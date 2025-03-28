@@ -1,4 +1,5 @@
-﻿  player.cpp
-  ruination.vcxproj -> C:\Users\thort\source\repos\ruination\x64\Debug\ruination.exe
+﻿  camera.cpp
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\camera.cpp(21,44): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+  ruination.vcxproj -> C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\x64\Debug\ruination.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.

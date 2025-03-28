@@ -45,17 +45,7 @@ void player::move_down()
 	player_object.y += player_speed;
 	
 }
-void player::walk()
-{
-	if (IsKeyDown(KEY_LEFT_SHIFT))
-	{
-		player_speed = 2;
-	}
-	else
-	{
-		player_speed = 5;
-	}
-}
+
 //player actions
 void player::shoot()
 {

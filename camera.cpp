@@ -39,4 +39,13 @@ void camera::camera_input()
 	{
 		player_camera.target.y += camera_speed;
 	}
+
+	if (IsKeyDown(KEY_LEFT_SHIFT))
+	{
+		camera_speed = 4;
+	}
+	else
+	{
+		camera_speed = 8;
+	}
 }

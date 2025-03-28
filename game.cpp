@@ -48,6 +48,14 @@ void game::handle_input()
 		player_game.move_down();
 	}
 
+	if (IsKeyDown(KEY_LEFT_SHIFT))
+	{
+		player_game.player_speed = 4;
+	}
+	else
+	{
+		player_game.player_speed = 8;
+	}
 
 
 	if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))

@@ -7,7 +7,9 @@ gun::gun(Vector2 position, Vector2 speed)
 	this->speed = speed;
 	active = true;
 }
-
+gun::~gun()
+{
+}
 void gun::draw()
 {
 	if (active)
