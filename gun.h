@@ -11,7 +11,9 @@ public:
 	~gun();
 	void updates();
 	void draw();
+	void handle_input();
 	
 	Vector2 position;
 	Vector2 speed;
+	int bullets;
 };

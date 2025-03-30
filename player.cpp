@@ -10,6 +10,7 @@ player::player()
 	player_object = { 400, 400 };
 	player_reticle = { 0, 0 };
 	player_speed = 8;
+	bullets = 6;
 }
 //destructor
 player::~player()
@@ -45,10 +46,28 @@ void player::move_down()
 	player_object.y += player_speed;
 	
 }
+void player::walk()
+{
+	player_speed = 4;
+}
+void player::reload()
+{
+	bullets = 6;
+}
 
 //player actions
 void player::shoot()
 {
-	guns.push_back(gun({player_object - player_reticle}, {Vector2MoveTowards(player_object, player_reticle, 5000.0)}));
+	if (bullets > 0)
+	{
+		guns.push_back(gun({ player_object - player_reticle }, { Vector2MoveTowards(player_object, player_reticle, 5000.0) }));
+		bullets--;
+		std::cout << bullets;
+	}
+	else
+	{
+		return;
+	}
+
 }
 

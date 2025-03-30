@@ -6,16 +6,18 @@ gun::gun(Vector2 position, Vector2 speed)
 	this->position = position;
 	this->speed = speed;
 	active = true;
+	bullets = 6;
 }
 gun::~gun()
 {
 }
 void gun::draw()
 {
-	if (active)
+	if (active && bullets > 0)
 	{
 		DrawCircleV(position, 7, BLUE);
 	}
+	
 }
 void gun::updates()
 {

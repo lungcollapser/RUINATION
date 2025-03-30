@@ -3,7 +3,6 @@
 
 player player_game;
 
-
 game::game()
 {
 	run = true;
@@ -50,11 +49,11 @@ void game::handle_input()
 
 	if (IsKeyDown(KEY_LEFT_SHIFT))
 	{
-		player_game.player_speed = 4;
+		player_game.walk();
 	}
-	else
+	if (IsKeyPressed(KEY_R))
 	{
-		player_game.player_speed = 8;
+		player_game.reload();
 	}
 
 
