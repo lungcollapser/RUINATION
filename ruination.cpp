@@ -36,6 +36,7 @@ int main()
         ClearBackground(BLACK);
         DrawLine(800, 0, 0, 800, WHITE);
         DrawLine(0, 0, 800, 800, WHITE);
+
         game_main.draw();
         EndMode2D();
         EndDrawing();
