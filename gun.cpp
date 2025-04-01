@@ -1,37 +1,20 @@
 #include "gun.h"
 #include <iostream>
 
-gun::gun(Vector2 position, Vector2 speed)
+gun::gun()
 {
-	this->position = position;
-	this->speed = speed;
 	active = true;
-	bullets = 6;
+	gun_reticle = { 0, 0 };
 }
 gun::~gun()
 {
 	
 
 }
-void gun::draw()
+void gun::draw(Vector2 player_object)
 {
-	if (active && bullets > 0)
-	{
-		DrawCircleV(position, 7, BLUE);
-	}
-	
+	gun_reticle = GetMousePosition();
+	DrawCircleV(gun_reticle + player_object, 8, RED);
 }
-void gun::updates()
-{
-	position += speed;
 
-	//fix screenwidth and height. causing bullets to disappear too excessively
-	if (active)
-	{
-		if (position.x > GetScreenWidth() + 500 || position.y > GetScreenHeight()  + 500 || position.x < 0 || position.y < 0)
-		{
-			active = false;
-			std::cout << "deleted";
-		}
-	}
-}
+

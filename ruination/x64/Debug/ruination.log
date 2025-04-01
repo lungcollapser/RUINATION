@@ -1,46 +1,6 @@
-﻿  player.cpp
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(28,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(28,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(29,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(29,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(30,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(30,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(31,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(31,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(32,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(32,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(33,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(33,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(37,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(37,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(38,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(38,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(39,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(39,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(40,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(40,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(41,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(41,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(45,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(45,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(46,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(46,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(47,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(47,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(48,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(48,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(52,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(52,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(53,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(53,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(54,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(54,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(58,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(58,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(59,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(59,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(63,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(63,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+﻿  game.cpp
+  ruination.cpp
+  Generating Code...
   ruination.vcxproj -> C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\x64\Debug\ruination.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.

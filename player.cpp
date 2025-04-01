@@ -3,14 +3,16 @@
 #include "raylib.h"
 #include <iostream>
 
+gun gun_player;
+
 //constructor
 player::player()
 {
 	//initializations
 	player_object = { 400, 400 };
-	player_reticle = { 0, 0 };
 	player_speed = 8;
 	bullets = 6;
+
 }
 //destructor
 player::~player()
@@ -20,9 +22,7 @@ player::~player()
 //player drawings
 void player::draw()
 {
-	player_reticle = GetMousePosition();
 	DrawCircleV(player_object, 25, WHITE);
-	DrawCircleV(player_object + player_reticle, 10, RED);
 	if (bullets == 6)
 	{
 		DrawCircle(player_object.x + -525, player_object.y + -525, 10, BLUE);
@@ -66,10 +66,6 @@ void player::draw()
 	{
 		return;
 	}
-
-
-	
-
 }
 //player movements
 void player::move_right()
@@ -101,20 +97,8 @@ void player::reload()
 {
 	bullets = 6;
 }
-
-//player actions
 void player::shoot()
 {
-	if (bullets > 0)
-	{
-		guns.push_back(gun({ Vector2MoveTowards(player_object, player_reticle, 100.0) }, Vector2{ 50, 50 }));
-		bullets--;
-		std::cout << bullets;
-	}
-	else
-	{
-		return;
-	}
 
 }
 

@@ -6,14 +6,10 @@ class gun
 {
 private:
 	bool active;
-public:
-	gun(Vector2 position, Vector2 speed);
-	~gun();
-	void updates();
-	void draw();
-	void handle_input();
+	Vector2 gun_reticle;
 	
-	Vector2 position;
-	Vector2 speed;
-	int bullets;
+public:
+	gun();
+	~gun();
+	void draw(Vector2 player_object);
 };

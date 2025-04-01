@@ -26,7 +26,6 @@ public:
 	std::vector<gun> guns;
 	//player attributes
 	Vector2 player_object;
-	Vector2 player_reticle;
 	int player_speed;
 	int bullets;
 
