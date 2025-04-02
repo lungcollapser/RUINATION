@@ -1,6 +1,719 @@
-﻿  game.cpp
+﻿  bullet.cpp
+  game.cpp
+  player.cpp
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.h(27,7): error C2039: 'vector': is not a member of 'std'
+  (compiling source file 'game.cpp')
+      C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\predefined C++ types (compiler internal)(357,11):
+      see declaration of 'std'
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.h(27,13): error C2143: syntax error: missing ';' before '<'
+  (compiling source file 'game.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.h(27,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'game.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.h(27,29): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'game.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\game.cpp(5,8): error C2512: 'bullet': no appropriate default constructor available
+      C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\bullet.h(5,7):
+      see declaration of 'bullet'
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\game.cpp(18,34): error C2039: 'bullets': is not a member of 'bullet'
+      C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\bullet.h(5,7):
+      see declaration of 'bullet'
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\game.cpp(29,34): error C2039: 'bullets': is not a member of 'bullet'
+      C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\bullet.h(5,7):
+      see declaration of 'bullet'
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(13,2): error C2679: binary '=': no operator found which takes a right-hand operand of type 'int' (or there is no acceptable conversion)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vector(1529,26):
+      could be 'std::vector<bullet,std::allocator<bullet>> &std::vector<bullet,std::allocator<bullet>>::operator =(std::initializer_list<_Ty>)'
+          with
+          [
+              _Ty=bullet
+          ]
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(13,2):
+          'std::vector<bullet,std::allocator<bullet>> &std::vector<bullet,std::allocator<bullet>>::operator =(std::initializer_list<_Ty>)': cannot convert argument 2 from 'int' to 'std::initializer_list<_Ty>'
+          with
+          [
+              _Ty=bullet
+          ]
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(13,12):
+              'std::initializer_list<_Ty>::initializer_list': no overloaded function could convert all the argument types
+          with
+          [
+              _Ty=bullet
+          ]
+                  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\initializer_list(51,1):
+                  could be 'std::initializer_list<_Ty>::initializer_list(std::initializer_list<_Ty> &&)'
+          with
+          [
+              _Ty=bullet
+          ]
+                      C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(13,12):
+                      'std::initializer_list<_Ty>::initializer_list(std::initializer_list<_Ty> &&)': cannot convert argument 1 from 'int' to 'std::initializer_list<_Ty> &&'
+          with
+          [
+              _Ty=bullet
+          ]
+                          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(13,12):
+                          Reason: cannot convert from 'int' to 'std::initializer_list<_Ty>'
+          with
+          [
+              _Ty=bullet
+          ]
+                          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(13,12):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\initializer_list(51,1):
+                  or       'std::initializer_list<_Ty>::initializer_list(const std::initializer_list<_Ty> &)'
+          with
+          [
+              _Ty=bullet
+          ]
+                      C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(13,12):
+                      'std::initializer_list<_Ty>::initializer_list(const std::initializer_list<_Ty> &)': cannot convert argument 1 from 'int' to 'const std::initializer_list<_Ty> &'
+          with
+          [
+              _Ty=bullet
+          ]
+                          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(13,12):
+                          Reason: cannot convert from 'int' to 'const std::initializer_list<_Ty>'
+          with
+          [
+              _Ty=bullet
+          ]
+                          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(13,12):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(13,12):
+                  while trying to match the argument list '(int)'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vector(1508,26):
+      or       'std::vector<bullet,std::allocator<bullet>> &std::vector<bullet,std::allocator<bullet>>::operator =(const std::vector<bullet,std::allocator<bullet>> &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(13,2):
+          'std::vector<bullet,std::allocator<bullet>> &std::vector<bullet,std::allocator<bullet>>::operator =(const std::vector<bullet,std::allocator<bullet>> &)': cannot convert argument 2 from 'int' to 'const std::vector<bullet,std::allocator<bullet>> &'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(13,12):
+              Reason: cannot convert from 'int' to 'const std::vector<bullet,std::allocator<bullet>>'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(13,12):
+              Constructor for class 'std::vector<bullet,std::allocator<bullet>>' is declared 'explicit'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vector(783,26):
+      or       'std::vector<bullet,std::allocator<bullet>> &std::vector<bullet,std::allocator<bullet>>::operator =(std::vector<bullet,std::allocator<bullet>> &&) noexcept(<expr>)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(13,2):
+          'std::vector<bullet,std::allocator<bullet>> &std::vector<bullet,std::allocator<bullet>>::operator =(std::vector<bullet,std::allocator<bullet>> &&) noexcept(<expr>)': cannot convert argument 2 from 'int' to 'std::vector<bullet,std::allocator<bullet>> &&'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(13,12):
+              Reason: cannot convert from 'int' to 'std::vector<bullet,std::allocator<bullet>>'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(13,12):
+              Constructor for class 'std::vector<bullet,std::allocator<bullet>>' is declared 'explicit'
+      C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(13,2):
+      while trying to match the argument list '(std::vector<bullet,std::allocator<bullet>>, int)'
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(25,6): error C2678: binary '==': no operator found which takes a left-hand operand of type 'std::vector<bullet,std::allocator<bullet>>' (or there is no acceptable conversion)
+      C:\Users\thort\Downloads\vcpkg\installed\x64-windows\include\raymath.h(2857,13):
+      could be 'bool operator ==(const Vector4 &,const Vector4 &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(25,6):
+          'bool operator ==(const Vector4 &,const Vector4 &)': cannot convert argument 1 from 'std::vector<bullet,std::allocator<bullet>>' to 'const Vector4 &'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(25,6):
+              Reason: cannot convert from 'std::vector<bullet,std::allocator<bullet>>' to 'const Vector4'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(25,6):
+              No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+      C:\Users\thort\Downloads\vcpkg\installed\x64-windows\include\raymath.h(2773,13):
+      or       'bool operator ==(const Vector3 &,const Vector3 &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(25,6):
+          'bool operator ==(const Vector3 &,const Vector3 &)': cannot convert argument 1 from 'std::vector<bullet,std::allocator<bullet>>' to 'const Vector3 &'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(25,6):
+              Reason: cannot convert from 'std::vector<bullet,std::allocator<bullet>>' to 'const Vector3'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(25,6):
+              No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+      C:\Users\thort\Downloads\vcpkg\installed\x64-windows\include\raymath.h(2679,13):
+      or       'bool operator ==(const Vector2 &,const Vector2 &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(25,6):
+          'bool operator ==(const Vector2 &,const Vector2 &)': cannot convert argument 1 from 'std::vector<bullet,std::allocator<bullet>>' to 'const Vector2 &'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(25,6):
+              Reason: cannot convert from 'std::vector<bullet,std::allocator<bullet>>' to 'const Vector2'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(25,6):
+              No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\utility(503,27):
+      or       'bool std::operator ==(const std::pair<_Ty1,_Ty2> &,const std::pair<_Uty1,_Uty2> &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(25,6):
+          'bool std::operator ==(const std::pair<_Ty1,_Ty2> &,const std::pair<_Uty1,_Uty2> &)': could not deduce template argument for 'const std::pair<_Ty1,_Ty2> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xutility(1926,30):
+      or       'bool std::operator ==(const std::reverse_iterator<_BidIt> &,const std::reverse_iterator<_BidIt2> &) noexcept(<expr>)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(25,6):
+          'bool std::operator ==(const std::reverse_iterator<_BidIt> &,const std::reverse_iterator<_BidIt2> &) noexcept(<expr>)': could not deduce template argument for 'const std::reverse_iterator<_BidIt> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xutility(4474,30):
+      or       'bool std::operator ==(const std::move_iterator<_Iter> &,const std::move_iterator<_Iter2> &) noexcept(<expr>)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(25,6):
+          'bool std::operator ==(const std::move_iterator<_Iter> &,const std::move_iterator<_Iter2> &) noexcept(<expr>)': could not deduce template argument for 'const std::move_iterator<_Iter> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\iterator(304,17):
+      or       'bool std::operator ==(const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &,const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(25,6):
+          'bool std::operator ==(const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &,const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &) noexcept': could not deduce template argument for 'const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\iterator(486,17):
+      or       'bool std::operator ==(const std::istreambuf_iterator<_Elem,_Traits> &,const std::istreambuf_iterator<_Elem,_Traits> &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(25,6):
+          'bool std::operator ==(const std::istreambuf_iterator<_Elem,_Traits> &,const std::istreambuf_iterator<_Elem,_Traits> &)': could not deduce template argument for 'const std::istreambuf_iterator<_Elem,_Traits> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xmemory(1046,30):
+      or       'bool std::operator ==(const std::allocator<_Ty> &,const std::allocator<_Other> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(25,6):
+          'bool std::operator ==(const std::allocator<_Ty> &,const std::allocator<_Other> &) noexcept': could not deduce template argument for 'const std::allocator<_Ty> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xstring(3221,30):
+      or       'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(25,6):
+          'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept': could not deduce template argument for 'const std::basic_string<_Elem,_Traits,_Alloc> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xstring(3227,30):
+      or       'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const _Elem *const ) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(25,6):
+          'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const _Elem *const ) noexcept': could not deduce template argument for 'const std::basic_string<_Elem,_Traits,_Alloc> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xstring(3246,17):
+      or       'bool std::operator ==(const _Elem *const ,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(25,6):
+          'bool std::operator ==(const _Elem *const ,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept': could not deduce template argument for 'const _Elem *const ' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(1872,17):
+      or       'bool std::operator ==(const std::shared_ptr<_Ty> &,const std::shared_ptr<_Ty0> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(25,6):
+          'bool std::operator ==(const std::shared_ptr<_Ty> &,const std::shared_ptr<_Ty0> &) noexcept': could not deduce template argument for 'const std::shared_ptr<_Ty> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(1909,17):
+      or       'bool std::operator ==(const std::shared_ptr<_Ty> &,std::nullptr_t) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(25,6):
+          'bool std::operator ==(const std::shared_ptr<_Ty> &,std::nullptr_t) noexcept': could not deduce template argument for 'const std::shared_ptr<_Ty> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(1920,17):
+      or       'bool std::operator ==(std::nullptr_t,const std::shared_ptr<_Ty> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(25,6):
+          'bool std::operator ==(std::nullptr_t,const std::shared_ptr<_Ty> &) noexcept': could not deduce template argument for 'const std::shared_ptr<_Ty> &' from 'int'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3630,30):
+      or       'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,const std::unique_ptr<_Ty2,_Dx2> &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(25,6):
+          'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,const std::unique_ptr<_Ty2,_Dx2> &)': could not deduce template argument for 'const std::unique_ptr<_Ty,_Dx> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3676,30):
+      or       'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,std::nullptr_t) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(25,6):
+          'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,std::nullptr_t) noexcept': could not deduce template argument for 'const std::unique_ptr<_Ty,_Dx> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3682,17):
+      or       'bool std::operator ==(std::nullptr_t,const std::unique_ptr<_Ty,_Dx> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(25,6):
+          'bool std::operator ==(std::nullptr_t,const std::unique_ptr<_Ty,_Dx> &) noexcept': could not deduce template argument for 'const std::unique_ptr<_Ty,_Dx> &' from 'int'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vector(2251,30):
+      or       'bool std::operator ==(const std::vector<_Ty,_Alloc> &,const std::vector<_Ty,_Alloc> &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(25,6):
+          'bool std::operator ==(const std::vector<_Ty,_Alloc> &,const std::vector<_Ty,_Alloc> &)': could not deduce template argument for 'const std::vector<_Ty,_Alloc> &' from 'int'
+      C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(25,6):
+      while trying to match the argument list '(std::vector<bullet,std::allocator<bullet>>, int)'
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(27,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(27,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(28,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(28,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(29,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(29,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(30,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(30,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(31,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(31,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(32,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(32,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(34,11): error C2678: binary '==': no operator found which takes a left-hand operand of type 'std::vector<bullet,std::allocator<bullet>>' (or there is no acceptable conversion)
+      C:\Users\thort\Downloads\vcpkg\installed\x64-windows\include\raymath.h(2857,13):
+      could be 'bool operator ==(const Vector4 &,const Vector4 &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(34,11):
+          'bool operator ==(const Vector4 &,const Vector4 &)': cannot convert argument 1 from 'std::vector<bullet,std::allocator<bullet>>' to 'const Vector4 &'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(34,11):
+              Reason: cannot convert from 'std::vector<bullet,std::allocator<bullet>>' to 'const Vector4'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(34,11):
+              No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+      C:\Users\thort\Downloads\vcpkg\installed\x64-windows\include\raymath.h(2773,13):
+      or       'bool operator ==(const Vector3 &,const Vector3 &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(34,11):
+          'bool operator ==(const Vector3 &,const Vector3 &)': cannot convert argument 1 from 'std::vector<bullet,std::allocator<bullet>>' to 'const Vector3 &'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(34,11):
+              Reason: cannot convert from 'std::vector<bullet,std::allocator<bullet>>' to 'const Vector3'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(34,11):
+              No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+      C:\Users\thort\Downloads\vcpkg\installed\x64-windows\include\raymath.h(2679,13):
+      or       'bool operator ==(const Vector2 &,const Vector2 &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(34,11):
+          'bool operator ==(const Vector2 &,const Vector2 &)': cannot convert argument 1 from 'std::vector<bullet,std::allocator<bullet>>' to 'const Vector2 &'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(34,11):
+              Reason: cannot convert from 'std::vector<bullet,std::allocator<bullet>>' to 'const Vector2'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(34,11):
+              No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\utility(503,27):
+      or       'bool std::operator ==(const std::pair<_Ty1,_Ty2> &,const std::pair<_Uty1,_Uty2> &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(34,11):
+          'bool std::operator ==(const std::pair<_Ty1,_Ty2> &,const std::pair<_Uty1,_Uty2> &)': could not deduce template argument for 'const std::pair<_Ty1,_Ty2> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xutility(1926,30):
+      or       'bool std::operator ==(const std::reverse_iterator<_BidIt> &,const std::reverse_iterator<_BidIt2> &) noexcept(<expr>)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(34,11):
+          'bool std::operator ==(const std::reverse_iterator<_BidIt> &,const std::reverse_iterator<_BidIt2> &) noexcept(<expr>)': could not deduce template argument for 'const std::reverse_iterator<_BidIt> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xutility(4474,30):
+      or       'bool std::operator ==(const std::move_iterator<_Iter> &,const std::move_iterator<_Iter2> &) noexcept(<expr>)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(34,11):
+          'bool std::operator ==(const std::move_iterator<_Iter> &,const std::move_iterator<_Iter2> &) noexcept(<expr>)': could not deduce template argument for 'const std::move_iterator<_Iter> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\iterator(304,17):
+      or       'bool std::operator ==(const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &,const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(34,11):
+          'bool std::operator ==(const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &,const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &) noexcept': could not deduce template argument for 'const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\iterator(486,17):
+      or       'bool std::operator ==(const std::istreambuf_iterator<_Elem,_Traits> &,const std::istreambuf_iterator<_Elem,_Traits> &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(34,11):
+          'bool std::operator ==(const std::istreambuf_iterator<_Elem,_Traits> &,const std::istreambuf_iterator<_Elem,_Traits> &)': could not deduce template argument for 'const std::istreambuf_iterator<_Elem,_Traits> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xmemory(1046,30):
+      or       'bool std::operator ==(const std::allocator<_Ty> &,const std::allocator<_Other> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(34,11):
+          'bool std::operator ==(const std::allocator<_Ty> &,const std::allocator<_Other> &) noexcept': could not deduce template argument for 'const std::allocator<_Ty> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xstring(3221,30):
+      or       'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(34,11):
+          'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept': could not deduce template argument for 'const std::basic_string<_Elem,_Traits,_Alloc> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xstring(3227,30):
+      or       'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const _Elem *const ) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(34,11):
+          'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const _Elem *const ) noexcept': could not deduce template argument for 'const std::basic_string<_Elem,_Traits,_Alloc> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xstring(3246,17):
+      or       'bool std::operator ==(const _Elem *const ,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(34,11):
+          'bool std::operator ==(const _Elem *const ,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept': could not deduce template argument for 'const _Elem *const ' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(1872,17):
+      or       'bool std::operator ==(const std::shared_ptr<_Ty> &,const std::shared_ptr<_Ty0> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(34,11):
+          'bool std::operator ==(const std::shared_ptr<_Ty> &,const std::shared_ptr<_Ty0> &) noexcept': could not deduce template argument for 'const std::shared_ptr<_Ty> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(1909,17):
+      or       'bool std::operator ==(const std::shared_ptr<_Ty> &,std::nullptr_t) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(34,11):
+          'bool std::operator ==(const std::shared_ptr<_Ty> &,std::nullptr_t) noexcept': could not deduce template argument for 'const std::shared_ptr<_Ty> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(1920,17):
+      or       'bool std::operator ==(std::nullptr_t,const std::shared_ptr<_Ty> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(34,11):
+          'bool std::operator ==(std::nullptr_t,const std::shared_ptr<_Ty> &) noexcept': could not deduce template argument for 'const std::shared_ptr<_Ty> &' from 'int'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3630,30):
+      or       'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,const std::unique_ptr<_Ty2,_Dx2> &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(34,11):
+          'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,const std::unique_ptr<_Ty2,_Dx2> &)': could not deduce template argument for 'const std::unique_ptr<_Ty,_Dx> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3676,30):
+      or       'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,std::nullptr_t) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(34,11):
+          'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,std::nullptr_t) noexcept': could not deduce template argument for 'const std::unique_ptr<_Ty,_Dx> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3682,17):
+      or       'bool std::operator ==(std::nullptr_t,const std::unique_ptr<_Ty,_Dx> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(34,11):
+          'bool std::operator ==(std::nullptr_t,const std::unique_ptr<_Ty,_Dx> &) noexcept': could not deduce template argument for 'const std::unique_ptr<_Ty,_Dx> &' from 'int'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vector(2251,30):
+      or       'bool std::operator ==(const std::vector<_Ty,_Alloc> &,const std::vector<_Ty,_Alloc> &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(34,11):
+          'bool std::operator ==(const std::vector<_Ty,_Alloc> &,const std::vector<_Ty,_Alloc> &)': could not deduce template argument for 'const std::vector<_Ty,_Alloc> &' from 'int'
+      C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(34,11):
+      while trying to match the argument list '(std::vector<bullet,std::allocator<bullet>>, int)'
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(36,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(36,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(37,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(37,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(38,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(38,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(39,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(39,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(40,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(40,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   ruination.cpp
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(42,11): error C2678: binary '==': no operator found which takes a left-hand operand of type 'std::vector<bullet,std::allocator<bullet>>' (or there is no acceptable conversion)
+      C:\Users\thort\Downloads\vcpkg\installed\x64-windows\include\raymath.h(2857,13):
+      could be 'bool operator ==(const Vector4 &,const Vector4 &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(42,11):
+          'bool operator ==(const Vector4 &,const Vector4 &)': cannot convert argument 1 from 'std::vector<bullet,std::allocator<bullet>>' to 'const Vector4 &'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(42,11):
+              Reason: cannot convert from 'std::vector<bullet,std::allocator<bullet>>' to 'const Vector4'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(42,11):
+              No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+      C:\Users\thort\Downloads\vcpkg\installed\x64-windows\include\raymath.h(2773,13):
+      or       'bool operator ==(const Vector3 &,const Vector3 &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(42,11):
+          'bool operator ==(const Vector3 &,const Vector3 &)': cannot convert argument 1 from 'std::vector<bullet,std::allocator<bullet>>' to 'const Vector3 &'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(42,11):
+              Reason: cannot convert from 'std::vector<bullet,std::allocator<bullet>>' to 'const Vector3'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(42,11):
+              No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+      C:\Users\thort\Downloads\vcpkg\installed\x64-windows\include\raymath.h(2679,13):
+      or       'bool operator ==(const Vector2 &,const Vector2 &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(42,11):
+          'bool operator ==(const Vector2 &,const Vector2 &)': cannot convert argument 1 from 'std::vector<bullet,std::allocator<bullet>>' to 'const Vector2 &'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(42,11):
+              Reason: cannot convert from 'std::vector<bullet,std::allocator<bullet>>' to 'const Vector2'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(42,11):
+              No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\utility(503,27):
+      or       'bool std::operator ==(const std::pair<_Ty1,_Ty2> &,const std::pair<_Uty1,_Uty2> &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(42,11):
+          'bool std::operator ==(const std::pair<_Ty1,_Ty2> &,const std::pair<_Uty1,_Uty2> &)': could not deduce template argument for 'const std::pair<_Ty1,_Ty2> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xutility(1926,30):
+      or       'bool std::operator ==(const std::reverse_iterator<_BidIt> &,const std::reverse_iterator<_BidIt2> &) noexcept(<expr>)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(42,11):
+          'bool std::operator ==(const std::reverse_iterator<_BidIt> &,const std::reverse_iterator<_BidIt2> &) noexcept(<expr>)': could not deduce template argument for 'const std::reverse_iterator<_BidIt> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xutility(4474,30):
+      or       'bool std::operator ==(const std::move_iterator<_Iter> &,const std::move_iterator<_Iter2> &) noexcept(<expr>)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(42,11):
+          'bool std::operator ==(const std::move_iterator<_Iter> &,const std::move_iterator<_Iter2> &) noexcept(<expr>)': could not deduce template argument for 'const std::move_iterator<_Iter> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\iterator(304,17):
+      or       'bool std::operator ==(const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &,const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(42,11):
+          'bool std::operator ==(const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &,const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &) noexcept': could not deduce template argument for 'const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\iterator(486,17):
+      or       'bool std::operator ==(const std::istreambuf_iterator<_Elem,_Traits> &,const std::istreambuf_iterator<_Elem,_Traits> &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(42,11):
+          'bool std::operator ==(const std::istreambuf_iterator<_Elem,_Traits> &,const std::istreambuf_iterator<_Elem,_Traits> &)': could not deduce template argument for 'const std::istreambuf_iterator<_Elem,_Traits> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xmemory(1046,30):
+      or       'bool std::operator ==(const std::allocator<_Ty> &,const std::allocator<_Other> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(42,11):
+          'bool std::operator ==(const std::allocator<_Ty> &,const std::allocator<_Other> &) noexcept': could not deduce template argument for 'const std::allocator<_Ty> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xstring(3221,30):
+      or       'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(42,11):
+          'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept': could not deduce template argument for 'const std::basic_string<_Elem,_Traits,_Alloc> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xstring(3227,30):
+      or       'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const _Elem *const ) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(42,11):
+          'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const _Elem *const ) noexcept': could not deduce template argument for 'const std::basic_string<_Elem,_Traits,_Alloc> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xstring(3246,17):
+      or       'bool std::operator ==(const _Elem *const ,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(42,11):
+          'bool std::operator ==(const _Elem *const ,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept': could not deduce template argument for 'const _Elem *const ' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(1872,17):
+      or       'bool std::operator ==(const std::shared_ptr<_Ty> &,const std::shared_ptr<_Ty0> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(42,11):
+          'bool std::operator ==(const std::shared_ptr<_Ty> &,const std::shared_ptr<_Ty0> &) noexcept': could not deduce template argument for 'const std::shared_ptr<_Ty> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(1909,17):
+      or       'bool std::operator ==(const std::shared_ptr<_Ty> &,std::nullptr_t) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(42,11):
+          'bool std::operator ==(const std::shared_ptr<_Ty> &,std::nullptr_t) noexcept': could not deduce template argument for 'const std::shared_ptr<_Ty> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(1920,17):
+      or       'bool std::operator ==(std::nullptr_t,const std::shared_ptr<_Ty> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(42,11):
+          'bool std::operator ==(std::nullptr_t,const std::shared_ptr<_Ty> &) noexcept': could not deduce template argument for 'const std::shared_ptr<_Ty> &' from 'int'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3630,30):
+      or       'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,const std::unique_ptr<_Ty2,_Dx2> &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(42,11):
+          'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,const std::unique_ptr<_Ty2,_Dx2> &)': could not deduce template argument for 'const std::unique_ptr<_Ty,_Dx> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3676,30):
+      or       'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,std::nullptr_t) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(42,11):
+          'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,std::nullptr_t) noexcept': could not deduce template argument for 'const std::unique_ptr<_Ty,_Dx> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3682,17):
+      or       'bool std::operator ==(std::nullptr_t,const std::unique_ptr<_Ty,_Dx> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(42,11):
+          'bool std::operator ==(std::nullptr_t,const std::unique_ptr<_Ty,_Dx> &) noexcept': could not deduce template argument for 'const std::unique_ptr<_Ty,_Dx> &' from 'int'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vector(2251,30):
+      or       'bool std::operator ==(const std::vector<_Ty,_Alloc> &,const std::vector<_Ty,_Alloc> &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(42,11):
+          'bool std::operator ==(const std::vector<_Ty,_Alloc> &,const std::vector<_Ty,_Alloc> &)': could not deduce template argument for 'const std::vector<_Ty,_Alloc> &' from 'int'
+      C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(42,11):
+      while trying to match the argument list '(std::vector<bullet,std::allocator<bullet>>, int)'
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(44,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(44,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(45,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(45,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(46,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(46,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(47,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(47,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(49,11): error C2678: binary '==': no operator found which takes a left-hand operand of type 'std::vector<bullet,std::allocator<bullet>>' (or there is no acceptable conversion)
+      C:\Users\thort\Downloads\vcpkg\installed\x64-windows\include\raymath.h(2857,13):
+      could be 'bool operator ==(const Vector4 &,const Vector4 &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(49,11):
+          'bool operator ==(const Vector4 &,const Vector4 &)': cannot convert argument 1 from 'std::vector<bullet,std::allocator<bullet>>' to 'const Vector4 &'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(49,11):
+              Reason: cannot convert from 'std::vector<bullet,std::allocator<bullet>>' to 'const Vector4'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(49,11):
+              No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+      C:\Users\thort\Downloads\vcpkg\installed\x64-windows\include\raymath.h(2773,13):
+      or       'bool operator ==(const Vector3 &,const Vector3 &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(49,11):
+          'bool operator ==(const Vector3 &,const Vector3 &)': cannot convert argument 1 from 'std::vector<bullet,std::allocator<bullet>>' to 'const Vector3 &'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(49,11):
+              Reason: cannot convert from 'std::vector<bullet,std::allocator<bullet>>' to 'const Vector3'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(49,11):
+              No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+      C:\Users\thort\Downloads\vcpkg\installed\x64-windows\include\raymath.h(2679,13):
+      or       'bool operator ==(const Vector2 &,const Vector2 &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(49,11):
+          'bool operator ==(const Vector2 &,const Vector2 &)': cannot convert argument 1 from 'std::vector<bullet,std::allocator<bullet>>' to 'const Vector2 &'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(49,11):
+              Reason: cannot convert from 'std::vector<bullet,std::allocator<bullet>>' to 'const Vector2'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(49,11):
+              No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\utility(503,27):
+      or       'bool std::operator ==(const std::pair<_Ty1,_Ty2> &,const std::pair<_Uty1,_Uty2> &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(49,11):
+          'bool std::operator ==(const std::pair<_Ty1,_Ty2> &,const std::pair<_Uty1,_Uty2> &)': could not deduce template argument for 'const std::pair<_Ty1,_Ty2> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xutility(1926,30):
+      or       'bool std::operator ==(const std::reverse_iterator<_BidIt> &,const std::reverse_iterator<_BidIt2> &) noexcept(<expr>)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(49,11):
+          'bool std::operator ==(const std::reverse_iterator<_BidIt> &,const std::reverse_iterator<_BidIt2> &) noexcept(<expr>)': could not deduce template argument for 'const std::reverse_iterator<_BidIt> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xutility(4474,30):
+      or       'bool std::operator ==(const std::move_iterator<_Iter> &,const std::move_iterator<_Iter2> &) noexcept(<expr>)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(49,11):
+          'bool std::operator ==(const std::move_iterator<_Iter> &,const std::move_iterator<_Iter2> &) noexcept(<expr>)': could not deduce template argument for 'const std::move_iterator<_Iter> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\iterator(304,17):
+      or       'bool std::operator ==(const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &,const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(49,11):
+          'bool std::operator ==(const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &,const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &) noexcept': could not deduce template argument for 'const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\iterator(486,17):
+      or       'bool std::operator ==(const std::istreambuf_iterator<_Elem,_Traits> &,const std::istreambuf_iterator<_Elem,_Traits> &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(49,11):
+          'bool std::operator ==(const std::istreambuf_iterator<_Elem,_Traits> &,const std::istreambuf_iterator<_Elem,_Traits> &)': could not deduce template argument for 'const std::istreambuf_iterator<_Elem,_Traits> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xmemory(1046,30):
+      or       'bool std::operator ==(const std::allocator<_Ty> &,const std::allocator<_Other> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(49,11):
+          'bool std::operator ==(const std::allocator<_Ty> &,const std::allocator<_Other> &) noexcept': could not deduce template argument for 'const std::allocator<_Ty> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xstring(3221,30):
+      or       'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(49,11):
+          'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept': could not deduce template argument for 'const std::basic_string<_Elem,_Traits,_Alloc> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xstring(3227,30):
+      or       'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const _Elem *const ) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(49,11):
+          'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const _Elem *const ) noexcept': could not deduce template argument for 'const std::basic_string<_Elem,_Traits,_Alloc> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xstring(3246,17):
+      or       'bool std::operator ==(const _Elem *const ,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(49,11):
+          'bool std::operator ==(const _Elem *const ,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept': could not deduce template argument for 'const _Elem *const ' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(1872,17):
+      or       'bool std::operator ==(const std::shared_ptr<_Ty> &,const std::shared_ptr<_Ty0> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(49,11):
+          'bool std::operator ==(const std::shared_ptr<_Ty> &,const std::shared_ptr<_Ty0> &) noexcept': could not deduce template argument for 'const std::shared_ptr<_Ty> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(1909,17):
+      or       'bool std::operator ==(const std::shared_ptr<_Ty> &,std::nullptr_t) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(49,11):
+          'bool std::operator ==(const std::shared_ptr<_Ty> &,std::nullptr_t) noexcept': could not deduce template argument for 'const std::shared_ptr<_Ty> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(1920,17):
+      or       'bool std::operator ==(std::nullptr_t,const std::shared_ptr<_Ty> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(49,11):
+          'bool std::operator ==(std::nullptr_t,const std::shared_ptr<_Ty> &) noexcept': could not deduce template argument for 'const std::shared_ptr<_Ty> &' from 'int'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3630,30):
+      or       'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,const std::unique_ptr<_Ty2,_Dx2> &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(49,11):
+          'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,const std::unique_ptr<_Ty2,_Dx2> &)': could not deduce template argument for 'const std::unique_ptr<_Ty,_Dx> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3676,30):
+      or       'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,std::nullptr_t) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(49,11):
+          'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,std::nullptr_t) noexcept': could not deduce template argument for 'const std::unique_ptr<_Ty,_Dx> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3682,17):
+      or       'bool std::operator ==(std::nullptr_t,const std::unique_ptr<_Ty,_Dx> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(49,11):
+          'bool std::operator ==(std::nullptr_t,const std::unique_ptr<_Ty,_Dx> &) noexcept': could not deduce template argument for 'const std::unique_ptr<_Ty,_Dx> &' from 'int'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vector(2251,30):
+      or       'bool std::operator ==(const std::vector<_Ty,_Alloc> &,const std::vector<_Ty,_Alloc> &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(49,11):
+          'bool std::operator ==(const std::vector<_Ty,_Alloc> &,const std::vector<_Ty,_Alloc> &)': could not deduce template argument for 'const std::vector<_Ty,_Alloc> &' from 'int'
+      C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(49,11):
+      while trying to match the argument list '(std::vector<bullet,std::allocator<bullet>>, int)'
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(51,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(51,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(52,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(52,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(53,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(53,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(55,11): error C2678: binary '==': no operator found which takes a left-hand operand of type 'std::vector<bullet,std::allocator<bullet>>' (or there is no acceptable conversion)
+      C:\Users\thort\Downloads\vcpkg\installed\x64-windows\include\raymath.h(2857,13):
+      could be 'bool operator ==(const Vector4 &,const Vector4 &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(55,11):
+          'bool operator ==(const Vector4 &,const Vector4 &)': cannot convert argument 1 from 'std::vector<bullet,std::allocator<bullet>>' to 'const Vector4 &'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(55,11):
+              Reason: cannot convert from 'std::vector<bullet,std::allocator<bullet>>' to 'const Vector4'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(55,11):
+              No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+      C:\Users\thort\Downloads\vcpkg\installed\x64-windows\include\raymath.h(2773,13):
+      or       'bool operator ==(const Vector3 &,const Vector3 &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(55,11):
+          'bool operator ==(const Vector3 &,const Vector3 &)': cannot convert argument 1 from 'std::vector<bullet,std::allocator<bullet>>' to 'const Vector3 &'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(55,11):
+              Reason: cannot convert from 'std::vector<bullet,std::allocator<bullet>>' to 'const Vector3'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(55,11):
+              No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+      C:\Users\thort\Downloads\vcpkg\installed\x64-windows\include\raymath.h(2679,13):
+      or       'bool operator ==(const Vector2 &,const Vector2 &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(55,11):
+          'bool operator ==(const Vector2 &,const Vector2 &)': cannot convert argument 1 from 'std::vector<bullet,std::allocator<bullet>>' to 'const Vector2 &'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(55,11):
+              Reason: cannot convert from 'std::vector<bullet,std::allocator<bullet>>' to 'const Vector2'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(55,11):
+              No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\utility(503,27):
+      or       'bool std::operator ==(const std::pair<_Ty1,_Ty2> &,const std::pair<_Uty1,_Uty2> &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(55,11):
+          'bool std::operator ==(const std::pair<_Ty1,_Ty2> &,const std::pair<_Uty1,_Uty2> &)': could not deduce template argument for 'const std::pair<_Ty1,_Ty2> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xutility(1926,30):
+      or       'bool std::operator ==(const std::reverse_iterator<_BidIt> &,const std::reverse_iterator<_BidIt2> &) noexcept(<expr>)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(55,11):
+          'bool std::operator ==(const std::reverse_iterator<_BidIt> &,const std::reverse_iterator<_BidIt2> &) noexcept(<expr>)': could not deduce template argument for 'const std::reverse_iterator<_BidIt> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xutility(4474,30):
+      or       'bool std::operator ==(const std::move_iterator<_Iter> &,const std::move_iterator<_Iter2> &) noexcept(<expr>)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(55,11):
+          'bool std::operator ==(const std::move_iterator<_Iter> &,const std::move_iterator<_Iter2> &) noexcept(<expr>)': could not deduce template argument for 'const std::move_iterator<_Iter> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\iterator(304,17):
+      or       'bool std::operator ==(const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &,const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(55,11):
+          'bool std::operator ==(const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &,const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &) noexcept': could not deduce template argument for 'const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\iterator(486,17):
+      or       'bool std::operator ==(const std::istreambuf_iterator<_Elem,_Traits> &,const std::istreambuf_iterator<_Elem,_Traits> &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(55,11):
+          'bool std::operator ==(const std::istreambuf_iterator<_Elem,_Traits> &,const std::istreambuf_iterator<_Elem,_Traits> &)': could not deduce template argument for 'const std::istreambuf_iterator<_Elem,_Traits> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xmemory(1046,30):
+      or       'bool std::operator ==(const std::allocator<_Ty> &,const std::allocator<_Other> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(55,11):
+          'bool std::operator ==(const std::allocator<_Ty> &,const std::allocator<_Other> &) noexcept': could not deduce template argument for 'const std::allocator<_Ty> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xstring(3221,30):
+      or       'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(55,11):
+          'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept': could not deduce template argument for 'const std::basic_string<_Elem,_Traits,_Alloc> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xstring(3227,30):
+      or       'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const _Elem *const ) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(55,11):
+          'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const _Elem *const ) noexcept': could not deduce template argument for 'const std::basic_string<_Elem,_Traits,_Alloc> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xstring(3246,17):
+      or       'bool std::operator ==(const _Elem *const ,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(55,11):
+          'bool std::operator ==(const _Elem *const ,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept': could not deduce template argument for 'const _Elem *const ' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(1872,17):
+      or       'bool std::operator ==(const std::shared_ptr<_Ty> &,const std::shared_ptr<_Ty0> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(55,11):
+          'bool std::operator ==(const std::shared_ptr<_Ty> &,const std::shared_ptr<_Ty0> &) noexcept': could not deduce template argument for 'const std::shared_ptr<_Ty> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(1909,17):
+      or       'bool std::operator ==(const std::shared_ptr<_Ty> &,std::nullptr_t) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(55,11):
+          'bool std::operator ==(const std::shared_ptr<_Ty> &,std::nullptr_t) noexcept': could not deduce template argument for 'const std::shared_ptr<_Ty> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(1920,17):
+      or       'bool std::operator ==(std::nullptr_t,const std::shared_ptr<_Ty> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(55,11):
+          'bool std::operator ==(std::nullptr_t,const std::shared_ptr<_Ty> &) noexcept': could not deduce template argument for 'const std::shared_ptr<_Ty> &' from 'int'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3630,30):
+      or       'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,const std::unique_ptr<_Ty2,_Dx2> &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(55,11):
+          'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,const std::unique_ptr<_Ty2,_Dx2> &)': could not deduce template argument for 'const std::unique_ptr<_Ty,_Dx> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3676,30):
+      or       'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,std::nullptr_t) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(55,11):
+          'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,std::nullptr_t) noexcept': could not deduce template argument for 'const std::unique_ptr<_Ty,_Dx> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3682,17):
+      or       'bool std::operator ==(std::nullptr_t,const std::unique_ptr<_Ty,_Dx> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(55,11):
+          'bool std::operator ==(std::nullptr_t,const std::unique_ptr<_Ty,_Dx> &) noexcept': could not deduce template argument for 'const std::unique_ptr<_Ty,_Dx> &' from 'int'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vector(2251,30):
+      or       'bool std::operator ==(const std::vector<_Ty,_Alloc> &,const std::vector<_Ty,_Alloc> &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(55,11):
+          'bool std::operator ==(const std::vector<_Ty,_Alloc> &,const std::vector<_Ty,_Alloc> &)': could not deduce template argument for 'const std::vector<_Ty,_Alloc> &' from 'int'
+      C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(55,11):
+      while trying to match the argument list '(std::vector<bullet,std::allocator<bullet>>, int)'
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(57,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(57,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(58,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(58,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(60,11): error C2678: binary '==': no operator found which takes a left-hand operand of type 'std::vector<bullet,std::allocator<bullet>>' (or there is no acceptable conversion)
+      C:\Users\thort\Downloads\vcpkg\installed\x64-windows\include\raymath.h(2857,13):
+      could be 'bool operator ==(const Vector4 &,const Vector4 &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(60,11):
+          'bool operator ==(const Vector4 &,const Vector4 &)': cannot convert argument 1 from 'std::vector<bullet,std::allocator<bullet>>' to 'const Vector4 &'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(60,11):
+              Reason: cannot convert from 'std::vector<bullet,std::allocator<bullet>>' to 'const Vector4'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(60,11):
+              No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+      C:\Users\thort\Downloads\vcpkg\installed\x64-windows\include\raymath.h(2773,13):
+      or       'bool operator ==(const Vector3 &,const Vector3 &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(60,11):
+          'bool operator ==(const Vector3 &,const Vector3 &)': cannot convert argument 1 from 'std::vector<bullet,std::allocator<bullet>>' to 'const Vector3 &'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(60,11):
+              Reason: cannot convert from 'std::vector<bullet,std::allocator<bullet>>' to 'const Vector3'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(60,11):
+              No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+      C:\Users\thort\Downloads\vcpkg\installed\x64-windows\include\raymath.h(2679,13):
+      or       'bool operator ==(const Vector2 &,const Vector2 &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(60,11):
+          'bool operator ==(const Vector2 &,const Vector2 &)': cannot convert argument 1 from 'std::vector<bullet,std::allocator<bullet>>' to 'const Vector2 &'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(60,11):
+              Reason: cannot convert from 'std::vector<bullet,std::allocator<bullet>>' to 'const Vector2'
+              C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(60,11):
+              No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\utility(503,27):
+      or       'bool std::operator ==(const std::pair<_Ty1,_Ty2> &,const std::pair<_Uty1,_Uty2> &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(60,11):
+          'bool std::operator ==(const std::pair<_Ty1,_Ty2> &,const std::pair<_Uty1,_Uty2> &)': could not deduce template argument for 'const std::pair<_Ty1,_Ty2> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xutility(1926,30):
+      or       'bool std::operator ==(const std::reverse_iterator<_BidIt> &,const std::reverse_iterator<_BidIt2> &) noexcept(<expr>)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(60,11):
+          'bool std::operator ==(const std::reverse_iterator<_BidIt> &,const std::reverse_iterator<_BidIt2> &) noexcept(<expr>)': could not deduce template argument for 'const std::reverse_iterator<_BidIt> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xutility(4474,30):
+      or       'bool std::operator ==(const std::move_iterator<_Iter> &,const std::move_iterator<_Iter2> &) noexcept(<expr>)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(60,11):
+          'bool std::operator ==(const std::move_iterator<_Iter> &,const std::move_iterator<_Iter2> &) noexcept(<expr>)': could not deduce template argument for 'const std::move_iterator<_Iter> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\iterator(304,17):
+      or       'bool std::operator ==(const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &,const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(60,11):
+          'bool std::operator ==(const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &,const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &) noexcept': could not deduce template argument for 'const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\iterator(486,17):
+      or       'bool std::operator ==(const std::istreambuf_iterator<_Elem,_Traits> &,const std::istreambuf_iterator<_Elem,_Traits> &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(60,11):
+          'bool std::operator ==(const std::istreambuf_iterator<_Elem,_Traits> &,const std::istreambuf_iterator<_Elem,_Traits> &)': could not deduce template argument for 'const std::istreambuf_iterator<_Elem,_Traits> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xmemory(1046,30):
+      or       'bool std::operator ==(const std::allocator<_Ty> &,const std::allocator<_Other> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(60,11):
+          'bool std::operator ==(const std::allocator<_Ty> &,const std::allocator<_Other> &) noexcept': could not deduce template argument for 'const std::allocator<_Ty> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xstring(3221,30):
+      or       'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(60,11):
+          'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept': could not deduce template argument for 'const std::basic_string<_Elem,_Traits,_Alloc> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xstring(3227,30):
+      or       'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const _Elem *const ) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(60,11):
+          'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const _Elem *const ) noexcept': could not deduce template argument for 'const std::basic_string<_Elem,_Traits,_Alloc> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xstring(3246,17):
+      or       'bool std::operator ==(const _Elem *const ,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(60,11):
+          'bool std::operator ==(const _Elem *const ,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept': could not deduce template argument for 'const _Elem *const ' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(1872,17):
+      or       'bool std::operator ==(const std::shared_ptr<_Ty> &,const std::shared_ptr<_Ty0> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(60,11):
+          'bool std::operator ==(const std::shared_ptr<_Ty> &,const std::shared_ptr<_Ty0> &) noexcept': could not deduce template argument for 'const std::shared_ptr<_Ty> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(1909,17):
+      or       'bool std::operator ==(const std::shared_ptr<_Ty> &,std::nullptr_t) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(60,11):
+          'bool std::operator ==(const std::shared_ptr<_Ty> &,std::nullptr_t) noexcept': could not deduce template argument for 'const std::shared_ptr<_Ty> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(1920,17):
+      or       'bool std::operator ==(std::nullptr_t,const std::shared_ptr<_Ty> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(60,11):
+          'bool std::operator ==(std::nullptr_t,const std::shared_ptr<_Ty> &) noexcept': could not deduce template argument for 'const std::shared_ptr<_Ty> &' from 'int'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3630,30):
+      or       'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,const std::unique_ptr<_Ty2,_Dx2> &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(60,11):
+          'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,const std::unique_ptr<_Ty2,_Dx2> &)': could not deduce template argument for 'const std::unique_ptr<_Ty,_Dx> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3676,30):
+      or       'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,std::nullptr_t) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(60,11):
+          'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,std::nullptr_t) noexcept': could not deduce template argument for 'const std::unique_ptr<_Ty,_Dx> &' from 'std::vector<bullet,std::allocator<bullet>>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3682,17):
+      or       'bool std::operator ==(std::nullptr_t,const std::unique_ptr<_Ty,_Dx> &) noexcept'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(60,11):
+          'bool std::operator ==(std::nullptr_t,const std::unique_ptr<_Ty,_Dx> &) noexcept': could not deduce template argument for 'const std::unique_ptr<_Ty,_Dx> &' from 'int'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vector(2251,30):
+      or       'bool std::operator ==(const std::vector<_Ty,_Alloc> &,const std::vector<_Ty,_Alloc> &)'
+          C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(60,11):
+          'bool std::operator ==(const std::vector<_Ty,_Alloc> &,const std::vector<_Ty,_Alloc> &)': could not deduce template argument for 'const std::vector<_Ty,_Alloc> &' from 'int'
+      C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(60,11):
+      while trying to match the argument list '(std::vector<bullet,std::allocator<bullet>>, int)'
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(62,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(62,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.h(27,7): error C2039: 'vector': is not a member of 'std'
+  (compiling source file 'ruination.cpp')
+      C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\predefined C++ types (compiler internal)(357,11):
+      see declaration of 'std'
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.h(27,13): error C2143: syntax error: missing ';' before '<'
+  (compiling source file 'ruination.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.h(27,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'ruination.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.h(27,29): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'ruination.cpp')
+  
   Generating Code...
-  ruination.vcxproj -> C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\x64\Debug\ruination.exe
-  'pwsh.exe' is not recognized as an internal or external command,
-  operable program or batch file.

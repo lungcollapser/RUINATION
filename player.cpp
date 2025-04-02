@@ -1,7 +1,6 @@
-#include "player.h"
-#include "gun.h"
-#include "raylib.h"
 #include <iostream>
+#include <vector>
+#include "player.h"
 
 gun gun_player;
 
@@ -95,10 +94,11 @@ void player::walk()
 }
 void player::reload()
 {
-	bullets = 6;
+	return;
 }
 void player::shoot()
 {
-
+	bullets.push_back(bullet({ player_object + gun_player.get_gun_reticle()}, {1, 1}));
+	std::cout << "shot";
 }
 

@@ -1,8 +1,10 @@
 #include "bullet.h"
 
 
-bullet::bullet()
+bullet::bullet(Vector2 position, Vector2  bullet_velocity)
 {
+	this->position = position;
+	this->bullet_velocity = bullet_velocity;
 	active = true;
 }
 bullet::~bullet()
@@ -17,11 +19,10 @@ void bullet::draw()
 		DrawCircleV(position, 7, BLUE);
 	}
 }
-void bullet::update_position()
+void bullet::update_position(Vector2 v)
 {
-
-	Vector2 change_vector = Vector2Scale(velocity, GetFrameTime());
-	position = Vector2Add(position, change_vector);
+	position += GetMousePosition();
+	
 }
 void bullet::queue_free()
 {

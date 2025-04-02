@@ -1,8 +1,9 @@
 #pragma once
-#include "raylib.h"
-#include "raymath.h"
 #include "gun.h"
-#include <vector>
+#include "player.h"
+#include "bullet.h"
+#include <raylib.h>
+#include "raymath.h"
 
 class player
 {
@@ -23,11 +24,11 @@ public:
 	void walk();
 	void reload();
 	//vector for gun/bullets. used for shoot method.
-	std::vector<gun> guns;
+	std::vector<bullet> bullets;
 	//player attributes
 	Vector2 player_object;
 	int player_speed;
-	int bullets;
+
 
 
 

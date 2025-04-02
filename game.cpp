@@ -1,7 +1,5 @@
 #include "game.h"
-#include "player.h"
-#include "bullet.h"
-#include "gun.h"
+
 
 player player_game;
 bullet bullet_game;
@@ -17,13 +15,21 @@ game::~game()
 }
 void game::update()
 {
-	
+	for (int i = 0; i < bullet_game.bullets; i++)
+	{
+		bullet_game.update_position(player_game.player_object);
+	}
 }
 
 void game::draw()
 {
 	player_game.draw();
 	gun_game.draw(player_game.player_object);
+
+	for (int i = 0; i < bullet_game.bullets; i++)
+	{
+		bullet_game.draw();
+	}
 }
 void game::handle_input()
 {
@@ -56,6 +62,6 @@ void game::handle_input()
 
 	if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
 	{
-		return;
+		player_game.shoot();
 	}
 }

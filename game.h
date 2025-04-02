@@ -1,5 +1,8 @@
 #pragma once
 #include "raylib.h"
+#include "player.h"
+#include "bullet.h"
+#include "gun.h"
 
 class game
 {
