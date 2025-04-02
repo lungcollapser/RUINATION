@@ -1,7 +1,7 @@
 // ruin.cpp : This file contains the 'main' function. Program execution begins and ends there
 
 #include "player.h"
-#include "raylib.h"
+#include "include.h"
 #include "camera.h"
 #include "game.h"
 

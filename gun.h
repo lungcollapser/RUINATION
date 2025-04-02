@@ -1,7 +1,5 @@
 #pragma once
-#include "raylib.h"
-#include "raymath.h"
-
+#include "include.h"
 class gun
 {
 private:

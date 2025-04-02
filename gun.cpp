@@ -1,5 +1,5 @@
 #include "gun.h"
-#include <iostream>
+
 
 gun::gun()
 {

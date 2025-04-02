@@ -1,6 +1,5 @@
 #pragma once
-#include "raylib.h"
-#include "raymath.h"
+#include "include.h"
 
 class bullet
 {

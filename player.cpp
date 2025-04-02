@@ -1,5 +1,3 @@
-#include <iostream>
-#include <vector>
 #include "player.h"
 
 gun gun_player;
