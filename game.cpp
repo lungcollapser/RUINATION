@@ -3,7 +3,7 @@
 
 player player_game;
 bullet bullet_game;
-gun gun_game;
+revolver revolver_game;
 
 game::game()
 {
@@ -24,7 +24,7 @@ void game::update()
 void game::draw()
 {
 	player_game.draw();
-	gun_game.draw(player_game.player_object);
+	revolver_game.draw(player_game.player_object);
 
 	for (int i = 0; i < bullet_game.bullets; i++)
 	{

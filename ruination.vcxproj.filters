@@ -21,7 +21,7 @@
     <ClCompile Include="ruination.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="gun.cpp">
+    <ClCompile Include="revolver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="camera.cpp">
@@ -33,12 +33,15 @@
     <ClCompile Include="bullet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="weapon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="gun.h">
+    <ClInclude Include="revolver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="camera.h">
@@ -51,6 +54,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="weapon.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,6 +1,7 @@
 #pragma once
-#include "gun.h"
+#include "revolver.h"
 #include "bullet.h"
+#include "weapon.h"
 #include "include.h"
 
 
@@ -22,7 +23,7 @@ public:
 	void move_down();
 	void walk();
 	void reload();
-	//vector for gun/bullets. used for shoot method.
+	//vector array container for bullets. used for shoot method.
 	std::vector<bullet> bullets;
 	//player attributes
 	Vector2 player_object;

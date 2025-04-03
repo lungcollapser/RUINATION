@@ -1,7 +1,6 @@
 #pragma once
 #include "player.h"
 #include "bullet.h"
-#include "gun.h"
 #include "include.h"
 
 class game
