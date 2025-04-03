@@ -19,4 +19,5 @@ public:
 	void handle_input();
 	//game running boolean
 	bool run;
+	std::vector<bullet> bullets;
 };

@@ -53,7 +53,7 @@ void player::reload()
 }
 void player::shoot()
 {
-	if (player_weapon.get_current_weapon() == "revolver")
+	if (player_weapon.get_current_weapon("revolver") == "revolver")
 	{
 		bullets.push_back(bullet({ player_object + revolver_player.get_revolver_reticle() }, { 1, 1 }));
 		std::cout << "shot";

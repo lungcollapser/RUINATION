@@ -25,6 +25,8 @@ public:
 	void reload();
 	//vector array container for bullets. used for shoot method.
 	std::vector<bullet> bullets;
+	std::vector<weapon> weapons;
+
 	//player attributes
 	Vector2 player_object;
 	int player_speed;

@@ -2,7 +2,7 @@
 #include "include.h"
 #include "weapon.h"
 
-class revolver : weapon
+class revolver : public weapon
 {
 private:
 	bool active;

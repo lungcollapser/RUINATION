@@ -2,8 +2,6 @@
 
 
 player player_game;
-bullet bullet_game;
-revolver revolver_game;
 
 game::game()
 {
@@ -15,20 +13,20 @@ game::~game()
 }
 void game::update()
 {
-	for (int i = 0; i < bullet_game.bullets; i++)
+	for (auto& bullet : bullets)
 	{
-		bullet_game.update_position(player_game.player_object);
+		bullet.update_position(player_game.player_object);
 	}
 }
 
 void game::draw()
 {
 	player_game.draw();
-	revolver_game.draw(player_game.player_object);
+	revolver.draw(player_game.player_object);
 
-	for (int i = 0; i < bullet_game.bullets; i++)
+	for (auto& bullet : bullets)
 	{
-		bullet_game.draw();
+		bullet.draw();
 	}
 }
 void game::handle_input()

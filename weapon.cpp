@@ -5,7 +5,6 @@ player player_weapon;
 weapon::weapon()
 {
 	is_reloading = false;
-	current_weapon = "revolver"
 }
 weapon::~weapon()
 {
