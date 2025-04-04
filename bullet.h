@@ -4,7 +4,6 @@
 class bullet
 {
 private:
-	float damage;
 	bool active;
 	Vector2 position;
 	Vector2 bullet_velocity;

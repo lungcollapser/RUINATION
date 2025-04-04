@@ -1,17 +1,21 @@
 #pragma once
-#include "include.h"
+#include "bullet.h"
 #include "player.h"
+#include "include.h"
 
 class weapon
 {
 private:
 	bool is_reloading;
-	std::string current_weapon;
+protected:
+	Vector2 weapon_reticle;
+	int mag_bullets;
+	int bullet_damage;
+	int bullet_speed;
 public:
 	weapon();
 	~weapon();
-	void handle_input();
-	void get_weapon_stats();
-	void set_weapon_stats();
-	std::string get_current_weapon(std::string current_weapon);
+	void fire();
+	std::vector<bullet> bullets;
+
 };

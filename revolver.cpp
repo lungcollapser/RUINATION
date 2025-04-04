@@ -1,16 +1,13 @@
 #include "revolver.h"
 
 
-revolver::revolver(int bullets, int bullet_damage, int bullet_velocity)
+revolver::revolver() : weapon()
 {
 	active = true;
-	revolver_reticle = { 0, 0 };
-
-	this->bullets = bullets;
-	this->bullet_damage = bullet_damage;
-	this->bullet_velocity = bullet_velocity;
-
-
+	weapon_reticle = { 0, 0 };
+	mag_bullets = 6;
+	bullet_speed = 1000;
+	bullet_damage = 1;
 }
 revolver::~revolver()
 {
@@ -19,11 +16,11 @@ revolver::~revolver()
 }
 void revolver::draw(Vector2 player_object)
 {
-	revolver_reticle = GetMousePosition();
-	DrawCircleV(revolver_reticle + player_object, 8, RED);
+	weapon_reticle = GetMousePosition();
+	DrawCircleV(weapon_reticle + player_object, 8, RED);
 }
 Vector2 revolver::get_revolver_reticle()
 {
-	return revolver_reticle;
+	return weapon_reticle;
 }
 

@@ -1,6 +1,6 @@
 #include "weapon.h"
 
-player player_weapon;
+player weapon_player;
 
 weapon::weapon()
 {
@@ -10,23 +10,11 @@ weapon::~weapon()
 {
 
 }
-void weapon::get_weapon_stats()
+void weapon::fire()
 {
-
-}
-void weapon::handle_input()
-{
-	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && is_reloading == false)
-	{
-		player_weapon.shoot();
-	}
-
-	if (IsKeyPressed(KEY_R) && is_reloading == false)
-	{
-		is_reloading = true;
-	}
-}
-std::string weapon::get_current_weapon(std::string current_weapon)
-{
-	return current_weapon;
+	Vector2 direction = { weapon_player.player_object - weapon_reticle };
+	Vector2 weapon_bullet_speed = Vector2Scale(direction, bullet_speed);
+	bullets.push_back(bullet({ weapon_player.player_object - weapon_reticle }, weapon_bullet_speed));
+	std::cout << "shoot";
+	
 }

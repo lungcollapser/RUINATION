@@ -1,21 +1,5 @@
-﻿  game.cpp
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\game.cpp(5,8): error C2512: 'bullet': no appropriate default constructor available
-      C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\bullet.h(4,7):
-      see declaration of 'bullet'
-  
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\game.cpp(6,10): error C2512: 'revolver': no appropriate default constructor available
-      C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\revolver.h(5,7):
-      see declaration of 'revolver'
-  
-  revolver.cpp
-  player.cpp
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.cpp(3,10): error C2512: 'revolver': no appropriate default constructor available
-      C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\revolver.h(5,7):
-      see declaration of 'revolver'
-  
-  ruination.cpp
-  weapon.cpp
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\revolver.h(5,18): error C2504: 'weapon': base class undefined
-  (compiling source file 'weapon.cpp')
-  
-  Generating Code...
+﻿  weapon.cpp
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\weapon.cpp(16,56): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  ruination.vcxproj -> C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\x64\Debug\ruination.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.

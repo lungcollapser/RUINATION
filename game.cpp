@@ -1,6 +1,6 @@
 #include "game.h"
 
-
+revolver revolver_game;
 player player_game;
 
 game::game()
@@ -22,7 +22,7 @@ void game::update()
 void game::draw()
 {
 	player_game.draw();
-	revolver.draw(player_game.player_object);
+	revolver_game.draw(player_game.player_object);
 
 	for (auto& bullet : bullets)
 	{

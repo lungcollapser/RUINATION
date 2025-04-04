@@ -16,12 +16,12 @@ void bullet::draw()
 {
 	if (active)
 	{
-		DrawCircleV(position, 7, BLUE);
+		DrawCircleV(position, 20, BLUE);
 	}
 }
 void bullet::update_position(Vector2 v)
 {
-	position += GetMousePosition();
+	position += bullet_velocity;
 	
 }
 void bullet::queue_free()
