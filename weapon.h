@@ -11,10 +11,11 @@ protected:
 	Vector2 weapon_reticle;
 	int mag_bullets;
 	int bullet_damage;
-	int bullet_speed;
+	float bullet_speed;
 public:
 	weapon();
 	~weapon();
+	void draw(Vector2 player_object);
 	void fire();
 	std::vector<bullet> bullets;
 

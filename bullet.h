@@ -5,14 +5,14 @@ class bullet
 {
 private:
 	bool active;
-	Vector2 position;
-	Vector2 bullet_velocity;
+	Vector2 fire_position;
+	Vector2 speed;
 
 public:
-	bullet(Vector2 position, Vector2 bullet_velocity);
+	bullet(Vector2 fire_position, Vector2 speed);
 	~bullet();
 	void draw();
-	void update_position(Vector2 v);
+	void update_position();
 	void hitbox();
 	void queue_free();
 };

@@ -2,7 +2,9 @@
 #include "player.h"
 #include "bullet.h"
 #include "revolver.h"
+#include "weapon.h"
 #include "include.h"
+
 
 class game
 {
@@ -21,4 +23,5 @@ public:
 	//game running boolean
 	bool run;
 	std::vector<bullet> bullets;
+	weapon weapon_game;
 };

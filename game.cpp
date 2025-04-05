@@ -13,18 +13,18 @@ game::~game()
 }
 void game::update()
 {
-	for (auto& bullet : bullets)
+	for (auto& bullet : weapon_game.bullets)
 	{
-		bullet.update_position(player_game.player_object);
+		bullet.update_position();
 	}
 }
 
 void game::draw()
 {
 	player_game.draw();
-	revolver_game.draw(player_game.player_object);
+	weapon_game.draw(player_game.player_object);
 
-	for (auto& bullet : bullets)
+	for (auto& bullet : weapon_game.bullets)
 	{
 		bullet.draw();
 	}
