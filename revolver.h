@@ -10,7 +10,7 @@ private:
 public:
 	revolver();
 	~revolver();
-	void draw(Vector2 player_object);
+	void draw();
 	Vector2 get_revolver_reticle();
 
 };

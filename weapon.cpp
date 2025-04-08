@@ -2,9 +2,13 @@
 
 player weapon_player;
 
+
 weapon::weapon()
 {
 	is_reloading = false;
+	bullet_speed = 10;
+	weapon_reticle = { 0, 0 };
+
 }
 weapon::~weapon()
 {
@@ -12,9 +16,13 @@ weapon::~weapon()
 }
 void weapon::fire()
 {
-	Vector2 direction = { weapon_player.player_object - weapon_reticle };
-	Vector2 weapon_bullet_speed = Vector2Scale(direction, bullet_speed);
-	bullets.push_back(bullet({ weapon_player.player_object - weapon_reticle }, weapon_bullet_speed));
+	
+	bullets.push_back(bullet({weapon_player.player_object}, Vector2{-1, -1}));
 	std::cout << "shoot";
 	
+}
+void weapon::draw(Vector2 player_object)
+{
+	weapon_reticle = GetMousePosition();
+	DrawCircleV(weapon_reticle + player_object, 8, RED);
 }

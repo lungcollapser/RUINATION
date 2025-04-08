@@ -14,5 +14,4 @@ public:
 	void draw();
 	void update_position(Vector2 v);
 	void hitbox();
-	void queue_free();
 };

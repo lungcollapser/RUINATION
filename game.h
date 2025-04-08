@@ -1,7 +1,7 @@
 #pragma once
 #include "player.h"
 #include "bullet.h"
-#include "revolver.h"
+#include "weapon.h"
 #include "include.h"
 
 class game
@@ -20,5 +20,4 @@ public:
 	void handle_input();
 	//game running boolean
 	bool run;
-	std::vector<bullet> bullets;
 };
