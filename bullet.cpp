@@ -12,11 +12,11 @@ bullet::~bullet()
 
 }
 
-void bullet::draw()
+void bullet::draw(Vector2 player_object)
 {
 	if (active)
 	{
-		DrawCircleV(fire_position, 20, BLUE);
+		DrawCircleV(fire_position + player_object / 400, 20, BLUE);
 	}
 }
 void bullet::update_position()

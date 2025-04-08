@@ -27,7 +27,7 @@ void game::draw()
 
 	for (auto& bullet : weapon_game.bullets)
 	{
-		bullet.draw();
+		bullet.draw(player_game.player_object);
 	}
 }
 void game::handle_input()
