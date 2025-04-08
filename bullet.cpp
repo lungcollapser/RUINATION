@@ -1,11 +1,11 @@
 #include "bullet.h"
 
 
-bullet::bullet(Vector2 fire_position, Vector2 speed)
+bullet::bullet(Vector2 position, Vector2 bullet_velocity)
 {
+	this->position = position;
+	this->bullet_velocity = bullet_velocity;
 	active = true;
-	this-> fire_position = fire_position;
-	this-> speed = speed;
 }
 bullet::~bullet()
 {
@@ -16,21 +16,18 @@ void bullet::draw()
 {
 	if (active)
 	{
-		DrawCircleV(fire_position, 20, BLUE);
+		DrawCircleV(position, 20, BLUE);
 	}
 }
-void bullet::update_position()
+void bullet::update_position(Vector2 v)
 {
-	speed += fire_position;
-}
-void bullet::queue_free()
-{
+	position += v;
+
 	if (active)
 	{
-		if (fire_position.x > GetScreenWidth() + 500 || fire_position.y > GetScreenHeight() + 500 || fire_position.x < 0 || fire_position.y < 0)
+		if (position.x > GetScreenWidth() + 500 || position.y > GetScreenHeight() + 500 || position.x < 0 || position.y < 0)
 		{
 			active = false;
-			std::cout << "deleted";
 		}
 	}
 }

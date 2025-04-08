@@ -2,13 +2,13 @@
 
 player weapon_player;
 
+
 weapon::weapon()
 {
 	is_reloading = false;
+	bullet_speed = 10;
 	weapon_reticle = { 0, 0 };
-	mag_bullets = 6;
-	bullet_damage = 1;
-	bullet_speed = 1000.0;
+
 }
 weapon::~weapon()
 {
@@ -16,8 +16,10 @@ weapon::~weapon()
 }
 void weapon::fire()
 {
-	bullets.push_back(bullet(Vector2MoveTowards(weapon_player.player_object, weapon_reticle, 1000), Vector2{-6, -6}));
+	
+	bullets.push_back(bullet({weapon_player.player_object}, Vector2{-1, -1}));
 	std::cout << "shoot";
+	
 }
 void weapon::draw(Vector2 player_object)
 {

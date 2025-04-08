@@ -1,7 +1,8 @@
 #include "game.h"
 
-revolver revolver_game;
 player player_game;
+weapon weapon_game;
+
 
 game::game()
 {
@@ -15,7 +16,7 @@ void game::update()
 {
 	for (auto& bullet : weapon_game.bullets)
 	{
-		bullet.update_position();
+		bullet.update_position(weapon_game.weapon_reticle);
 	}
 }
 
@@ -60,6 +61,6 @@ void game::handle_input()
 
 	if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
 	{
-		player_game.shoot();
+		weapon_game.fire();
 	}
 }
