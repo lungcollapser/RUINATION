@@ -16,7 +16,7 @@ void game::update()
 {
 	for (auto& bullet : weapon_game.bullets)
 	{
-		bullet.update_position(weapon_game.weapon_reticle);
+		bullet.update_position();
 	}
 }
 

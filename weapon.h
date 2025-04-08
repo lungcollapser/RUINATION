@@ -12,12 +12,13 @@ protected:
 	int mag_bullets;
 	int bullet_damage;
 	float bullet_speed;
+	float bullet_spread;
+	float angle;
 public:
 	weapon();
 	~weapon();
 	void draw(Vector2 player_object);
 	void fire();
-	void draw(Vector2 player_object);
 	Vector2 weapon_reticle;
 	std::vector<bullet> bullets;
 	
