@@ -1,4 +1,17 @@
-﻿  weapon.cpp
-  ruination.vcxproj -> C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\x64\Debug\ruination.exe
-  'pwsh.exe' is not recognized as an internal or external command,
-  operable program or batch file.
+﻿  bullet.cpp
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\weapon.h(24,14): error C2065: 'bullet': undeclared identifier
+  (compiling source file 'bullet.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\weapon.h(24,7): error C2923: 'std::vector': 'bullet' is not a valid template type argument for parameter '_Ty'
+  (compiling source file 'bullet.cpp')
+      C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\weapon.h(24,14):
+      see declaration of 'bullet'
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\weapon.h(24,7): error C2976: 'std::vector': too few template arguments
+  (compiling source file 'bullet.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vector(429,7):
+      see declaration of 'std::vector'
+  
+  weapon.cpp
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\weapon.cpp(24,84): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Generating Code...

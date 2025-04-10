@@ -21,7 +21,5 @@ public:
 	void fire();
 	Vector2 weapon_reticle;
 	Vector2 weapon_range_limit;
-	std::vector<bullet> bullets;
-	
 
 };
