@@ -25,19 +25,19 @@ void camera::camera_input()
 {
 	if (IsKeyDown(KEY_D))
 	{
-		player_camera.target.x += camera_speed;
+		player_camera.target.x++
 	}
 	else if (IsKeyDown(KEY_A))
 	{
-		player_camera.target.x -= camera_speed;
+		player_camera.target.x--;
 	}
 	else if (IsKeyDown(KEY_W))
 	{
-		player_camera.target.y -= camera_speed;
+		player_camera.target.y--
 	}
 	else if (IsKeyDown(KEY_S))
 	{
-		player_camera.target.y += camera_speed;
+		player_camera.target.y++
 	}
 
 	if (IsKeyDown(KEY_LEFT_SHIFT))

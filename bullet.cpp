@@ -1,7 +1,7 @@
 #include "bullet.h"
 
 
-bullet::bullet(Vector2 fire_position, int speed)
+bullet::bullet(Vector2 fire_position, Vector2 speed)
 {
 	this->fire_position = fire_position;
 	this->speed = speed;
@@ -22,7 +22,8 @@ void bullet::draw(Vector2 player_object)
 }
 void bullet::update_position()
 {
-	fire_position.x += weapon_reticle.x * speed;
-	fire_position.y += weapon_reticle.y * speed;
+	Vector2 changeVector = Vector2Scale(speed, GetFrameTime());
+	position = Vector2Add(position, changeVector);
+	currentRange += Vector2Length(changeVector);
 	
 }
