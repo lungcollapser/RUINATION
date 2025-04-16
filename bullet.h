@@ -7,6 +7,7 @@ private:
 	bool active;
 	Vector2 fire_position;
 	Vector2 speed;
+	float current_range;
 
 public:
 	bullet(Vector2 fire_position, Vector2 speed);

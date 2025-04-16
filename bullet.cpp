@@ -22,8 +22,8 @@ void bullet::draw(Vector2 player_object)
 }
 void bullet::update_position()
 {
-	Vector2 changeVector = Vector2Scale(speed, GetFrameTime());
-	position = Vector2Add(position, changeVector);
-	currentRange += Vector2Length(changeVector);
+	Vector2 change_vector = Vector2Scale(speed, GetFrameTime());
+	fire_position = Vector2Add(fire_position, change_vector);
+	current_range += Vector2Length(change_vector);
 	
 }

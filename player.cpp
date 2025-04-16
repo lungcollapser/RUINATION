@@ -7,7 +7,7 @@ player::player()
 {
 	//initializations
 	player_object = { 400, 400 };
-	player_speed = 8;
+	player_speed = 3;
 }
 //destructor
 player::~player()
@@ -21,26 +21,24 @@ void player::draw()
 	
 }
 //player movements
-void player::move_right()
+void player::take_input()
 {
-	player_object.x += player_speed;
-
-}
-void player::move_left()
-{
-
-	player_object.x -= player_speed;
-}
-void player::move_up()
-{
-	
-	player_object.y -= player_speed;
-	
-}
-void player::move_down()
-{
-	player_object.y += player_speed;
-	
+	if (IsKeyDown(KEY_D))
+	{
+		player_object.x++
+	}
+	else if (IsKeyDown(KEY_A))
+	{
+		player_object.x--;
+	}
+	else if (IsKeyDown(KEY_W))
+	{
+		player_object.y--;
+	}
+	else if (IsKeyDown(KEY_S))
+	{
+		player_object.y++;
+	}
 }
 void player::walk()
 {
