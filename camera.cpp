@@ -1,14 +1,14 @@
 #include "camera.h"
 
 
-camera::camera() : player_camera({0})
+camera::camera()
 {
 	player_camera = { 0 };
-	player_camera.target = { 400, 400 };
+	player_camera.target = { 0, 0 };
 	player_camera.offset = Vector2{ 800 / 2.0f, 800 / 2.0f };
 	player_camera.rotation = 0.0f;
 	player_camera.zoom = 0.7f;
-	camera_speed = 8;
+	camera_speed = 900;
 	
 }
 camera::~camera()
@@ -23,29 +23,27 @@ void camera::update()
 }
 void camera::camera_input()
 {
+	Vector2 direction = { 0,0 };
 
 	if (IsKeyDown(KEY_D))
 	{
-		player_camera.target.x++;
+		direction.x++;
 	}
-	else if (IsKeyDown(KEY_A))
+	if (IsKeyDown(KEY_A))
 	{
-		player_camera.target.x--;
+		direction.x--;
 	}
-	else if (IsKeyDown(KEY_W))
+	if (IsKeyDown(KEY_W))
 	{
-		player_camera.target.y--;
+		direction.y--;
 	}
-	else if (IsKeyDown(KEY_S))
+	if (IsKeyDown(KEY_S))
 	{
-		player_camera.target.y++;
+		direction.y++;
 	}
 	
-	Vector2Normalize(player_camera.target);
-
-	Vector2 change_vector = Vector2Scale(player_camera.target, camera_speed * GetFrameTime());
-
-	Vector2Add(player_camera.target, change_vector);
+	Vector2 velocity = Vector2Scale(Vector2Normalize(direction), camera_speed * GetFrameTime());
+	player_camera.target = Vector2Add(player_camera.target, velocity);
 
 	if (IsKeyDown(KEY_LEFT_SHIFT))
 	{

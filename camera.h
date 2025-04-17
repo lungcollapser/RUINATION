@@ -15,6 +15,6 @@ public:
 	void set_speed();
 
 	Camera2D player_camera;
-	float camera_speed;
+	int camera_speed;
 
 };

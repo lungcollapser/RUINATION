@@ -2,6 +2,7 @@
 
 player player_game;
 weapon weapon_game;
+camera camera_game;
 
 
 game::game()
@@ -18,6 +19,7 @@ void game::update()
 	{
 		bullet.update_position();
 	}
+	camera_game.update();
 }
 
 void game::draw()
@@ -37,4 +39,6 @@ void game::handle_input()
 	{
 		weapon_game.fire();
 	}
+
+	player_game.take_input();
 }

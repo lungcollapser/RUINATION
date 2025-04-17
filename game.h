@@ -3,6 +3,7 @@
 #include "bullet.h"
 #include "weapon.h"
 #include "include.h"
+#include "camera.h"
 
 class game
 {
@@ -15,7 +16,6 @@ public:
 	void draw();
 	//game updating
 	void update();
-	void update_camera();
 	//game input
 	void handle_input();
 	//game running boolean

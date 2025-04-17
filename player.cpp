@@ -6,8 +6,8 @@ weapon player_weapon;
 player::player()
 {
 	//initializations
-	player_object = { 400, 400 };
-	player_speed = 3;
+	player_object = { 0, 0 };
+	player_speed = 500;
 }
 //destructor
 player::~player()
@@ -23,34 +23,48 @@ void player::draw()
 //player movements
 void player::take_input()
 {
+	Vector2 direction = { 0,0 };
+
 	if (IsKeyDown(KEY_D))
 	{
-		player_object.x++
+		direction.x++;
 	}
-	else if (IsKeyDown(KEY_A))
+	if (IsKeyDown(KEY_A))
 	{
-		player_object.x--;
+		direction.x--;
 	}
-	else if (IsKeyDown(KEY_W))
+	if (IsKeyDown(KEY_W))
 	{
-		player_object.y--;
+		direction.y--;
 	}
-	else if (IsKeyDown(KEY_S))
+	if (IsKeyDown(KEY_S))
 	{
-		player_object.y++;
+		direction.y++;
+	}
+
+
+	Vector2 velocity = Vector2Scale(Vector2Normalize(direction), player_speed * GetFrameTime());
+	player_object = Vector2Add(player_object, velocity);
+
+	if (IsKeyDown(KEY_LEFT_SHIFT))
+	{
+		player_speed = 3;
+	}
+	else
+	{
+		return;
+	}
+
+	if (IsKeyDown(KEY_R))
+	{
+		return;
+	}
+
+	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+	{
+		player_weapon.fire();
 	}
 }
-void player::walk()
-{
-	player_speed = 4;
-}
-void player::reload()
-{
-	return;
-}
-void player::shoot()
-{
-	
-	player_weapon.fire();
-}
+
+
 
