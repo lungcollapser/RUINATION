@@ -20,6 +20,14 @@ void game::update()
 		bullet.update_position();
 	}
 	camera_game.update();
+
+	if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+	{
+		weapon_game.fire();
+	}
+
+	player_game.take_input();
+	camera_game.take_input();
 }
 
 void game::draw()
@@ -32,13 +40,4 @@ void game::draw()
 		bullet.draw(player_game.player_object);
 	}
 }
-void game::handle_input()
-{
 
-	if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
-	{
-		weapon_game.fire();
-	}
-
-	player_game.take_input();
-}

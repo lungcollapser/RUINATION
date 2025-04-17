@@ -1,9 +1,10 @@
 #pragma once
 #include "player.h"
+#include "camera.h"
 #include "bullet.h"
 #include "weapon.h"
 #include "include.h"
-#include "camera.h"
+
 
 class game
 {

@@ -25,11 +25,7 @@ int main()
     // window loop to keep it open until closed by user
     while (!WindowShouldClose())
     {
-        //camera
-        camera_main.camera_input();
-        game_main.handle_input();
         //movement & updates
-        game_main.update();
         // drawing/camera
         BeginDrawing();
         BeginMode2D(camera_main.player_camera);
@@ -37,6 +33,7 @@ int main()
         DrawLine(800, 0, 0, 800, WHITE);
         DrawLine(0, 0, 800, 800, WHITE);
         game_main.draw();
+        game_main.update();
         EndMode2D();
         EndDrawing();
         
