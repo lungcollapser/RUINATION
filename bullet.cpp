@@ -24,6 +24,5 @@ void bullet::update_position()
 {
 	Vector2 change_vector = Vector2Scale(speed, GetFrameTime());
 	fire_position = Vector2Add(fire_position, change_vector);
-	current_range += Vector2Length(change_vector);
 	
 }

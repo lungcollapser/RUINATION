@@ -4,7 +4,6 @@
 revolver::revolver() : weapon()
 {
 	active = true;
-	mag_bullets = 6;
 }
 revolver::~revolver()
 {

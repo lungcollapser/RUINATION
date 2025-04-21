@@ -7,7 +7,7 @@ player::player()
 {
 	//initializations
 	player_object = { 0, 0 };
-	player_speed = 500;
+	player_speed = 650;
 }
 //destructor
 player::~player()
@@ -23,6 +23,7 @@ void player::draw()
 //player movements
 void player::take_input()
 {
+
 	Vector2 direction = { 0,0 };
 
 	if (IsKeyDown(KEY_D))
@@ -41,8 +42,6 @@ void player::take_input()
 	{
 		direction.y++;
 	}
-
-
 	Vector2 velocity = Vector2Scale(Vector2Normalize(direction), player_speed * GetFrameTime());
 	player_object = Vector2Add(player_object, velocity);
 
@@ -52,7 +51,7 @@ void player::take_input()
 	}
 	else
 	{
-		return;
+		return; 
 	}
 
 	if (IsKeyDown(KEY_R))

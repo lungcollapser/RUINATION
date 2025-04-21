@@ -9,11 +9,8 @@ class weapon
 private:
 	bool is_reloading;
 protected:
-	int mag_bullets;
-	int bullet_damage;
 	float bullet_speed;
 	float bullet_spread;
-	float angle;
 public:
 	weapon();
 	~weapon();
