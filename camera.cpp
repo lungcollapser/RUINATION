@@ -7,9 +7,7 @@ camera::camera()
 	player_camera = { 0 };
 	player_camera.target = { camera_player.player_object };
 	player_camera.zoom = 1.0;
-	player_camera.offset = { 1920 / 2.0f, 1080 / 2.0f };
-	camera_speed = 5;
-	
+	camera_speed = 525;
 }
 camera::~camera()
 {
@@ -23,8 +21,7 @@ void camera::update()
 void camera::take_input()
 {
 	Vector2Normalize(player_camera.target);
-	Vector2 velocity = Vector2Scale(camera_speed * GetFrameTime())
-
+	camera_speed = camera_speed * GetFrameTime();
 
 	if (IsKeyDown(KEY_D))
 	{
@@ -40,7 +37,7 @@ void camera::take_input()
 	}
 	if (IsKeyDown(KEY_S))
 	{
-		player_camera.target.y += velocity;
+		player_camera.target.y += camera_speed;
 	}
 
 

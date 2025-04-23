@@ -7,7 +7,7 @@ player::player()
 {
 	//initializations
 	player_object = { 0, 0 };
-	player_speed = 650;
+	player_speed = 525;
 }
 //destructor
 player::~player()
@@ -47,11 +47,11 @@ void player::take_input()
 
 	if (IsKeyDown(KEY_LEFT_SHIFT))
 	{
-		player_speed = 3;
+		player_speed = 325;
 	}
 	else
 	{
-		return; 
+		player_speed = 525;
 	}
 
 	if (IsKeyDown(KEY_R))

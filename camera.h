@@ -13,5 +13,6 @@ public:
 
 	Camera2D player_camera;
 	float camera_speed;
+	
 
 };

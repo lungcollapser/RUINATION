@@ -8,6 +8,7 @@ camera camera_main;
 
 
 std::vector<bullet> bullets;
+Vector2 screen_size = { 1920, 1080 };
 
 
 void bullet_logic()
@@ -20,6 +21,7 @@ void bullet_logic()
 void camera_logic()
 {
     camera_main.update();
+    camera_main.player_camera.offset = { screen_size / 2.0f };
 }
 void draw()
 {
@@ -48,14 +50,13 @@ void input()
 int main()
 {
     // creating the window using two arguments. change color in the cpp file
-    InitWindow(1920, 1080, "ruin");
+    InitWindow(screen_size.x, screen_size.y, "ruin");
     // fps setting
     SetTargetFPS(60);
     //hides the cursor to make way for reticle
     HideCursor();
     //sets a mouse offset due to strange mouse positioning (NEEDS TO BE FIXED)
     SetMouseOffset(-400, -400);
-
     // window loop to keep it open until closed by user
     while (!WindowShouldClose())
     {
