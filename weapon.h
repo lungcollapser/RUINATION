@@ -16,6 +16,7 @@ public:
 	~weapon();
 	void draw(Vector2 player_object);
 	void fire();
+	void take_input();
 	Vector2 weapon_reticle;
 	Vector2 weapon_range_limit;
 	std::vector<bullet> bullets;
