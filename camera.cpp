@@ -41,8 +41,8 @@ void camera::take_input()
 	}
 	
 	direction = Vector2Normalize(direction);
-	Vector2 change_vector = Vector2Scale(direction, camera_speed * GetFrameTime());
-	player_camera.target = Vector2Add(player_camera.target, change_vector);
+	Vector2 velocity = Vector2Scale(direction, camera_speed * GetFrameTime());
+	player_camera.target = Vector2Add(player_camera.target, velocity);
 
 	if (IsKeyDown(KEY_LEFT_SHIFT))
 	{

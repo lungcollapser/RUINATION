@@ -7,13 +7,13 @@ weapon weapon_main;
 camera camera_main;
 
 
-std::vector<bullet> bullets;
 Vector2 screen_size = { 1920, 1080 };
 
 
 void bullet_logic()
 {
-    for (auto& bullet : bullets)
+
+    for (auto& bullet : weapon_main.bullets)
     {
         bullet.update_position();
     }
@@ -28,15 +28,16 @@ void draw()
     BeginDrawing();
     ClearBackground(BLACK);
     BeginMode2D(camera_main.player_camera);
+
+    for (auto& bullet : weapon_main.bullets)
+    {
+        bullet.draw();
+    }
+
     DrawLine(800, 0, 0, 800, WHITE);
     DrawLine(0, 0, 800, 800, WHITE);
     player_main.draw();
     weapon_main.draw(player_main.player_object);
-
-    for (auto& bullet : weapon_main.bullets)
-    {
-        bullet.draw(player_main.player_object);
-    }
     EndMode2D();
     EndDrawing();
 }

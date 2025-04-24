@@ -1,7 +1,7 @@
 #include "bullet.h"
 
 
-bullet::bullet(Vector2 fire_position, Vector2 speed)
+bullet::bullet(Vector2 fire_position, int speed)
 {
 	this->fire_position = fire_position;
 	this->speed = speed;
@@ -13,7 +13,7 @@ bullet::~bullet()
 
 }
 
-void bullet::draw(Vector2 player_object)
+void bullet::draw()
 {
 	if (active)
 	{
@@ -22,7 +22,7 @@ void bullet::draw(Vector2 player_object)
 }
 void bullet::update_position()
 {
-	Vector2 change_vector = Vector2Scale(speed, GetFrameTime());
+	Vector2 change_vector = Vector2Scale(Vector2Normalize(fire_position), speed * GetFrameTime());
 	fire_position = Vector2Add(fire_position, change_vector);
 	
 }

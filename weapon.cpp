@@ -21,7 +21,7 @@ void weapon::fire()
 
 	Vector2 direction = { cos(PI / 180), -sin(PI / 180) };
 	Vector2 bullet_velocity = Vector2Scale(direction, bullet_speed);
-	bullets.push_back(bullet(Vector2{ weapon_player.player_object - weapon_reticle }, weapon_range_limit));
+	bullets.push_back(bullet(Vector2{ weapon_player.player_object }, 100));
 	std::cout << "shoot";
 	
 }

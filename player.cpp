@@ -55,11 +55,6 @@ void player::take_input()
 		player_speed = 525;
 	}
 
-	if (IsKeyDown(KEY_R))
-	{
-		return;
-	}
-
 	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
 	{
 		player_weapon.fire();
