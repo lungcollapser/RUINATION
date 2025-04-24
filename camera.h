@@ -12,7 +12,7 @@ public:
 	void take_input();
 
 	Camera2D player_camera;
-	float camera_speed;
+	int camera_speed;
 	
 
 };

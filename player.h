@@ -16,7 +16,7 @@ public:
 	void take_input();
 	//player attributes
 	Vector2 player_object;
-	float player_speed;
+	int player_speed;
 
 
 

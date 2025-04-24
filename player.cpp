@@ -7,7 +7,8 @@ player::player()
 {
 	//initializations
 	player_object = { 0, 0 };
-	player_speed = 525;
+	player_speed = 100;
+
 }
 //destructor
 player::~player()
@@ -64,6 +65,7 @@ void player::take_input()
 		player_weapon.fire();
 	}
 }
+
 
 
 

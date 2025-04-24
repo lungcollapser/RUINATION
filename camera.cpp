@@ -5,7 +5,7 @@ player camera_player;
 camera::camera()
 {
 	player_camera = { 0 };
-	player_camera.target = { camera_player.player_object };
+	player_camera.target = { 0, 0 };
 	player_camera.zoom = 1.0;
 	camera_speed = 525;
 }
@@ -20,35 +20,36 @@ void camera::update()
 }
 void camera::take_input()
 {
-	Vector2Normalize(player_camera.target);
-	camera_speed = camera_speed * GetFrameTime();
+
+	Vector2 direction = { 0, 0 };
 
 	if (IsKeyDown(KEY_D))
 	{
-		player_camera.target.x += camera_speed;
+		direction.x++;
 	}
 	if (IsKeyDown(KEY_A))
 	{
-		player_camera.target.x -= camera_speed;
+		direction.x--;
 	}
 	if (IsKeyDown(KEY_W))
 	{
-		player_camera.target.y -= camera_speed;
+		direction.y--;
 	}
 	if (IsKeyDown(KEY_S))
 	{
-		player_camera.target.y += camera_speed;
+		direction.y++;
 	}
-
-
 	
+	direction = Vector2Normalize(direction);
+	Vector2 change_vector = Vector2Scale(direction, camera_speed * GetFrameTime());
+	player_camera.target = Vector2Add(player_camera.target, change_vector);
 
 	if (IsKeyDown(KEY_LEFT_SHIFT))
 	{
-		camera_speed = 4;
+		camera_speed = 325;
 	}
 	else
 	{
-		camera_speed = 8;
+		camera_speed = 525;
 	}
 }
