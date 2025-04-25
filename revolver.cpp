@@ -10,9 +10,7 @@ revolver::~revolver()
 	
 
 }
-
-Vector2 revolver::get_revolver_reticle()
+void revolver::draw()
 {
-	return weapon_reticle;
-}
 
+}

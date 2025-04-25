@@ -11,6 +11,7 @@ private:
 protected:
 	float bullet_speed;
 	float bullet_spread;
+	Vector2 weapon_range_limit;
 public:
 	weapon();
 	~weapon();
@@ -18,7 +19,6 @@ public:
 	void fire();
 	void take_input();
 	Vector2 weapon_reticle;
-	Vector2 weapon_range_limit;
 	std::vector<bullet> bullets;
 
 };

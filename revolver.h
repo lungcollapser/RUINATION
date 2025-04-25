@@ -11,6 +11,4 @@ public:
 	revolver();
 	~revolver();
 	void draw();
-	Vector2 get_revolver_reticle();
-
 };

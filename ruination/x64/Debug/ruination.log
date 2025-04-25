@@ -1,4 +1,13 @@
-﻿  weapon.cpp
+﻿  bullet.cpp
+  camera.cpp
+  player.cpp
+  revolver.cpp
+  ruination.cpp
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\ruination.cpp(56,42): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\ruination.cpp(56,27): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  weapon.cpp
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\weapon.cpp(25,95): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
   ruination.vcxproj -> C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\x64\Debug\ruination.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.

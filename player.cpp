@@ -24,7 +24,6 @@ void player::draw()
 //player movements
 void player::take_input()
 {
-
 	Vector2 direction = { 0,0 };
 
 	if (IsKeyDown(KEY_D))
@@ -46,6 +45,7 @@ void player::take_input()
 	Vector2 velocity = Vector2Scale(Vector2Normalize(direction), player_speed * GetFrameTime());
 	player_object = Vector2Add(player_object, velocity);
 
+
 	if (IsKeyDown(KEY_LEFT_SHIFT))
 	{
 		player_speed = 325;
@@ -55,10 +55,6 @@ void player::take_input()
 		player_speed = 525;
 	}
 
-	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
-	{
-		player_weapon.fire();
-	}
 }
 
 

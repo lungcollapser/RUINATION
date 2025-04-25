@@ -17,6 +17,7 @@ void bullet_logic()
     {
         bullet.update_position();
     }
+
 }
 void camera_logic()
 {
@@ -43,9 +44,9 @@ void draw()
 }
 void input()
 {
+    weapon_main.take_input();
     player_main.take_input();
     camera_main.take_input();
-    weapon_main.take_input();
 }
 
 // main func
@@ -62,10 +63,10 @@ int main()
     // window loop to keep it open until closed by user
     while (!WindowShouldClose())
     {
+        draw();
         camera_logic();
         input();
         bullet_logic();
-        draw();
     }
     // tells the window to close when told
     CloseWindow();
