@@ -9,7 +9,7 @@ class weapon
 private:
 	bool is_reloading;
 protected:
-	float bullet_speed;
+	int bullet_speed;
 	float bullet_spread;
 	Vector2 weapon_range_limit;
 public:

@@ -14,5 +14,4 @@ public:
 	Camera2D player_camera;
 	int camera_speed;
 	
-
 };

@@ -1,7 +1,7 @@
 #include "revolver.h"
 
 
-revolver::revolver() : weapon()
+revolver::revolver()
 {
 	active = true;
 }
@@ -10,7 +10,4 @@ revolver::~revolver()
 	
 
 }
-void revolver::draw()
-{
 
-}

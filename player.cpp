@@ -42,6 +42,7 @@ void player::take_input()
 	{
 		direction.y++;
 	}
+
 	Vector2 velocity = Vector2Scale(Vector2Normalize(direction), player_speed * GetFrameTime());
 	player_object = Vector2Add(player_object, velocity);
 

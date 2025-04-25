@@ -1,5 +1,6 @@
 #include "camera.h"
 #include "player.h"
+#include "weapon.h"
 #include "include.h"
 
 player player_main;
@@ -7,7 +8,8 @@ weapon weapon_main;
 camera camera_main;
 
 
-Vector2 screen_size = { 1920, 1080 };
+int screen_size_x = 1920;
+int screen_size_y = 1080;
 
 
 void bullet_logic()
@@ -22,7 +24,7 @@ void bullet_logic()
 void camera_logic()
 {
     camera_main.update();
-    camera_main.player_camera.offset = { screen_size / 2.0f };
+    camera_main.player_camera.offset = { screen_size_x / 2.0f, screen_size_y / 2.0f };
 }
 void draw()
 {
@@ -53,7 +55,7 @@ void input()
 int main()
 {
     // creating the window using two arguments. change color in the cpp file
-    InitWindow(screen_size.x, screen_size.y, "ruin");
+    InitWindow(screen_size_x, screen_size_y, "ruin");
     // fps setting
     SetTargetFPS(60);
     //hides the cursor to make way for reticle
@@ -63,10 +65,11 @@ int main()
     // window loop to keep it open until closed by user
     while (!WindowShouldClose())
     {
-        draw();
         camera_logic();
         input();
         bullet_logic();
+        draw();
+
     }
     // tells the window to close when told
     CloseWindow();
