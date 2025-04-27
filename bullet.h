@@ -3,14 +3,12 @@
 
 class bullet 
 {
-private:
+public:
+	bullet(Vector2 fire_position, int bullet_speed);
+	~bullet();
+	void draw(Vector2 player_position);
+	void update_position();
 	bool active;
 	Vector2 fire_position;
-	int speed;
-
-public:
-	bullet(Vector2 fire_position, int speed);
-	~bullet();
-	void draw();
-	void update_position();
+	int bullet_speed;
 };

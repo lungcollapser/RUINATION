@@ -1,3 +1,10 @@
-﻿  revolver.cpp
-ruination.obj : error LNK2019: unresolved external symbol "public: void __cdecl bullet::draw(void)" (?draw@bullet@@QEAAXXZ) referenced in function "void __cdecl draw(void)" (?draw@@YAXXZ)
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\x64\Debug\ruination.exe : fatal error LNK1120: 1 unresolved externals
+﻿  bullet.cpp
+  camera.cpp
+  revolver.cpp
+  player.cpp
+  ruination.cpp
+  weapon.cpp
+  Generating Code...
+  ruination.vcxproj -> C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\x64\Debug\ruination.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.

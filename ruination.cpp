@@ -34,7 +34,7 @@ void draw()
 
     for (auto& bullet : weapon_main.bullets)
     {
-        bullet.draw();
+        bullet.draw(player_main.player_object);
     }
 
     DrawLine(800, 0, 0, 800, WHITE);

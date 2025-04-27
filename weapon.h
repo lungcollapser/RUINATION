@@ -11,7 +11,6 @@ private:
 protected:
 	int bullet_speed;
 	float bullet_spread;
-	Vector2 weapon_range_limit;
 public:
 	weapon();
 	~weapon();
