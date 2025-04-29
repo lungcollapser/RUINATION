@@ -10,4 +10,6 @@ private:
 public:
 	revolver();
 	~revolver();
+	void draw();
+	void reload();
 };

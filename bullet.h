@@ -9,7 +9,6 @@ public:
 	~bullet();
 	void draw(Vector2 player_position);
 	void update_position();
-	void hit_box();
 	bool active;
 	Vector2 fire_position;
 	int bullet_speed;

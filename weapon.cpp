@@ -6,11 +6,13 @@ player weapon_player;
 weapon::weapon()
 {
 	is_reloading = false;
-	bullet_speed = 5;
 	weapon_reticle = { 0, 0 };
 	bullet_spread = 0;
-	bullet_speed = 4000;
-
+	bullet_speed = 0;
+	bullet_amount = 0;
+	weapon_types[1] = { "repeater" };
+	weapon_types[2] = { "revolver" };
+	current_weapon = "revolver";
 }
 weapon::~weapon()
 {
@@ -35,5 +37,12 @@ void weapon::take_input()
 	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
 	{
 		fire();
+	}
+
+	if (current_weapon == "revolver")
+	{
+		bullet_amount = 6;
+		bullet_speed = 3000;
+
 	}
 }
