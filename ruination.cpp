@@ -1,11 +1,13 @@
 #include "camera.h"
 #include "player.h"
 #include "weapon.h"
+#include "enemy.h"
 #include "include.h"
 
 player player_main;
 weapon weapon_main;
 camera camera_main;
+enemy enemy_main;
 
 
 int screen_size_x = 1920;
@@ -19,7 +21,6 @@ void bullet_logic()
     {
         bullet.update_position();
     }
-
 }
 void camera_logic()
 {
@@ -41,6 +42,7 @@ void draw()
     DrawLine(0, 0, 800, 800, WHITE);
     player_main.draw();
     weapon_main.draw(player_main.player_object);
+    enemy_main.draw();
     EndMode2D();
     EndDrawing();
 }

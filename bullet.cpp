@@ -1,5 +1,6 @@
 #include "bullet.h"
 
+enemy enemy_bullet;
 
 bullet::bullet(Vector2 fire_position, int bullet_speed)
 {
@@ -24,4 +25,13 @@ void bullet::update_position()
 {
 	Vector2 change_vector = Vector2Scale(Vector2Normalize(fire_position), bullet_speed * GetFrameTime());
 	fire_position = Vector2Add(fire_position, change_vector);
+
+	hit_box();
+}
+void bullet::hit_box()
+{
+	if (fire_position == enemy_bullet.enemy_object && enemy_bullet.enemy_health > 0)
+	{
+		enemy_bullet.enemy_object = { 600, 700 };
+	}
 }
