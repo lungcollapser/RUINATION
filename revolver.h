@@ -1,8 +1,9 @@
 #pragma once
 #include "weapon.h"
+#include "include.h"
 
 
-class revolver
+class revolver : weapon
 {
 private:
 	bool active;

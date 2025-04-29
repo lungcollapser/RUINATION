@@ -12,7 +12,6 @@ protected:
 	int bullet_amount;
 	int bullet_speed;
 	float bullet_spread;
-	std::string weapon_types[2];
 public:
 	weapon();
 	~weapon();

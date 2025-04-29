@@ -2,6 +2,7 @@
 #include "player.h"
 #include "weapon.h"
 #include "enemy.h"
+#include "revolver.h"
 #include "include.h"
 
 player player_main;
@@ -56,6 +57,7 @@ void input()
 // main func
 int main()
 {
+    revolver revolver_main;
     // creating the window using two arguments. change color in the cpp file
     InitWindow(screen_size_x, screen_size_y, "ruin");
     // fps setting
