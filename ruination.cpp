@@ -6,8 +6,9 @@
 #include "include.h"
 
 player player_main;
-weapon weapon_main;
 camera camera_main;
+revolver revolver_main(6, 4000);
+weapon weapon_main_one;
 enemy enemy_main;
 
 
@@ -18,7 +19,7 @@ int screen_size_y = 1080;
 void bullet_logic()
 {
 
-    for (auto& bullet : weapon_main.bullets)
+    for (auto& bullet : weapon_main_one.bullets)
     {
         bullet.update_position();
     }
@@ -30,11 +31,12 @@ void camera_logic()
 }
 void draw()
 {
+
     BeginDrawing();
     ClearBackground(BLACK);
     BeginMode2D(camera_main.player_camera);
 
-    for (auto& bullet : weapon_main.bullets)
+    for (auto& bullet : weapon_main_one.bullets)
     {
         bullet.draw(player_main.player_object);
     }
@@ -42,14 +44,14 @@ void draw()
     DrawLine(800, 0, 0, 800, WHITE);
     DrawLine(0, 0, 800, 800, WHITE);
     player_main.draw();
-    weapon_main.draw(player_main.player_object);
+    weapon_main_one.draw(player_main.player_object);
     enemy_main.draw();
     EndMode2D();
     EndDrawing();
 }
 void input()
 {
-    weapon_main.take_input();
+    weapon_main_one.take_input();
     player_main.take_input();
     camera_main.take_input();
 }
@@ -57,7 +59,6 @@ void input()
 // main func
 int main()
 {
-    revolver revolver_main;
     // creating the window using two arguments. change color in the cpp file
     InitWindow(screen_size_x, screen_size_y, "ruin");
     // fps setting

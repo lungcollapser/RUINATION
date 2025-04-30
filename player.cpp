@@ -1,6 +1,5 @@
 #include "player.h"
 
-weapon player_weapon;
 
 //constructor
 player::player()

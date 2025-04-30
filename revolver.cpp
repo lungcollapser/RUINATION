@@ -1,12 +1,8 @@
 #include "revolver.h"
 
-revolver::revolver() 
+revolver::revolver(int bm, int bs) : weapon(bm, bs)
 {
 	active = true;
-	this->bullet_spread = 0;
-	this->bullet_speed = 4000;
-	this->bullet_amount = 6;
-	
 }
 revolver::~revolver()
 {

@@ -9,7 +9,7 @@ private:
 	bool active;
 
 public:
-	revolver();
+	revolver(int bm, int bs);
 	~revolver();
 	void draw();
 	void reload();

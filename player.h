@@ -1,5 +1,4 @@
 #pragma once
-#include "weapon.h"
 #include "include.h"
 
 

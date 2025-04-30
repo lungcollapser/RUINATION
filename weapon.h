@@ -11,9 +11,9 @@ private:
 protected:
 	int bullet_amount;
 	int bullet_speed;
-	float bullet_spread;
 public:
 	weapon();
+	weapon(int bm, int bs);
 	~weapon();
 	void draw(Vector2 player_object);
 	void fire();

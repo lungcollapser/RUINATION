@@ -6,11 +6,14 @@ weapon::weapon()
 {
 	is_reloading = false;
 	weapon_reticle = { 0, 0 };
-	this->bullet_spread = bullet_spread;
-	this->bullet_speed = bullet_speed;
-	this->bullet_amount = bullet_amount;
 	current_weapon = "revolver";
 }
+weapon::weapon(int bull_am, int bull_sp)
+{
+	bullet_amount = bull_am;
+	bullet_speed = bull_sp;
+}
+
 weapon::~weapon()
 {
 
@@ -34,6 +37,7 @@ void weapon::take_input()
 	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
 	{
 		fire();
+		std::cout << bullet_speed;
 	}
 
 }
