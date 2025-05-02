@@ -1,1 +1,7 @@
-﻿  ruination.vcxproj -> C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\x64\Debug\ruination.exe
+﻿  ruination.cpp
+  weapon.cpp
+  Generating Code...
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\weapon.cpp(36,1): warning C4715: 'weapon::fire': not all control paths return a value
+  ruination.vcxproj -> C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\x64\Debug\ruination.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.
