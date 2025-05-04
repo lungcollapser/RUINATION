@@ -2,15 +2,12 @@
 
 player weapon_player;
 
+
 weapon::weapon()
 {
 	weapon_attributes();
 	is_reloading = false;
 	weapon_reticle = { 0, 0 };
-	weapons[1] = "fists";
-	weapons[2] = "revolver";
-	weapons[3] = "repeater";
-	current_weapon = "";
 }
 
 weapon::~weapon()
@@ -44,47 +41,31 @@ void weapon::take_input()
 		bullet_amount -= 1;
 		std::cout << bullet_amount;
 	}
+	
 	if (IsKeyPressed(KEY_ONE))
 	{
-		current_weapon = weapons[1];
+		change_weapon(revolver);
 		std::cout << current_weapon;
 	}
 	if (IsKeyPressed(KEY_TWO))
 	{
-		current_weapon = weapons[2];
+		change_weapon(repeater);
 		std::cout << current_weapon;
 	}
-	if (IsKeyPressed(KEY_THREE))
-	{
-		current_weapon = weapons[3];
-		std::cout << current_weapon;
-	}
-	reload();
 }
-void weapon::weapon_attributes()
-{
-	if (current_weapon == weapons[1])
-	{
-		bullet_speed = 0;
-		bullet_amount = 0;
-	}
-	if (current_weapon == weapons[2])
-	{
-		bullet_speed = 4000;
-		bullet_amount = 6;
-	}
-	if (current_weapon == weapons[3])
-	{
-		bullet_speed = 6000;
-		bullet_amount = 3;
 
-	}
-	
-}
 void weapon::reload()
 {
-	if (IsKeyPressed(KEY_R))
+	
+}
+void weapon::change_weapon(weapon_types new_weapon)
+{
+	switch (new_weapon)
 	{
-		bullet_amount = 6;
+	case revolver: current_weapon = new_weapon; bullet_amount = 6; bullet_speed = 4000;
+		break;
+	case repeater: current_weapon = new_weapon; bullet_amount = 12; bullet_speed = 5000;
+		break;
 	}
+
 }
