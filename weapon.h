@@ -8,22 +8,24 @@ class weapon
 {
 private:
 	bool is_reloading;
-protected:
-	int bullet_speed;
-	int bullet_left;
 public:
+	enum weapon_types
+	{
+		revolver, repeater
+	};
 	weapon();
 	~weapon();
 	void draw(Vector2& player_object);
 	void fire();
 	void take_input();
 	void weapon_attributes();
+	void change_weapon(weapon_types new_weapon);
 	void reload();
 	int bullet_amount;
+	int bullet_speed;
 	int circle_offset;
 	Vector2 weapon_reticle;
-	std::string weapons[4];
-	std::string current_weapon;
+	weapon_types current_weapon;
 	std::vector<bullet> bullets;
 
 };

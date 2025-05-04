@@ -1,10 +1,4 @@
-﻿  camera.cpp
-  player.cpp
-  revolver.cpp
-  ruination.cpp
-  weapon.cpp
-  Generating Code...
-  LINK : C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\x64\Debug\ruination.exe not found or not built by the last incremental link; performing full link
+﻿  weapon.cpp
   ruination.vcxproj -> C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\x64\Debug\ruination.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.

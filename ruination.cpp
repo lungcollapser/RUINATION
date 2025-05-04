@@ -72,9 +72,9 @@ int main()
     while (!WindowShouldClose())
     {
 
+        input();
         camera_logic();
         bullet_logic();
-        input();
         draw();
 
     }
