@@ -52,7 +52,7 @@ void draw()
 void input()
 {
     weapon_main.take_input();
-    player_main.take_input(weapon_main.current_weapon);
+    player_main.take_input();
     camera_main.take_input();
 }
 

@@ -4,15 +4,13 @@ player weapon_player;
 
 weapon::weapon()
 {
+	weapon_attributes();
 	is_reloading = false;
 	weapon_reticle = { 0, 0 };
-	weapons[1] = "revolver";
-	weapons[2] = "repeater";
+	weapons[1] = "fists";
+	weapons[2] = "revolver";
+	weapons[3] = "repeater";
 	current_weapon = "";
-	bullet_amount = 0;
-	bullet_speed = 0;
-	weapon_attributes();
-	
 }
 
 weapon::~weapon()
@@ -39,22 +37,49 @@ void weapon::draw(Vector2 player_object)
 }
 void weapon::take_input()
 {
-	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && bullet_amount > 0)
 	{
 
 		fire();
 		bullet_amount -= 1;
 		std::cout << bullet_amount;
 	}
-
+	if (IsKeyPressed(KEY_ONE))
+	{
+		current_weapon = weapons[1];
+		std::cout << current_weapon;
+	}
+	if (IsKeyPressed(KEY_TWO))
+	{
+		current_weapon = weapons[2];
+		std::cout << current_weapon;
+	}
+	if (IsKeyPressed(KEY_THREE))
+	{
+		current_weapon = weapons[3];
+		std::cout << current_weapon;
+	}
+	reload();
 }
 void weapon::weapon_attributes()
 {
-	if (current_weapon == "revolver")
+	if (current_weapon == weapons[1])
+	{
+		bullet_speed = 0;
+		bullet_amount = 0;
+	}
+	if (current_weapon == weapons[2])
 	{
 		bullet_speed = 4000;
 		bullet_amount = 6;
 	}
+	if (current_weapon == weapons[3])
+	{
+		bullet_speed = 6000;
+		bullet_amount = 3;
+
+	}
+	
 }
 void weapon::reload()
 {

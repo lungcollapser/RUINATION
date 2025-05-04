@@ -5,7 +5,7 @@
 player::player()
 {
 	//initializations
-	player_object = { 0, 0 };
+	player_object = { 0.0f, 0.0f };
 	player_speed = 100;
 
 }
@@ -21,7 +21,7 @@ void player::draw()
 	
 }
 //player movements
-void player::take_input(std::string current_weapon)
+void player::take_input()
 {
 	Vector2 direction = { 0,0 };
 
@@ -55,11 +55,7 @@ void player::take_input(std::string current_weapon)
 		player_speed = 525;
 	}
 
-	if (IsKeyPressed(KEY_ONE))
-	{
-		current_weapon = "revolver";
-		std::cout << current_weapon;
-	}
+	
 
 }
 

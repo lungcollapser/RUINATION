@@ -18,7 +18,7 @@ void bullet::draw(Vector2 player_position)
 {
 	if (active)
 	{
-		DrawCircleV(fire_position + player_position, 20, BLUE);
+		DrawCircleV(fire_position + player_position, 5, BLUE);
 	}
 }
 void bullet::update_position()

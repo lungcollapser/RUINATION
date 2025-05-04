@@ -15,7 +15,7 @@ public:
 	//player actions
 	void draw();
 	//player movement
-	void take_input(std::string current_weapon);
+	void take_input();
 	//player attributes
 	Vector2 player_object;
 
