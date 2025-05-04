@@ -29,7 +29,7 @@ void weapon::fire()
 	}
 
 }
-void weapon::draw(Vector2 player_object)
+void weapon::draw(Vector2& player_object)
 {
 	weapon_reticle = GetMousePosition();
 	DrawCircleV(weapon_reticle + player_object, 8, RED);

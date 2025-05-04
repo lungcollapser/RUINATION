@@ -14,7 +14,7 @@ protected:
 public:
 	weapon();
 	~weapon();
-	void draw(Vector2 player_object);
+	void draw(Vector2& player_object);
 	void fire();
 	void take_input();
 	void weapon_attributes();
