@@ -11,6 +11,7 @@ private:
 protected:
 	int bullet_amount;
 	int bullet_speed;
+	int bullet_left;
 public:
 	weapon();
 	~weapon();
@@ -20,6 +21,7 @@ public:
 	void weapon_attributes();
 	void reload();
 	Vector2 weapon_reticle;
+	std::string weapons[2];
 	std::string current_weapon;
 	std::vector<bullet> bullets;
 

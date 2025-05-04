@@ -28,10 +28,7 @@ void camera_logic()
     camera_main.update();
     camera_main.player_camera.offset = { screen_size_x / 2.0f, screen_size_y / 2.0f };
 }
-void weapon_logic()
-{
-    weapon_main.weapon_attributes();
-}
+
 void draw()
 {
 
@@ -55,7 +52,7 @@ void draw()
 void input()
 {
     weapon_main.take_input();
-    player_main.take_input();
+    player_main.take_input(weapon_main.current_weapon);
     camera_main.take_input();
 }
 
@@ -77,7 +74,6 @@ int main()
 
         camera_logic();
         bullet_logic();
-        weapon_logic();
         input();
         draw();
 

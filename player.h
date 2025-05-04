@@ -1,5 +1,6 @@
 #pragma once
 #include "include.h"
+#include "weapon.h"
 
 
 class player
@@ -14,7 +15,7 @@ public:
 	//player actions
 	void draw();
 	//player movement
-	void take_input();
+	void take_input(std::string current_weapon);
 	//player attributes
 	Vector2 player_object;
 

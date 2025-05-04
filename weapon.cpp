@@ -6,16 +6,13 @@ weapon::weapon()
 {
 	is_reloading = false;
 	weapon_reticle = { 0, 0 };
-	current_weapon = "revolver";
+	weapons[1] = "revolver";
+	weapons[2] = "repeater";
+	current_weapon = "";
 	bullet_amount = 0;
 	bullet_speed = 0;
-
-	if (current_weapon == "revolver")
-	{
-		bullet_speed = 4000;
-		bullet_amount = 6;
-		reload();
-	}
+	weapon_attributes();
+	
 }
 
 weapon::~weapon()
@@ -27,12 +24,12 @@ void weapon::fire()
 	//Could possibly use later if speed is on Vector2. For now just use given value.
 	/*Vector2 direction = {cos(PI / 180), -sin(PI / 180)};
 	Vector2 bullet_velocity = Vector2Scale(direction, bullet_speed);*/
-	bullets.push_back(bullet(Vector2MoveTowards(weapon_player.player_object, weapon_reticle, 1), bullet_speed));
-
-	if (bullet_amount < 1)
+	if (bullet_amount > 0)
 	{
-		return;
+		bullets.push_back(bullet(Vector2MoveTowards(weapon_player.player_object, weapon_reticle, 1), bullet_speed));
+
 	}
+
 }
 void weapon::draw(Vector2 player_object)
 {
@@ -53,12 +50,16 @@ void weapon::take_input()
 }
 void weapon::weapon_attributes()
 {
-
+	if (current_weapon == "revolver")
+	{
+		bullet_speed = 4000;
+		bullet_amount = 6;
+	}
 }
 void weapon::reload()
 {
-	if (bullet_amount < 1)
+	if (IsKeyPressed(KEY_R))
 	{
-		return;
+		bullet_amount = 6;
 	}
 }
