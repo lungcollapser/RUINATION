@@ -5,7 +5,6 @@ player weapon_player;
 
 weapon::weapon()
 {
-	weapon_attributes();
 	is_reloading = false;
 	weapon_reticle = { 0, 0 };
 }

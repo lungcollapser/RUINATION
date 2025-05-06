@@ -18,7 +18,6 @@ public:
 	void draw(Vector2 player_object);
 	void fire();
 	void take_input();
-	void weapon_attributes();
 	void change_weapon(weapon_types new_weapon);
 	void reload();
 	int bullet_amount;
