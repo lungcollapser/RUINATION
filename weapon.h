@@ -8,6 +8,9 @@ class weapon
 {
 private:
 	bool is_reloading;
+protected:
+	int bullets_left;
+	int bullets_amount;
 public:
 	enum weapon_types
 	{
@@ -20,7 +23,6 @@ public:
 	void take_input();
 	void change_weapon(weapon_types new_weapon);
 	void reload();
-	int bullet_amount;
 	int bullet_speed;
 	int circle_offset;
 	Vector2 weapon_reticle;
