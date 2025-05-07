@@ -15,6 +15,10 @@ int screen_size_x = 1920;
 int screen_size_y = 1080;
 
 
+void weapon_logic()
+{
+    weapon_main.reload();
+}
 void bullet_logic()
 {
 
@@ -75,6 +79,7 @@ int main()
         input();
         camera_logic();
         bullet_logic();
+        weapon_logic();
         draw();
 
     }
