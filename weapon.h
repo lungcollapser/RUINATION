@@ -9,8 +9,8 @@ class weapon
 private:
 	bool is_reloading;
 protected:
-	int bullets_left;
-	int bullets_amount;
+	int rev_bullet_amount;
+	int rep_bullet_amount;
 public:
 	enum weapon_types
 	{
