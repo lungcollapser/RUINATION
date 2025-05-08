@@ -38,8 +38,22 @@ void weapon::draw(Vector2 player_object)
 }
 void weapon::take_input()
 {
+	weapon* rev = new weapon(revolver, 4000, 6);
+	weapon* rep = new weapon(repeater, 5000, 12);
 
-	return;
+	if (IsKeyPressed(KEY_ONE))
+	{
+		rev->fire();
+		rev->reload();
+		std::cout << current_weapon;
+	}
+	if (IsKeyPressed(KEY_TWO))
+	{
+		rep->fire();
+		rep->reload();
+		std::cout << current_weapon;
+
+	}
 }
 
 void weapon::reload()
