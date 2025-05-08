@@ -1,6 +1,7 @@
 #pragma once
 #include "bullet.h"
 #include "player.h"
+#include "revolver.h"
 #include "include.h"
 
 
@@ -9,8 +10,8 @@ class weapon
 private:
 	bool is_reloading;
 protected:
-	int rev_bullet_amount;
-	int rep_bullet_amount;
+	int min_bullets;
+	int max_bullets;
 public:
 	enum weapon_types
 	{

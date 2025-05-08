@@ -1,1 +1,18 @@
-﻿  ruination.vcxproj -> C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\x64\Debug\ruination.exe
+﻿  camera.cpp
+  player.cpp
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\weapon.h(4,10): error C1083: Cannot open include file: '': No such file or directory
+  (compiling source file 'camera.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\weapon.h(4,10): error C1083: Cannot open include file: '': No such file or directory
+  (compiling source file 'player.cpp')
+  
+  revolver.cpp
+  ruination.cpp
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\weapon.h(4,10): error C1083: Cannot open include file: '': No such file or directory
+  (compiling source file 'ruination.cpp')
+  
+  weapon.cpp
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\weapon.h(4,10): error C1083: Cannot open include file: '': No such file or directory
+  (compiling source file 'weapon.cpp')
+  
+  Generating Code...
