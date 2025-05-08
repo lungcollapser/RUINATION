@@ -9,7 +9,8 @@ camera camera_main;
 weapon weapon_main;
 enemy enemy_main;
 
-
+weapon* rev = new weapon(weapon_main.revolver, 4000, 6);
+weapon* rep = new weapon(weapon_main.repeater, 5000, 12);
 
 int screen_size_x = 1920;
 int screen_size_y = 1080;
@@ -17,7 +18,18 @@ int screen_size_y = 1080;
 
 void weapon_logic()
 {
-    weapon_main.reload();
+    if (IsKeyPressed(KEY_ONE))
+    {
+        rev->fire();
+        rev->reload();
+        std::cout << weapon_main.current_weapon;
+    }
+    if (IsKeyPressed(KEY_TWO))
+    {
+        rep->fire();
+        rep->reload();
+        std::cout << weapon_main.current_weapon;
+    }
 }
 void bullet_logic()
 {
@@ -55,7 +67,6 @@ void draw()
 }
 void input()
 {
-    weapon_main.take_input();
     player_main.take_input();
     camera_main.take_input();
 }
@@ -75,11 +86,10 @@ int main()
     // window loop to keep it open until closed by user
     while (!WindowShouldClose())
     {
-
         input();
+        weapon_logic();
         camera_logic();
         bullet_logic();
-        weapon_logic();
         draw();
 
     }
