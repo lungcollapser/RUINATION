@@ -4,10 +4,12 @@
 #include "enemy.h"
 #include "include.h"
 
-weapon weapon_main;
 player player_main;
 camera camera_main;
 enemy enemy_main;
+
+weapon weapon_revolver(weapon_revolver.revolver, 4000, 6);
+weapon weapon_repeater(weapon_repeater.repeater, 6000, 12);
 
 
 int screen_size_x = 1920;
@@ -16,12 +18,21 @@ int screen_size_y = 1080;
 
 void weapon_logic()
 {
-    return;
+    weapon_revolver.fire();
+
+    if (IsKeyPressed(KEY_ONE))
+    {
+        weapon_revolver;
+    }
+    if (IsKeyPressed(KEY_TWO))
+    {
+        weapon_revolver;
+    }
 }
 void bullet_logic()
 {
 
-    for (auto& bullet : weapon_main.bullets)
+    for (auto& bullet : weapon_revolver.bullets)
     {
         bullet.update_position();
     }
@@ -39,7 +50,7 @@ void draw()
     ClearBackground(BLACK);
     BeginMode2D(camera_main.player_camera);
 
-    for (auto& bullet : weapon_main.bullets)
+    for (auto& bullet : weapon_revolver.bullets)
     {
         bullet.draw(player_main.player_object);
     }
@@ -47,15 +58,14 @@ void draw()
     DrawLine(800, 0, 0, 800, WHITE);
     DrawLine(0, 0, 800, 800, WHITE);
     player_main.draw();
-    weapon_main.draw(player_main.player_object);
+    weapon_revolver.draw(player_main.player_object);
     enemy_main.draw();
     EndMode2D();
     EndDrawing();
 }
 void input()
 {
-
-    weapon_main.take_input();
+    weapon_revolver.reload();
     player_main.take_input();
     camera_main.take_input();
 }
@@ -76,6 +86,7 @@ int main()
     while (!WindowShouldClose())
     {
         input();
+        weapon_logic();
         camera_logic();
         bullet_logic();
         draw();
