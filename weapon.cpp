@@ -2,7 +2,6 @@
 
 player weapon_player;
 
-
 weapon::weapon()
 {
 	is_reloading = false;
@@ -27,6 +26,7 @@ void weapon::fire()
 	{
 		bullets.push_back(bullet(Vector2MoveTowards(weapon_player.player_object, weapon_reticle, 1), bullet_speed));
 		bullet_amount -= 1;
+		std::cout << bullet_speed;
 	}
 
 }
@@ -38,18 +38,7 @@ void weapon::draw(Vector2& player_object)
 }
 void weapon::take_input()
 {
-	weapon rev = weapon(revolver, 4000, 6);
-
-	if (IsKeyPressed(KEY_ONE))
-	{
-		change_weapon(rev);
-	}
-	if (IsKeyPressed(KEY_TWO))
-	{
-		weapon rep = weapon(repeater, 5000, 12);
-		std::cout << current_weapon;
-
-	}
+	return;
 }
 
 void weapon::reload()
