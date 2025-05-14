@@ -15,7 +15,7 @@ public:
 		revolver, repeater
 	};
 	weapon();
-	weapon(weapon_types weapons, int bull_speed, int bull_amount);
+	weapon(int bull_speed, int bull_amount);
 	~weapon();
 	void draw(Vector2& player_object);
 	void fire();
