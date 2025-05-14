@@ -2,14 +2,14 @@
 
 player weapon_player;
 
+
 weapon::weapon()
 {
 	is_reloading = false;
 	weapon_reticle = { 0, 0 };
 }
-weapon::weapon(weapon_types weapon, int bull_speed, int bull_amount)
+weapon::weapon(int bull_speed, int bull_amount)
 {
-	this->current_weapon = weapon;
 	this->bullet_speed = bull_speed;
 	this->bullet_amount = bull_amount;
 }
@@ -38,7 +38,15 @@ void weapon::draw(Vector2 player_object)
 }
 void weapon::take_input()
 {
-	return;
+	if (IsKeyPressed(KEY_ONE))
+	{
+		current_weapon = revolver;
+		std::cout << current_weapon;
+	}
+	if (IsKeyPressed(KEY_TWO))
+	{
+		current_weapon = repeater;
+	}
 }
 
 void weapon::reload()
