@@ -18,7 +18,7 @@ public:
 	weapon(int bull_speed, int bull_amount);
 	~weapon();
 	void draw(Vector2 player_object);
-	void fire();
+	void fire(weapon &curr_weapon);
 	void take_input();
 	void change_weapon(weapon_types new_weapon);
 	void reload();
