@@ -5,19 +5,20 @@ player weapon_player;
 
 weapon::weapon()
 {
-	is_reloading = false;
-	weapon_reticle = { 0, 0 };
+
 }
 weapon::weapon(int bull_speed, int bull_amount)
 {
 	this->bullet_speed = bull_speed;
 	this->bullet_amount = bull_amount;
+	weapon_reticle = { 0, 0 };
+	is_reloading = false;
 }
 weapon::~weapon()
 {
 
 }
-void weapon::fire()
+void weapon::fire(weapon &curr_weapon)
 {
 	//Could possibly use later if speed is on Vector2. For now just use given value.
 	/*Vector2 direction = {cos(PI / 180), -sin(PI / 180)};
@@ -25,8 +26,8 @@ void weapon::fire()
 	if (bullet_amount > 0 && IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
 	{
 		bullets.push_back(bullet(Vector2MoveTowards(weapon_player.player_object, weapon_reticle, 1), bullet_speed));
-		bullet_amount -= 1;
-		std::cout << bullet_speed;
+		curr_weapon.bullet_amount -= 1;
+		std::cout << bullet_amount;
 	}
 
 }
@@ -46,6 +47,7 @@ void weapon::take_input()
 	if (IsKeyPressed(KEY_TWO))
 	{
 		current_weapon = repeater;
+		std::cout << current_weapon;
 	}
 }
 
