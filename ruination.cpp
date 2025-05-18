@@ -11,28 +11,30 @@ camera camera_main;
 enemy enemy_main;
 weapon rev(4000, 6);
 weapon rep(6000, 12);
-weapon curr_weapon;
+weapon main_weapon;
 
 int screen_size_x = 1920;
 int screen_size_y = 1080;
 
 void weapon_logic()
 {
-    
-    if (IsKeyPressed(KEY_ONE))
+
+    if (IsKeyPressed(KEY_ONE) && main_weapon.current_weapon != main_weapon.revolver)
     {
-        curr_weapon = rev;
+        main_weapon = rev;
+        main_weapon.current_weapon = main_weapon.revolver;
     }
-    if (IsKeyPressed(KEY_TWO))
+    if (IsKeyPressed(KEY_TWO) && main_weapon.current_weapon != main_weapon.repeater)
     {
-        curr_weapon = rep;
+        main_weapon = rep;
+        main_weapon.current_weapon = main_weapon.repeater;
     }
 }
 void bullet_logic()
 {
     bullet_main.bullet_hitbox();
 
-    for (auto& bullet : curr_weapon.bullets)
+    for (auto& bullet : main_weapon.bullets)
     {
         bullet.update_position();
     }
@@ -50,7 +52,7 @@ void draw()
     ClearBackground(BLACK);
     BeginMode2D(camera_main.player_camera);
 
-    for (auto& bullet : curr_weapon.bullets)
+    for (auto& bullet : main_weapon.bullets)
     {
         bullet.draw(player_main.player_object);
     }
@@ -58,15 +60,16 @@ void draw()
     DrawLine(800, 0, 0, 800, WHITE);
     DrawLine(0, 0, 800, 800, WHITE);
     player_main.draw();
-    curr_weapon.draw(player_main.player_object);
+    main_weapon.draw(player_main.player_object);
     enemy_main.draw();
     EndMode2D();
     EndDrawing();
 }
 void input()
 {
-    curr_weapon.fire(curr_weapon);
-    curr_weapon.reload();
+    main_weapon.fire(main_weapon);
+    main_weapon.reload();
+    main_weapon.take_input();
     player_main.take_input();
     camera_main.take_input();
 }

@@ -37,6 +37,9 @@ void weapon::draw(Vector2 player_object)
 }
 void weapon::take_input()
 {
+	if (current_weapon == revolver)
+	{
+	}
 	
 }
 
