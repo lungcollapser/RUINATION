@@ -8,6 +8,7 @@ public:
 	~enemy();
 	void draw();
 	void update_position();
+	void enemy_hitbox(Vector2 projectile);
 	Vector2 enemy_object;
 	int enemy_health;
 	int enemy_speed;

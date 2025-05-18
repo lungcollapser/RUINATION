@@ -20,3 +20,11 @@ void enemy::update_position()
 {
 
 }
+void enemy::enemy_hitbox(Vector2 projectile)
+{
+	if (projectile == enemy_object)
+	{
+		enemy_health -= 1;
+		std::cout << "ayo";
+	}
+}
