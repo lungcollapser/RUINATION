@@ -4,14 +4,26 @@ player weapon_player;
 
 weapon::weapon()
 {
-
+	weapon_reticle = { 0, 0 };
+	is_reloading = false;
+	current_weapon = fists;
+	clips = 2;
 }
 weapon::weapon(int bull_speed, int bull_amount) 
 {
 	this->bullet_speed = bull_speed;
 	this->bullet_amount = bull_amount;
-	weapon_reticle = { 0, 0 };
-	is_reloading = false;
+
+	if (bullet_amount == 0)
+	{
+		clips -= 1;
+		std::cout << clips;
+
+		if (clips == 0)
+		{
+			bullet_amount = 0;
+		}
+	}
 }
 weapon::~weapon()
 {
@@ -45,11 +57,11 @@ void weapon::take_input()
 
 void weapon::reload()
 {
-	if (IsKeyPressed(KEY_R) && current_weapon == revolver)
+	if (IsKeyPressed(KEY_R) && current_weapon == revolver && clips > 1)
 	{
 		bullet_amount = 6;
 	}
-	else if (IsKeyPressed(KEY_R) && current_weapon == repeater)
+	else if (IsKeyPressed(KEY_R) && current_weapon == repeater && clips > 1)
 	{
 		bullet_amount = 12;
 	}

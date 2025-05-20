@@ -12,7 +12,7 @@ private:
 public:
 	enum weapon_types
 	{
-		revolver, repeater
+		fists, revolver, repeater
 	};
 	weapon();
 	weapon(int bull_speed, int bull_amount);
@@ -25,6 +25,7 @@ public:
 	int circle_offset;
 	int bullet_speed;
 	int bullet_amount;
+	int clips;
 	Vector2 weapon_reticle;
 	weapon_types current_weapon;
 	std::vector<bullet> bullets;
