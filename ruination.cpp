@@ -69,7 +69,6 @@ void input()
 {
     main_weapon.fire(main_weapon);
     main_weapon.reload();
-    main_weapon.take_input();
     player_main.take_input();
     camera_main.take_input();
 }
