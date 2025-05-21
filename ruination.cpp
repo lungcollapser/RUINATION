@@ -1,16 +1,14 @@
+#include "include.h"
 #include "camera.h"
 #include "player.h"
 #include "weapon.h"
 #include "enemy.h"
 #include "bullet.h"
-#include "include.h"
 
 bullet bullet_main;
 player player_main;
 camera camera_main;
 enemy enemy_main;
-weapon rev(4000, 6);
-weapon rep(6000, 12);
 weapon main_weapon;
 
 int screen_size_x = 1920;
@@ -19,16 +17,7 @@ int screen_size_y = 1080;
 void weapon_logic()
 {
 
-    if (IsKeyPressed(KEY_ONE) && main_weapon.current_weapon != main_weapon.revolver)
-    {
-        main_weapon = rev;
-        main_weapon.current_weapon = main_weapon.revolver;
-    }
-    if (IsKeyPressed(KEY_TWO) && main_weapon.current_weapon != main_weapon.repeater)
-    {
-        main_weapon = rep;
-        main_weapon.current_weapon = main_weapon.repeater;
-    }
+    
 }
 void bullet_logic()
 {
@@ -91,7 +80,6 @@ int main()
     {
         
         input();
-        weapon_logic();
         camera_logic();
         bullet_logic();
         draw();
