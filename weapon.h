@@ -1,33 +1,26 @@
 #pragma once
+#include "include.h"
 #include "bullet.h"
 #include "player.h"
-#include "include.h"
-
 
 class weapon
 {
 private:
 	bool is_reloading;
-
 public:
-	enum weapon_types
-	{
-		fists, revolver, repeater
-	};
 	weapon();
-	weapon(int bull_speed, int bull_amount);
 	~weapon();
 	void draw(Vector2 player_object);
 	void fire(weapon &curr_weapon);
 	void take_input();
-	void change_weapon(weapon_types new_weapon);
+	void change_weapon();
 	void reload();
 	int circle_offset;
 	int bullet_speed;
 	int bullet_amount;
 	int clips;
+	int current_clips;
 	Vector2 weapon_reticle;
-	weapon_types current_weapon;
 	std::vector<bullet> bullets;
 
 };

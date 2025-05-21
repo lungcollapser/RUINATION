@@ -1,12 +1,13 @@
 #include "player.h"
 
-
 //constructor
 player::player()
 {
 	//initializations
 	player_object = { 0.0f, 0.0f };
 	player_speed = 100;
+
+	revolver_player = new revolver();
 
 }
 //destructor
@@ -55,7 +56,10 @@ void player::take_input()
 		player_speed = 525;
 	}
 
-	
+	if (IsKeyPressed(KEY_ONE))
+	{
+		current_weapon = revolver_player;
+	}
 
 }
 

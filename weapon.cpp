@@ -6,25 +6,8 @@ weapon::weapon()
 {
 	weapon_reticle = { 0, 0 };
 	is_reloading = false;
-	current_weapon = fists;
-	clips = 2;
 }
-weapon::weapon(int bull_speed, int bull_amount) 
-{
-	this->bullet_speed = bull_speed;
-	this->bullet_amount = bull_amount;
 
-	if (bullet_amount == 0)
-	{
-		clips -= 1;
-		std::cout << clips;
-
-		if (clips == 0)
-		{
-			bullet_amount = 0;
-		}
-	}
-}
 weapon::~weapon()
 {
 
@@ -36,9 +19,8 @@ void weapon::fire(weapon &curr_weapon)
 	Vector2 bullet_velocity = Vector2Scale(direction, bullet_speed);*/
 	if (bullet_amount > 0 && IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
 	{
-		bullets.push_back(bullet(Vector2MoveTowards(weapon_player.player_object, weapon_reticle, 1), bullet_speed));
+		bullets.push_back(bullet(Vector2MoveTowards(weapon_player.player_object, weapon_reticle, 1), bullet_speed * GetFrameTime()));
 		curr_weapon.bullet_amount -= 1;
-		std::cout << bullet_amount;
 	}
 
 }
@@ -49,19 +31,17 @@ void weapon::draw(Vector2& player_object)
 }
 void weapon::take_input()
 {
-	if (current_weapon == revolver)
-	{
-	}
+	
 	
 }
 
 void weapon::reload()
 {
-	if (IsKeyPressed(KEY_R) && current_weapon == revolver && clips > 1)
+	if (IsKeyPressed(KEY_R) && clips > 1)
 	{
 		bullet_amount = 6;
 	}
-	else if (IsKeyPressed(KEY_R) && current_weapon == repeater && clips > 1)
+	else if (IsKeyPressed(KEY_R) && clips > 1)
 	{
 		bullet_amount = 12;
 	}
