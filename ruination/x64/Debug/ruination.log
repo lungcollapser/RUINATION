@@ -1,37 +1,8 @@
-﻿  camera.cpp
-  player.cpp
-  revolver.cpp
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.h(10,11): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'revolver.cpp')
-  
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.h(10,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'revolver.cpp')
-  
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.h(10,27): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'revolver.cpp')
-  
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.h(11,9): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'revolver.cpp')
-  
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.h(11,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'revolver.cpp')
-  
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.h(11,24): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'revolver.cpp')
-  
+﻿  revolver.cpp
   ruination.cpp
   weapon.cpp
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\revolver.h(5,25): error C2504: 'weapon': base class undefined
-  (compiling source file 'weapon.cpp')
-  
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.h(11,9): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'weapon.cpp')
-  
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.h(11,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'weapon.cpp')
-  
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\player.h(11,24): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'weapon.cpp')
-  
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\weapon.cpp(22,109): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\weapon.cpp(20,95): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   Generating Code...
+  ruination.vcxproj -> C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\x64\Debug\ruination.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.

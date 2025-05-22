@@ -131,6 +131,7 @@
     <ClCompile Include="camera.cpp" />
     <ClCompile Include="enemy.cpp" />
     <ClCompile Include="player.cpp" />
+    <ClCompile Include="repeater.cpp" />
     <ClCompile Include="revolver.cpp" />
     <ClCompile Include="ruination.cpp" />
     <ClCompile Include="weapon.cpp" />
@@ -141,6 +142,7 @@
     <ClInclude Include="enemy.h" />
     <ClInclude Include="include.h" />
     <ClInclude Include="player.h" />
+    <ClInclude Include="repeater.h" />
     <ClInclude Include="revolver.h" />
     <ClInclude Include="weapon.h" />
   </ItemGroup>

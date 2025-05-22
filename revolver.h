@@ -7,5 +7,4 @@ class revolver : public weapon
 public:
 	revolver();
 	~revolver();
-
 };
