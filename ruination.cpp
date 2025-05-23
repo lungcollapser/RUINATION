@@ -1,12 +1,11 @@
 #include "include.h"
+#include "bullet.h"
 #include "camera.h"
 #include "player.h"
 #include "enemy.h"
-#include "bullet.h"
-#include "weapon.h"
 
+std::vector<bullet> bullets;
 
-bullet bullet_main;
 player player_main;
 camera camera_main;
 enemy enemy_main;
@@ -22,9 +21,8 @@ void weapon_logic()
 }
 void bullet_logic()
 {
-    bullet_main.bullet_hitbox();
 
-    for (auto& bullet : player_main.current_weapon.bullets)
+    for (auto& bullet : bullets)
     {
         bullet.update_position();
     }
@@ -42,7 +40,7 @@ void draw()
     ClearBackground(BLACK);
     BeginMode2D(camera_main.player_camera);
 
-    for (auto& bullet : player_main.current_weapon.bullets)
+    for (auto& bullet : bullets)
     {
         bullet.draw(player_main.player_object);
     }
@@ -50,15 +48,13 @@ void draw()
     DrawLine(800, 0, 0, 800, WHITE);
     DrawLine(0, 0, 800, 800, WHITE);
     player_main.draw();
-    player_main.current_weapon.draw(player_main.player_object);
     enemy_main.draw();
     EndMode2D();
     EndDrawing();
 }
 void input()
 {
-    player_main.current_weapon.fire(player_main.player_object);
-    player_main.current_weapon.reload();
+    player_main.take_input();
     player_main.take_input();
     camera_main.take_input();
 }
@@ -84,7 +80,6 @@ int main()
         camera_logic();
         bullet_logic();
         draw();
-
     }
     // tells the window to close when told
     CloseWindow();

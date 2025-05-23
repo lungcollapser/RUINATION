@@ -6,17 +6,25 @@ player::player()
 {
 	//initializations
 	player_object = { 0.0f, 0.0f };
-	player_speed = 100;
+	player_speed = 525;
+
+	current_weapon = new weapon();
+	revolver_player = new revolver();
+	repeater_player = new repeater();
 }
 //destructor
 player::~player()
 {
-
+	delete revolver_player;
+	delete repeater_player;
 }
 //player drawings
 void player::draw()
 {
 	DrawCircleV(player_object, 25, WHITE);
+
+	player_reticle = GetMousePosition();
+	DrawCircleV(player_object + player_reticle, 8, RED);
 	
 }
 //player movements
@@ -57,9 +65,25 @@ void player::take_input()
 	if (IsKeyPressed(KEY_ONE))
 	{
 		current_weapon = revolver_player;
-		std::cout << current_weapon.current_clips;
+	}
+	else
+	{
+		current_weapon = revolver_player;
+		std::cout << current_weapon->bullet_amount;
+	}
+	if (current_weapon->bullet_amount > 0 && IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+	{
+		current_weapon->fire(player_object);
 	}
 
+	if (IsKeyPressed(KEY_R) && current_weapon->current_clips > 1)
+	{
+		current_weapon->bullet_amount = 6;
+	}
+	else if (IsKeyPressed(KEY_R) && current_weapon->current_clips > 1)
+	{
+		current_weapon->bullet_amount = 12;
+	}
 }
 
 

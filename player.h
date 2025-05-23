@@ -1,11 +1,13 @@
 #pragma once
 #include "include.h"
 #include "revolver.h"
+#include "repeater.h"
 
 class player
 {
 protected:
 	int player_speed;
+	Vector2 player_reticle;
 public:
 	//constructor
 	player();
@@ -17,6 +19,7 @@ public:
 	void take_input();
 	//player attributes
 	Vector2 player_object;
-	weapon current_weapon;
-	revolver revolver_player;
+	weapon *current_weapon;
+	revolver *revolver_player;
+	repeater *repeater_player;
 };

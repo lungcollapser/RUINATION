@@ -1,8 +1,4 @@
-﻿  revolver.cpp
-  ruination.cpp
-  weapon.cpp
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\weapon.cpp(20,95): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Generating Code...
+﻿  player.cpp
   ruination.vcxproj -> C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\x64\Debug\ruination.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.
