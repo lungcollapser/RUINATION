@@ -2,6 +2,7 @@
 #include "include.h"
 #include "bullet.h"
 
+
 class weapon
 {
 private:
@@ -11,7 +12,6 @@ protected:
 public:
 	weapon();
 	~weapon();
-	void draw(Vector2 &player_object);
 	void fire(Vector2 &player_object);
 	void take_input();
 	void change_weapon();
@@ -22,6 +22,4 @@ public:
 	int bullet_amount;
 	int clips;
 	int current_clips;
-
-
 };
