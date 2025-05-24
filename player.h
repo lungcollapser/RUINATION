@@ -19,6 +19,7 @@ public:
 	void take_input();
 	//player attributes
 	Vector2 player_object;
+	std::vector<bullet>& get_bullets();
 	weapon *current_weapon;
 	revolver *revolver_player;
 	repeater *repeater_player;

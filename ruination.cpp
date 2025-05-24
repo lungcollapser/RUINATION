@@ -1,10 +1,8 @@
 #include "include.h"
-#include "bullet.h"
 #include "camera.h"
 #include "player.h"
 #include "enemy.h"
-
-std::vector<bullet> bullets;
+#include "weapon.h"
 
 player player_main;
 camera camera_main;
@@ -22,7 +20,7 @@ void weapon_logic()
 void bullet_logic()
 {
 
-    for (auto& bullet : bullets)
+    for (auto& bullet : player_main.get_bullets())
     {
         bullet.update_position();
     }
@@ -40,7 +38,7 @@ void draw()
     ClearBackground(BLACK);
     BeginMode2D(camera_main.player_camera);
 
-    for (auto& bullet : bullets)
+    for (auto& bullet : player_main.get_bullets())
     {
         bullet.draw(player_main.player_object);
     }
@@ -54,7 +52,6 @@ void draw()
 }
 void input()
 {
-    player_main.take_input();
     player_main.take_input();
     camera_main.take_input();
 }

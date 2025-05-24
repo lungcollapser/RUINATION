@@ -8,10 +8,6 @@ bullet::bullet(Vector2 fire_position, int bullet_speed)
 	this->bullet_speed = bullet_speed;
 
 }
-bullet::bullet()
-{
-
-}
 bullet::~bullet()
 {
 
