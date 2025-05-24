@@ -33,3 +33,4 @@ void weapon::take_input()
 		}
 	}
 }
+
