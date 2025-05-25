@@ -2,7 +2,7 @@
 
 revolver::revolver()
 {
-	bullet_speed = 70000;
+	bullet_speed = 1000;
 	clips = 2;
 }
 revolver::~revolver()

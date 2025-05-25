@@ -2,7 +2,7 @@
 
 repeater::repeater()
 {
-	bullet_speed = 90000;
+	bullet_speed = 2000;
 	clips = 4;
 }
 repeater::~repeater()
