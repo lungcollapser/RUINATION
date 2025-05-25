@@ -29,9 +29,7 @@ player::~player()
 void player::draw()
 {
 	DrawCircleV(player_object, 25, WHITE);
-
-	player_reticle = GetMousePosition();
-	DrawCircleV(player_object + player_reticle, 8, RED);
+	current_weapon->draw(player_object);
 	
 }
 
@@ -42,7 +40,7 @@ std::vector<bullet>& player::get_bullets()
 //player movements
 void player::take_input()
 {
-	Vector2 direction = { 0,0 };
+	Vector2 direction = { 0.0f, 0.0f };
 
 	if (IsKeyDown(KEY_D))
 	{
@@ -63,7 +61,7 @@ void player::take_input()
 
 	Vector2 velocity = Vector2Scale(Vector2Normalize(direction), player_speed * GetFrameTime());
 	player_object = Vector2Add(player_object, velocity);
-
+	current_weapon->weapon_reticle = Vector2Add(current_weapon->weapon_reticle, velocity);
 
 	if (IsKeyDown(KEY_LEFT_SHIFT))
 	{

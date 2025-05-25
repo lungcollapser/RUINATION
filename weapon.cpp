@@ -3,7 +3,7 @@
 
 weapon::weapon()
 {
-	weapon_reticle = { 0, 0 };
+	weapon_reticle = {0, 0};
 	is_reloading = false;
 }
 
@@ -17,9 +17,14 @@ void weapon::fire(Vector2 &player_object)
 	/*Vector2 direction = {cos(PI / 180), -sin(PI / 180)};
 	Vector2 bullet_velocity = Vector2Scale(direction, bullet_speed);*/
 	
-	bullets.push_back(bullet(Vector2MoveTowards(player_object, weapon_reticle, 1), bullet_speed * GetFrameTime()));
+	bullets.push_back(bullet(Vector2MoveTowards(player_object, weapon_reticle, 1), bullet_speed));
 	bullet_amount -= 1;
 
+}
+void weapon::draw(Vector2 &player_object)
+{
+	weapon_reticle = GetMousePosition();
+	DrawCircleV(weapon_reticle + player_object, 8, RED);
 }
 
 void weapon::take_input()

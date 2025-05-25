@@ -72,11 +72,11 @@ int main()
 
     while (!WindowShouldClose())
     {
-        
+        draw();
+        bullet_logic();
         input();
         camera_logic();
-        bullet_logic();
-        draw();
+       
     }
     // tells the window to close when told
     CloseWindow();
