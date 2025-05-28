@@ -61,7 +61,6 @@ void player::take_input()
 
 	Vector2 velocity = Vector2Scale(Vector2Normalize(direction), player_speed * GetFrameTime());
 	player_object = Vector2Add(player_object, velocity);
-	current_weapon->weapon_reticle = Vector2Add(current_weapon->weapon_reticle, velocity);
 
 	if (IsKeyDown(KEY_LEFT_SHIFT))
 	{
