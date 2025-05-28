@@ -12,7 +12,7 @@ protected:
 public:
 	weapon();
 	~weapon();
-	void fire(Vector2 &player_object);
+	void fire(Vector2 player_object);
 	void take_input();
 	void change_weapon();
 	void reload();

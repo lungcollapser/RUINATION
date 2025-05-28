@@ -54,6 +54,7 @@ void input()
 {
     player_main.take_input();
     camera_main.take_input();
+
 }
 
 // main func
@@ -72,9 +73,9 @@ int main()
 
     while (!WindowShouldClose())
     {
+        input();
         draw();
         bullet_logic();
-        input();
         camera_logic();
        
     }
