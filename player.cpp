@@ -5,7 +5,6 @@
 player::player()
 {
 	//initializations
-	player_object = { 0.0f, 0.0f };
 	player_speed = 525;
 
 	current_weapon = new weapon();
@@ -38,7 +37,7 @@ std::vector<bullet>& player::get_bullets()
 	return current_weapon->bullets;
 }
 //player movements
-void player::take_input()
+void player::take_input(Vector2 &center_position)
 {
 	Vector2 direction = { 0.0f, 0.0f };
 
@@ -84,7 +83,7 @@ void player::take_input()
 	
 	if (current_weapon->bullet_amount > 0 && IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
 	{
-		current_weapon->fire(player_object);
+		current_weapon->fire(center_position);
 		std::cout << current_weapon->bullet_amount;
 	}
 	else
