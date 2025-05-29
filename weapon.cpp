@@ -11,13 +11,13 @@ weapon::~weapon()
 {
 
 }
-void weapon::fire(Vector2 player_object)
+void weapon::fire(Vector2 &center_position)
 {
 	//Could possibly use later if speed is on Vector2. For now just use given value.
 	/*Vector2 direction = {cos(PI / 180), -sin(PI / 180)};
 	Vector2 bullet_velocity = Vector2Scale(direction, bullet_speed);*/
 	
-	bullets.push_back(bullet(Vector2Normalize(Vector2Subtract(GetMousePosition(), player_object)), bullet_speed));
+	bullets.push_back(bullet(Vector2Normalize(Vector2Subtract(weapon_reticle, center_position)), bullet_speed));
 	bullet_amount -= 1;
 
 }

@@ -12,6 +12,8 @@ enemy enemy_main;
 int screen_size_x = 1920;
 int screen_size_y = 1080;
 
+Vector2 center_position = { 0, 0 };
+
 void weapon_logic()
 {
 
@@ -52,7 +54,7 @@ void draw()
 }
 void input()
 {
-    player_main.take_input();
+    player_main.take_input(center_position);
     camera_main.take_input();
 
 }

@@ -16,7 +16,7 @@ public:
 	//player actions
 	void draw();
 	//player movement
-	void take_input();
+	void take_input(Vector2 &center_position);
 	//player attributes
 	Vector2 player_object;
 	std::vector<bullet>& get_bullets();
