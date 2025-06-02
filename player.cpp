@@ -76,11 +76,7 @@ void player::take_input(Vector2 &center_position)
 	if (current_weapon->bullet_amount > 0 && IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
 	{
 		current_weapon->fire(center_position);
-	}
-	else
-	{
-		return;
-	}
+	} 
 
 	if (IsKeyPressed(KEY_R) && current_weapon->current_clips >= 1)
 	{

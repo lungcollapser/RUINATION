@@ -3,10 +3,12 @@
 #include "player.h"
 #include "enemy.h"
 #include "weapon.h"
+#include "ammo.h"
 
 player player_main;
 camera camera_main;
 enemy enemy_main;
+ammo ammo_main;
 
 
 int screen_size_x = 1920;
@@ -14,9 +16,14 @@ int screen_size_y = 1080;
 
 Vector2 center_position = { 0, 0 };
 
-void weapon_logic()
+void ammo_logic()
 {
-
+    if (ammo_main.ammo_drop == player_main.player_object)
+    {
+        player_main.current_weapon->current_clips += 1;
+        std::cout << "clipped";
+        
+    }
     
 }
 void bullet_logic()
@@ -49,6 +56,7 @@ void draw()
     DrawLine(0, 0, 800, 800, WHITE);
     player_main.draw();
     enemy_main.draw();
+    ammo_main.draw_clips();
     EndMode2D();
     EndDrawing();
 }
@@ -78,6 +86,7 @@ int main()
         input();
         draw();
         bullet_logic();
+        ammo_logic();
         camera_logic();
        
     }
