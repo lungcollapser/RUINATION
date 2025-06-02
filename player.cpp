@@ -14,8 +14,8 @@ player::player()
 	revolver_player->bullet_amount = 6;
 	repeater_player->bullet_amount = 12;
 
-	revolver_player->current_clips = 1;
-	repeater_player->current_clips = 1;
+	revolver_player->current_clips = 2;
+	repeater_player->current_clips = 2;
 
 }
 //destructor
@@ -61,30 +61,21 @@ void player::take_input(Vector2 &center_position)
 	Vector2 velocity = Vector2Scale(Vector2Normalize(direction), player_speed * GetFrameTime());
 	player_object = Vector2Add(player_object, velocity);
 
-	if (IsKeyDown(KEY_LEFT_SHIFT))
-	{
-		player_speed = 325;
-	}
-	else
-	{
-		player_speed = 525;
-	}
 
 	if (IsKeyPressed(KEY_ONE))
 	{
 		current_weapon = revolver_player;
+		std::cout << current_weapon->current_clips;
 	}
 	else if (IsKeyPressed(KEY_TWO))
 	{
 		current_weapon = repeater_player;
+		std::cout << current_weapon->current_clips;
 	}
-
-
 	
 	if (current_weapon->bullet_amount > 0 && IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
 	{
 		current_weapon->fire(center_position);
-		std::cout << current_weapon->bullet_amount;
 	}
 	else
 	{
@@ -94,6 +85,8 @@ void player::take_input(Vector2 &center_position)
 	if (IsKeyPressed(KEY_R) && current_weapon->current_clips >= 1)
 	{
 		current_weapon->bullet_amount = 6;
+		current_weapon->current_clips -= 1;
+		std::cout << "reloard";
 	}
 	
 }

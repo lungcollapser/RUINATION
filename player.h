@@ -1,7 +1,8 @@
 #pragma once
-#include "include.h"
 #include "revolver.h"
 #include "repeater.h"
+#include "include.h"
+
 
 class player
 {
