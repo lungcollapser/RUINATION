@@ -3,20 +3,30 @@
 #include "player.h"
 #include "enemy.h"
 #include "weapon.h"
+#include "ammo.h"
 
 player player_main;
 camera camera_main;
 enemy enemy_main;
+ammo ammo_main;
 
 
 int screen_size_x = 1920;
 int screen_size_y = 1080;
 
 Vector2 center_position = { 0, 0 };
+bool player_collision = false;
 
-void weapon_logic()
+void ammo_logic()
 {
+    player_collision = CheckCollisionRecs(player_main.collision, ammo_main.collision);
 
+    if (player_collision)
+    {
+        player_main.current_weapon->current_clips += 1;
+        std::cout << "clipped";
+        
+    }
     
 }
 void bullet_logic()
@@ -47,6 +57,7 @@ void draw()
 
     DrawLine(800, 0, 0, 800, WHITE);
     DrawLine(0, 0, 800, 800, WHITE);
+    ammo_main.draw_clips();
     player_main.draw();
     enemy_main.draw();
     EndMode2D();
@@ -76,9 +87,10 @@ int main()
     while (!WindowShouldClose())
     {
         input();
-        draw();
         bullet_logic();
+        ammo_logic();
         camera_logic();
+        draw();
        
     }
     // tells the window to close when told
