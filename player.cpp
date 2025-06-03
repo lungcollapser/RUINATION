@@ -5,6 +5,7 @@
 player::player()
 {
 	//initializations
+	collision = { 0, 0 };
 	player_speed = 525;
 
 	current_weapon = new weapon();
@@ -29,6 +30,7 @@ void player::draw()
 {
 	DrawCircleV(player_object, 25, WHITE);
 	current_weapon->draw(player_object);
+	DrawRectangle(collision.x + player_object.x - 25, collision.y + player_object.y - 25, 50, 50, PURPLE);
 	
 }
 
@@ -85,6 +87,11 @@ void player::take_input(Vector2 &center_position)
 		std::cout << "reloard";
 	}
 	
+}
+void player::player_update(Rectangle object)
+{
+	GetCollisionRec(collision, object);
+
 }
 
 

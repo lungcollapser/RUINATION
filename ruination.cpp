@@ -15,10 +15,13 @@ int screen_size_x = 1920;
 int screen_size_y = 1080;
 
 Vector2 center_position = { 0, 0 };
+bool player_collision = false;
 
 void ammo_logic()
 {
-    if (ammo_main.ammo_drop == player_main.player_object)
+    player_collision = CheckCollisionRecs(player_main.collision, ammo_main.collision);
+
+    if (player_collision)
     {
         player_main.current_weapon->current_clips += 1;
         std::cout << "clipped";
@@ -54,9 +57,9 @@ void draw()
 
     DrawLine(800, 0, 0, 800, WHITE);
     DrawLine(0, 0, 800, 800, WHITE);
+    ammo_main.draw_clips();
     player_main.draw();
     enemy_main.draw();
-    ammo_main.draw_clips();
     EndMode2D();
     EndDrawing();
 }
@@ -84,10 +87,10 @@ int main()
     while (!WindowShouldClose())
     {
         input();
-        draw();
         bullet_logic();
         ammo_logic();
         camera_logic();
+        draw();
        
     }
     // tells the window to close when told
