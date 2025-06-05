@@ -91,15 +91,7 @@ Rectangle player::get_rectangle()
 {
 	return Rectangle{ player_object.x - 25, player_object.y - 25, 50, 50 };
 }
-void player::collision_logic(bool is_colliding)
-{
-	if (is_colliding)
-	{
-		current_weapon->current_clips += 1;
-		std::cout << "clipped";
 
-	}
-}
 
 
 
