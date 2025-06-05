@@ -15,10 +15,11 @@ int screen_size_x = 800;
 int screen_size_y = 800;
 
 Vector2 center_position = { 0, 0 };
+bool player_collision = false;
 
 void ammo_logic()
 {
-    bool player_collision = CheckCollisionRecs(player_main.get_rectangle(), ammo_main.get_clips_rectangle());
+    player_collision = CheckCollisionRecs(player_main.get_rectangle(), ammo_main.get_clips_rectangle());
     
     if (player_collision)
     {
@@ -32,8 +33,16 @@ void bullet_logic()
 
     for (auto& bullet : player_main.get_bullets())
     {
-        bullet.update_position();
+        bullet.update_position(screen_size_x, screen_size_y);
     }
+
+    player_collision = CheckCollisionRecs(bullet_main.get_rectangle(), enemy_main.get_rectangle());
+
+    if (player_collision)
+    {
+        enemy_main.enemy_state = 1;
+    }
+
 }
 void camera_logic()
 {
@@ -85,11 +94,11 @@ int main()
 
     while (!WindowShouldClose())
     {
-        draw();
-        input();
         bullet_logic();
         ammo_logic();
         camera_logic();
+        draw();
+        input();
     }
     // tells the window to close when told
     CloseWindow();

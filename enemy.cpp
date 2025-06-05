@@ -14,17 +14,22 @@ enemy::~enemy()
 }
 void enemy::draw()
 {
-	DrawCircleV(enemy_object, 30, PURPLE);
+	if (enemy_state == 0)
+	{
+		DrawCircleV(enemy_object, 30, PURPLE);
+		DrawRectangleLinesEx(get_rectangle(), 3, WHITE);
+	}
+	else
+	{
+		return;
+	}
+	
 }
 void enemy::update_position()
 {
 
 }
-void enemy::enemy_hitbox(Vector2 projectile)
+Rectangle enemy::get_rectangle()
 {
-	if (projectile == enemy_object)
-	{
-		enemy_health -= 1;
-		std::cout << "ayo";
-	}
+	return Rectangle{ enemy_object.x - 25, enemy_object.y - 25, 50, 50 };
 }
