@@ -18,10 +18,10 @@ public:
 	void draw();
 	//player movement
 	void take_input(Vector2 &center_position);
-	void player_update(Rectangle object);
+	void collision_logic(bool is_colliding);
+	Rectangle get_rectangle();
 	//player attributes
 	Vector2 player_object;
-	Rectangle collision;
 	std::vector<bullet>& get_bullets();
 	weapon *current_weapon;
 	revolver *revolver_player;
