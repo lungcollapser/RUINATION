@@ -9,7 +9,10 @@ void ammo::draw_clips()
 {
 	DrawCircleV(clips_drop, 20, YELLOW);
 	DrawCircleV(ammo_drop, 20, ORANGE);
-	DrawRectangleLinesEx(get_clips_rectangle(), 3, PURPLE);
+	switch (ammo_state)
+	{
+		dropped: DrawRectangleLinesEx(get_clips_rectangle(), 3, PURPLE);
+	}
 
 }
 Rectangle ammo::get_clips_rectangle()

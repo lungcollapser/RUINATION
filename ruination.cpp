@@ -4,26 +4,26 @@
 #include "enemy.h"
 #include "weapon.h"
 #include "ammo.h"
+#include "bullet.h"
 
 player player_main;
 camera camera_main;
 enemy enemy_main;
 ammo ammo_main;
 
+bool player_collision = false;
 
 int screen_size_x = 800;
 int screen_size_y = 800;
-
-Vector2 center_position = { 0, 0 };
-bool player_collision = false;
 
 void ammo_logic()
 {
     player_collision = CheckCollisionRecs(player_main.get_rectangle(), ammo_main.get_clips_rectangle());
     
-    if (player_collision)
+    if (player_collision && ammo_main.dropped)
     {
         player_main.current_weapon->current_clips += 1;
+        ammo_main.picked_up;
         std::cout << "clipped";
 
     }
@@ -36,7 +36,7 @@ void bullet_logic()
         bullet.update_position(screen_size_x, screen_size_y);
     }
 
-    player_collision = CheckCollisionRecs(bullet_main.get_rectangle(), enemy_main.get_rectangle());
+    player_collision = CheckCollisionRecs(player_main.get_rectangle(), enemy_main.get_rectangle());
 
     if (player_collision)
     {
@@ -73,6 +73,8 @@ void draw()
 }
 void input()
 {
+    Vector2 center_position = { 0, 0 };
+
     player_main.take_input(center_position);
     camera_main.take_input();
 

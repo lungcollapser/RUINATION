@@ -1,3 +1,6 @@
-﻿  ruination.cpp
-ruination.obj : error LNK2019: unresolved external symbol "public: __cdecl bullet::bullet(void)" (??0bullet@@QEAA@XZ) referenced in function "void __cdecl `dynamic initializer for 'bullet_main''(void)" (??__Ebullet_main@@YAXXZ)
-C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\x64\Debug\ruination.exe : fatal error LNK1120: 1 unresolved externals
+﻿  ammo.cpp
+  ruination.cpp
+  Generating Code...
+  ruination.vcxproj -> C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\x64\Debug\ruination.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.
