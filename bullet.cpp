@@ -2,6 +2,10 @@
 
 enemy enemy_bullet;
 
+bullet::bullet()
+{
+
+}
 bullet::bullet(Vector2 fire_position, int bullet_speed)
 {
 	this->fire_position = fire_position;

@@ -14,9 +14,8 @@ public:
 	~weapon();
 	void fire(Vector2 &center_position);
 	void take_input();
-	void change_weapon();
-	void reload();
 	void draw(Vector2 &player_object);
+	Rectangle get_bull_rectangle();
 	Vector2 weapon_reticle;
 	std::vector<bullet> bullets;
 	int bullet_speed;
