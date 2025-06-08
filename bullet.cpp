@@ -22,7 +22,7 @@ void bullet::draw(Vector2 player_position)
 	if (active)
 	{
 		DrawCircleV(fire_position + player_position, 10, BLUE);
-		DrawRectangleLinesEx(get_rectangle(), 3, RED);
+		DrawRectangleLinesEx(get_rectangle(player_position), 3, RED);
 	}
 }
 void bullet::update_position(int screen_x, int screen_y)
@@ -40,7 +40,7 @@ void bullet::update_position(int screen_x, int screen_y)
 	}
 
 }
-Rectangle bullet::get_rectangle()
+Rectangle bullet::get_rectangle(Vector2 player_position)
 {
-	return Rectangle{ fire_position.x, fire_position.y, 15, 15 };
+	return Rectangle{ fire_position.x + player_position.x, fire_position.y + player_position.y, 15, 15 };
 }
