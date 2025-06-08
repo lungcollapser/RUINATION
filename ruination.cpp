@@ -20,10 +20,10 @@ void ammo_logic()
 {
     player_collision = CheckCollisionRecs(player_main.get_rectangle(), ammo_main.get_clips_rectangle());
     
-    if (player_collision && ammo_main.dropped)
+    if (player_collision && ammo_main.ammo_state == 0)
     {
         player_main.current_weapon->current_clips += 1;
-        ammo_main.picked_up;
+        ammo_main.ammo_state = 1;
         std::cout << "clipped";
 
     }
@@ -34,9 +34,8 @@ void bullet_logic()
     for (auto& bullet : player_main.get_bullets())
     {
         bullet.update_position(screen_size_x, screen_size_y);
+        player_collision = CheckCollisionRecs(bullet.get_rectangle(player_main.player_object), enemy_main.get_rectangle());
     }
-
-    player_collision = CheckCollisionRecs(player_main.get_rectangle(), enemy_main.get_rectangle());
 
     if (player_collision)
     {

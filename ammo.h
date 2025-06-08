@@ -4,10 +4,7 @@
 class ammo
 {
 public: 
-	enum ammo_state
-	{
-		dropped, picked_up
-	};
+	int ammo_state;
 
 	ammo();
 	void draw_clips();
