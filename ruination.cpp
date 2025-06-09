@@ -11,33 +11,32 @@ camera camera_main;
 enemy enemy_main;
 ammo ammo_main;
 
-bool player_collision = false;
 
 int screen_size_x = 800;
 int screen_size_y = 800;
 
 void ammo_logic()
 {
-    player_collision = CheckCollisionRecs(player_main.get_rectangle(), ammo_main.get_clips_rectangle());
+    bool player_collision = CheckCollisionRecs(player_main.get_rectangle(), ammo_main.get_clips_rectangle());
     
-    if (player_collision && ammo_main.ammo_state == 0)
+    if (player_collision && ammo_main.current_state == ammo_main.dropped)
     {
         player_main.current_weapon->current_clips += 1;
-        ammo_main.ammo_state = 1;
-        std::cout << "clipped";
+        ammo_main.current_state = ammo_main.picked_up;
 
     }
 }
 void bullet_logic()
 {
+    bool bullet_collision = false;
 
     for (auto& bullet : player_main.get_bullets())
     {
         bullet.update_position(screen_size_x, screen_size_y);
-        player_collision = CheckCollisionRecs(bullet.get_rectangle(player_main.player_object), enemy_main.get_rectangle());
+        bullet_collision = CheckCollisionRecs(bullet.get_rectangle(player_main.player_object), enemy_main.get_rectangle());
     }
 
-    if (player_collision)
+    if (bullet_collision)
     {
         enemy_main.current_state = enemy_main.dead;
     }

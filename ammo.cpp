@@ -4,20 +4,15 @@ ammo::ammo()
 {
 	ammo_drop = { 450, 450 };
 	clips_drop = { 450, 450 };
-	ammo_state = 0;
+	current_state = dropped;
 }
 void ammo::draw_clips()
 {
-	if (ammo_state == 0)
+	switch (current_state)
 	{
-		DrawCircleV(clips_drop, 20, YELLOW);
-
+	case 0: DrawCircleV(clips_drop, 20, YELLOW); break;
+	case 1: break;
 	}
-	else
-	{
-		return;
-	}
-
 }
 Rectangle ammo::get_clips_rectangle()
 {
