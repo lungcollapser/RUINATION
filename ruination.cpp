@@ -39,7 +39,7 @@ void bullet_logic()
 
     if (player_collision)
     {
-        enemy_main.enemy_state = 1;
+        enemy_main.current_state = enemy_main.dead;
     }
 
 }

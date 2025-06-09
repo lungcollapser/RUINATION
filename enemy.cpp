@@ -6,7 +6,7 @@ enemy::enemy()
 	enemy_object = { 200, 300 };
 	enemy_health = 1;
 	enemy_speed = 100;
-	enemy_state = 0;
+	current_state = alive;
 }
 enemy::~enemy()
 {
@@ -14,16 +14,12 @@ enemy::~enemy()
 }
 void enemy::draw()
 {
-	if (enemy_state == 0)
+
+	switch (current_state)
 	{
-		DrawCircleV(enemy_object, 30, PURPLE);
-		DrawRectangleLinesEx(get_rectangle(), 3, WHITE);
+	case alive: DrawCircleV(enemy_object, 30, PURPLE); DrawRectangleLinesEx(get_rectangle(), 3, WHITE); break;
+	case dead: break;
 	}
-	else
-	{
-		return;
-	}
-	
 }
 void enemy::update_position()
 {
