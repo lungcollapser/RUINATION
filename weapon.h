@@ -15,11 +15,11 @@ public:
 	void fire(Vector2 &center_position);
 	void take_input();
 	void draw(Vector2 &player_object);
-	Rectangle get_bull_rectangle();
 	Vector2 weapon_reticle;
 	std::vector<bullet> bullets;
 	int bullet_speed;
 	int bullet_amount;
+	int max_bullets;
 	int clips;
 	int current_clips;
 };

@@ -11,8 +11,8 @@ player::player()
 	revolver_player = new revolver();
 	repeater_player = new repeater();
 
-	revolver_player->bullet_amount = 6;
-	repeater_player->bullet_amount = 12;
+	revolver_player->bullet_amount = revolver_player->max_bullets;
+	repeater_player->bullet_amount = repeater_player->max_bullets;
 
 	revolver_player->current_clips = 2;
 	repeater_player->current_clips = 2;
@@ -81,7 +81,7 @@ void player::take_input(Vector2 &center_position)
 
 	if (IsKeyPressed(KEY_R) && current_weapon->current_clips >= 1)
 	{
-		current_weapon->bullet_amount = 6;
+		current_weapon->bullet_amount = current_weapon->max_bullets;
 		current_weapon->current_clips -= 1;
 		std::cout << "reloard";
 	}

@@ -28,7 +28,7 @@ void ammo_logic()
     
     if (ammo_collision && ammo_main.current_ammo_state == ammo_main.dropped)
     {
-        player_main.current_weapon->bullet_amount += 6;
+        player_main.current_weapon->bullet_amount += player_main.current_weapon->max_bullets;
         ammo_main.current_ammo_state = ammo_main.picked_up;
     }
 }
