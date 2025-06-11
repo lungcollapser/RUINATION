@@ -79,7 +79,7 @@ void player::take_input(Vector2 &center_position)
 		current_weapon->fire(center_position);
 	} 
 
-	if (IsKeyPressed(KEY_R) && current_weapon->current_clips >= 1)
+	if (IsKeyPressed(KEY_R) && current_weapon->current_clips >= 1 && current_weapon->bullet_amount < current_weapon->max_bullets)
 	{
 		current_weapon->bullet_amount = current_weapon->max_bullets;
 		current_weapon->current_clips -= 1;
