@@ -1,1 +1,113 @@
-﻿  ruination.vcxproj -> C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\x64\Debug\ruination.exe
+﻿  bullet.cpp
+  camera.cpp
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\weapon.h(19,14): error C2065: 'bullet': undeclared identifier
+  (compiling source file 'bullet.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\weapon.h(19,7): error C2923: 'std::vector': 'bullet' is not a valid template type argument for parameter '_Ty'
+  (compiling source file 'bullet.cpp')
+      C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\weapon.h(19,14):
+      see declaration of 'bullet'
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\weapon.h(19,7): error C2976: 'std::vector': too few template arguments
+  (compiling source file 'bullet.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\vector(442,7):
+      see declaration of 'std::vector'
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\enemy.h(16,14): error C2065: 'bullet': undeclared identifier
+  (compiling source file 'bullet.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\enemy.h(16,7): error C2923: 'std::vector': 'bullet' is not a valid template type argument for parameter '_Ty'
+  (compiling source file 'bullet.cpp')
+      C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\enemy.h(16,14):
+      see declaration of 'bullet'
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\enemy.h(16,7): error C2976: 'std::vector': too few template arguments
+  (compiling source file 'bullet.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\vector(442,7):
+      see declaration of 'std::vector'
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\enemy.h(16,14): error C2065: 'bullet': undeclared identifier
+  (compiling source file 'camera.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\enemy.h(16,7): error C2923: 'std::vector': 'bullet' is not a valid template type argument for parameter '_Ty'
+  (compiling source file 'camera.cpp')
+      C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\enemy.h(16,14):
+      see declaration of 'bullet'
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\enemy.h(16,7): error C2976: 'std::vector': too few template arguments
+  (compiling source file 'camera.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\vector(442,7):
+      see declaration of 'std::vector'
+  
+  enemy.cpp
+  player.cpp
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\enemy.h(16,14): error C2065: 'bullet': undeclared identifier
+  (compiling source file 'player.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\enemy.h(16,7): error C2923: 'std::vector': 'bullet' is not a valid template type argument for parameter '_Ty'
+  (compiling source file 'player.cpp')
+      C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\enemy.h(16,14):
+      see declaration of 'bullet'
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\enemy.h(16,7): error C2976: 'std::vector': too few template arguments
+  (compiling source file 'player.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\vector(442,7):
+      see declaration of 'std::vector'
+  
+  repeater.cpp
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\enemy.h(16,14): error C2065: 'bullet': undeclared identifier
+  (compiling source file 'repeater.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\enemy.h(16,7): error C2923: 'std::vector': 'bullet' is not a valid template type argument for parameter '_Ty'
+  (compiling source file 'repeater.cpp')
+      C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\enemy.h(16,14):
+      see declaration of 'bullet'
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\enemy.h(16,7): error C2976: 'std::vector': too few template arguments
+  (compiling source file 'repeater.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\vector(442,7):
+      see declaration of 'std::vector'
+  
+  revolver.cpp
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\enemy.h(16,14): error C2065: 'bullet': undeclared identifier
+  (compiling source file 'revolver.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\enemy.h(16,7): error C2923: 'std::vector': 'bullet' is not a valid template type argument for parameter '_Ty'
+  (compiling source file 'revolver.cpp')
+      C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\enemy.h(16,14):
+      see declaration of 'bullet'
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\enemy.h(16,7): error C2976: 'std::vector': too few template arguments
+  (compiling source file 'revolver.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\vector(442,7):
+      see declaration of 'std::vector'
+  
+  ruination.cpp
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\enemy.h(16,14): error C2065: 'bullet': undeclared identifier
+  (compiling source file 'ruination.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\enemy.h(16,7): error C2923: 'std::vector': 'bullet' is not a valid template type argument for parameter '_Ty'
+  (compiling source file 'ruination.cpp')
+      C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\enemy.h(16,14):
+      see declaration of 'bullet'
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\enemy.h(16,7): error C2976: 'std::vector': too few template arguments
+  (compiling source file 'ruination.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\vector(442,7):
+      see declaration of 'std::vector'
+  
+  weapon.cpp
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\enemy.h(16,14): error C2065: 'bullet': undeclared identifier
+  (compiling source file 'weapon.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\enemy.h(16,7): error C2923: 'std::vector': 'bullet' is not a valid template type argument for parameter '_Ty'
+  (compiling source file 'weapon.cpp')
+      C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\enemy.h(16,14):
+      see declaration of 'bullet'
+  
+C:\Users\thort\OneDrive\Desktop\C++ISFUN\source\repos\ruination\enemy.h(16,7): error C2976: 'std::vector': too few template arguments
+  (compiling source file 'weapon.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\vector(442,7):
+      see declaration of 'std::vector'
+  
+  Generating Code...

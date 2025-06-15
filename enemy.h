@@ -1,5 +1,6 @@
 #pragma once
 #include "include.h"
+#include "weapon.h"
 
 class enemy
 {
@@ -8,9 +9,11 @@ public:
 	~enemy();
 	void draw();
 	void update_position();
+	void fire(Vector2 &player_object);
 	Rectangle get_rectangle();
 	Vector2 enemy_object;
-	int enemy_health, enemy_speed;
+	int enemy_health, enemy_speed, bullet_speed;
+	std::vector<bullet> enemy_bullets;
 	enum enemy_state
 	{
 		alive = 0, 
