@@ -17,14 +17,13 @@ int screen_size_y = 800;
 
 void ammo_logic()
 {
-    bool clips_collision = CheckCollisionRecs(player_main.get_rectangle(), ammo_main.get_clips_rectangle({enemy_main.enemy_object}));
+    bool clips_collision = CheckCollisionRecs(player_main.get_rectangle(), ammo_main.get_clips_rectangle());
     bool ammo_collision = CheckCollisionRecs(player_main.get_rectangle(), ammo_main.get_ammo_rectangle({0, 0}));
     
     if (clips_collision && ammo_main.current_clips_state == ammo_main.dropped)
     {
         player_main.current_weapon->current_clips += 1;
         ammo_main.current_clips_state = ammo_main.picked_up;
-        std::cout << "clipped";
     }
     
     if (ammo_collision && ammo_main.current_ammo_state == ammo_main.dropped)
@@ -46,8 +45,10 @@ void bullet_logic()
     if (bullet_collision)
     {
         enemy_main.current_state = enemy_main.dead;
+        ammo_main.current_clips_state = ammo_main.dropped;
+        ammo_main.clips_drop = { enemy_main.enemy_object };
     }
-
+    enemy_main.fire(player_main.player_object);
 }
 void camera_logic()
 {
@@ -70,10 +71,7 @@ void draw()
 
     DrawLine(800, 0, 0, 800, WHITE);
     DrawLine(0, 0, 800, 800, WHITE);
-    if (enemy_main.current_state == enemy_main.dead)
-    {
-        ammo_main.draw_clips(enemy_main.enemy_object);
-    }
+    ammo_main.draw_clips();
     player_main.draw();
     enemy_main.draw();
     EndMode2D();
@@ -104,11 +102,11 @@ int main()
 
     while (!WindowShouldClose())
     {
+        draw();
+        input();
         bullet_logic();
         ammo_logic();
         camera_logic();
-        draw();
-        input();
     }
     // tells the window to close when told
     CloseWindow();
