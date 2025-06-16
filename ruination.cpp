@@ -4,13 +4,14 @@
 #include "enemy.h"
 #include "weapon.h"
 #include "ammo.h"
+#include "weapon.h"
 #include "bullet.h"
 
 player player_main;
 camera camera_main;
 enemy enemy_main;
 ammo ammo_main;
-
+weapon weapon_main;
 
 int screen_size_x = 800;
 int screen_size_y = 800;
@@ -36,7 +37,7 @@ void bullet_logic()
 {
     bool bullet_collision = false;
 
-    for (auto& bullet : player_main.get_bullets())
+    for (auto& bullet : enemy_main.get_bullets())
     {
         bullet.update_position(screen_size_x, screen_size_y);
         bullet_collision = CheckCollisionRecs(bullet.get_rectangle(player_main.player_object), enemy_main.get_rectangle());
@@ -48,7 +49,11 @@ void bullet_logic()
         ammo_main.current_clips_state = ammo_main.dropped;
         ammo_main.clips_drop = { enemy_main.enemy_object };
     }
-    enemy_main.fire(player_main.player_object);
+    if (IsMouseButtonDown(MOUSE_BUTTON_LEFT))
+    {
+        enemy_main.fire(player_main.player_object);
+    }
+    
 }
 void camera_logic()
 {
@@ -64,9 +69,9 @@ void draw()
     DrawFPS(10, 10);
     BeginMode2D(camera_main.player_camera);
 
-    for (auto& bullet : player_main.get_bullets())
+    for (auto& bullet : enemy_main.get_bullets())
     {
-        bullet.draw(player_main.player_object);
+        bullet.draw(enemy_main.enemy_object);
     }
 
     DrawLine(800, 0, 0, 800, WHITE);

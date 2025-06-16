@@ -1,6 +1,5 @@
 #include "bullet.h"
 
-enemy enemy_bullet;
 
 bullet::bullet()
 {

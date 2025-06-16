@@ -6,12 +6,21 @@ enemy::enemy()
 	enemy_object = { 200, 300 };
 	enemy_health = 1;
 	enemy_speed = 100;
-	bullet_speed = 100;
 	current_state = alive;
+
+	enemy_weapon = new weapon();
+	
+	enemy_weapon->bullet_speed = 300;
+
+
 }
 enemy::~enemy()
 {
 
+}
+std::vector<bullet>& enemy::get_bullets()
+{
+	return enemy_weapon->get_bullets(enemy_weapon);
 }
 void enemy::draw()
 {
@@ -24,7 +33,7 @@ void enemy::draw()
 }
 void enemy::fire(Vector2 &player_object)
 {
-	enemy_bullets.push_back(bullet(Vector2Normalize(Vector2Subtract(enemy_object, player_object)), bullet_speed));
+	enemy_weapon->fire(player_object, enemy_object, bullet_speed);
 }
 void enemy::update_position()
 {
