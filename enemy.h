@@ -8,11 +8,12 @@ public:
 	enemy();
 	~enemy();
 	void draw();
-	void update_position();
-	void fire(Vector2 &player_object);
+	void update_position(Vector2 player_object);
+	void fire(Vector2 &player_object, Vector2 center_position);
 	Rectangle get_rectangle();
 	weapon* enemy_weapon;
 	Vector2 enemy_object;
+	Vector2 enemy_position;
 
 	int enemy_health, enemy_speed, bullet_speed;
 	enum enemy_state
