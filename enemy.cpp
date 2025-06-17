@@ -5,7 +5,7 @@ enemy::enemy()
 {
 	enemy_object = { 200, 300 };
 	enemy_health = 1;
-	enemy_speed = 5000;
+	enemy_speed = 50;
 	current_state = alive;
 
 	enemy_weapon = new weapon();
@@ -34,13 +34,17 @@ void enemy::draw()
 }
 void enemy::fire(Vector2 &player_object, Vector2 center_position)
 {
-	enemy_weapon->fire(player_object, center_position, bullet_speed);
+	if (enemy_weapon->bullet_amount > 0)
+	{
+		enemy_weapon->fire(player_object, center_position, bullet_speed);
+		std::cout << "ayo";
+	}
 }
 void enemy::update_position(Vector2 player_object)
 {
 	Vector2 direction = { 0, 0 };
-	Vector2MoveTowards(player_object, enemy_object, 1 * enemy_speed);
-	std::cout << "okay";
+	Vector2 velocity = Vector2Scale(Vector2Normalize(direction), enemy_speed * GetFrameTime());
+	enemy_object = Vector2Subtract(player_object, enemy_object) * velocity;
 
 }
 Rectangle enemy::get_rectangle()
