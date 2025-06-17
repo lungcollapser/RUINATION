@@ -37,7 +37,7 @@ void bullet_logic()
 {
     bool bullet_collision = false;
 
-    for (auto& bullet : enemy_main.get_bullets())
+    for (auto& bullet : player_main.get_bullets())
     {
         bullet.update_position(screen_size_x, screen_size_y);
         bullet_collision = CheckCollisionRecs(bullet.get_rectangle(player_main.player_object), enemy_main.get_rectangle());
@@ -49,16 +49,17 @@ void bullet_logic()
         ammo_main.current_clips_state = ammo_main.dropped;
         ammo_main.clips_drop = { enemy_main.enemy_object };
     }
-    if (IsMouseButtonDown(MOUSE_BUTTON_LEFT))
-    {
-        enemy_main.fire(player_main.player_object);
-    }
+    
     
 }
 void camera_logic()
 {
     camera_main.update();
     camera_main.player_camera.offset = { screen_size_x / 2.0f, screen_size_y / 2.0f };
+}
+void enemy_logic()
+{
+    enemy_main.update_position(player_main.player_object);
 }
 
 void draw()
@@ -69,7 +70,7 @@ void draw()
     DrawFPS(10, 10);
     BeginMode2D(camera_main.player_camera);
 
-    for (auto& bullet : enemy_main.get_bullets())
+    for (auto& bullet : player_main.get_bullets())
     {
         bullet.draw(enemy_main.enemy_object);
     }
@@ -86,6 +87,7 @@ void input()
 {
     Vector2 center_position = { 0, 0 };
 
+    enemy_main.fire(player_main.player_object,center_position);
     player_main.take_input(center_position);
     camera_main.take_input();
 
@@ -111,6 +113,7 @@ int main()
         input();
         bullet_logic();
         ammo_logic();
+        enemy_logic();
         camera_logic();
     }
     // tells the window to close when told
