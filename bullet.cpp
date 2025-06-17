@@ -39,7 +39,7 @@ void bullet::update_position(int screen_x, int screen_y)
 	}
 
 }
-Rectangle bullet::get_rectangle(Vector2 player_position)
+Rectangle bullet::get_rectangle(Vector2 position)
 {
-	return Rectangle{ fire_position.x + player_position.x, fire_position.y + player_position.y, 15, 15 };
+	return Rectangle{ fire_position.x + position.x, fire_position.y + position.y, 15, 15 };
 }

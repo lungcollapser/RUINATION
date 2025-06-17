@@ -35,15 +35,22 @@ void ammo_logic()
 }
 void bullet_logic()
 {
-    bool bullet_collision = false;
+    bool player_collision = false;
+    bool enemy_collision = false;
+
 
     for (auto& bullet : player_main.get_bullets())
     {
         bullet.update_position(screen_size_x, screen_size_y);
-        bullet_collision = CheckCollisionRecs(bullet.get_rectangle(player_main.player_object), enemy_main.get_rectangle());
+        player_collision = CheckCollisionRecs(bullet.get_rectangle(player_main.player_object), enemy_main.get_rectangle());
+    }
+    for (auto& bullet : enemy_main.get_bullets())
+    {
+        bullet.update_position(screen_size_x, screen_size_y);
+        enemy_collision = CheckCollisionRecs(bullet.get_rectangle(enemy_main.enemy_object), player_main.get_rectangle());
     }
 
-    if (bullet_collision)
+    if (player_collision)
     {
         enemy_main.current_state = enemy_main.dead;
         ammo_main.current_clips_state = ammo_main.dropped;
@@ -71,6 +78,10 @@ void draw()
     BeginMode2D(camera_main.player_camera);
 
     for (auto& bullet : player_main.get_bullets())
+    {
+        bullet.draw(player_main.player_object);
+    }
+    for (auto& bullet : enemy_main.get_bullets())
     {
         bullet.draw(enemy_main.enemy_object);
     }
