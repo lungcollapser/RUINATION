@@ -98,7 +98,7 @@ void input()
 {
     Vector2 center_position = { 0, 0 };
 
-    enemy_main.fire(player_main.player_object,center_position);
+    enemy_main.fire(player_main.player_object, center_position);
     player_main.take_input(center_position);
     camera_main.take_input();
 
