@@ -12,14 +12,11 @@ player::player()
 
 	revolver_player->bullet_amount = revolver_player->max_bullets;
 	repeater_player->bullet_amount = repeater_player->max_bullets;
-
-	revolver_player->current_clips = 2;
-	repeater_player->current_clips = 2;
-
 }
 //destructor
 player::~player()
 {
+	delete current_weapon;
 	delete revolver_player;
 	delete repeater_player;
 }

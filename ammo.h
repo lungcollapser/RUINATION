@@ -5,11 +5,10 @@ class ammo
 {
 public: 
 	ammo();
-	void draw_clips();
+	void draw_clips(Vector2 position);
 	Vector2 draw_ammo(Vector2 position);
-	Rectangle get_clips_rectangle();
-	Rectangle get_ammo_rectangle(Vector2 position);
-	Vector2 clips_drop;
+	Rectangle get_rectangle(Vector2 position);
+	Vector2 clips_drop, ammo_drop;
 	enum ammo_state
 	{
 		dropped = 0,

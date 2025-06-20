@@ -4,22 +4,20 @@
 #include "enemy.h"
 #include "weapon.h"
 #include "ammo.h"
-#include "weapon.h"
 #include "bullet.h"
 
 player player_main;
 camera camera_main;
 enemy enemy_main;
 ammo ammo_main;
-weapon weapon_main;
 
 int screen_size_x = 800;
 int screen_size_y = 800;
 
 void ammo_logic()
 {
-    bool clips_collision = CheckCollisionRecs(player_main.get_rectangle(), ammo_main.get_clips_rectangle());
-    bool ammo_collision = CheckCollisionRecs(player_main.get_rectangle(), ammo_main.get_ammo_rectangle({0, 0}));
+    bool clips_collision = CheckCollisionRecs(player_main.get_rectangle(), ammo_main.get_rectangle({0, 0}));
+    bool ammo_collision = CheckCollisionRecs(player_main.get_rectangle(), ammo_main.get_rectangle({0, 0}));
     
     if (clips_collision && ammo_main.current_clips_state == ammo_main.dropped)
     {
@@ -88,7 +86,7 @@ void draw()
 
     DrawLine(800, 0, 0, 800, WHITE);
     DrawLine(0, 0, 800, 800, WHITE);
-    ammo_main.draw_clips();
+    ammo_main.draw_clips(enemy_main.enemy_object);
     player_main.draw();
     enemy_main.draw();
     EndMode2D();
@@ -127,6 +125,7 @@ int main()
         enemy_logic();
         camera_logic();
     }
+    delete player_main.current_weapon;
     // tells the window to close when told
     CloseWindow();
 

@@ -6,6 +6,7 @@ enemy::enemy()
 	enemy_health = 1;
 	enemy_speed = 1000;
 	current_state = alive;
+	enemy_object = { 200, 300 };
 
 	enemy_weapon = new weapon();
 	
@@ -16,7 +17,7 @@ enemy::enemy()
 }
 enemy::~enemy()
 {
-
+	delete enemy_weapon;
 }
 std::vector<bullet>& enemy::get_bullets()
 {
@@ -31,7 +32,7 @@ void enemy::draw()
 	case dead: break;
 	}
 }
-void enemy::fire(Vector2 &player_object, Vector2 center_position)
+void enemy::fire(Vector2 &player_object, Vector2 &center_position)
 {
 	if (enemy_weapon->bullet_amount > 0)
 	{
