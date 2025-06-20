@@ -15,7 +15,7 @@ std::vector<bullet>& weapon::get_bullets(weapon *weapon)
 {
 	return weapon->bullets;
 }
-void weapon::fire(Vector2 weapon_reticle, Vector2 &center_position, int bullet_speed)
+void weapon::fire(Vector2 &weapon_reticle, Vector2 &center_position, int bullet_speed)
 {
 	//Could possibly use later if speed is on Vector2. For now just use given value.
 	/*Vector2 direction = {cos(PI / 180), -sin(PI / 180)};

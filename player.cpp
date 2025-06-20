@@ -1,6 +1,5 @@
 #include "player.h"
 
-
 //constructor
 player::player()
 {
@@ -83,7 +82,6 @@ void player::take_input(Vector2 &center_position)
 	{
 		current_weapon->bullet_amount = current_weapon->max_bullets;
 		current_weapon->current_clips -= 1;
-		std::cout << "reloard";
 	}
 	
 }

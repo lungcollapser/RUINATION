@@ -8,7 +8,7 @@ public:
 	enemy();
 	~enemy();
 	void draw();
-	void update_position(Vector2 player_object);
+	void update_position(Vector2 &player_object);
 	void fire(Vector2 &player_object, Vector2 center_position);
 	Rectangle get_rectangle();
 	weapon* enemy_weapon;

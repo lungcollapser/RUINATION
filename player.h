@@ -22,6 +22,7 @@ public:
 	Rectangle get_rectangle();
 	//player attributes
 	Vector2 player_object;
+	Vector2 global_position;
 	std::vector<bullet>& get_bullets();
 	weapon *current_weapon;
 	revolver *revolver_player;
