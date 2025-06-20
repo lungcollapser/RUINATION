@@ -42,7 +42,7 @@ void enemy::update_position(Vector2 &player_object)
 {
 	Vector2 direction = Vector2Normalize(Vector2Subtract(player_object, enemy_object));
 
-	enemy_object = Vector2Scale(Vector2Normalize(direction), enemy_speed * GetFrameTime());
+	enemy_object = Vector2MoveTowards(enemy_object, player_object, 3);
 
 }
 Rectangle enemy::get_rectangle()
