@@ -2,7 +2,6 @@
 #include "include.h"
 #include "bullet.h"
 
-
 class weapon
 {
 private:
