@@ -6,10 +6,6 @@ player::player()
 	//initializations
 	player_speed = 525;
 
-	current_weapon = new weapon();
-	revolver_player = new revolver();
-	repeater_player = new repeater();
-
 	revolver_player->bullet_amount = revolver_player->max_bullets;
 	repeater_player->bullet_amount = repeater_player->max_bullets;
 }
@@ -19,8 +15,6 @@ player::~player()
 
 	//for some reason, deleting the current_weapon results in an exception being thrown. LOOK INTO THIS
 
-	delete revolver_player;
-	delete repeater_player;
 }
 //player drawings
 void player::draw()
@@ -31,7 +25,7 @@ void player::draw()
 
 }
 
-std::vector<bullet>& player::get_bullets()
+std::vector<bullet> player::get_bullets()
 {
 	return current_weapon->get_bullets(current_weapon);
 }
