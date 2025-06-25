@@ -16,7 +16,9 @@ player::player()
 //destructor
 player::~player()
 {
-	delete current_weapon;
+
+	//for some reason, deleting the current_weapon results in an exception being thrown. LOOK INTO THIS
+
 	delete revolver_player;
 	delete repeater_player;
 }

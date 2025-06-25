@@ -4,9 +4,8 @@
 enemy::enemy()
 {
 	enemy_health = 1;
-	enemy_speed = 1000;
+	enemy_speed = 3;
 	current_state = alive;
-	enemy_object = { 200, 300 };
 
 	enemy_weapon = new weapon();
 	
@@ -29,7 +28,7 @@ void enemy::draw()
 	switch (current_state)
 	{
 	case alive: DrawCircleV(enemy_object, 30, PURPLE); DrawRectangleLinesEx(get_rectangle(), 3, WHITE); break;
-	case dead: break;
+	case dead: enemy_speed = 0; break;
 	}
 }
 void enemy::fire(Vector2 &player_object, Vector2 &center_position)
@@ -41,9 +40,7 @@ void enemy::fire(Vector2 &player_object, Vector2 &center_position)
 }
 void enemy::update_position(Vector2 &player_object)
 {
-	Vector2 direction = Vector2Normalize(Vector2Subtract(player_object, enemy_object));
-
-	enemy_object = Vector2MoveTowards(enemy_object, player_object, 3);
+	enemy_object = Vector2MoveTowards(enemy_object, player_object, enemy_speed);
 
 }
 Rectangle enemy::get_rectangle()

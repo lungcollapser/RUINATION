@@ -16,7 +16,7 @@ int screen_size_y = 800;
 
 void ammo_logic()
 {
-    bool clips_collision = CheckCollisionRecs(player_main.get_rectangle(), ammo_main.get_rectangle({0, 0}));
+    bool clips_collision = CheckCollisionRecs(player_main.get_rectangle(), ammo_main.get_rectangle({enemy_main.enemy_object}));
     bool ammo_collision = CheckCollisionRecs(player_main.get_rectangle(), ammo_main.get_rectangle({0, 0}));
     
     if (clips_collision && ammo_main.current_clips_state == ammo_main.dropped)
@@ -125,7 +125,6 @@ int main()
         enemy_logic();
         camera_logic();
     }
-    delete player_main.current_weapon;
     // tells the window to close when told
     CloseWindow();
 
