@@ -16,8 +16,8 @@ public:
 	void take_input(Vector2 &center_position);
 	Rectangle get_rectangle();
 	Vector2 player_object;
-	std::vector<bullet>& get_bullets();
-	weapon *current_weapon;
-	revolver *revolver_player;
-	repeater *repeater_player;
+	std::vector<bullet> get_bullets();
+	std::shared_ptr<weapon> current_weapon;
+	std::shared_ptr<weapon> revolver_player;
+	std::shared_ptr<weapon> repeater_player;
 };

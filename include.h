@@ -1,10 +1,10 @@
 #pragma once
 #include "raylib.h"
 #include "raymath.h"
+#include <memory>
 #include <cstdlib>
 #include <ctime>
 #include <cmath>
 #include <vector>
 #include <string>
-
 #include <iostream>

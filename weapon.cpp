@@ -11,7 +11,7 @@ weapon::~weapon()
 {
 
 }
-std::vector<bullet>& weapon::get_bullets(weapon *weapon)
+std::vector<bullet> weapon::get_bullets(std::shared_ptr<weapon> weapon)
 {
 	return weapon->bullets;
 }
