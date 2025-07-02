@@ -4,7 +4,6 @@
 #include "enemy.h"
 #include "weapon.h"
 #include "ammo.h"
-#include "bullet.h"
 
 player player_main;
 camera camera_main;
@@ -42,11 +41,7 @@ void bullet_logic()
         bullet.update_position(screen_size_x, screen_size_y);
         player_collision = CheckCollisionRecs(bullet.get_rectangle(player_main.player_object), enemy_main.get_rectangle());
     }
-    for (auto& bullet : enemy_main.get_bullets())
-    {
-        bullet.update_position(screen_size_x, screen_size_y);
-        enemy_collision = CheckCollisionRecs(bullet.get_rectangle(enemy_main.enemy_object), player_main.get_rectangle());
-    }
+    
 
     if (player_collision)
     {
@@ -69,7 +64,6 @@ void enemy_logic()
 
 void draw()
 {
-
     BeginDrawing();
     ClearBackground(BLACK);
     DrawFPS(10, 10);
@@ -79,10 +73,7 @@ void draw()
     {
         bullet.draw(player_main.player_object);
     }
-    for (auto& bullet : enemy_main.get_bullets())
-    {
-        bullet.draw(enemy_main.enemy_object);
-    }
+    
 
     DrawLine(800, 0, 0, 800, WHITE);
     DrawLine(0, 0, 800, 800, WHITE);
@@ -96,7 +87,6 @@ void input()
 {
     Vector2 center_position = { 0, 0 };
 
-    enemy_main.fire(player_main.player_object, center_position);
     player_main.take_input(center_position);
     camera_main.take_input();
 
@@ -118,12 +108,13 @@ int main()
 
     while (!WindowShouldClose())
     {
-        draw();
         input();
         bullet_logic();
         ammo_logic();
         enemy_logic();
         camera_logic();
+        draw();
+
     }
     // tells the window to close when told
     CloseWindow();

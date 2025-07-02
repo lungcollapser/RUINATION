@@ -8,7 +8,6 @@ enemy::enemy()
 	current_state = alive;
 
 	enemy_weapon = new weapon();
-	
 	enemy_weapon->bullet_speed = 3000;
 	enemy_weapon->bullet_amount = 4;
 
@@ -18,7 +17,7 @@ enemy::~enemy()
 {
 	delete enemy_weapon;
 }
-std::vector<bullet>& enemy::get_bullets()
+std::vector<bullet> enemy::get_bullets()
 {
 	return enemy_weapon->get_bullets(enemy_weapon);
 }
