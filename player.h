@@ -17,7 +17,7 @@ public:
 	Rectangle get_rectangle();
 	Vector2 player_object;
 	std::vector<bullet> get_bullets();
-	std::shared_ptr<weapon> current_weapon;
-	std::shared_ptr<weapon> revolver_player;
-	std::shared_ptr<weapon> repeater_player;
+	weapon* current_weapon;
+	revolver* revolver_weapon;
+	repeater* repeater_weapon;
 };

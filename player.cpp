@@ -6,14 +6,21 @@ player::player()
 	//initializations
 	player_speed = 525;
 
-	revolver_player->bullet_amount = revolver_player->max_bullets;
-	repeater_player->bullet_amount = repeater_player->max_bullets;
+	current_weapon = new weapon();
+	revolver_weapon = new revolver();
+	repeater_weapon = new repeater();
+
+	revolver_weapon->bullet_amount = revolver_weapon->max_bullets;
+	repeater_weapon->bullet_amount = repeater_weapon->max_bullets;
 }
 //destructor
 player::~player()
 {
 
 	//for some reason, deleting the current_weapon results in an exception being thrown. LOOK INTO THIS
+
+	delete revolver_weapon;
+	delete repeater_weapon;
 
 }
 //player drawings
@@ -57,19 +64,18 @@ void player::take_input(Vector2 &center_position)
 
 	if (IsKeyPressed(KEY_ONE))
 	{
-		current_weapon = revolver_player;
+		current_weapon = revolver_weapon;
 		std::cout << current_weapon->current_clips;
+		std::cout << current_weapon->bullet_speed;
 	}
 	else if (IsKeyPressed(KEY_TWO))
 	{
-		current_weapon = repeater_player;
+		current_weapon = repeater_weapon;
 		std::cout << current_weapon->current_clips;
 	}
 	
-	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && current_weapon->bullet_amount > 0)
-	{
-		current_weapon->fire(current_weapon->weapon_reticle, center_position, current_weapon->bullet_speed);
-	}
+	
+	current_weapon->fire(current_weapon->weapon_reticle, center_position, current_weapon->bullet_speed);
 
 	if (IsKeyPressed(KEY_R) && current_weapon->current_clips >= 1 && current_weapon->bullet_amount < current_weapon->max_bullets)
 	{

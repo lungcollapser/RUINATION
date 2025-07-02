@@ -22,7 +22,7 @@ public:
 		dead = 1
 	};
 	enemy_state current_state;
-	std::vector<bullet>& get_bullets();
+	std::vector<bullet> get_bullets();
 
 
 };
