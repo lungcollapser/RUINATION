@@ -32,9 +32,9 @@ void player::draw()
 
 }
 
-std::vector<bullet> player::get_bullets()
+std::vector<bullet>& player::get_bullets()
 {
-	return current_weapon->get_bullets(current_weapon);
+	return current_weapon->bullets;
 }
 //player movements
 void player::take_input(Vector2 &center_position)
@@ -75,7 +75,10 @@ void player::take_input(Vector2 &center_position)
 	}
 	
 	
-	current_weapon->fire(current_weapon->weapon_reticle, center_position, current_weapon->bullet_speed);
+	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && current_weapon->bullet_amount > 0)
+	{
+		current_weapon->fire(current_weapon->weapon_reticle, center_position, current_weapon->bullet_speed);
+	}
 
 	if (IsKeyPressed(KEY_R) && current_weapon->current_clips >= 1 && current_weapon->bullet_amount < current_weapon->max_bullets)
 	{
