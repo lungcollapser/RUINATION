@@ -4,14 +4,16 @@
 #include "enemy.h"
 #include "weapon.h"
 #include "ammo.h"
+#include "bullet.h"
 
 player player_main;
 camera camera_main;
 enemy enemy_main;
 ammo ammo_main;
 
-int screen_size_x = 800;
-int screen_size_y = 800;
+static int screen_size_x = 800;
+static int screen_size_y = 800;
+
 
 void ammo_logic()
 {
@@ -108,12 +110,12 @@ int main()
 
     while (!WindowShouldClose())
     {
+        draw();
         input();
         bullet_logic();
         ammo_logic();
         enemy_logic();
         camera_logic();
-        draw();
 
     }
     // tells the window to close when told
