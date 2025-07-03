@@ -17,8 +17,19 @@ static int screen_size_y = 800;
 
 void ammo_logic()
 {
-    bool clips_collision = CheckCollisionRecs(player_main.get_rectangle(), ammo_main.get_rectangle({enemy_main.enemy_object}));
-    bool ammo_collision = CheckCollisionRecs(player_main.get_rectangle(), ammo_main.get_rectangle({0, 0}));
+    srand(time(0));
+    int item_drop_choice = rand() % 2;
+
+    //TODO: make the item drop choice global for all things that can be destroyed have the chance to drop items.
+    bool clips_collision = CheckCollisionRecs(player_main.get_rectangle(), ammo_main.get_rectangle({ ammo_main.clips_drop }));
+    bool ammo_collision = CheckCollisionRecs(player_main.get_rectangle(), ammo_main.get_rectangle({ ammo_main.ammo_drop }));
+
+    switch (item_drop_choice)
+    {
+    case 0: ammo_main.current_clips_state = ammo_main.dropped; ammo_main.clips_drop = enemy_main.enemy_object; break;
+    case 1: ammo_main.current_ammo_state = ammo_main.dropped; ammo_main.ammo_drop = enemy_main.enemy_object; break;
+    case 2: break;
+    }
     
     if (clips_collision && ammo_main.current_clips_state == ammo_main.dropped)
     {
@@ -28,7 +39,7 @@ void ammo_logic()
     
     if (ammo_collision && ammo_main.current_ammo_state == ammo_main.dropped)
     {
-        player_main.current_weapon->bullet_amount += player_main.current_weapon->max_bullets;
+        player_main.current_weapon->bullet_amount = player_main.current_weapon->max_bullets;
         ammo_main.current_ammo_state = ammo_main.picked_up;
     }
 }
@@ -48,8 +59,6 @@ void bullet_logic()
     if (player_collision)
     {
         enemy_main.current_state = enemy_main.dead;
-        ammo_main.current_clips_state = ammo_main.dropped;
-        ammo_main.clips_drop = { enemy_main.enemy_object };
     }
     
     
@@ -80,6 +89,7 @@ void draw()
     DrawLine(800, 0, 0, 800, WHITE);
     DrawLine(0, 0, 800, 800, WHITE);
     ammo_main.draw_clips(enemy_main.enemy_object);
+    ammo_main.draw_ammo(enemy_main.enemy_object);
     player_main.draw();
     enemy_main.draw();
     EndMode2D();

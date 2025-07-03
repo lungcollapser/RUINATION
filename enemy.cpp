@@ -17,7 +17,7 @@ void enemy::draw()
 	switch (current_state)
 	{
 	case alive: DrawCircleV(enemy_object, 30, PURPLE); DrawRectangleLinesEx(get_rectangle(), 3, WHITE); break;
-	case dead: break;
+	case dead: enemy_speed = 0; break;
 	}
 }
 
