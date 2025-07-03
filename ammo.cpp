@@ -1,5 +1,7 @@
 #include "ammo.h"
 
+//TODO: narrow position down so the code is less redudant. having to write that its the ammo drop position twice on ruination.cpp. once for draw and twice for collision. unnecessary 
+
 ammo::ammo()
 {
 	clips_drop = { 0, 0 };
@@ -13,14 +15,13 @@ void ammo::draw_clips(Vector2 position)
 	case 1: break;
 	}
 }
-Vector2 ammo::draw_ammo(Vector2 position)
+void ammo::draw_ammo(Vector2 position)
 {
 	switch (current_ammo_state)
 	{
 	case 0: DrawCircleV(ammo_drop, 20, GREEN); DrawRectangleLinesEx(get_rectangle(position), 3, WHITE); break;
 	case 1:break;
 	}
-	return position;
 }
 Rectangle ammo::get_rectangle(Vector2 position)
 {

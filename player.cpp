@@ -18,7 +18,6 @@ player::~player()
 {
 
 	//for some reason, deleting the current_weapon results in an exception being thrown. LOOK INTO THIS
-
 	delete revolver_weapon;
 	delete repeater_weapon;
 
@@ -66,7 +65,6 @@ void player::take_input(Vector2 &center_position)
 	{
 		current_weapon = revolver_weapon;
 		std::cout << current_weapon->current_clips;
-		std::cout << current_weapon->bullet_speed;
 	}
 	else if (IsKeyPressed(KEY_TWO))
 	{
