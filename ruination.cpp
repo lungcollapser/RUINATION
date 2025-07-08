@@ -23,13 +23,13 @@ void ammo_logic()
     bool ammo_collision = CheckCollisionRecs(player_main.get_rectangle(), ammo_main.get_rectangle({ ammo_main.ammo_drop }));
 
     
-    if (clips_collision)
+    if (ammo_collision && ammo_main.ammo_choices == ammo_main.clips)
     {
         player_main.current_weapon->current_clips += 1;
         ammo_main.current_ammo_state = ammo_main.picked_up;
     }
     
-    if (ammo_collision && player_main.current_weapon->bullet_amount < player_main.current_weapon->max_bullets)
+    if (ammo_collision && player_main.current_weapon->bullet_amount < player_main.current_weapon->max_bullets && ammo_main.ammo_choices == ammo_main.bullets)
     {
         player_main.current_weapon->bullet_amount = player_main.current_weapon->max_bullets;
         ammo_main.current_ammo_state = ammo_main.picked_up;
@@ -53,11 +53,6 @@ void bullet_logic()
     {
         enemy_main.enemy_health -= 1;
 
-        if (enemy_main.enemy_health == 0)
-        {
-            ammo_main.draw(enemy_main.enemy_object);
-        }
-
     }
 }
 void camera_logic()
@@ -76,17 +71,17 @@ void draw()
     ClearBackground(BLACK);
     DrawFPS(10, 10);
     BeginMode2D(camera_main.player_camera);
-
     for (auto& bullet : player_main.get_bullets())
     {
         bullet.draw(player_main.player_object);
     }
-    
-
     DrawLine(800, 0, 0, 800, WHITE);
     DrawLine(0, 0, 800, 800, WHITE);
     player_main.draw();
     enemy_main.draw();
+    ammo_main.draw(enemy_main.enemy_object);
+    EndMode2D();
+    EndDrawing();
 }
 void input()
 {
@@ -118,8 +113,6 @@ int main()
         ammo_logic();
         enemy_logic();
         camera_logic();
-        EndMode2D();
-        EndDrawing();
     }
     // tells the window to close when told
     CloseWindow();

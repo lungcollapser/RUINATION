@@ -10,14 +10,22 @@ ammo::ammo()
 void ammo::draw(Vector2 position)
 {
 	srand(time(0));
-	ammo_choices = rand() % 1;
 
-	switch (ammo_choices)
+	ammo_choices_rand = rand() % 1;
+
+	switch (ammo_choices_rand)
 	{
-	case 0: DrawCircleV(ammo_drop, 10, PURPLE); ammo_drop = position; break;
-	case 1: DrawCircleV(ammo_drop, 10, YELLOW); ammo_drop = position; break;
+	case bullets : DrawCircleV(ammo_drop, 10, PURPLE); ammo_drop = position; break;
+	case clips: DrawCircleV(ammo_drop, 10, YELLOW); ammo_drop = position; break;
+
+		if (current_ammo_state == picked_up)
+		{
+			break;
+		}
 	}
-	std::cout << ammo_choices;
+}
+void ammo::update()
+{
 }
 Rectangle ammo::get_rectangle(Vector2 position)
 {

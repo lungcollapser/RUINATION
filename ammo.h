@@ -5,11 +5,14 @@
 
 #include "include.h"
 
+
 class ammo
 {
+
 public: 
 	ammo();
 	void draw(Vector2 position);
+	void update();
 	Rectangle get_rectangle(Vector2 position);
 	Vector2 ammo_drop;
 	enum ammo_type
@@ -25,6 +28,7 @@ public:
 	ammo_type current_ammo_type;
 	ammo_state current_ammo_state;
 
+	int ammo_choices_rand;
 	int ammo_choices;
 };
 #endif
