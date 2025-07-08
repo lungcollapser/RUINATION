@@ -72,7 +72,7 @@
               "RelativeDocumentMoniker": "ammo.h",
               "ToolTip": "C:\\Users\\thort\\OneDrive\\Desktop\\CISFUN\\source\\repos\\ruination\\ammo.h",
               "RelativeToolTip": "ammo.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-07-08T02:23:45.742Z",
               "EditorCaption": ""
@@ -87,8 +87,7 @@
               "RelativeToolTip": "enemy.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-07-08T02:18:18.105Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-08T02:18:18.105Z"
             },
             {
               "$type": "Document",
@@ -100,8 +99,7 @@
               "RelativeToolTip": "enemy.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-07-08T02:16:24.574Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-08T02:16:24.574Z"
             },
             {
               "$type": "Document",
@@ -111,7 +109,7 @@
               "RelativeDocumentMoniker": "ruination.cpp",
               "ToolTip": "C:\\Users\\thort\\OneDrive\\Desktop\\CISFUN\\source\\repos\\ruination\\ruination.cpp",
               "RelativeToolTip": "ruination.cpp",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAAAHkAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-02-20T02:36:26.087Z",
               "EditorCaption": ""
@@ -126,8 +124,7 @@
               "RelativeToolTip": "weapon.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-05T11:39:55.701Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T11:39:55.701Z"
             },
             {
               "$type": "Document",
@@ -139,8 +136,7 @@
               "RelativeToolTip": "weapon.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-05T11:39:53.491Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T11:39:53.491Z"
             },
             {
               "$type": "Document",
@@ -152,8 +148,7 @@
               "RelativeToolTip": "bullet.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-05T02:14:56.944Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T02:14:56.944Z"
             },
             {
               "$type": "Document",
@@ -165,8 +160,7 @@
               "RelativeToolTip": "player.cpp",
               "ViewState": "AgIAAEUAAAAAAAAAAAAAAD8AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-21T12:49:24.025Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-21T12:49:24.025Z"
             },
             {
               "$type": "Document",
@@ -176,7 +170,7 @@
               "RelativeDocumentMoniker": "ammo.cpp",
               "ToolTip": "C:\\Users\\thort\\OneDrive\\Desktop\\CISFUN\\source\\repos\\ruination\\ammo.cpp",
               "RelativeToolTip": "ammo.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-07-03T12:30:06.76Z",
               "EditorCaption": ""
@@ -191,8 +185,7 @@
               "RelativeToolTip": "include.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-07-08T02:18:17.755Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-08T02:18:17.755Z"
             },
             {
               "$type": "Document",
@@ -204,8 +197,7 @@
               "RelativeToolTip": "player.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-21T12:49:29.554Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-21T12:49:29.554Z"
             },
             {
               "$type": "Document",
@@ -217,8 +209,7 @@
               "RelativeToolTip": "revolver.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-07-02T02:10:05.239Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-02T02:10:05.239Z"
             }
           ]
         }
