@@ -1,4 +1,8 @@
 #pragma once
+
+#ifndef WEAPON_H
+#define WEAPON_H
+
 #include "include.h"
 #include "bullet.h"
 
@@ -17,3 +21,4 @@ public:
 	Vector2 weapon_reticle;
 	int bullet_speed, bullet_amount, max_bullets, clips, current_clips;
 };
+#endif

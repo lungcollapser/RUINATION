@@ -17,27 +17,19 @@ static int screen_size_y = 800;
 
 void ammo_logic()
 {
-    srand(time(0));
-    int item_drop_choice = rand() % 2;
 
     //TODO: make the item drop choice global for all things that can be destroyed have the chance to drop items.
-    bool clips_collision = CheckCollisionRecs(player_main.get_rectangle(), ammo_main.get_rectangle({ ammo_main.clips_drop }));
+    bool clips_collision = CheckCollisionRecs(player_main.get_rectangle(), ammo_main.get_rectangle({ ammo_main.ammo_drop }));
     bool ammo_collision = CheckCollisionRecs(player_main.get_rectangle(), ammo_main.get_rectangle({ ammo_main.ammo_drop }));
 
-    switch (item_drop_choice)
-    {
-    case 0: ammo_main.current_clips_state = ammo_main.dropped; ammo_main.clips_drop = enemy_main.enemy_object; break;
-    case 1: ammo_main.current_ammo_state = ammo_main.dropped; ammo_main.ammo_drop = enemy_main.enemy_object; break;
-    case 2: break;
-    }
     
-    if (clips_collision && ammo_main.current_clips_state == ammo_main.dropped)
+    if (clips_collision)
     {
         player_main.current_weapon->current_clips += 1;
-        ammo_main.current_clips_state = ammo_main.picked_up;
+        ammo_main.current_ammo_state = ammo_main.picked_up;
     }
     
-    if (ammo_collision && ammo_main.current_ammo_state == ammo_main.dropped)
+    if (ammo_collision && player_main.current_weapon->bullet_amount < player_main.current_weapon->max_bullets)
     {
         player_main.current_weapon->bullet_amount = player_main.current_weapon->max_bullets;
         ammo_main.current_ammo_state = ammo_main.picked_up;
@@ -45,23 +37,28 @@ void ammo_logic()
 }
 void bullet_logic()
 {
-    bool player_collision = false;
-    bool enemy_collision = false;
+    srand(time(0));
+    int item_drop_choice = rand() % 2;
 
+    bool bullet_collision = false;
 
     for (auto& bullet : player_main.get_bullets())
     {
         bullet.update_position(screen_size_x, screen_size_y);
-        player_collision = CheckCollisionRecs(bullet.get_rectangle(player_main.player_object), enemy_main.get_rectangle());
+        bullet_collision = CheckCollisionRecs(bullet.get_rectangle(player_main.player_object), enemy_main.get_rectangle());
     }
     
 
-    if (player_collision)
+    if (bullet_collision)
     {
-        enemy_main.current_state = enemy_main.dead;
+        enemy_main.enemy_health -= 1;
+
+        if (enemy_main.enemy_health == 0)
+        {
+            ammo_main.draw(enemy_main.enemy_object);
+        }
+
     }
-    
-    
 }
 void camera_logic()
 {
@@ -70,7 +67,7 @@ void camera_logic()
 }
 void enemy_logic()
 {
-    enemy_main.update_position(player_main.player_object);
+    enemy_main.update(player_main.player_object);
 }
 
 void draw()
@@ -88,12 +85,8 @@ void draw()
 
     DrawLine(800, 0, 0, 800, WHITE);
     DrawLine(0, 0, 800, 800, WHITE);
-    ammo_main.draw_clips(enemy_main.enemy_object);
-    ammo_main.draw_ammo(enemy_main.enemy_object);
     player_main.draw();
     enemy_main.draw();
-    EndMode2D();
-    EndDrawing();
 }
 void input()
 {
@@ -117,7 +110,6 @@ int main()
     //sets a mouse offset due to strange mouse positioning (NEEDS TO BE FIXED)
     SetMouseOffset(-400, -400);
     // window loop to keep it open until closed by user
-
     while (!WindowShouldClose())
     {
         draw();
@@ -126,7 +118,8 @@ int main()
         ammo_logic();
         enemy_logic();
         camera_logic();
-
+        EndMode2D();
+        EndDrawing();
     }
     // tells the window to close when told
     CloseWindow();

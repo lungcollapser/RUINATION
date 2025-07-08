@@ -27,7 +27,6 @@ void player::draw()
 {
 	DrawCircleV(player_object, 25, WHITE);
 	current_weapon->draw(player_object);
-	DrawRectangleLinesEx(get_rectangle(), 3, PURPLE);
 
 }
 
@@ -59,6 +58,15 @@ void player::take_input(Vector2 &center_position)
 
 	Vector2 velocity = Vector2Scale(Vector2Normalize(direction), player_speed * GetFrameTime());
 	player_object = Vector2Add(player_object, velocity);
+
+	if (IsKeyDown(KEY_LEFT_SHIFT))
+	{
+		player_speed = 325;
+	}
+	else
+	{
+		player_speed = 525;
+	}
 
 
 	if (IsKeyPressed(KEY_ONE))
