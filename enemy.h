@@ -1,4 +1,8 @@
 #pragma once
+
+#ifndef ENEMY_H
+#define ENEMY_H
+
 #include "include.h"
 #include "weapon.h"
 
@@ -8,7 +12,7 @@ public:
 	enemy();
 	~enemy();
 	void draw();
-	void update_position(Vector2 &player_object);
+	void update(Vector2 &player_object);
 	Rectangle get_rectangle();
 	Vector2 enemy_object;
 	Vector2 enemy_position;
@@ -20,6 +24,5 @@ public:
 		dead = 1
 	};
 	enemy_state current_state;
-
-
 };
+#endif

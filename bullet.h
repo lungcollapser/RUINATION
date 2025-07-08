@@ -1,4 +1,8 @@
 #pragma once
+
+#ifndef BULLET_H
+#define BULLET_H
+
 #include "include.h"
 
 class bullet 
@@ -14,3 +18,4 @@ public:
 	Vector2 fire_position;
 	int bullet_speed;
 };
+#endif

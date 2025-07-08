@@ -1,27 +1,23 @@
 #include "ammo.h"
 
 //TODO: narrow position down so the code is less redudant. having to write that its the ammo drop position twice on ruination.cpp. once for draw and twice for collision. unnecessary 
+//TPDP: MAKE AMMO AND CLIPS ONE OVERALL THING INSTEAD OF HAVING TWO DRAWS AND TWO DIFFERENT TYPES
 
 ammo::ammo()
 {
-	clips_drop = { 0, 0 };
 	ammo_drop = { 0, 0 };
 }
-void ammo::draw_clips(Vector2 position)
+void ammo::draw(Vector2 position)
 {
-	switch (current_clips_state)
+	srand(time(0));
+	ammo_choices = rand() % 1;
+
+	switch (ammo_choices)
 	{
-	case 0: DrawCircleV(clips_drop, 20, YELLOW); DrawRectangleLinesEx(get_rectangle(position), 3, WHITE); break;
-	case 1: break;
+	case 0: DrawCircleV(ammo_drop, 10, PURPLE); ammo_drop = position; break;
+	case 1: DrawCircleV(ammo_drop, 10, YELLOW); ammo_drop = position; break;
 	}
-}
-void ammo::draw_ammo(Vector2 position)
-{
-	switch (current_ammo_state)
-	{
-	case 0: DrawCircleV(ammo_drop, 20, GREEN); DrawRectangleLinesEx(get_rectangle(position), 3, WHITE); break;
-	case 1:break;
-	}
+	std::cout << ammo_choices;
 }
 Rectangle ammo::get_rectangle(Vector2 position)
 {

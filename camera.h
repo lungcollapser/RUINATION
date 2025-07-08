@@ -1,4 +1,8 @@
 #pragma once
+
+#ifndef CAMERA_H
+#define CAMERA_H
+
 #include "include.h"
 #include "player.h"
 
@@ -13,3 +17,4 @@ public:
 	void take_input();
 	Camera2D player_camera;
 };
+#endif

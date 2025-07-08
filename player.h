@@ -1,9 +1,11 @@
 #pragma once
+
+#ifndef PLAYER_H
+#define PLAYER_H
+
 #include "include.h"
 #include "revolver.h"
 #include "repeater.h"
-
-
 
 class player
 {
@@ -21,3 +23,4 @@ public:
 	revolver *revolver_weapon;
 	repeater *repeater_weapon;
 };
+#endif

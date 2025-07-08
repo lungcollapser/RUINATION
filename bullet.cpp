@@ -21,7 +21,6 @@ void bullet::draw(Vector2 position)
 	if (active)
 	{
 		DrawCircleV(fire_position + position, 10, BLUE);
-		DrawRectangleLinesEx(get_rectangle(position), 3, RED);
 	}
 }
 void bullet::update_position(int screen_x, int screen_y)
