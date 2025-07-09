@@ -4,6 +4,7 @@
 player::player()
 {
 	//initializations
+	player_object = { 0, 0 };
 	player_speed = 525;
 
 	current_weapon = new weapon();

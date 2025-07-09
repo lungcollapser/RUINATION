@@ -1,5 +1,6 @@
 #include "enemy.h"
 
+//TDOD: Delete enemy instaead of just slowing its speed.
 
 enemy::enemy()
 {

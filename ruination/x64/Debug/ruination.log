@@ -1,7 +1,7 @@
-﻿  ammo.cpp
-C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\ammo.cpp(12,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+﻿  camera.cpp
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\camera.cpp(47,28): warning C4552: '*': result of expression not used
   ruination.cpp
-C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\ruination.cpp(40,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\ruination.cpp(46,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Generating Code...
   ruination.vcxproj -> C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\x64\Debug\ruination.exe
   'pwsh.exe' is not recognized as an internal or external command,
