@@ -6,6 +6,9 @@
 #include "ammo.h"
 #include "bullet.h"
 
+//TODO: Make collision Rectangles into collision Circles.
+//TODO: Make bullet collision more global to where if it hits any object, it deactivates and disappears.
+
 player player_main;
 camera camera_main;
 enemy enemy_main;
@@ -37,6 +40,9 @@ void ammo_logic()
 }
 void bullet_logic()
 {
+
+    //TODO: Stop bullets on objects so they dont travel through
+    //TODO: Make bullets inactive when they exit screen.
     srand(time(0));
     int item_drop_choice = rand() % 2;
 
@@ -46,12 +52,19 @@ void bullet_logic()
     {
         bullet.update_position(screen_size_x, screen_size_y);
         bullet_collision = CheckCollisionRecs(bullet.get_rectangle(player_main.player_object), enemy_main.get_rectangle());
+
+        if (bullet_collision)
+        {
+            bullet.active = false;
+        }
+       
     }
     
 
     if (bullet_collision)
     {
         enemy_main.enemy_health -= 1;
+        enemy_main.update(player_main.player_object);
 
     }
 }
@@ -111,7 +124,6 @@ int main()
         input();
         bullet_logic();
         ammo_logic();
-        enemy_logic();
         camera_logic();
     }
     // tells the window to close when told
