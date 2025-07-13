@@ -6,6 +6,7 @@ enemy::enemy()
 {
 	enemy_health = 10;
 	enemy_speed = 3;
+	enemy_radius = 30;
 	current_state = alive;
 }
 enemy::~enemy()
@@ -14,17 +15,28 @@ enemy::~enemy()
 }
 void enemy::draw()
 {
-
-	switch (current_state)
+	if (current_state == alive)
 	{
-	case alive: DrawCircleV(enemy_object, 30, PURPLE); break;
-	case dead: enemy_speed = 0; break;
+		DrawCircleV(enemy_object, enemy_radius, PURPLE);
 	}
+	else
+	{
+		return;
+	}
+
 }
 
-void enemy::update(Vector2 &player_object)
+void enemy::update(Vector2& player_object)
 {
-	enemy_object = Vector2MoveTowards(enemy_object, player_object, enemy_speed);
+
+	if (current_state == aggro)
+	{
+		enemy_object = Vector2MoveTowards(enemy_object, player_object, enemy_speed);
+	}
+	else if (current_state == neutral)
+	{
+		return;
+	}
 
 	if (enemy_health <= 0)
 	{
@@ -32,7 +44,9 @@ void enemy::update(Vector2 &player_object)
 	}
 
 }
-Rectangle enemy::get_rectangle()
+int enemy::take_damage(int damage)
 {
-	return Rectangle{ enemy_object.x - 25, enemy_object.y - 25, 50, 50 };
+	enemy_health -= damage;
+	
+	return damage;
 }

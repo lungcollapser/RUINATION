@@ -6,6 +6,7 @@ revolver::revolver()
 	clips = 2;
 	max_bullets = 6;
 	current_clips = 2;
+	bullet_damage = 1;
 }
 revolver::~revolver()
 {

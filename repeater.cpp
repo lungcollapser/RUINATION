@@ -6,6 +6,7 @@ repeater::repeater()
 	clips = 4;
 	max_bullets = 12;
 	current_clips = 2;
+	bullet_damage = 2;
 }
 repeater::~repeater()
 {

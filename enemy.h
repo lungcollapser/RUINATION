@@ -13,15 +13,15 @@ public:
 	~enemy();
 	void draw();
 	void update(Vector2 &player_object);
-	Rectangle get_rectangle();
-	Vector2 enemy_object;
-	Vector2 enemy_position;
-
-	int enemy_health, enemy_speed, bullet_speed;
+	int take_damage(int damage);
+	Vector2 enemy_object, enemy_position;
+	int enemy_health, enemy_speed, enemy_radius, bullet_speed;
 	enum enemy_state
 	{
-		alive = 0, 
-		dead = 1
+		aggro,
+		neutral,
+		alive, 
+		dead
 	};
 	enemy_state current_state;
 };

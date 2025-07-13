@@ -43,15 +43,14 @@ void bullet_logic()
 
     //TODO: Stop bullets on objects so they dont travel through
     //TODO: Make bullets inactive when they exit screen.
-    srand(time(0));
-    int item_drop_choice = rand() % 2;
+    //TODO: Dont allow bullets to do continuous damage.
 
     bool bullet_collision = false;
 
     for (auto& bullet : player_main.get_bullets())
     {
         bullet.update_position(screen_size_x, screen_size_y);
-        bullet_collision = CheckCollisionRecs(bullet.get_rectangle(player_main.player_object), enemy_main.get_rectangle());
+        bullet_collision = CheckCollisionCircles(bullet.fire_position, bullet.bullet_radius, enemy_main.enemy_object, enemy_main.enemy_radius);
 
         if (bullet_collision)
         {
@@ -59,13 +58,11 @@ void bullet_logic()
         }
        
     }
-    
-
     if (bullet_collision)
     {
-        enemy_main.enemy_health -= 1;
-        enemy_main.update(player_main.player_object);
-
+        enemy_main.take_damage(player_main.current_weapon->bullet_damage);
+        enemy_main.current_state = enemy_main.aggro;
+        std::cout << enemy_main.enemy_health;
     }
 }
 void camera_logic()
@@ -122,6 +119,7 @@ int main()
     {
         draw();
         input();
+        enemy_logic();
         bullet_logic();
         ammo_logic();
         camera_logic();
