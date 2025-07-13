@@ -1,7 +1,16 @@
-﻿  camera.cpp
+﻿  bullet.cpp
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.cpp(11,23): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  camera.cpp
 C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\camera.cpp(47,28): warning C4552: '*': result of expression not used
+  enemy.cpp
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\enemy.cpp(20,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\enemy.cpp(34,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  player.cpp
+  repeater.cpp
+  revolver.cpp
   ruination.cpp
-C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\ruination.cpp(46,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\ruination.cpp(53,130): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  weapon.cpp
   Generating Code...
   ruination.vcxproj -> C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\x64\Debug\ruination.exe
   'pwsh.exe' is not recognized as an internal or external command,

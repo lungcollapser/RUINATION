@@ -9,6 +9,7 @@ bullet::bullet(Vector2 fire_position, int bullet_speed)
 {
 	this->fire_position = fire_position;
 	this->bullet_speed = bullet_speed;
+	bullet_radius = 10;
 	active = true;
 }
 bullet::~bullet()
@@ -21,7 +22,7 @@ void bullet::draw(Vector2& position)
 
 	if (active)
 	{
-		DrawCircleV(fire_position + position, 10, BLUE);
+		DrawCircleV(fire_position + position, bullet_radius, BLUE);
 	}
 	
 }

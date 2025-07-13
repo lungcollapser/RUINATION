@@ -19,6 +19,6 @@ public:
 	void draw(Vector2 &player_object);
 	std::vector<bullet> bullets;
 	Vector2 weapon_reticle;
-	int bullet_speed, bullet_amount, max_bullets, clips, current_clips;
+	int bullet_speed, bullet_amount, bullet_damage, max_bullets, clips, current_clips;
 };
 #endif

@@ -16,6 +16,6 @@ public:
 	Rectangle get_rectangle(Vector2 player_position);
 	bool active;
 	Vector2 fire_position;
-	int bullet_speed;
+	float bullet_speed, bullet_radius;
 };
 #endif
