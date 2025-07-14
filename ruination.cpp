@@ -4,25 +4,21 @@
 #include "enemy.h"
 #include "weapon.h"
 #include "ammo.h"
-#include "bullet.h"
 
 //TODO: Make collision Rectangles into collision Circles.
 //TODO: Make bullet collision more global to where if it hits any object, it deactivates and disappears.
+//TODO: Look into making a component system.
 
 player player_main;
 camera camera_main;
 enemy enemy_main;
 ammo ammo_main;
 
-static int screen_size_x = 800;
-static int screen_size_y = 800;
-
 
 void ammo_logic()
 {
 
     //TODO: make the item drop choice global for all things that can be destroyed have the chance to drop items.
-    bool clips_collision = CheckCollisionRecs(player_main.get_rectangle(), ammo_main.get_rectangle({ ammo_main.ammo_drop }));
     bool ammo_collision = CheckCollisionRecs(player_main.get_rectangle(), ammo_main.get_rectangle({ ammo_main.ammo_drop }));
 
     
@@ -40,8 +36,6 @@ void ammo_logic()
 }
 void bullet_logic()
 {
-
-    //TODO: Stop bullets on objects so they dont travel through
     //TODO: Make bullets inactive when they exit screen.
     //TODO: Dont allow bullets to do continuous damage.
 
@@ -50,13 +44,12 @@ void bullet_logic()
     for (auto& bullet : player_main.get_bullets())
     {
         bullet.update_position(screen_size_x, screen_size_y);
-        bullet_collision = CheckCollisionCircles(bullet.fire_position, bullet.bullet_radius, enemy_main.enemy_object, enemy_main.enemy_radius);
-
+        bullet_collision = CheckCollisionRecs(bullet.get_rectangle(player_main.player_object), enemy_main.get_rectangle());
+ 
         if (bullet_collision)
         {
             bullet.active = false;
         }
-       
     }
     if (bullet_collision)
     {

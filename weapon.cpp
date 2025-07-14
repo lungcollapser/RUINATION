@@ -4,7 +4,6 @@
 weapon::weapon()
 {
 	weapon_reticle = {0, 0};
-	is_reloading = false;
 }
 
 weapon::~weapon()
@@ -24,6 +23,9 @@ void weapon::draw(Vector2 &player_object)
 	weapon_reticle = GetMousePosition();
 	DrawCircleV(weapon_reticle + player_object, 8, RED);
 }
-
+std::vector<bullet>& weapon::get_bullets()
+{
+	return bullets;
+}
 
 

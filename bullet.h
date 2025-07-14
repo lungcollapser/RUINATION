@@ -4,6 +4,8 @@
 #define BULLET_H
 
 #include "include.h"
+#include "weapon.h"
+#include "player.h"
 
 class bullet 
 {
@@ -16,6 +18,9 @@ public:
 	Rectangle get_rectangle(Vector2 player_position);
 	bool active;
 	Vector2 fire_position;
-	float bullet_speed, bullet_radius;
+	int bullet_speed, bullet_radius;
+
+	weapon* weapon_bullet;
+	player* weapon_player;
 };
 #endif
