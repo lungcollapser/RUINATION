@@ -4,6 +4,7 @@
 #include "enemy.h"
 #include "weapon.h"
 #include "ammo.h"
+#include "bullet.h"
 
 //TODO: Make collision Rectangles into collision Circles.
 //TODO: Make bullet collision more global to where if it hits any object, it deactivates and disappears.
@@ -13,6 +14,8 @@ player player_main;
 camera camera_main;
 enemy enemy_main;
 ammo ammo_main;
+weapon weapon_main;
+bullet bullet_main;
 
 
 void ammo_logic()
@@ -34,38 +37,11 @@ void ammo_logic()
         ammo_main.current_ammo_state = ammo_main.picked_up;
     }
 }
-void bullet_logic()
-{
-    //TODO: Make bullets inactive when they exit screen.
-    //TODO: Dont allow bullets to do continuous damage.
 
-    bool bullet_collision = false;
-
-    for (auto& bullet : player_main.get_bullets())
-    {
-        bullet.update_position(screen_size_x, screen_size_y);
-        bullet_collision = CheckCollisionRecs(bullet.get_rectangle(player_main.player_object), enemy_main.get_rectangle());
- 
-        if (bullet_collision)
-        {
-            bullet.active = false;
-        }
-    }
-    if (bullet_collision)
-    {
-        enemy_main.take_damage(player_main.current_weapon->bullet_damage);
-        enemy_main.current_state = enemy_main.aggro;
-        std::cout << enemy_main.enemy_health;
-    }
-}
 void camera_logic()
 {
     camera_main.update();
     camera_main.player_camera.offset = { screen_size_x / 2.0f, screen_size_y / 2.0f };
-}
-void enemy_logic()
-{
-    enemy_main.update(player_main.player_object);
 }
 
 void draw()
@@ -74,10 +50,6 @@ void draw()
     ClearBackground(BLACK);
     DrawFPS(10, 10);
     BeginMode2D(camera_main.player_camera);
-    for (auto& bullet : player_main.get_bullets())
-    {
-        bullet.draw(player_main.player_object);
-    }
     DrawLine(800, 0, 0, 800, WHITE);
     DrawLine(0, 0, 800, 800, WHITE);
     player_main.draw();
@@ -93,6 +65,15 @@ void input()
     player_main.take_input(center_position);
     camera_main.take_input();
 
+}
+void update()
+{
+    for (int i = 0; i == weapon_main.bullet_amount; i++)
+    {
+        bullet_main.update(screen_size_x, screen_size_y);
+
+    }
+    enemy_main.update(player_main.player_object);
 }
 
 // main func
@@ -112,8 +93,7 @@ int main()
     {
         draw();
         input();
-        enemy_logic();
-        bullet_logic();
+        update();
         ammo_logic();
         camera_logic();
     }

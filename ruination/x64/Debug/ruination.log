@@ -1,16 +1,208 @@
 ﻿  bullet.cpp
-C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.cpp(25,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\revolver.h(8,25): error C2504: 'weapon': base class undefined
+  (compiling source file 'bullet.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\repeater.h(8,25): error C2504: 'weapon': base class undefined
+  (compiling source file 'bullet.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\player.h(22,9): error C2143: syntax error: missing ';' before '*'
+  (compiling source file 'bullet.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\player.h(22,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'bullet.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\player.h(22,24): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'bullet.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\weapon.h(17,8): error C2143: syntax error: missing ';' before '*'
+  (compiling source file 'bullet.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\weapon.h(17,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'bullet.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\weapon.h(17,23): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'bullet.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\weapon.h(21,8): error C2143: syntax error: missing ';' before '*'
+  (compiling source file 'bullet.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\weapon.h(21,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'bullet.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\weapon.h(21,17): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'bullet.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.cpp(30,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   camera.cpp
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.h(23,8): error C2143: syntax error: missing ';' before '*'
+  (compiling source file 'camera.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.h(23,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'camera.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.h(23,23): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'camera.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.h(24,8): error C2143: syntax error: missing ';' before '*'
+  (compiling source file 'camera.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.h(24,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'camera.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.h(24,23): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'camera.cpp')
+  
 C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\camera.cpp(47,28): warning C4552: '*': result of expression not used
   enemy.cpp
-C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\enemy.cpp(20,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\enemy.cpp(34,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\revolver.h(8,25): error C2504: 'weapon': base class undefined
+  (compiling source file 'enemy.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\repeater.h(8,25): error C2504: 'weapon': base class undefined
+  (compiling source file 'enemy.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\player.h(22,9): error C2143: syntax error: missing ';' before '*'
+  (compiling source file 'enemy.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\player.h(22,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'enemy.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\player.h(22,24): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'enemy.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.h(23,8): error C2143: syntax error: missing ';' before '*'
+  (compiling source file 'enemy.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.h(23,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'enemy.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.h(23,23): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'enemy.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\enemy.cpp(24,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\enemy.cpp(39,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   player.cpp
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.h(23,8): error C2143: syntax error: missing ';' before '*'
+  (compiling source file 'player.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.h(23,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'player.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.h(23,23): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'player.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.h(24,8): error C2143: syntax error: missing ';' before '*'
+  (compiling source file 'player.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.h(24,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'player.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.h(24,23): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'player.cpp')
+  
   repeater.cpp
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\revolver.h(8,25): error C2504: 'weapon': base class undefined
+  (compiling source file 'repeater.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\player.h(22,9): error C2143: syntax error: missing ';' before '*'
+  (compiling source file 'repeater.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\player.h(22,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'repeater.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\player.h(22,24): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'repeater.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\player.h(24,11): error C2143: syntax error: missing ';' before '*'
+  (compiling source file 'repeater.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\player.h(24,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'repeater.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\player.h(24,27): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'repeater.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.h(23,8): error C2143: syntax error: missing ';' before '*'
+  (compiling source file 'repeater.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.h(23,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'repeater.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.h(23,23): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'repeater.cpp')
+  
   revolver.cpp
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\repeater.h(8,25): error C2504: 'weapon': base class undefined
+  (compiling source file 'revolver.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\player.h(22,9): error C2143: syntax error: missing ';' before '*'
+  (compiling source file 'revolver.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\player.h(22,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'revolver.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\player.h(22,24): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'revolver.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\player.h(23,11): error C2143: syntax error: missing ';' before '*'
+  (compiling source file 'revolver.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\player.h(23,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'revolver.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\player.h(23,27): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'revolver.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.h(23,8): error C2143: syntax error: missing ';' before '*'
+  (compiling source file 'revolver.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.h(23,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'revolver.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.h(23,23): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'revolver.cpp')
+  
   ruination.cpp
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.h(23,8): error C2143: syntax error: missing ';' before '*'
+  (compiling source file 'ruination.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.h(23,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'ruination.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.h(23,23): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'ruination.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.h(24,8): error C2143: syntax error: missing ';' before '*'
+  (compiling source file 'ruination.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.h(24,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'ruination.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.h(24,23): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'ruination.cpp')
+  
   weapon.cpp
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\revolver.h(8,25): error C2504: 'weapon': base class undefined
+  (compiling source file 'weapon.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\repeater.h(8,25): error C2504: 'weapon': base class undefined
+  (compiling source file 'weapon.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\player.h(22,9): error C2143: syntax error: missing ';' before '*'
+  (compiling source file 'weapon.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\player.h(22,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'weapon.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\player.h(22,24): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'weapon.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.h(23,8): error C2143: syntax error: missing ';' before '*'
+  (compiling source file 'weapon.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.h(23,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'weapon.cpp')
+  
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.h(23,23): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'weapon.cpp')
+  
   Generating Code...
-  ruination.vcxproj -> C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\x64\Debug\ruination.exe
-  'pwsh.exe' is not recognized as an internal or external command,
-  operable program or batch file.

@@ -5,6 +5,7 @@
 
 #include "include.h"
 #include "weapon.h"
+#include "bullet.h"
 
 class enemy
 {
@@ -29,5 +30,6 @@ public:
 	enemy_state current_state;
 
 	weapon* enemy_weapon;
+	bullet* enemy_bullet;
 };
 #endif

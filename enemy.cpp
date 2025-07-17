@@ -11,6 +11,7 @@ enemy::enemy()
 	bullet_collision = false;
 
 	enemy_weapon = new weapon();
+	enemy_bullet = new bullet();
 }
 enemy::~enemy()
 {
@@ -31,7 +32,7 @@ void enemy::draw()
 
 void enemy::update(Vector2& player_object)
 {
-	bullet_collision = CheckCollisionRecs(bullet.get_rectangle(player_main.player_object), get_rectangle());
+	bullet_collision = CheckCollisionRecs(enemy_bullet->get_rectangle(player_object), get_rectangle());
 
 	if (current_state == aggro)
 	{
@@ -44,7 +45,8 @@ void enemy::update(Vector2& player_object)
 
 	if (bullet_collision)
 	{
-		take_damage()
+		take_damage(enemy_weapon->bullet_damage);
+		current_state = aggro;
 	}
 
 	if (enemy_health <= 0)
