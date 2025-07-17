@@ -19,6 +19,7 @@ player::~player()
 {
 
 	//for some reason, deleting the current_weapon results in an exception being thrown. LOOK INTO THIS
+	delete current_weapon;
 	delete revolver_weapon;
 	delete repeater_weapon;
 
@@ -31,10 +32,6 @@ void player::draw()
 
 }
 
-std::vector<bullet>& player::get_bullets()
-{
-	return current_weapon->bullets;
-}
 //player movements
 void player::take_input(Vector2 &center_position)
 {
