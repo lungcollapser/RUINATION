@@ -12,13 +12,9 @@ bullet::bullet(Vector2 fire_position, int bullet_speed)
 	bullet_radius = 10;
 	active = true;
 
-	weapon_bullet = new weapon();
-	weapon_player = new player();
 }
 bullet::~bullet()
 {
-	delete weapon_bullet;
-	delete weapon_player;
 
 }
 
@@ -32,7 +28,7 @@ void bullet::draw(Vector2& position)
 	}
 	
 }
-void bullet::update(int screen_x, int screen_y)
+void bullet::update(int screen_x, int screen_y, int bullet_amount, Vector2 center_position)
 {
 	//This doesn't work. need to delete bullet when it exits screen.
 	if (fire_position.x >= screen_x && fire_position.y >= screen_y)
@@ -44,9 +40,9 @@ void bullet::update(int screen_x, int screen_y)
 	Vector2 change_vector = Vector2Scale(Vector2Normalize(fire_position), bullet_speed * GetFrameTime());
 	fire_position = Vector2Add(fire_position, change_vector);
 
-	for (int i = 0; i == weapon_bullet->bullet_amount; i++)
+	for (int i = 0; i < bullet_amount; i++)
 	{
-		draw(weapon_player->player_object);
+		draw(center_position);
 	}
 
 	

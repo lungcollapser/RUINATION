@@ -4,7 +4,6 @@
 #define WEAPON_H
 
 #include "include.h"
-#include "player.h"
 #include "bullet.h"
 
 class weapon
@@ -14,10 +13,10 @@ public:
 	~weapon();
 	void fire(Vector2 &weapon_reticle, Vector2 &center_position, int bullet_speed);
 	void draw(Vector2 &player_object);
-	bullet* get_bullets();
+	std::unique_ptr<bullet> get_bullets();
 	Vector2 weapon_reticle, center_position;
 	int bullet_speed, bullet_amount, bullet_damage, max_bullets, clips, current_clips;
 
-	bullet* bullets;
+	std::unique_ptr<bullet> bullets;
 };
 #endif

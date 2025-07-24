@@ -6,7 +6,6 @@
 #include "include.h"
 #include "revolver.h"
 #include "repeater.h"
-#include "weapon.h"
 
 class player
 {
