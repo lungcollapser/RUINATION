@@ -19,7 +19,6 @@ player::~player()
 {
 
 	//for some reason, deleting the current_weapon results in an exception being thrown. LOOK INTO THIS
-	delete current_weapon;
 	delete revolver_weapon;
 	delete repeater_weapon;
 

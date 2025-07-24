@@ -5,7 +5,6 @@
 
 #include "include.h"
 #include "weapon.h"
-#include "bullet.h"
 
 class enemy
 {
@@ -13,12 +12,12 @@ public:
 	enemy();
 	~enemy();
 	void draw();
-	void update(Vector2 &player_object);
+	void update(Vector2 &player_object, Rectangle bullet_rectangle);
 	int take_damage(int damage);
 	Rectangle get_rectangle();
 	Rectangle enemy_rec;
 	Vector2 enemy_object, enemy_position;
-	int enemy_health, enemy_speed, enemy_radius, bullet_speed;
+	float enemy_health, enemy_speed, enemy_radius, bullet_speed;
 	bool bullet_collision;
 	enum enemy_state
 	{
@@ -30,6 +29,5 @@ public:
 	enemy_state current_state;
 
 	weapon* enemy_weapon;
-	bullet* enemy_bullet;
 };
 #endif

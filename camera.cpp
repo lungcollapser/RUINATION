@@ -44,7 +44,6 @@ void camera::take_input()
 	Vector2 velocity =   Vector2Scale(direction, camera_speed * GetFrameTime());
 	player_camera.target = Vector2Add(player_camera.target, velocity);
 
-	GetMouseWheelMove() * 0.5 * player_camera.zoom;
 
 	if (IsKeyDown(KEY_LEFT_SHIFT))
 	{

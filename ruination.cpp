@@ -68,12 +68,12 @@ void input()
 }
 void update()
 {
-    for (int i = 0; i == weapon_main.bullet_amount; i++)
+    for (int i = 0; i < weapon_main.bullet_amount; i++)
     {
-        bullet_main.update(screen_size_x, screen_size_y);
+        bullet_main.update(screen_size_x, screen_size_y, weapon_main.bullet_amount, player_main.player_object);
 
     }
-    enemy_main.update(player_main.player_object);
+    enemy_main.update(player_main.player_object, bullet_main.get_rectangle(player_main.player_object));
 }
 
 // main func
