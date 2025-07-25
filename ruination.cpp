@@ -17,6 +17,8 @@ ammo ammo_main;
 weapon weapon_main;
 bullet bullet_main;
 
+static Vector2 center_position = { 0, 0 };
+
 
 void ammo_logic()
 {
@@ -52,6 +54,12 @@ void draw()
     BeginMode2D(camera_main.player_camera);
     DrawLine(800, 0, 0, 800, WHITE);
     DrawLine(0, 0, 800, 800, WHITE);
+    for (int i = 0; i < player_main.current_weapon->bullet_amount; i++)
+    {
+        weapon_main.bullets->draw(center_position);
+        std::cout << "draw";
+    }
+
     player_main.draw();
     enemy_main.draw();
     ammo_main.draw(enemy_main.enemy_object);
@@ -60,7 +68,6 @@ void draw()
 }
 void input()
 {
-    Vector2 center_position = { 0, 0 };
 
     player_main.take_input(center_position);
     camera_main.take_input();
@@ -68,10 +75,10 @@ void input()
 }
 void update()
 {
-    for (int i = 0; i < weapon_main.bullet_amount; i++)
+    for (int i = 0; i < player_main.current_weapon->bullet_amount; i++)
     {
-        bullet_main.update(screen_size_x, screen_size_y, weapon_main.bullet_amount, player_main.player_object);
-
+        weapon_main.bullets->update(screen_size_x, screen_size_y, weapon_main.bullet_amount, player_main.player_object);
+        std::cout << "update";
     }
     enemy_main.update(player_main.player_object, bullet_main.get_rectangle(player_main.player_object));
 }

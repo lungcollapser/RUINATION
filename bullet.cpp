@@ -40,10 +40,7 @@ void bullet::update(int screen_x, int screen_y, int bullet_amount, Vector2 cente
 	Vector2 change_vector = Vector2Scale(Vector2Normalize(fire_position), bullet_speed * GetFrameTime());
 	fire_position = Vector2Add(fire_position, change_vector);
 
-	for (int i = 0; i < bullet_amount; i++)
-	{
-		draw(center_position);
-	}
+	
 
 	
 }
