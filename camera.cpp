@@ -16,7 +16,7 @@ camera::~camera()
 
 void camera::update()
 {
-	return;
+	player_camera.offset = { screen_size_x / 2.0f, screen_size_y / 2.0f };
 }
 void camera::take_input()
 {

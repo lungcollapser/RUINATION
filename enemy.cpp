@@ -7,7 +7,8 @@ enemy::enemy()
 	enemy_health = 10;
 	enemy_speed = 3;
 	enemy_radius = 30;
-	current_state = alive;
+	current_move_state = aggro;
+	current_health_state = alive;
 	bullet_collision = false;
 
 	enemy_weapon = new weapon();
@@ -18,7 +19,7 @@ enemy::~enemy()
 }
 void enemy::draw()
 {
-	if (current_state == alive)
+	if (current_health_state == alive)
 	{
 		DrawCircleV(enemy_object, enemy_radius, PURPLE);
 	}
@@ -33,11 +34,11 @@ void enemy::update(Vector2& player_object, Rectangle bullet_rectangle)
 {
 	bullet_collision = CheckCollisionRecs(bullet_rectangle, get_rectangle());
 
-	if (current_state == aggro)
+	if (current_move_state == aggro)
 	{
 		enemy_object = Vector2MoveTowards(enemy_object, player_object, enemy_speed);
 	}
-	else if (current_state == neutral)
+	else if (current_move_state == neutral)
 	{
 		return;
 	}
@@ -45,12 +46,12 @@ void enemy::update(Vector2& player_object, Rectangle bullet_rectangle)
 	if (bullet_collision)
 	{
 		take_damage(enemy_weapon->bullet_damage);
-		current_state = aggro;
+		current_move_state = aggro;
 	}
 
 	if (enemy_health <= 0)
 	{
-		current_state = dead;
+		current_health_state = dead;
 	}
 
 }

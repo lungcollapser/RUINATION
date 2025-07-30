@@ -11,8 +11,8 @@ public:
 	bullet();
 	bullet(Vector2 fire_position, int bullet_speed);
 	~bullet();
-	void draw(Vector2& position);
-	void update(int screen_x, int screen_y, int bullet_amount, Vector2 center_position);
+	void draw(Vector2 position);
+	void update(int screen_x, int screen_y);
 	Rectangle get_rectangle(Vector2 player_position);
 	bool active;
 	Vector2 fire_position;
