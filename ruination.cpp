@@ -39,26 +39,19 @@ void ammo_logic()
         ammo_main.current_ammo_state = ammo_main.picked_up;
     }
 }
-
-void camera_logic()
-{
-    camera_main.update();
-    camera_main.player_camera.offset = { screen_size_x / 2.0f, screen_size_y / 2.0f };
-}
-
 void draw()
 {
     BeginDrawing();
     ClearBackground(BLACK);
     DrawFPS(10, 10);
     BeginMode2D(camera_main.player_camera);
+    for (auto& bullet : player_main.get_bullets())
+    {
+        bullet.draw(player_main.player_object);
+        std::cout << "ayo";
+    }
     DrawLine(800, 0, 0, 800, WHITE);
     DrawLine(0, 0, 800, 800, WHITE);
-    for (int i = 0; i < player_main.current_weapon->bullet_amount; i++)
-    {
-        weapon_main.bullets->draw(center_position);
-        std::cout << "draw";
-    }
 
     player_main.draw();
     enemy_main.draw();
@@ -69,18 +62,18 @@ void draw()
 void input()
 {
 
-    player_main.take_input(center_position);
+    player_main.take_input(player_main.player_object);
     camera_main.take_input();
 
 }
 void update()
 {
-    for (int i = 0; i < player_main.current_weapon->bullet_amount; i++)
+    for (auto& bullet : player_main.get_bullets())
     {
-        weapon_main.bullets->update(screen_size_x, screen_size_y, weapon_main.bullet_amount, player_main.player_object);
-        std::cout << "update";
+        bullet.update(screen_size_x, screen_size_y);
     }
     enemy_main.update(player_main.player_object, bullet_main.get_rectangle(player_main.player_object));
+    camera_main.update();
 }
 
 // main func
@@ -102,7 +95,6 @@ int main()
         input();
         update();
         ammo_logic();
-        camera_logic();
     }
     // tells the window to close when told
     CloseWindow();

@@ -4,6 +4,7 @@
 #define PLAYER_H
 
 #include "include.h"
+#include "weapon.h"
 #include "revolver.h"
 #include "repeater.h"
 
@@ -21,5 +22,7 @@ public:
 	weapon *current_weapon;
 	revolver *revolver_weapon;
 	repeater *repeater_weapon;
+
+	std::vector<bullet> get_bullets();
 };
 #endif

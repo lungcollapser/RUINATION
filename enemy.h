@@ -19,14 +19,18 @@ public:
 	Vector2 enemy_object, enemy_position;
 	float enemy_health, enemy_speed, enemy_radius, bullet_speed;
 	bool bullet_collision;
-	enum enemy_state
+	enum enemy_move_state
 	{
 		aggro,
-		neutral,
-		alive, 
+		neutral
+	};
+	enum enemy_health_state
+	{
+		alive,
 		dead
 	};
-	enemy_state current_state;
+	enemy_move_state current_move_state;
+	enemy_health_state current_health_state;
 
 	weapon* enemy_weapon;
 };

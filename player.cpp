@@ -95,6 +95,10 @@ Rectangle player::get_rectangle()
 {
 	return Rectangle{ player_object.x - 25, player_object.y - 25, 50, 50 };
 }
+std::vector<bullet> player::get_bullets()
+{
+	return current_weapon->bullets;
+}
 
 
 
