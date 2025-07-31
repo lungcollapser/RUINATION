@@ -11,7 +11,6 @@ enemy::enemy()
 	current_health_state = alive;
 	bullet_collision = false;
 
-	enemy_weapon = new weapon();
 }
 enemy::~enemy()
 {
@@ -30,7 +29,7 @@ void enemy::draw()
 
 }
 
-void enemy::update(Vector2& player_object)
+void enemy::update(Vector2& player_object, float bullet_damage)
 {
 	bullet_collision = true;
 
@@ -45,7 +44,7 @@ void enemy::update(Vector2& player_object)
 
 	if (bullet_collision)
 	{
-		take_damage(enemy_weapon->bullet_damage);
+		take_damage(bullet_damage);
 		current_move_state = aggro;
 	}
 

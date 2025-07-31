@@ -18,20 +18,6 @@ camera camera_main;
 enemy enemy_main;
 ammo ammo_main;
 weapon weapon_main;
-
-
-
-bool collision(Rectangle collision_one, Rectangle collision_two)
-{
-    if (CheckCollisionRecs(collision_one, collision_two))
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
     
 
 void ammo_logic()
@@ -56,7 +42,7 @@ void ammo_logic()
 
     }
 }
-void draw()
+internal void draw()
 {
     BeginDrawing();
     ClearBackground(BLACK);
@@ -74,7 +60,7 @@ void draw()
     EndMode2D();
     EndDrawing();
 }
-void input()
+internal void input()
 {
     local_persist Vector2 center_position = { 0, 0 };
 
@@ -83,14 +69,14 @@ void input()
     camera_main.take_input();
 
 }
-void update()
+internal void update()
 {
     for (auto& bullet : player_main.get_bullets())
     {
         bullet.update(screen_size_x, screen_size_y, player_main.player_object, enemy_main.get_rectangle());
     }
     camera_main.update();
-    enemy_main.update(player_main.player_object);
+    enemy_main.update(player_main.player_object, player_main.current_weapon->bullet_damage);
 }
 
 // main func
