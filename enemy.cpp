@@ -30,9 +30,9 @@ void enemy::draw()
 
 }
 
-void enemy::update(Vector2& player_object, Rectangle bullet_rectangle)
+void enemy::update(Vector2& player_object)
 {
-	bullet_collision = CheckCollisionRecs(bullet_rectangle, get_rectangle());
+	bullet_collision = true;
 
 	if (current_move_state == aggro)
 	{
