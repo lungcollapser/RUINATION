@@ -4,7 +4,6 @@
 #define ENEMY_H
 
 #include "include.h"
-#include "weapon.h"
 
 class enemy
 {
@@ -12,7 +11,7 @@ public:
 	enemy();
 	~enemy();
 	void draw();
-	void update(Vector2 &player_object);
+	void update(Vector2 &player_object, float bullet_damage);
 	int take_damage(int damage);
 	Rectangle get_rectangle();
 	Rectangle enemy_rec;
@@ -32,6 +31,5 @@ public:
 	enemy_move_state current_move_state;
 	enemy_health_state current_health_state;
 
-	weapon* enemy_weapon;
 };
 #endif
