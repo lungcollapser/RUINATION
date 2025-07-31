@@ -12,7 +12,7 @@ public:
 	enemy();
 	~enemy();
 	void draw();
-	void update(Vector2 &player_object, Rectangle bullet_rectangle);
+	void update(Vector2 &player_object);
 	int take_damage(int damage);
 	Rectangle get_rectangle();
 	Rectangle enemy_rec;

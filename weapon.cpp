@@ -3,8 +3,7 @@
 
 weapon::weapon()
 {
-	weapon_reticle = {0, 0};
-	center_position = { 0, 0 };
+	weapon_reticle = { 0, 0 };
 }
 
 weapon::~weapon()

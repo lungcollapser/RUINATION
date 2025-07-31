@@ -4,7 +4,10 @@
 #include "enemy.h"
 #include "weapon.h"
 #include "ammo.h"
-#include "bullet.h"
+
+#define global_variable static
+#define local_persist static
+#define internal static
 
 //TODO: Make collision Rectangles into collision Circles.
 //TODO: Make bullet collision more global to where if it hits any object, it deactivates and disappears.
@@ -15,28 +18,42 @@ camera camera_main;
 enemy enemy_main;
 ammo ammo_main;
 weapon weapon_main;
-bullet bullet_main;
 
-static Vector2 center_position = { 0, 0 };
 
+
+bool collision(Rectangle collision_one, Rectangle collision_two)
+{
+    if (CheckCollisionRecs(collision_one, collision_two))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+    
 
 void ammo_logic()
 {
 
     //TODO: make the item drop choice global for all things that can be destroyed have the chance to drop items.
-    bool ammo_collision = CheckCollisionRecs(player_main.get_rectangle(), ammo_main.get_rectangle({ ammo_main.ammo_drop }));
+    bool ammo_collision = collision(player_main.get_rectangle(), ammo_main.get_rectangle({ ammo_main.ammo_drop }));
 
     
     if (ammo_collision && ammo_main.ammo_choices == ammo_main.clips)
     {
         player_main.current_weapon->current_clips += 1;
         ammo_main.current_ammo_state = ammo_main.picked_up;
+        std::cout << "picked up";
     }
     
     if (ammo_collision && player_main.current_weapon->bullet_amount < player_main.current_weapon->max_bullets && ammo_main.ammo_choices == ammo_main.bullets)
     {
         player_main.current_weapon->bullet_amount = player_main.current_weapon->max_bullets;
         ammo_main.current_ammo_state = ammo_main.picked_up;
+        std::cout << "picked up";
+
     }
 }
 void draw()
@@ -48,11 +65,9 @@ void draw()
     for (auto& bullet : player_main.get_bullets())
     {
         bullet.draw(player_main.player_object);
-        std::cout << "ayo";
     }
     DrawLine(800, 0, 0, 800, WHITE);
     DrawLine(0, 0, 800, 800, WHITE);
-
     player_main.draw();
     enemy_main.draw();
     ammo_main.draw(enemy_main.enemy_object);
@@ -61,6 +76,8 @@ void draw()
 }
 void input()
 {
+    local_persist Vector2 center_position = { 0, 0 };
+
 
     player_main.take_input(player_main.player_object);
     camera_main.take_input();
@@ -70,10 +87,10 @@ void update()
 {
     for (auto& bullet : player_main.get_bullets())
     {
-        bullet.update(screen_size_x, screen_size_y);
+        bullet.update(screen_size_x, screen_size_y, player_main.player_object, enemy_main.get_rectangle());
     }
-    enemy_main.update(player_main.player_object, bullet_main.get_rectangle(player_main.player_object));
     camera_main.update();
+    enemy_main.update(player_main.player_object);
 }
 
 // main func

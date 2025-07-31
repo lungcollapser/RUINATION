@@ -28,7 +28,7 @@ void bullet::draw(Vector2 position)
 	}
 	
 }
-void bullet::update(int screen_x, int screen_y)
+void bullet::update(int screen_x, int screen_y, Vector2 player_object, Rectangle player_collision)
 {
 	//This doesn't work. need to delete bullet when it exits screen.
 	if (fire_position.x >= screen_x && fire_position.y >= screen_y)
@@ -39,7 +39,27 @@ void bullet::update(int screen_x, int screen_y)
 	Vector2 change_vector = Vector2Scale(Vector2Normalize(fire_position), bullet_speed * GetFrameTime());
 	fire_position = Vector2Add(fire_position, change_vector);
 
+	bool bullet_player = collision(get_rectangle(player_object), player_collision);
+
+		if (bullet_player)
+		{
+			active = false;
+			std::cout << "false";
+		}
+
 }
+bool bullet::collision(Rectangle collision_one, Rectangle collision_two)
+{
+	if (CheckCollisionRecs(collision_one, collision_two))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
 Rectangle bullet::get_rectangle(Vector2 position)
 {
 	return Rectangle{ fire_position.x + position.x, fire_position.y + position.y, 15, 15 };

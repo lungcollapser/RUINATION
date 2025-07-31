@@ -15,6 +15,7 @@ public:
 	void update();
 	Rectangle get_rectangle(Vector2 position);
 	Vector2 ammo_drop;
+	bool ammo_collision;
 	enum ammo_type
 	{
 		bullets = 0,
