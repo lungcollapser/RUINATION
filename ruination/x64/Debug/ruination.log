@@ -1,25 +1,8 @@
-﻿  ammo.cpp
-C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\ammo.cpp(12,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  bullet.cpp
-C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.cpp(26,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  camera.cpp
-  enemy.cpp
-C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\enemy.cpp(47,15): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  entity.cpp
-  player.cpp
-  repeater.cpp
-  revolver.cpp
+﻿  enemy.cpp
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\enemy.cpp(57,15): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   ruination.cpp
-C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\ruination.cpp(79,76): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  weapon.cpp
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\ruination.cpp(57,76): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Generating Code...
-bullet.obj : error LNK2005: "bool __cdecl collision(struct Rectangle,struct Rectangle)" (?collision@@YA_NURectangle@@0@Z) already defined in ammo.obj
-camera.obj : error LNK2005: "bool __cdecl collision(struct Rectangle,struct Rectangle)" (?collision@@YA_NURectangle@@0@Z) already defined in ammo.obj
-enemy.obj : error LNK2005: "bool __cdecl collision(struct Rectangle,struct Rectangle)" (?collision@@YA_NURectangle@@0@Z) already defined in ammo.obj
-entity.obj : error LNK2005: "bool __cdecl collision(struct Rectangle,struct Rectangle)" (?collision@@YA_NURectangle@@0@Z) already defined in ammo.obj
-player.obj : error LNK2005: "bool __cdecl collision(struct Rectangle,struct Rectangle)" (?collision@@YA_NURectangle@@0@Z) already defined in ammo.obj
-repeater.obj : error LNK2005: "bool __cdecl collision(struct Rectangle,struct Rectangle)" (?collision@@YA_NURectangle@@0@Z) already defined in ammo.obj
-revolver.obj : error LNK2005: "bool __cdecl collision(struct Rectangle,struct Rectangle)" (?collision@@YA_NURectangle@@0@Z) already defined in ammo.obj
-ruination.obj : error LNK2005: "bool __cdecl collision(struct Rectangle,struct Rectangle)" (?collision@@YA_NURectangle@@0@Z) already defined in ammo.obj
-weapon.obj : error LNK2005: "bool __cdecl collision(struct Rectangle,struct Rectangle)" (?collision@@YA_NURectangle@@0@Z) already defined in ammo.obj
-C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\x64\Debug\ruination.exe : fatal error LNK1169: one or more multiply defined symbols found
+  ruination.vcxproj -> C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\x64\Debug\ruination.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.

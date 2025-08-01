@@ -20,28 +20,6 @@ ammo ammo_main;
 weapon weapon_main;
     
 
-void ammo_logic()
-{
-
-    //TODO: make the item drop choice global for all things that can be destroyed have the chance to drop items.
-    bool ammo_collision = collision(player_main.get_rectangle(), ammo_main.get_rectangle({ ammo_main.ammo_drop }));
-
-    
-    if (ammo_collision && ammo_main.ammo_choices == ammo_main.clips)
-    {
-        player_main.current_weapon->current_clips += 1;
-        ammo_main.current_ammo_state = ammo_main.picked_up;
-        std::cout << "picked up";
-    }
-    
-    if (ammo_collision && player_main.current_weapon->bullet_amount < player_main.current_weapon->max_bullets && ammo_main.ammo_choices == ammo_main.bullets)
-    {
-        player_main.current_weapon->bullet_amount = player_main.current_weapon->max_bullets;
-        ammo_main.current_ammo_state = ammo_main.picked_up;
-        std::cout << "picked up";
-
-    }
-}
 internal void draw()
 {
     BeginDrawing();
@@ -76,7 +54,8 @@ internal void update()
         bullet.update(screen_size_x, screen_size_y, player_main.player_object, enemy_main.get_rectangle());
     }
     camera_main.update();
-    enemy_main.update(player_main.player_object, player_main.current_weapon->bullet_damage);
+    enemy_main.update(player_main.player_object, player_main.current_weapon->bullet_damage, weapon_main.get_bullets(), enemy_main.get_rectangle());
+    ammo_main.update(player_main.get_rectangle(), ammo_main.get_rectangle({ 0, 0 }), player_main.current_weapon);
 }
 
 // main func
@@ -97,7 +76,6 @@ int main()
         draw();
         input();
         update();
-        ammo_logic();
     }
     // tells the window to close when told
     CloseWindow();
