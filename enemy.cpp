@@ -7,9 +7,8 @@ enemy::enemy()
 	enemy_health = 10;
 	enemy_speed = 3;
 	enemy_radius = 30;
-	current_move_state = aggro;
+	current_move_state = neutral;
 	current_health_state = alive;
-	bullet_collision = false;
 
 }
 enemy::~enemy()
@@ -28,10 +27,21 @@ void enemy::draw()
 	}
 
 }
-
-void enemy::update(Vector2& player_object, float bullet_damage)
+bool enemy::collision(Rectangle collision_one, Rectangle collision_two)
 {
-	bullet_collision = true;
+	if (CheckCollisionRecs(collision_one, collision_two))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+void enemy::update(Vector2& player_object, float bullet_damage, Rectangle rec1, Rectangle rec2)
+{
+	bool enemy_collision = collision(rec1, rec2);
 
 	if (current_move_state == aggro)
 	{
@@ -42,10 +52,11 @@ void enemy::update(Vector2& player_object, float bullet_damage)
 		return;
 	}
 
-	if (bullet_collision)
+	if (enemy_collision)
 	{
 		take_damage(bullet_damage);
 		current_move_state = aggro;
+		std::cout << enemy_health;
 	}
 
 	if (enemy_health <= 0)

@@ -4,6 +4,7 @@
 #define AMMO_H
 
 #include "include.h"
+#include "weapon.h"
 
 
 class ammo
@@ -12,10 +13,11 @@ class ammo
 public: 
 	ammo();
 	void draw(Vector2 position);
-	void update();
+	void update(Rectangle rec1, Rectangle rec2, weapon* current_weapon);
+	bool collision(Rectangle collision_one, Rectangle collision_two);
+
 	Rectangle get_rectangle(Vector2 position);
 	Vector2 ammo_drop;
-	bool ammo_collision;
 	enum ammo_type
 	{
 		bullets = 0,

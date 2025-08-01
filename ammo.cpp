@@ -24,8 +24,37 @@ void ammo::draw(Vector2 position)
 		}
 	}
 }
-void ammo::update()
+bool ammo::collision(Rectangle collision_one, Rectangle collision_two)
 {
+	if (CheckCollisionRecs(collision_one, collision_two))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+void ammo::update(Rectangle rec1, Rectangle rec2, weapon* current_weapon)
+{
+    //TODO: make the item drop choice global for all things that can be destroyed have the chance to drop items.
+    bool ammo_collision = collision(rec1, rec2);
+
+
+    if (ammo_collision && ammo_choices == clips)
+    {
+        current_weapon->clips += 1;
+        current_ammo_state = picked_up;
+        std::cout << "picked up";
+    }
+
+    if (ammo_collision && current_weapon->bullet_amount < current_weapon->max_bullets && ammo_choices == bullets)
+    {
+        current_weapon->bullet_amount = current_weapon->max_bullets;
+        current_ammo_state = picked_up;
+        std::cout << "picked up";
+
+    }
 }
 Rectangle ammo::get_rectangle(Vector2 position)
 {
