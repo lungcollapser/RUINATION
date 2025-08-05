@@ -11,14 +11,14 @@ public:
 	enemy();
 	~enemy();
 	void draw();
-	void update(Vector2 &player_object, float bullet_damage, Rectangle rec1, Rectangle rec2);
+	void update(v2 &player_object, float bullet_damage, Rectangle rec1, Rectangle rec2);
 	int take_damage(int damage);
 	bool collision(Rectangle collision_one, Rectangle collision_two);
 
 	Rectangle get_rectangle();
 	Rectangle enemy_rec;
 	Vector2 enemy_object, enemy_position;
-	float enemy_health, enemy_speed, enemy_radius, bullet_speed;
+	int16 enemy_health, enemy_speed, enemy_radius, bullet_speed;
 	enum enemy_move_state
 	{
 		aggro,

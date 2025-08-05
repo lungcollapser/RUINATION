@@ -15,8 +15,8 @@ struct entity_stats
 	uint8 entity_stat_assign();
 
 	uint8 entity_choice;
-	uint8 health;
-	uint8 speed;
+	int16 health;
+	int16 speed;
 	v2 position;
 
 };

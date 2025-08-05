@@ -32,9 +32,9 @@ void player::draw()
 }
 
 //player movements
-void player::take_input(Vector2 &center_position)
+void player::take_input(v2 &center_position)
 {
-	Vector2 direction = { 0.0f, 0.0f };
+	v2 direction = { 0.0f, 0.0f };
 
 	if (IsKeyDown(KEY_D))
 	{
@@ -53,7 +53,7 @@ void player::take_input(Vector2 &center_position)
 		direction.y++;
 	}
 
-	Vector2 velocity = Vector2Scale(Vector2Normalize(direction), player_speed * GetFrameTime());
+	v2 velocity = Vector2Scale(Vector2Normalize(direction), player_speed * GetFrameTime());
 	player_object = Vector2Add(player_object, velocity);
 
 	if (IsKeyDown(KEY_LEFT_SHIFT))
@@ -69,19 +69,16 @@ void player::take_input(Vector2 &center_position)
 	if (IsKeyPressed(KEY_ONE))
 	{
 		current_weapon = revolver_weapon;
-		std::cout << current_weapon->current_clips;
 	}
 	else if (IsKeyPressed(KEY_TWO))
 	{
 		current_weapon = repeater_weapon;
-		std::cout << current_weapon->current_clips;
 	}
 	
 	
 	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && current_weapon->bullet_amount > 0)
 	{
 		current_weapon->fire(current_weapon->weapon_reticle, center_position, current_weapon->bullet_speed);
-		std::cout << current_weapon->bullet_amount;
 	}
 
 	if (IsKeyPressed(KEY_R) && current_weapon->current_clips >= 1 && current_weapon->bullet_amount < current_weapon->max_bullets)

@@ -16,7 +16,7 @@ public:
 	std::vector<bullet> bullets;
 	std::vector<bullet> get_bullets();
 	Vector2 weapon_reticle;
-	int bullet_speed, bullet_amount, bullet_damage, max_bullets, clips, current_clips;
+	int16 bullet_speed, bullet_amount, bullet_damage, max_bullets, clips, current_clips;
 	
 };
 #endif

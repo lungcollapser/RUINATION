@@ -18,12 +18,13 @@ bullet::~bullet()
 
 }
 
-void bullet::draw(Vector2 position)
+void bullet::draw(v2 position)
 {
 
 	if (active)
 	{
 		DrawCircleV(fire_position + position, bullet_radius, BLUE);
+		DrawRectangleLines(fire_position.x + position.x, fire_position.y + position.y, 15, 15, YELLOW);
 	}
 	
 }
@@ -38,7 +39,7 @@ bool bullet::collision(Rectangle collision_one, Rectangle collision_two)
 		return false;
 	}
 }
-void bullet::update(int screen_x, int screen_y, Vector2 player_object, Rectangle player_collision)
+void bullet::update(int screen_x, int screen_y, v2 player_object, Rectangle player_collision)
 {
 	//This doesn't work. need to delete bullet when it exits screen.
 
@@ -49,14 +50,14 @@ void bullet::update(int screen_x, int screen_y, Vector2 player_object, Rectangle
 		active = false;
 	}
 
-	Vector2 change_vector = Vector2Scale(Vector2Normalize(fire_position), bullet_speed * GetFrameTime());
+	v2 change_vector = Vector2Scale(Vector2Normalize(fire_position), bullet_speed * GetFrameTime());
 	fire_position = Vector2Add(fire_position, change_vector);
 
 
 }
 
 
-Rectangle bullet::get_rectangle(Vector2 position)
+Rectangle bullet::get_rectangle(v2 position)
 {
 	return Rectangle{ fire_position.x + position.x, fire_position.y + position.y, 15, 15 };
 }

@@ -7,7 +7,7 @@ ammo::ammo()
 {
 	ammo_drop = { 0, 0 };
 }
-void ammo::draw(Vector2 position)
+void ammo::draw(v2 position)
 {
 	srand(time(0));
 
@@ -56,7 +56,7 @@ void ammo::update(Rectangle rec1, Rectangle rec2, weapon* current_weapon)
 
     }
 }
-Rectangle ammo::get_rectangle(Vector2 position)
+Rectangle ammo::get_rectangle(v2 position)
 {
 	return Rectangle{ position.x - 25, position.y - 25, 50, 50 };
 }
