@@ -23,7 +23,7 @@ void enemy::draw()
 	}
 	else
 	{
-		return;
+		current_health_state == dead;
 	}
 
 }
@@ -39,17 +39,22 @@ bool enemy::collision(Rectangle collision_one, Rectangle collision_two)
 	}
 }
 
-void enemy::update(Vector2& player_object, float bullet_damage, Rectangle rec1, Rectangle rec2)
+void enemy::update(v2& player_object, float bullet_damage, Rectangle rec1, Rectangle rec2)
 {
 	bool enemy_collision = collision(rec1, rec2);
+	
+	if (current_health_state == dead)
+	{
+		return;
+	}
 
 	if (current_move_state == aggro)
 	{
 		enemy_object = Vector2MoveTowards(enemy_object, player_object, enemy_speed);
 	}
-	else if (current_move_state == neutral)
+	else
 	{
-		return;
+		current_move_state == neutral;
 	}
 
 	if (enemy_collision)
@@ -63,6 +68,11 @@ void enemy::update(Vector2& player_object, float bullet_damage, Rectangle rec1, 
 	{
 		current_health_state = dead;
 	}
+	else
+	{
+		current_health_state = alive;
+	}
+
 
 }
 int enemy::take_damage(int damage)

@@ -10,7 +10,7 @@
 class player
 {
 protected:
-	int player_speed;
+	int16 player_speed;
 public:
 	player();
 	~player();

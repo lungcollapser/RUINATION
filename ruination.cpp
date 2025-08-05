@@ -52,9 +52,9 @@ internal void update()
     for (auto& bullet : player_main.get_bullets())
     {
         bullet.update(screen_size_x, screen_size_y, player_main.player_object, enemy_main.get_rectangle());
+        enemy_main.update(player_main.player_object, player_main.current_weapon->bullet_damage, bullet.get_rectangle(player_main.player_object), enemy_main.get_rectangle());
     }
     camera_main.update();
-    enemy_main.update(player_main.player_object, player_main.current_weapon->bullet_damage, weapon_main.get_bullets(), enemy_main.get_rectangle());
     ammo_main.update(player_main.get_rectangle(), ammo_main.get_rectangle({ 0, 0 }), player_main.current_weapon);
 }
 

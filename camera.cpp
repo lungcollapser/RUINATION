@@ -21,7 +21,7 @@ void camera::update()
 void camera::take_input()
 {
 
-	Vector2 direction = { 0, 0 };
+	v2 direction = { 0, 0 };
 
 	if (IsKeyDown(KEY_D))
 	{

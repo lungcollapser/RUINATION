@@ -1,7 +1,19 @@
-﻿  enemy.cpp
-C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\enemy.cpp(57,15): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+﻿  ammo.cpp
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\ammo.cpp(12,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  bullet.cpp
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.cpp(27,68): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.cpp(27,38): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  camera.cpp
+  enemy.cpp
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\enemy.cpp(26,24): warning C4553: '==': result of expression not used; did you intend '='?
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\enemy.cpp(57,22): warning C4553: '==': result of expression not used; did you intend '='?
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\enemy.cpp(62,15): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  entity.cpp
+  player.cpp
+  repeater.cpp
+  revolver.cpp
   ruination.cpp
-C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\ruination.cpp(57,76): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  weapon.cpp
   Generating Code...
   ruination.vcxproj -> C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\x64\Debug\ruination.exe
   'pwsh.exe' is not recognized as an internal or external command,
