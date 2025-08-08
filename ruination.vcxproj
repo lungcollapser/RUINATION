@@ -144,6 +144,7 @@
     <ClCompile Include="repeater.cpp" />
     <ClCompile Include="revolver.cpp" />
     <ClCompile Include="ruination.cpp" />
+    <ClCompile Include="timer.cpp" />
     <ClCompile Include="weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -156,6 +157,7 @@
     <ClInclude Include="player.h" />
     <ClInclude Include="repeater.h" />
     <ClInclude Include="revolver.h" />
+    <ClInclude Include="timer.h" />
     <ClInclude Include="weapon.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
