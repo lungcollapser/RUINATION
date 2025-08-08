@@ -4,6 +4,7 @@
 #include "enemy.h"
 #include "weapon.h"
 #include "ammo.h"
+#include "timer.h"
 
 #define global_variable static
 #define local_persist static
@@ -22,6 +23,7 @@ weapon weapon_main;
 
 internal void draw()
 {
+    timer timer_main;
     BeginDrawing();
     ClearBackground(BLACK);
     DrawFPS(10, 10);
@@ -35,6 +37,7 @@ internal void draw()
     player_main.draw();
     enemy_main.draw();
     ammo_main.draw(enemy_main.enemy_object);
+    timer_main.draw(player_main.player_object);
     EndMode2D();
     EndDrawing();
 }
