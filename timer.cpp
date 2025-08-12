@@ -1,7 +1,16 @@
 #include "timer.h"
 
-void timer::draw(v2 player_object)
+void draw_timer(v2 player_object)
 {
-	DrawText(TextFormat("Time Left: ", timer_max), player_object.x - 50, player_object.y - 50, 50, ORANGE);
+	timer *max_timer = (timer*) malloc(sizeof(uint16));
 
+	if (max_timer)
+	{
+		DrawText(TextFormat("Time Left: ", max_timer->timer_max), player_object.x - 50, player_object.y - 50, 50, ORANGE);
+	}
+
+	
+	free(max_timer);
+
+	
 }

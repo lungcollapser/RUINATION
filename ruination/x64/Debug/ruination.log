@@ -1,6 +1,6 @@
 ﻿  timer.cpp
-C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\timer.cpp(5,87): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\timer.cpp(5,65): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\timer.cpp(9,99): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\timer.cpp(9,77): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   ruination.vcxproj -> C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\x64\Debug\ruination.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.

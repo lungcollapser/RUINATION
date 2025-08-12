@@ -23,7 +23,6 @@ weapon weapon_main;
 
 internal void draw()
 {
-    timer timer_main;
     BeginDrawing();
     ClearBackground(BLACK);
     DrawFPS(10, 10);
@@ -37,16 +36,16 @@ internal void draw()
     player_main.draw();
     enemy_main.draw();
     ammo_main.draw(enemy_main.enemy_object);
-    timer_main.draw(player_main.player_object);
+    draw_timer(player_main.player_object);
     EndMode2D();
     EndDrawing();
 }
 internal void input()
 {
-    local_persist Vector2 center_position = { 0, 0 };
+    local_persist v2 center_position = { 0, 0 };
 
 
-    player_main.take_input(player_main.player_object);
+    player_main.take_input(center_position);
     camera_main.take_input();
 
 }
