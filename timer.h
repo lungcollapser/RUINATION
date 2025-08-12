@@ -3,9 +3,6 @@
 
 struct timer
 {
-	void draw(v2 player_object);
-	void alloc();
-	void dealloc();
 
 	uint16 timer_max;
 	uint16 timer_left;
@@ -17,3 +14,7 @@ enum timer_state
 	timer_stop = 2,
 	timer_paused = 3
 };
+
+void draw_timer(v2 player_object);
+void alloc();
+void dealloc();
