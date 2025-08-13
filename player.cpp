@@ -1,38 +1,27 @@
 #include "player.h"
 
-//constructor
-player::player()
+
+void init_p(weapon* current_weapon, revolver* revolver_weapon, repeater* repeater_weapon)
 {
-	//initializations
-	player_object = { 0, 0 };
-	player_speed = 525;
+	current_weapon = (weapon*)malloc(sizeof(weapon));
+	revolver_weapon = (revolver*)malloc(sizeof(revolver));
+	repeater_weapon = (repeater*)malloc(sizeof(repeater));
 
-	current_weapon = new weapon();
-	revolver_weapon = new revolver();
-	repeater_weapon = new repeater();
-
-	revolver_weapon->bullet_amount = revolver_weapon->max_bullets;
-	repeater_weapon->bullet_amount = repeater_weapon->max_bullets;
 }
-//destructor
-player::~player()
+void free_p(weapon* current_weapon, revolver* revolver_weapon, repeater* repeater_weapon)
 {
-
-	//for some reason, deleting the current_weapon results in an exception being thrown. LOOK INTO THIS
-	delete revolver_weapon;
-	delete repeater_weapon;
-
+	free(current_weapon);
+	free(revolver_weapon);
+	free(repeater_weapon);
 }
 //player drawings
-void player::draw()
+void draw_p(v2 player_object)
 {
 	DrawCircleV(player_object, 25, WHITE);
-	current_weapon->draw(player_object);
-
 }
 
 //player movements
-void player::take_input(v2 &center_position)
+void take_input_p(v2 player_object, weapon* current_weapon, revolver* revolver_weapon, repeater* repeater_weapon, v2 &center_position, uint16 player_speed)
 {
 	v2 direction = { 0.0f, 0.0f };
 
@@ -88,11 +77,11 @@ void player::take_input(v2 &center_position)
 	}
 	
 }
-Rectangle player::get_rectangle()
+Rectangle get_rectangle(v2 player_object)
 {
 	return Rectangle{ player_object.x - 25, player_object.y - 25, 50, 50 };
 }
-std::vector<bullet>& player::get_bullets()
+std::vector<bullet>& get_bullets(weapon* current_weapon)
 {
 	return current_weapon->bullets;
 }

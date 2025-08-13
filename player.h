@@ -7,21 +7,17 @@
 #include "revolver.h"
 #include "repeater.h"
 
-class player
-{
-protected:
-	int16 player_speed;
-public:
-	player();
-	~player();
-	void draw();
-	void take_input(Vector2 &center_position);
-	Rectangle get_rectangle();
-	std::vector<bullet>& get_bullets();
-	Vector2 player_object;
-	weapon *current_weapon;
-	revolver *revolver_weapon;
-	repeater *repeater_weapon;
 
+struct player_attributes
+{
+	uint16 player_speed;
+	v2 player_object;
+	
 };
+void draw_p(v2 player_object);
+void take_input_p(v2 player_object, weapon* current_weapon, revolver* revolver_weapon, repeater* repeater_weapon, v2& center_position, uint16 player_speed);
+void init_p(weapon * current_weapon);
+void free_p(weapon* current_weapon, revolver* revolver_weapon, repeater* repeater_weapon);
+Rectangle get_rectangle(v2 player_object);
+std::vector<bullet>& get_bullets(weapon* current_weapon);
 #endif

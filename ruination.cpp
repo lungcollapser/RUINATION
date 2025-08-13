@@ -14,15 +14,26 @@
 //TODO: Make bullet collision more global to where if it hits any object, it deactivates and disappears.
 //TODO: Look into making a component system.
 
-player player_main;
 camera camera_main;
 enemy enemy_main;
 ammo ammo_main;
 weapon weapon_main;
     
+internal void draw_player(player* player)
+{
+
+    draw_p(player->player_object);
+
+}
+internal void take_input_player(player* player)
+{
+
+    take_input_p(player->player_object);
+}
 
 internal void draw()
 {
+
     BeginDrawing();
     ClearBackground(BLACK);
     DrawFPS(10, 10);
@@ -58,6 +69,10 @@ internal void update()
     }
     camera_main.update();
     ammo_main.update(player_main.get_rectangle(), ammo_main.get_rectangle({ 0, 0 }), player_main.current_weapon);
+}
+internal void free_mem()
+{
+
 }
 
 // main func

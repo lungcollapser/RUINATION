@@ -6,17 +6,36 @@
 #include "include.h"
 #include "bullet.h"
 
-class weapon
+class revolver;
+class repeater;
+
+enum current_weapon
 {
-public:
-	weapon();
-	~weapon();
-	void fire(Vector2 &weapon_reticle, Vector2 &center_position, int bullet_speed);
-	void draw(Vector2 &player_object);
+	revolver = 1,
+	repeater = 2
+};
+
+struct revolver
+{
+	
+	
+	uint16 bullet_speed;
+	uint16 bullet_amount;
+	uint16 bullet_damage;
+	uint16 max_bullets;
+	uint16 clips;
+	uint16 current_clips;
+	v2 weapon_reticle;
+
 	std::vector<bullet> bullets;
-	std::vector<bullet> get_bullets();
-	Vector2 weapon_reticle;
-	int16 bullet_speed, bullet_amount, bullet_damage, max_bullets, clips, current_clips;
 	
 };
+void init_w();
+void free_w();
+void draw_w(v2 player_object);
+void fire_w(std::vector<bullet> bullets, v2 weapon_reticle, v2 center_position, uint16 bullet_speed, uint16 bullet_amount);
+void take_input_w();
+std::vector<bullet> get_bullets();
+
+
 #endif
