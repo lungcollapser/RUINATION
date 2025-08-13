@@ -23,7 +23,7 @@ void enemy::draw()
 	}
 	else
 	{
-		current_health_state == dead;
+		current_health_state = dead;
 	}
 
 }
@@ -54,7 +54,7 @@ void enemy::update(v2& player_object, float bullet_damage, Rectangle rec1, Recta
 	}
 	else
 	{
-		current_move_state == neutral;
+		current_move_state = neutral;
 	}
 
 	if (enemy_collision)

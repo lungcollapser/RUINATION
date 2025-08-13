@@ -17,7 +17,6 @@
 camera camera_main;
 enemy enemy_main;
 ammo ammo_main;
-weapon weapon_main;
     
 internal void draw_player(player* player)
 {
@@ -25,76 +24,107 @@ internal void draw_player(player* player)
     draw_p(player->player_object);
 
 }
-internal void take_input_player(player* player)
+internal void update_player(player* player, v2 center_position)
 {
 
-    take_input_p(player->player_object);
+    update_p(player->player_object, center_position, 525);
+}
+internal void draw_weapon(weapon* current_weapon, player* player)
+{
+    draw_w(player->player_object, {0, 0});
+
+    for (auto& bullet : current_weapon->get_bullets())
+    {
+        bullet.draw(player->player_object);
+    }
+}
+internal void update_weapon(weapon* current_weapon, revolver* revolver_weapon, repeater* repeater_weapon, player* player)
+{
+    update_w(current_weapon, { 0, 0 }, { 0, 0 }, current_weapon->bullet_speed, current_weapon->bullet_amount);
+
+    for (auto& bullet : current_weapon->get_bullets())
+    {
+        bullet.update(screen_size_x, screen_size_y, player->player_object, enemy_main.get_rectangle());
+        enemy_main.update(player->player_object, current_weapon->bullet_damage, bullet.get_rectangle(player->player_object), enemy_main.get_rectangle());
+    }
+
+    if (IsKeyPressed(KEY_ONE))
+    {
+        current_weapon = revolver_weapon;
+    }
+    else if (IsKeyPressed(KEY_TWO))
+    {
+        current_weapon = repeater_weapon;
+    }
+
 }
 
 internal void draw()
 {
 
-    BeginDrawing();
-    ClearBackground(BLACK);
-    DrawFPS(10, 10);
-    BeginMode2D(camera_main.player_camera);
-    for (auto& bullet : player_main.get_bullets())
-    {
-        bullet.draw(player_main.player_object);
-    }
     DrawLine(800, 0, 0, 800, WHITE);
     DrawLine(0, 0, 800, 800, WHITE);
-    player_main.draw();
     enemy_main.draw();
     ammo_main.draw(enemy_main.enemy_object);
-    draw_timer(player_main.player_object);
-    EndMode2D();
-    EndDrawing();
 }
 internal void input()
 {
     local_persist v2 center_position = { 0, 0 };
 
 
-    player_main.take_input(center_position);
     camera_main.take_input();
 
 }
 internal void update()
 {
-    for (auto& bullet : player_main.get_bullets())
-    {
-        bullet.update(screen_size_x, screen_size_y, player_main.player_object, enemy_main.get_rectangle());
-        enemy_main.update(player_main.player_object, player_main.current_weapon->bullet_damage, bullet.get_rectangle(player_main.player_object), enemy_main.get_rectangle());
-    }
     camera_main.update();
-    ammo_main.update(player_main.get_rectangle(), ammo_main.get_rectangle({ 0, 0 }), player_main.current_weapon);
+}
+internal void init_mem()
+{
 }
 internal void free_mem()
 {
-
+    
 }
 
 // main func
 int main()
 {
+    local_persist v2 center_position = { 0, 0 };
 
-    // creating the window using two arguments. change color in the cpp file
+
+    player* player_main = (player*)malloc(sizeof(player));
+    weapon* weapon_main = (weapon*)malloc(sizeof(weapon));
+    revolver* revolver_main = (revolver*)malloc(sizeof(revolver));
+    repeater* repeater_main = (repeater*)malloc(sizeof(repeater));
+
     InitWindow(screen_size_x, screen_size_y, "ruin");
-    // fps setting
     SetTargetFPS(60);
-    //hides the cursor to make way for reticle
     HideCursor();
-    //sets a mouse offset due to strange mouse positioning (NEEDS TO BE FIXED)
     SetMouseOffset(-400, -400);
-    // window loop to keep it open until closed by user
     while (!WindowShouldClose())
     {
+        BeginDrawing();
+        ClearBackground(BLACK);
+        DrawFPS(10, 10);
+        BeginMode2D(camera_main.player_camera);
+
         draw();
+        draw_player(player_main);
+        draw_weapon(weapon_main, player_main);
         input();
+        update_player(player_main, center_position);
+        update_weapon(weapon_main, revolver_main, repeater_main, player_main);
         update();
+
+        EndMode2D();
+        EndDrawing();
     }
-    // tells the window to close when told
+    free(player_main);
+    free(weapon_main);
+    free(revolver_main);
+    free(repeater_main);
+
     CloseWindow();
 
     return 0;

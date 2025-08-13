@@ -6,16 +6,9 @@
 #include "include.h"
 #include "bullet.h"
 
-class revolver;
-class repeater;
 
-enum current_weapon
-{
-	revolver = 1,
-	repeater = 2
-};
 
-struct revolver
+struct weapon
 {
 	
 	
@@ -28,14 +21,16 @@ struct revolver
 	v2 weapon_reticle;
 
 	std::vector<bullet> bullets;
+	std::vector<bullet>& get_bullets();
+
+	void fire_w(v2 center_position);
 	
 };
 void init_w();
 void free_w();
-void draw_w(v2 player_object);
-void fire_w(std::vector<bullet> bullets, v2 weapon_reticle, v2 center_position, uint16 bullet_speed, uint16 bullet_amount);
-void take_input_w();
-std::vector<bullet> get_bullets();
+void draw_w(v2 player_object, v2 weapon_reticle);
+void update_w(weapon* current_weapon, v2 weapon_reticle, v2 center_position, uint16 bullet_speed, uint16 bullet_amount);
+
 
 
 #endif
