@@ -10,7 +10,6 @@
 #define local_persist static
 #define internal static
 
-//TODO: Make collision Rectangles into collision Circles.
 //TODO: Make bullet collision more global to where if it hits any object, it deactivates and disappears.
 //TODO: Look into making a component system.
 
@@ -18,31 +17,31 @@ camera camera_main;
 enemy enemy_main;
 ammo ammo_main;
     
-internal void draw_player(player* player)
+internal void draw_player(v2 player_object)
 {
 
-    draw_p(player->player_object);
+    draw_p(player_object);
 
 }
-internal void update_player(player* player, v2 center_position)
+internal void update_player(v2 player_object, v2 center_position, uint16 player_speed)
 {
 
-    update_p(player->player_object, center_position, 525);
+    update_p(player_object, center_position, player_speed);
 }
-internal void draw_weapon(weapon* current_weapon, player* player)
+internal void draw_weapon(std::vector<bullet> bullets, v2 player_object)
 {
-    draw_w(player->player_object, {0, 0});
+    draw_w(player_object, {0, 0});
 
-    for (auto& bullet : current_weapon->get_bullets())
+    for (auto& bullet : get_bullets(bullets))
     {
-        bullet.draw(player->player_object);
+        bullet.draw(player_object);
     }
 }
 internal void update_weapon(weapon* current_weapon, revolver* revolver_weapon, repeater* repeater_weapon, player* player)
 {
     update_w(current_weapon, { 0, 0 }, { 0, 0 }, current_weapon->bullet_speed, current_weapon->bullet_amount);
 
-    for (auto& bullet : current_weapon->get_bullets())
+    for (auto& bullet : get_bullets(current_weapon->bullets))
     {
         bullet.update(screen_size_x, screen_size_y, player->player_object, enemy_main.get_rectangle());
         enemy_main.update(player->player_object, current_weapon->bullet_damage, bullet.get_rectangle(player->player_object), enemy_main.get_rectangle());
@@ -53,7 +52,7 @@ internal void update_weapon(weapon* current_weapon, revolver* revolver_weapon, r
         current_weapon = revolver_weapon;
     }
     else if (IsKeyPressed(KEY_TWO))
-    {
+    { 
         current_weapon = repeater_weapon;
     }
 
@@ -98,8 +97,11 @@ int main()
     revolver* revolver_main = (revolver*)malloc(sizeof(revolver));
     repeater* repeater_main = (repeater*)malloc(sizeof(repeater));
 
+    player_main->player_object = { 0,0 };
+
+
     InitWindow(screen_size_x, screen_size_y, "ruin");
-    SetTargetFPS(60);
+    SetTargetFPS(120);
     HideCursor();
     SetMouseOffset(-400, -400);
     while (!WindowShouldClose())
@@ -110,10 +112,10 @@ int main()
         BeginMode2D(camera_main.player_camera);
 
         draw();
-        draw_player(player_main);
-        draw_weapon(weapon_main, player_main);
+        draw_player(player_main->player_object);
+        draw_weapon(weapon_main->bullets, player_main->player_object);
         input();
-        update_player(player_main, center_position);
+        update_player(player_main->player_object, center_position, player_main->player_speed);
         update_weapon(weapon_main, revolver_main, repeater_main, player_main);
         update();
 

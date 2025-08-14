@@ -10,7 +10,7 @@
 
 struct player
 {
-	uint16 player_speed;
+	uint16 player_speed = 525;
 	v2 player_object;
 	
 };

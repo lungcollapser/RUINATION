@@ -5,7 +5,6 @@
 //player drawings
 void draw_p(v2 player_object)
 {
-	player_object = { 0, 0 };
 
 	DrawCircleV(player_object, 25, WHITE);
 }
@@ -43,8 +42,6 @@ void update_p(v2 player_object, v2 &center_position, uint16 player_speed)
 	{
 		player_speed = 525;
 	}
-
-
 	
 }
 Rectangle get_rectangle(v2 player_object)
