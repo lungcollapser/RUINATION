@@ -13,6 +13,11 @@
 //TODO: Make bullet collision more global to where if it hits any object, it deactivates and disappears.
 //TODO: Look into making a component system.
 
+player* player_main = (player*)malloc(sizeof(player));
+weapon* weapon_main = (weapon*)malloc(sizeof(weapon));
+revolver* revolver_main = (revolver*)malloc(sizeof(revolver));
+repeater* repeater_main = (repeater*)malloc(sizeof(repeater));
+
 camera camera_main;
 enemy enemy_main;
 ammo ammo_main;
@@ -80,10 +85,13 @@ internal void update()
 }
 internal void init_mem()
 {
+    player_main = new player();
+
+    alloc_and_init_p(player_main);
 }
 internal void free_mem()
 {
-    
+    free_p(player_main);
 }
 
 // main func
@@ -92,25 +100,17 @@ int main()
     local_persist v2 center_position = { 0, 0 };
 
 
-    player* player_main = (player*)malloc(sizeof(player));
-    weapon* weapon_main = (weapon*)malloc(sizeof(weapon));
-    revolver* revolver_main = (revolver*)malloc(sizeof(revolver));
-    repeater* repeater_main = (repeater*)malloc(sizeof(repeater));
-
-    player_main->player_object = { 0,0 };
-
-
     InitWindow(screen_size_x, screen_size_y, "ruin");
     SetTargetFPS(120);
     HideCursor();
     SetMouseOffset(-400, -400);
+    init_mem();
     while (!WindowShouldClose())
     {
         BeginDrawing();
         ClearBackground(BLACK);
         DrawFPS(10, 10);
         BeginMode2D(camera_main.player_camera);
-
         draw();
         draw_player(player_main->player_object);
         draw_weapon(weapon_main->bullets, player_main->player_object);
@@ -122,7 +122,7 @@ int main()
         EndMode2D();
         EndDrawing();
     }
-    free(player_main);
+    free_mem();
     free(weapon_main);
     free(revolver_main);
     free(repeater_main);

@@ -1,17 +1,26 @@
 #include "player.h"
 
 
+void alloc_and_init_p(player* player_main)
+{
 
-//player drawings
+	player_main->player_object = { 0, 0 };
+	player_main->player_speed = 525;
+	std::cout << player_main->player_speed;
+}
+void free_p(player* player_main)
+{
+	free(player_main);
+}
 void draw_p(v2 player_object)
 {
 
 	DrawCircleV(player_object, 25, WHITE);
 }
 
-//player movements
 void update_p(v2 player_object, v2 &center_position, uint16 player_speed)
 {
+
 	v2 direction = { 0.0f, 0.0f };
 
 	if (IsKeyDown(KEY_D))

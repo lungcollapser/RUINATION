@@ -10,10 +10,13 @@
 
 struct player
 {
-	uint16 player_speed = 525;
+	player* player_main;
+	uint16 player_speed;
 	v2 player_object;
 	
 };
+void alloc_and_init_p(player* player_main);
+void free_p(player* player_main);
 void draw_p(v2 player_object);
 void update_p(v2 player_object, v2& center_position, uint16 player_speed);
 Rectangle get_rectangle(v2 player_object);
