@@ -86,12 +86,16 @@ internal void update()
 internal void init_mem()
 {
     player_main = new player();
+    weapon_main = new weapon();
 
-    alloc_and_init_p(player_main);
+    init_p(player_main);
+    init_w(weapon_main);
+
 }
 internal void free_mem()
 {
     free_p(player_main);
+    free_w(weapon_main);
 }
 
 // main func
@@ -123,7 +127,6 @@ int main()
         EndDrawing();
     }
     free_mem();
-    free(weapon_main);
     free(revolver_main);
     free(repeater_main);
 

@@ -23,8 +23,8 @@ struct weapon
 	std::vector<bullet> bullets;
 
 };
-void init_w();
-void free_w();
+void init_w(weapon *weapon_main);
+void free_w(weapon *weapon_main);
 void draw_w(v2 player_object, v2 weapon_reticle);
 void fire_w(v2 center_position, weapon* weapon, std::vector<bullet> bullets);
 void update_w(weapon* current_weapon, v2 weapon_reticle, v2 center_position, uint16 bullet_speed, uint16 bullet_amount);

@@ -10,12 +10,11 @@
 
 struct player
 {
-	player* player_main;
 	uint16 player_speed;
 	v2 player_object;
 	
 };
-void alloc_and_init_p(player* player_main);
+void init_p(player* player_main);
 void free_p(player* player_main);
 void draw_p(v2 player_object);
 void update_p(v2 player_object, v2& center_position, uint16 player_speed);

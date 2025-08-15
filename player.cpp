@@ -1,7 +1,7 @@
 #include "player.h"
 
 
-void alloc_and_init_p(player* player_main)
+void init_p(player* player_main)
 {
 
 	player_main->player_object = { 0, 0 };

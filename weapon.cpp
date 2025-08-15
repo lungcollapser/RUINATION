@@ -2,12 +2,15 @@
 
 
 
-void init_w()
+void init_w(weapon* weapon_main)
 {
+	weapon_main->bullet_amount = 6;
+	weapon_main->bullet_speed = 4000;
+	weapon_main->current_clips = 1;
 }
-void free_w()
+void free_w(weapon* weapon_main)
 {
-
+	free(weapon_main);
 }
 void draw_w(v2 player_object, v2 weapon_reticle)
 {
