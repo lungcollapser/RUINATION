@@ -2,15 +2,18 @@
 
 
 
-void init_w(weapon* weapon_main)
+void init_w(weapon* weapon_init)
 {
-	weapon_main->bullet_amount = 6;
-	weapon_main->bullet_speed = 4000;
-	weapon_main->current_clips = 1;
+
+	weapon_main = (weapon*)malloc(sizeof(weapon));
+
+	weapon_init->bullet_amount = 6;
+	weapon_init->bullet_speed = 4000;
+	weapon_init->current_clips = 1;
 }
-void free_w(weapon* weapon_main)
+void free_w(weapon* weapon)
 {
-	free(weapon_main);
+	free(weapon);
 }
 void draw_w(v2 player_object, weapon* weapon)
 {

@@ -23,8 +23,10 @@ struct weapon
 	std::vector<bullet> bullets;
 
 };
-void init_w(weapon *weapon_main);
-void free_w(weapon *weapon_main);
+local_persist weapon* weapon_main;
+
+void init_w(weapon *weapon_init);
+void free_w(weapon *weapon);
 void draw_w(v2 player_object, weapon* weapon);
 void fire_w(v2 center_position, weapon* weapon);
 void update_w(weapon* weapon, v2 center_position);

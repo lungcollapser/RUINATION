@@ -6,15 +6,9 @@
 #include "ammo.h"
 #include "timer.h"
 
-#define global_variable static
-#define local_persist static
-#define internal static
-
 //TODO: Make bullet collision more global to where if it hits any object, it deactivates and disappears.
 //TODO: Look into making a component system.
 
-player* player_main = (player*)malloc(sizeof(player));
-weapon* weapon_main = (weapon*)malloc(sizeof(weapon));
 revolver* revolver_main = (revolver*)malloc(sizeof(revolver));
 repeater* repeater_main = (repeater*)malloc(sizeof(repeater));
 
@@ -96,10 +90,6 @@ internal void free_mem()
 // main func
 int main()
 {
-    if (player_main == NULL)
-    {
-        return 1;
-    }
 
     InitWindow(screen_size_x, screen_size_y, "ruin");
     init_mem();

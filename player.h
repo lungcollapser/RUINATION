@@ -14,9 +14,11 @@ struct player
 	v2 player_object;
 	
 };
-void init_p(player* player_main);
-void free_p(player* player_main);
-void draw_p(player* player_main);
-void update_p(player* player_main);
+local_persist player* player_main;
+
+void init_p(player* player_init);
+void free_p(player* player);
+void draw_p(player* player);
+void update_p(player* player);
 Rectangle get_rectangle(v2 player_object);
 #endif

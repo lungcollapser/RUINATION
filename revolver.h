@@ -5,10 +5,13 @@
 
 #include "weapon.h"
 
-class revolver : public weapon
+struct revolver : public weapon
 {
-public:
-	revolver();
-	~revolver();
+	void init_rev(revolver* revolver_init                                 );
+	void free_rev(revolver* revolver);
 };
+
+local_persist revolver* revolver_main;
+
+
 #endif

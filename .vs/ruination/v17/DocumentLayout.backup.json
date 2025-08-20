@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{44DD23FC-33C6-43A4-B3C0-3ABFA10A7A79}|ruination.vcxproj|solutionrelative:ruination.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{44DD23FC-33C6-43A4-B3C0-3ABFA10A7A79}|ruination.vcxproj|C:\\Users\\thort\\OneDrive\\Desktop\\CISFUN\\source\\repos\\ruination\\player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{44DD23FC-33C6-43A4-B3C0-3ABFA10A7A79}|ruination.vcxproj|solutionrelative:player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{44DD23FC-33C6-43A4-B3C0-3ABFA10A7A79}|ruination.vcxproj|C:\\Users\\thort\\OneDrive\\Desktop\\CISFUN\\source\\repos\\ruination\\weapon.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{44DD23FC-33C6-43A4-B3C0-3ABFA10A7A79}|ruination.vcxproj|solutionrelative:weapon.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -19,8 +23,8 @@
       "RelativeMoniker": "D:0:0:{44DD23FC-33C6-43A4-B3C0-3ABFA10A7A79}|ruination.vcxproj|solutionrelative:player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{44DD23FC-33C6-43A4-B3C0-3ABFA10A7A79}|ruination.vcxproj|C:\\Users\\thort\\OneDrive\\Desktop\\CISFUN\\source\\repos\\ruination\\player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{44DD23FC-33C6-43A4-B3C0-3ABFA10A7A79}|ruination.vcxproj|solutionrelative:player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{44DD23FC-33C6-43A4-B3C0-3ABFA10A7A79}|ruination.vcxproj|C:\\Users\\thort\\OneDrive\\Desktop\\CISFUN\\source\\repos\\ruination\\include.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{44DD23FC-33C6-43A4-B3C0-3ABFA10A7A79}|ruination.vcxproj|solutionrelative:include.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{44DD23FC-33C6-43A4-B3C0-3ABFA10A7A79}|ruination.vcxproj|C:\\Users\\thort\\OneDrive\\Desktop\\CISFUN\\source\\repos\\ruination\\camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -43,10 +47,6 @@
       "RelativeMoniker": "D:0:0:{44DD23FC-33C6-43A4-B3C0-3ABFA10A7A79}|ruination.vcxproj|solutionrelative:enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{44DD23FC-33C6-43A4-B3C0-3ABFA10A7A79}|ruination.vcxproj|C:\\Users\\thort\\OneDrive\\Desktop\\CISFUN\\source\\repos\\ruination\\include.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{44DD23FC-33C6-43A4-B3C0-3ABFA10A7A79}|ruination.vcxproj|solutionrelative:include.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{44DD23FC-33C6-43A4-B3C0-3ABFA10A7A79}|ruination.vcxproj|C:\\Users\\thort\\OneDrive\\Desktop\\CISFUN\\source\\repos\\ruination\\ammo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{44DD23FC-33C6-43A4-B3C0-3ABFA10A7A79}|ruination.vcxproj|solutionrelative:ammo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
@@ -66,7 +66,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "camera.cpp",
               "DocumentMoniker": "C:\\Users\\thort\\OneDrive\\Desktop\\CISFUN\\source\\repos\\ruination\\camera.cpp",
               "RelativeDocumentMoniker": "camera.cpp",
@@ -74,12 +74,11 @@
               "RelativeToolTip": "camera.cpp",
               "ViewState": "AgIAABIAAAAAAAAAAAAAACoAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-08-20T12:10:36.977Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-20T12:10:36.977Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "camera.h",
               "DocumentMoniker": "C:\\Users\\thort\\OneDrive\\Desktop\\CISFUN\\source\\repos\\ruination\\camera.h",
               "RelativeDocumentMoniker": "camera.h",
@@ -87,38 +86,37 @@
               "RelativeToolTip": "camera.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-08-20T12:10:34.808Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-20T12:10:34.808Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "player.cpp",
               "DocumentMoniker": "C:\\Users\\thort\\OneDrive\\Desktop\\CISFUN\\source\\repos\\ruination\\player.cpp",
               "RelativeDocumentMoniker": "player.cpp",
               "ToolTip": "C:\\Users\\thort\\OneDrive\\Desktop\\CISFUN\\source\\repos\\ruination\\player.cpp",
               "RelativeToolTip": "player.cpp",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAAgAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-08-05T11:50:12.062Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "player.h",
               "DocumentMoniker": "C:\\Users\\thort\\OneDrive\\Desktop\\CISFUN\\source\\repos\\ruination\\player.h",
               "RelativeDocumentMoniker": "player.h",
               "ToolTip": "C:\\Users\\thort\\OneDrive\\Desktop\\CISFUN\\source\\repos\\ruination\\player.h",
               "RelativeToolTip": "player.h",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAQwBMAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAQwBMAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-08-05T12:18:01.081Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "weapon.cpp",
               "DocumentMoniker": "C:\\Users\\thort\\OneDrive\\Desktop\\CISFUN\\source\\repos\\ruination\\weapon.cpp",
               "RelativeDocumentMoniker": "weapon.cpp",
@@ -135,29 +133,29 @@
               "Title": "ruination.cpp",
               "DocumentMoniker": "C:\\Users\\thort\\OneDrive\\Desktop\\CISFUN\\source\\repos\\ruination\\ruination.cpp",
               "RelativeDocumentMoniker": "ruination.cpp",
-              "ToolTip": "C:\\Users\\thort\\OneDrive\\Desktop\\CISFUN\\source\\repos\\ruination\\ruination.cpp",
-              "RelativeToolTip": "ruination.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHIAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\thort\\OneDrive\\Desktop\\CISFUN\\source\\repos\\ruination\\ruination.cpp*",
+              "RelativeToolTip": "ruination.cpp*",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAAAHsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-02-20T02:36:26.087Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "weapon.h",
               "DocumentMoniker": "C:\\Users\\thort\\OneDrive\\Desktop\\CISFUN\\source\\repos\\ruination\\weapon.h",
               "RelativeDocumentMoniker": "weapon.h",
               "ToolTip": "C:\\Users\\thort\\OneDrive\\Desktop\\CISFUN\\source\\repos\\ruination\\weapon.h",
               "RelativeToolTip": "weapon.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-08-13T02:10:42.486Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "enemy.cpp",
               "DocumentMoniker": "C:\\Users\\thort\\OneDrive\\Desktop\\CISFUN\\source\\repos\\ruination\\enemy.cpp",
               "RelativeDocumentMoniker": "enemy.cpp",
@@ -169,7 +167,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "enemy.h",
               "DocumentMoniker": "C:\\Users\\thort\\OneDrive\\Desktop\\CISFUN\\source\\repos\\ruination\\enemy.h",
               "RelativeDocumentMoniker": "enemy.h",
@@ -193,7 +191,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "bullet.cpp",
               "DocumentMoniker": "C:\\Users\\thort\\OneDrive\\Desktop\\CISFUN\\source\\repos\\ruination\\bullet.cpp",
               "RelativeDocumentMoniker": "bullet.cpp",
@@ -201,20 +199,20 @@
               "RelativeToolTip": "bullet.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-08-10T19:07:24.056Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-10T19:07:24.056Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 5,
               "Title": "include.h",
               "DocumentMoniker": "C:\\Users\\thort\\OneDrive\\Desktop\\CISFUN\\source\\repos\\ruination\\include.h",
               "RelativeDocumentMoniker": "include.h",
               "ToolTip": "C:\\Users\\thort\\OneDrive\\Desktop\\CISFUN\\source\\repos\\ruination\\include.h",
               "RelativeToolTip": "include.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-07-26T03:12:00.169Z"
+              "WhenOpened": "2025-07-26T03:12:00.169Z",
+              "EditorCaption": ""
             }
           ]
         }

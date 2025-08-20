@@ -10,6 +10,11 @@
 #include <string>
 #include <iostream>
 
+#define global_variable static
+#define local_persist static
+#define internal static
+
+
 typedef unsigned char uint8;
 typedef Vector2 v2;
 typedef short int int16;
