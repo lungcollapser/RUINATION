@@ -12,13 +12,13 @@ void free_p(player* player_main)
 {
 	free(player_main);
 }
-void draw_p(v2 player_object)
+void draw_p(player* player_main)
 {
 
-	DrawCircleV(player_object, 25, WHITE);
+	DrawCircleV(player_main->player_object, 25, WHITE);
 }
 
-void update_p(v2 player_object, v2 &center_position, uint16 player_speed)
+void update_p(player* player_main)
 {
 
 	v2 direction = { 0.0f, 0.0f };
@@ -40,16 +40,16 @@ void update_p(v2 player_object, v2 &center_position, uint16 player_speed)
 		direction.y++;
 	}
 
-	v2 velocity = Vector2Scale(Vector2Normalize(direction), player_speed * GetFrameTime());
-	player_object = Vector2Add(player_object, velocity);
+	v2 velocity = Vector2Scale(Vector2Normalize(direction), player_main->player_speed * GetFrameTime());
+	player_main->player_object = Vector2Add(player_main->player_object, velocity);
 
 	if (IsKeyDown(KEY_LEFT_SHIFT))
 	{
-		player_speed = 325;
+		player_main->player_speed = 325;
 	}
 	else
 	{
-		player_speed = 525;
+		player_main->player_speed = 525;
 	}
 	
 }

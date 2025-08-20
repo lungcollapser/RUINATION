@@ -25,9 +25,9 @@ struct weapon
 };
 void init_w(weapon *weapon_main);
 void free_w(weapon *weapon_main);
-void draw_w(v2 player_object, v2 weapon_reticle);
-void fire_w(v2 center_position, weapon* weapon, std::vector<bullet> bullets);
-void update_w(weapon* current_weapon, v2 weapon_reticle, v2 center_position, uint16 bullet_speed, uint16 bullet_amount);
-std::vector<bullet>& get_bullets(std::vector<bullet> bullets);
+void draw_w(v2 player_object, weapon* weapon);
+void fire_w(v2 center_position, weapon* weapon);
+void update_w(weapon* weapon, v2 center_position);
+std::vector<bullet>& get_bullets(weapon* weapon);
 
 #endif

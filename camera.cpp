@@ -40,8 +40,7 @@ void camera::take_input()
 		direction.y++;
 	}
 	
-	direction = Vector2Normalize(direction);
-	Vector2 velocity =   Vector2Scale(direction, camera_speed * GetFrameTime());
+	Vector2 velocity =   Vector2Scale(Vector2Normalize(direction), camera_speed * GetFrameTime());
 	player_camera.target = Vector2Add(player_camera.target, velocity);
 
 

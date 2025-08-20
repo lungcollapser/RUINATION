@@ -22,31 +22,28 @@ camera camera_main;
 enemy enemy_main;
 ammo ammo_main;
     
-internal void draw_player(v2 player_object)
+internal void draw_player()
 {
-
-    draw_p(player_object);
-
+    draw_p(player_main);
 }
-internal void update_player(v2 player_object, v2 center_position, uint16 player_speed)
+internal void update_player()
 {
-
-    update_p(player_object, center_position, player_speed);
+    update_p(player_main);
 }
-internal void draw_weapon(std::vector<bullet> bullets, v2 player_object)
+internal void draw_weapon(player* player)
 {
-    draw_w(player_object, {0, 0});
+    draw_w(player->player_object, weapon_main);
 
-    for (auto& bullet : get_bullets(bullets))
+    for (auto& bullet : get_bullets(weapon_main))
     {
-        bullet.draw(player_object);
+        bullet.draw(player->player_object);
     }
 }
-internal void update_weapon(weapon* current_weapon, revolver* revolver_weapon, repeater* repeater_weapon, player* player)
+internal void update_weapon(weapon* current_weapon, player* player, revolver* revolver_weapon, repeater* repeater_weapon)
 {
-    update_w(current_weapon, { 0, 0 }, { 0, 0 }, current_weapon->bullet_speed, current_weapon->bullet_amount);
+    update_w(weapon_main, { 0, 0 });
 
-    for (auto& bullet : get_bullets(current_weapon->bullets))
+    for (auto& bullet : get_bullets(weapon_main))
     {
         bullet.update(screen_size_x, screen_size_y, player->player_object, enemy_main.get_rectangle());
         enemy_main.update(player->player_object, current_weapon->bullet_damage, bullet.get_rectangle(player->player_object), enemy_main.get_rectangle());
@@ -73,11 +70,7 @@ internal void draw()
 }
 internal void input()
 {
-    local_persist v2 center_position = { 0, 0 };
-
-
     camera_main.take_input();
-
 }
 internal void update()
 {
@@ -87,6 +80,8 @@ internal void init_mem()
 {
     player_main = new player();
     weapon_main = new weapon();
+    revolver_main = new revolver();
+    repeater_main = new repeater();
 
     init_p(player_main);
     init_w(weapon_main);
@@ -101,28 +96,30 @@ internal void free_mem()
 // main func
 int main()
 {
-    local_persist v2 center_position = { 0, 0 };
-
+    if (player_main == NULL)
+    {
+        return 1;
+    }
 
     InitWindow(screen_size_x, screen_size_y, "ruin");
+    init_mem();
     SetTargetFPS(120);
     HideCursor();
     SetMouseOffset(-400, -400);
-    init_mem();
     while (!WindowShouldClose())
     {
+        input();
+        update_player();
+        update_weapon(weapon_main, player_main, revolver_main, repeater_main);
+        update();
+
         BeginDrawing();
         ClearBackground(BLACK);
         DrawFPS(10, 10);
         BeginMode2D(camera_main.player_camera);
         draw();
-        draw_player(player_main->player_object);
-        draw_weapon(weapon_main->bullets, player_main->player_object);
-        input();
-        update_player(player_main->player_object, center_position, player_main->player_speed);
-        update_weapon(weapon_main, revolver_main, repeater_main, player_main);
-        update();
-
+        draw_player();
+        draw_weapon(player_main);
         EndMode2D();
         EndDrawing();
     }
