@@ -27,12 +27,12 @@ struct weapon
 };
 
 
-local_persist weapon* weapon_main;
-void init_w(weapon *weapon_init);
-void free_w(weapon *weapon);
-void draw_w(v2 player_object, weapon* weapon);
-void fire_w(v2 center_position, weapon* weapon);
-void update_w(weapon* weapon, v2 center_position);
+local_persist weapon* weapon_main = (weapon*)malloc(sizeof(weapon));
+void init_w();
+void free_w();
+void draw_w(v2 player_object);
+void fire_w(v2 center_position);
+void update_w(v2 center_position);
 std::vector<bullet>& get_bullets(weapon* weapon);
 
 #endif
