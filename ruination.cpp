@@ -9,7 +9,6 @@
 //TODO: Make bullet collision more global to where if it hits any object, it deactivates and disappears.
 //TODO: Look into making a component system.
 
-camera camera_main;
 enemy enemy_main;
 ammo ammo_main;
     
@@ -41,6 +40,10 @@ internal void update_weapon(player* player)
     }
 
 }
+internal void update_camera()
+{
+    update_cam(camera_main);
+}
 
 internal void draw()
 {
@@ -50,14 +53,7 @@ internal void draw()
     enemy_main.draw();
     ammo_main.draw(enemy_main.enemy_object);
 }
-internal void input()
-{
-    camera_main.take_input();
-}
-internal void update()
-{
-    camera_main.update();
-}
+
 internal void init_mem()
 {
     player_main = new player();
@@ -65,12 +61,14 @@ internal void init_mem()
 
     init_p(player_main);
     init_w(weapon_main);
+    init_cam(camera_main);
 
 }
 internal void free_mem()
 {
     free_p(player_main);
     free_w(weapon_main);
+    free_cam(camera_main);
 }
 
 // main func
@@ -84,20 +82,25 @@ int main()
     SetMouseOffset(-400, -400);
     while (!WindowShouldClose())
     {
-        input();
-        update_player();
-        update_weapon(player_main);
-        update();
-
+        /*starting functions*/
+        BeginMode2D(camera_main->camera);
         BeginDrawing();
         ClearBackground(BLACK);
         DrawFPS(10, 10);
-        BeginMode2D(camera_main.player_camera);
+
+        /*drawing*/
         draw();
         draw_player();
         draw_weapon(player_main);
-        EndMode2D();
+
+        /*updates*/
+        update_player();
+        update_weapon(player_main);
+        update_camera();
+
+        /*ending functions*/
         EndDrawing();
+        EndMode2D();
     }
     free_mem();
     CloseWindow();
