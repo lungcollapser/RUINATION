@@ -6,15 +6,14 @@
 #include "include.h"
 #include "player.h"
 
-class camera
+struct camera
 {
-private:
-	int camera_speed;
-public:
-	camera();
-	~camera();
-	void update();
-	void take_input();
-	Camera2D player_camera;
+	uint16 camera_speed;
 };
+Camera2D camera_main;
+Camera2D* camera_main_ptr;
+
+void init_cam(Camera2D* camera_ptr);
+void free_cam(camera* camera_ptr);
+void update_cam(camera* camera_ptr);
 #endif

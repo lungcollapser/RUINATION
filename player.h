@@ -4,9 +4,6 @@
 #define PLAYER_H
 
 #include "include.h"
-#include "revolver.h"
-#include "repeater.h"
-
 
 struct player
 {

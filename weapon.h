@@ -7,7 +7,10 @@
 #include "bullet.h"
 
 
-
+enum weapon_type
+{
+	fists, revolver, repeater
+};
 struct weapon
 {
 	
@@ -19,12 +22,12 @@ struct weapon
 	uint16 clips;
 	uint16 current_clips;
 	v2 weapon_reticle = { 0, 0 };
-
 	std::vector<bullet> bullets;
 
 };
-local_persist weapon* weapon_main;
 
+
+local_persist weapon* weapon_main;
 void init_w(weapon *weapon_init);
 void free_w(weapon *weapon);
 void draw_w(v2 player_object, weapon* weapon);

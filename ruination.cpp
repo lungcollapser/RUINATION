@@ -9,9 +9,6 @@
 //TODO: Make bullet collision more global to where if it hits any object, it deactivates and disappears.
 //TODO: Look into making a component system.
 
-revolver* revolver_main = (revolver*)malloc(sizeof(revolver));
-repeater* repeater_main = (repeater*)malloc(sizeof(repeater));
-
 camera camera_main;
 enemy enemy_main;
 ammo ammo_main;
@@ -33,23 +30,14 @@ internal void draw_weapon(player* player)
         bullet.draw(player->player_object);
     }
 }
-internal void update_weapon(weapon* current_weapon, player* player, revolver* revolver_weapon, repeater* repeater_weapon)
+internal void update_weapon(player* player)
 {
     update_w(weapon_main, { 0, 0 });
 
     for (auto& bullet : get_bullets(weapon_main))
     {
         bullet.update(screen_size_x, screen_size_y, player->player_object, enemy_main.get_rectangle());
-        enemy_main.update(player->player_object, current_weapon->bullet_damage, bullet.get_rectangle(player->player_object), enemy_main.get_rectangle());
-    }
-
-    if (IsKeyPressed(KEY_ONE))
-    {
-        current_weapon = revolver_weapon;
-    }
-    else if (IsKeyPressed(KEY_TWO))
-    { 
-        current_weapon = repeater_weapon;
+        enemy_main.update(player->player_object, weapon_main->bullet_damage, bullet.get_rectangle(player->player_object), enemy_main.get_rectangle());
     }
 
 }
@@ -74,8 +62,6 @@ internal void init_mem()
 {
     player_main = new player();
     weapon_main = new weapon();
-    revolver_main = new revolver();
-    repeater_main = new repeater();
 
     init_p(player_main);
     init_w(weapon_main);
@@ -100,7 +86,7 @@ int main()
     {
         input();
         update_player();
-        update_weapon(weapon_main, player_main, revolver_main, repeater_main);
+        update_weapon(player_main);
         update();
 
         BeginDrawing();
@@ -114,9 +100,6 @@ int main()
         EndDrawing();
     }
     free_mem();
-    free(revolver_main);
-    free(repeater_main);
-
     CloseWindow();
 
     return 0;

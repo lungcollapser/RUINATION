@@ -6,10 +6,7 @@ void init_w(weapon* weapon_init)
 {
 
 	weapon_main = (weapon*)malloc(sizeof(weapon));
-
-	weapon_init->bullet_amount = 6;
-	weapon_init->bullet_speed = 4000;
-	weapon_init->current_clips = 1;
+	
 }
 void free_w(weapon* weapon)
 {
@@ -29,7 +26,42 @@ void fire_w(v2 center_position, weapon* weapon)
 }
 void update_w(weapon* weapon, v2 center_position)
 {
-	
+	weapon_type weapon_choice;
+
+	if (IsKeyPressed(KEY_ONE))
+	{
+		weapon_choice = revolver;
+
+		if (weapon_choice == revolver)
+		{
+			weapon->bullet_speed = 1000;
+			weapon->clips = 2;
+			weapon->max_bullets = 6;
+			weapon->current_clips = 2;
+			weapon->bullet_damage = 1;
+			weapon->bullet_amount = 8;
+		}
+		std::cout << weapon_choice;
+	}
+	else if (IsKeyPressed(KEY_TWO))
+	{
+		weapon_choice = repeater;
+
+		if (weapon_choice == repeater)
+		{
+			weapon->bullet_speed = 2000;
+			weapon->clips = 4;
+			weapon->max_bullets = 12;
+			weapon->current_clips = 2;
+			weapon->bullet_damage = 2;
+			weapon->bullet_amount = 12;
+		}
+		std::cout << weapon_choice;
+	}
+	else
+	{
+		weapon_choice = fists;
+	}
 
 	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && weapon->bullet_amount > 0)
 	{
