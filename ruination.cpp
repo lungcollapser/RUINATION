@@ -24,7 +24,7 @@ internal void draw_weapon(player* player)
 {
     draw_w(player->player_object);
 
-    for (auto& bullet : get_bullets(weapon_main))
+    for (auto& bullet : get_bullets())
     {
         bullet.draw(player->player_object);
     }
@@ -33,7 +33,7 @@ internal void update_weapon(player* player)
 {
     update_w({ 0, 0 });
 
-    for (auto& bullet : get_bullets(weapon_main))
+    for (auto& bullet : get_bullets())
     {
         bullet.update(screen_size_x, screen_size_y, player->player_object, enemy_main.get_rectangle());
         enemy_main.update(player->player_object, weapon_main->bullet_damage, bullet.get_rectangle(player->player_object), enemy_main.get_rectangle());
@@ -42,7 +42,7 @@ internal void update_weapon(player* player)
 }
 internal void update_camera()
 {
-    update_cam(camera_main);
+    update_cam();
 }
 
 internal void draw()
@@ -56,18 +56,17 @@ internal void draw()
 
 internal void init_mem()
 {
-    camera_main = new camera();
 
     init_p();
     init_w();
-    init_cam(camera_main);
+    init_cam();
 
 }
 internal void free_mem()
 {
     free_p();
     free_w();
-    free_cam(camera_main);
+    free_cam();
 
 }
 
@@ -82,7 +81,6 @@ int main()
     while (!WindowShouldClose())
     {
         /*starting functions*/
-
         BeginDrawing();
         ClearBackground(BLACK);
         DrawFPS(10, 10);

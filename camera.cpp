@@ -1,20 +1,22 @@
 #include "camera.h"
 
-void init_cam(camera* camera_ptr)
+void init_cam()
 {
+	
 	camera_main = (camera*)malloc(sizeof(camera));
 
-	camera_ptr->camera = { 0 };
-	camera_ptr->camera.target = { 0, 0 };
-	camera_ptr->camera_speed = 525;
+	camera_main->camera = { 0 };
+	camera_main->camera.target = { 0, 0 };
+	camera_main->camera.zoom = 1.0;
+	camera_main->camera_speed = 525;
 }
-void free_cam(camera* camera_ptr)
+void free_cam()
 {
-	free(camera_ptr);
+	free(camera_main);
 }
-void update_cam(camera* camera_ptr)
+void update_cam()
 {
-	camera_ptr->camera.offset = { screen_size_x / 2.0f, screen_size_y / 2.0f };
+	camera_main->camera.offset = { screen_size_x / 2.0f, screen_size_y / 2.0f };
 
 	v2 direction = { 0, 0 };
 
@@ -35,17 +37,17 @@ void update_cam(camera* camera_ptr)
 		direction.y++;
 	}
 	
-	Vector2 velocity =   Vector2Scale(Vector2Normalize(direction), camera_ptr->camera_speed * GetFrameTime());
-	camera_ptr->camera.target = Vector2Add(camera_ptr->camera.target, velocity);
+	Vector2 velocity =   Vector2Scale(Vector2Normalize(direction), camera_main->camera_speed * GetFrameTime());
+	camera_main->camera.target = Vector2Add(camera_main->camera.target, velocity);
 
 
 	if (IsKeyDown(KEY_LEFT_SHIFT))
 	{
-		camera_ptr->camera_speed = 325;
+		camera_main->camera_speed = 325;
 	}
 	else
 	{
-		camera_ptr->camera_speed = 525;
+		camera_main->camera_speed = 525;
 	}
 
 }

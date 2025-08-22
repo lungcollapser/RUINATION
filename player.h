@@ -11,7 +11,7 @@ struct player
 	v2 player_object;
 	
 };
-local_persist player* player_main = (player*)malloc(sizeof(player));
+extern player* player_main;
 
 void init_p();
 void free_p();

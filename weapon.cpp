@@ -1,11 +1,19 @@
 #include "weapon.h"
 
-
+weapon* weapon_main = nullptr;
 
 void init_w()
 {
 
-	weapon_main = (weapon*)malloc(sizeof(weapon));
+	weapon_main = static_cast<weapon*>(malloc(sizeof(weapon)));
+
+	if (weapon_main == NULL)
+	{
+		std::cout << "weapon alloc failed!";
+		return;
+	}
+
+	weapon_main->weapon_reticle = { 0, 0 };
 	
 }
 void free_w()
@@ -75,9 +83,9 @@ void update_w(v2 center_position)
 	}
 }
 
-std::vector<bullet>& get_bullets(weapon* weapon)
+std::vector<bullet> get_bullets()
 {
-	return weapon->bullets;
+	return weapon_main->bullets;
 }
 
 

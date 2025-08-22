@@ -1,11 +1,15 @@
 #include "player.h"
 
+player* player_main = nullptr;
+
 void init_p()
 {
+	player_main = static_cast<player*>(malloc(sizeof(player)));
 
 	if (player_main == NULL)
 	{
-		std::cout << "memory allocation player failed";
+		std::cout << "player alloc failed!";
+		return;
 	}
 
 

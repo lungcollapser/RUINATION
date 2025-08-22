@@ -13,7 +13,7 @@ struct camera
 
 local_persist camera* camera_main;
 
-void init_cam(camera* camera_ptr);
-void free_cam(camera* camera_ptr);
-void update_cam(camera* camera_ptr);
+void init_cam();
+void free_cam();
+void update_cam();
 #endif
