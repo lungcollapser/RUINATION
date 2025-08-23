@@ -61,7 +61,7 @@ void update_p()
 	}
 	
 }
-Rectangle get_rectangle(v2 player_object)
+Rectangle get_rectangle_player(v2 player_object)
 {
 	return Rectangle{ player_object.x - 25, player_object.y - 25, 50, 50 };
 }

@@ -22,7 +22,6 @@ struct weapon
 	uint16 clips;
 	uint16 current_clips;
 	v2 weapon_reticle;
-	std::vector<bullet> bullets;
 };
 
 
@@ -32,7 +31,7 @@ void init_w();
 void free_w();
 void draw_w(v2 player_object);
 void fire_w(v2 center_position);
-void update_w(v2 center_position);
-std::vector<bullet> get_bullets();
+void update_w(v2 center_position, v2 player_object);
+bullet* get_bullets();
 
 #endif

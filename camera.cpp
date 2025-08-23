@@ -1,9 +1,16 @@
 #include "camera.h"
 
+camera* camera_main = nullptr;
+
 void init_cam()
 {
 	
 	camera_main = (camera*)malloc(sizeof(camera));
+
+	if (camera_main == NULL)
+	{
+		return;
+	}
 
 	camera_main->camera = { 0 };
 	camera_main->camera.target = { 0, 0 };

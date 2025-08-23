@@ -5,19 +5,19 @@
 
 #include "include.h"
 
-class bullet 
+struct bullet 
 {
-public:
-	bullet();
-	bullet(v2 fire_position, int bullet_speed);
-	~bullet();
-	void draw(v2 position);
-	void update(int screen_x, int screen_y, v2 player_object, Rectangle player_collision);
-	bool collision(Rectangle collision_one, Rectangle collision_two);
-	Rectangle get_rectangle(v2 player_position);
 	bool active;
 	v2 fire_position;
-	int16 bullet_speed, bullet_radius;
+	uint16 bullet_speed, bullet_radius;
 
 };
+extern bullet* bullet_main;
+
+void init_b(v2 player_object);
+void free_b();
+void draw_b(v2 position, uint16 bullet_amount);
+void update_b(v2 weapon_reticle, v2 center_position, uint16 bullet_amount);
+bool bullet_collision(Rectangle collision_one, Rectangle collision_two);
+Rectangle get_rectangle_bullet(v2 player_position);
 #endif

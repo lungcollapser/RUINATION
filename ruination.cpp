@@ -20,31 +20,27 @@ internal void update_player()
 {
     update_p();
 }
-internal void draw_weapon(player* player)
+internal void draw_weapon(v2 player_object)
 {
-    draw_w(player->player_object);
-
-    for (auto& bullet : get_bullets())
-    {
-        bullet.draw(player->player_object);
-    }
+    draw_w(player_object);
 }
-internal void update_weapon(player* player)
+internal void update_weapon()
 {
-    update_w({ 0, 0 });
-
-    for (auto& bullet : get_bullets())
-    {
-        bullet.update(screen_size_x, screen_size_y, player->player_object, enemy_main.get_rectangle());
-        enemy_main.update(player->player_object, weapon_main->bullet_damage, bullet.get_rectangle(player->player_object), enemy_main.get_rectangle());
-    }
-
+    update_w({ 0, 0 }, player_main->player_object);
+}
+internal void draw_bullet(v2 player_object)
+{
+    draw_b(player_object, weapon_main->bullet_amount);
+}
+internal void update_bullet(v2 player_object)
+{
+    update_b(weapon_main->weapon_reticle, player_object, weapon_main->bullet_amount);
+    enemy_main.update(player_object, weapon_main->bullet_damage, get_rectangle_bullet(player_object), enemy_main.get_rectangle());
 }
 internal void update_camera()
 {
     update_cam();
 }
-
 internal void draw()
 {
 
@@ -53,21 +49,19 @@ internal void draw()
     enemy_main.draw();
     ammo_main.draw(enemy_main.enemy_object);
 }
-
 internal void init_mem()
 {
-
     init_p();
     init_w();
     init_cam();
-
+    init_b(player_main->player_object);
 }
 internal void free_mem()
 {
     free_p();
     free_w();
     free_cam();
-
+    free_b();
 }
 
 // main func
@@ -88,11 +82,11 @@ int main()
         /*drawing*/
         draw();
         draw_player();
-        draw_weapon(player_main);
+        draw_weapon(player_main->player_object);
 
         /*updates*/
         update_player();
-        update_weapon(player_main);
+        update_weapon();
         update_camera();
 
         /*ending functions*/

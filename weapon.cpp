@@ -5,7 +5,7 @@ weapon* weapon_main = nullptr;
 void init_w()
 {
 
-	weapon_main = static_cast<weapon*>(malloc(sizeof(weapon)));
+	weapon_main = (weapon*)malloc(sizeof(weapon));
 
 	if (weapon_main == NULL)
 	{
@@ -28,11 +28,10 @@ void draw_w(v2 player_object)
 void fire_w(v2 center_position)
 {
 
-	weapon_main->bullets.push_back(bullet(Vector2Normalize(Vector2Subtract(weapon_main->weapon_reticle, center_position)), weapon_main->bullet_speed));
 	weapon_main->bullet_amount -= 1;
 
 }
-void update_w(v2 center_position)
+void update_w(v2 center_position, v2 player_object)
 {
 	weapon_type weapon_choice;
 
@@ -57,7 +56,7 @@ void update_w(v2 center_position)
 
 		if (weapon_choice == repeater)
 		{
-			weapon_main->bullet_speed = 2000;
+			weapon_main->bullet_speed = 1000;
 			weapon_main->clips = 4;
 			weapon_main->max_bullets = 12;
 			weapon_main->current_clips = 2;
@@ -73,7 +72,8 @@ void update_w(v2 center_position)
 
 	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && weapon_main->bullet_amount > 0)
 	{
-		fire_w(center_position);
+		draw_b(player_object, weapon_main->bullet_amount);
+		update_b(weapon_main->weapon_reticle, player_object, weapon_main->bullet_amount);
 	}
 
 	if (IsKeyPressed(KEY_R) && weapon_main->current_clips >= 1 && weapon_main->bullet_amount < weapon_main->max_bullets)
@@ -83,9 +83,9 @@ void update_w(v2 center_position)
 	}
 }
 
-std::vector<bullet> get_bullets()
+bullet* get_bullets()
 {
-	return weapon_main->bullets;
+	return bullet_main;
 }
 
 

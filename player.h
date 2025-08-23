@@ -17,5 +17,5 @@ void init_p();
 void free_p();
 void draw_p();
 void update_p();
-Rectangle get_rectangle(v2 player_object);
+Rectangle get_rectangle_player(v2 player_object);
 #endif
