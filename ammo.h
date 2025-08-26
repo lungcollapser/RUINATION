@@ -4,7 +4,6 @@
 #define AMMO_H
 
 #include "include.h"
-#include "weapon.h"
 
 
 class ammo
@@ -13,7 +12,7 @@ class ammo
 public: 
 	ammo();
 	void draw(v2 position);
-	void update(Rectangle rec1, Rectangle rec2, weapon* current_weapon);
+	void update(Rectangle rec1, Rectangle rec2);
 	bool collision(Rectangle collision_one, Rectangle collision_two);
 
 	Rectangle get_rectangle(v2 position);

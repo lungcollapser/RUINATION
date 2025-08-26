@@ -11,7 +11,6 @@ struct camera
 	uint16 camera_speed;
 };
 
-extern camera* camera_main;
 
 void init_cam();
 void free_cam();

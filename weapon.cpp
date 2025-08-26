@@ -70,11 +70,6 @@ void update_w(v2 center_position, v2 player_object)
 		weapon_choice = fists;
 	}
 
-	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && weapon_main->bullet_amount > 0)
-	{
-		draw_b(player_object, weapon_main->bullet_amount);
-		update_b(weapon_main->weapon_reticle, player_object, weapon_main->bullet_amount);
-	}
 
 	if (IsKeyPressed(KEY_R) && weapon_main->current_clips >= 1 && weapon_main->bullet_amount < weapon_main->max_bullets)
 	{
@@ -83,9 +78,5 @@ void update_w(v2 center_position, v2 player_object)
 	}
 }
 
-bullet* get_bullets()
-{
-	return bullet_main;
-}
 
 
