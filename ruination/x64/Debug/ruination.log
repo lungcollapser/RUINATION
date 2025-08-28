@@ -1,6 +1,1 @@
-﻿  bullet.cpp
-C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.cpp(21,86): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\bullet.cpp(21,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  ruination.vcxproj -> C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\x64\Debug\ruination.exe
-  'pwsh.exe' is not recognized as an internal or external command,
-  operable program or batch file.
+﻿  ruination.vcxproj -> C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\x64\Debug\ruination.exe

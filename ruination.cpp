@@ -48,12 +48,12 @@ internal void draw()
     DrawLine(0, 0, 800, 800, WHITE);
     enemy_main.draw();
 }
-internal void init_mem()
+internal void init_mem(player player)
 {
     init_p();
     init_w();
-    init_b();
-    init_cam(player_main.player_object);
+    init_b(player.player_object);
+    init_cam(player.player_object);
 }
 internal void free_mem()
 {
@@ -64,7 +64,7 @@ internal void free_mem()
 int main()
 {
     InitWindow(screen_size_x, screen_size_y, "ruin");
-    init_mem();
+    init_mem(player_main);
     SetTargetFPS(120);
     HideCursor();
     SetMouseOffset(-400, -400);

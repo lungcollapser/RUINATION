@@ -18,7 +18,7 @@ struct bullet
 
 extern bullet bullets[MAX_BULLETS];
 
-void init_b();
+void init_b(v2 player_object);
 void free_b();
 void draw_b(v2 position);
 void update_b(v2 weapon_reticle, v2 center_position);

@@ -1,6 +1,3 @@
 C:\Users\thort\source\repos\ruination\x64\Debug\raylib.dll
 C:\Users\thort\source\repos\ruination\x64\Debug\glfw3.dll
 C:\Users\thort\source\repos\ruination\ruination\x64\Debug\ruination.vcxproj.Up2Date
-C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\x64\Debug\raylib.dll
-C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\x64\Debug\glfw3.dll
-C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\ruination\x64\Debug\ruination.vcxproj.Up2Date

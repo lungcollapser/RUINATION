@@ -2,11 +2,12 @@
 
 extern bullet bullets[MAX_BULLETS] = { 0 };
 
-void init_b()
+void init_b(v2 player_object)
 {
 	for (int i = 0; i < MAX_BULLETS; i++)
 	{
 		bullets[i].active = false;
+		bullets[i].fire_position = { player_object };
 	}
 }
 void draw_b(v2 position)
@@ -33,9 +34,9 @@ void update_b(v2 weapon_reticle, v2 center_position)
 			if (!bullets[i].active)
 			{
 				bullets[i].active = true;
-				bullets[i].fire_position = { center_position };
-				bullets[i].speed.x = 6.0;
-				bullets[i].speed.y = 6.0;
+				bullets[i].speed = Vector2MoveTowards(bullets[i].fire_position, weapon_reticle, 30);
+				break;
+				
 			}
 
 		}
@@ -45,8 +46,7 @@ void update_b(v2 weapon_reticle, v2 center_position)
 	{
 		if (bullets[i].active)
 		{
-			bullets[i].fire_position.x += bullets[i].speed.x;
-			bullets[i].fire_position.y -= bullets[i].speed.y;
+			bullets[i].fire_position += bullets[i].speed;
 		}
 
 
