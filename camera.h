@@ -11,8 +11,10 @@ struct camera
 	uint16 camera_speed;
 };
 
+extern camera camera_main;
 
-void init_cam();
+void init_cam(v2 player_object);
 void free_cam();
 void update_cam();
 #endif
+

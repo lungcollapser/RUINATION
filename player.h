@@ -11,7 +11,7 @@ struct player
 	v2 player_object;
 	
 };
-extern player* player_main;
+extern player player_main;
 
 void init_p();
 void free_p();

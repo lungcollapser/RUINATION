@@ -1,10 +1,13 @@
 #include "bullet.h"
 
-bullet bullets[MAX_BULLETS];
+extern bullet bullets[MAX_BULLETS] = { 0 };
 
 void init_b()
 {
-	
+	for (int i = 0; i < MAX_BULLETS; i++)
+	{
+		bullets[i].active = false;
+	}
 }
 void draw_b(v2 position)
 {
@@ -20,39 +23,38 @@ void draw_b(v2 position)
 	}
 	
 }
-void shoot_b(v2 weapon_reticle, v2 center_position, uint16 bullet_speed)
-{
-	for (int i = 0; i < MAX_BULLETS; i++)
-	{
 
-		if (!bullets[i].active)
+void update_b(v2 weapon_reticle, v2 center_position)
+{
+	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+	{
+		for (int i = 0; i < MAX_BULLETS; i++)
 		{
-			bullets[i].active = true;
-			bullets[i].fire_position = center_position;
-			bullets[i].velocity = bullet_speed;
-			break;
+			if (!bullets[i].active)
+			{
+				bullets[i].active = true;
+				bullets[i].fire_position = { center_position };
+				bullets[i].speed.x = 6.0;
+				bullets[i].speed.y = 6.0;
+			}
+
 		}
 
-
 	}
-	
-}
-void update_b(v2 weapon_reticle, v2 center_position, uint16 bullet_speed)
-{
 	for (int i = 0; i < MAX_BULLETS; i++)
 	{
 		if (bullets[i].active)
 		{
-			bullets[i].fire_position = Vector2MoveTowards(center_position, weapon_reticle, 1);
+			bullets[i].fire_position.x += bullets[i].speed.x;
+			bullets[i].fire_position.y -= bullets[i].speed.y;
 		}
 
 
-		if (bullets[i].fire_position.x > 0 || bullets[i].fire_position.y > 0)
+		if (bullets[i].fire_position.x > screen_size_x || bullets[i].fire_position.y > screen_size_y)
 		{
 			bullets[i].active = false;
 		}
 	}
-
 
 }
 bool bullet_collision(Rectangle collision_one, Rectangle collision_two)

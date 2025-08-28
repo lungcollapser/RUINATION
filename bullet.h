@@ -11,15 +11,17 @@ struct bullet
 {
 	bool active;
 	v2 fire_position;
-	uint16 velocity;
+	v2 velocity;
+	v2 speed;
 
 };
 
-void init_b(v2 player_object);
+extern bullet bullets[MAX_BULLETS];
+
+void init_b();
 void free_b();
 void draw_b(v2 position);
-void update_b(v2 weapon_reticle, v2 center_position, uint16 bullet_speed);
-void shoot_b(v2 weapon_reticle, v2 center_position, uint16 bullet_speed);
+void update_b(v2 weapon_reticle, v2 center_position);
 bool bullet_collision(Rectangle collision_one, Rectangle collision_two);
 Rectangle get_rectangle_bullet(v2 player_position);
 #endif

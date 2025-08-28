@@ -20,28 +20,22 @@ internal void update_player()
 {
     update_p();
 }
-internal void draw_weapon(v2 player_object)
+internal void draw_weapon(player player)
 {
-    draw_w(player_object);
+
+    draw_w(player.player_object);
 }
 internal void update_weapon()
 {
-    update_w({ 0, 0 }, player_main->player_object);
+    update_w({ 0, 0 }, player_main.player_object);
 }
-internal void draw_bullet(v2 player_object)
+internal void draw_bullet(player player)
 {
-    draw_b(player_object);
+    draw_b(player.player_object);
 }
-internal void update_bullet(v2 player_object)
+internal void update_bullet(weapon weapon, player player)
 {
-
-    if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && weapon_main->bullet_amount > 0)
-    {
-
-        shoot_b(weapon_main->weapon_reticle, player_object, 1);
-
-        std::cout << "fired";
-    }
+    update_b(weapon.weapon_reticle, player.player_object);
 }
 internal void update_camera()
 {
@@ -58,11 +52,12 @@ internal void init_mem()
 {
     init_p();
     init_w();
+    init_b();
+    init_cam(player_main.player_object);
 }
 internal void free_mem()
 {
     free_p();
-    free_w();
 }
 
 // main func
@@ -74,25 +69,29 @@ int main()
     HideCursor();
     SetMouseOffset(-400, -400);
 
+
+
     while (!WindowShouldClose())
     {
         /*starting functions*/
         BeginDrawing();
+        BeginMode2D(camera_main.camera);
         ClearBackground(BLACK);
         DrawFPS(10, 10);
+
+
+        update_player();
+        update_weapon();
+        update_camera();
+        update_bullet(weapon_main, player_main);
 
         /*drawing*/
         draw();
         draw_player();
-        draw_weapon(player_main->player_object);
-        draw_bullet(player_main->player_object);
+        draw_weapon(player_main);
+        draw_bullet(player_main);
 
         /*updates*/
-        update_player();
-        update_weapon();
-        update_camera();
-        update_bullet(player_main->player_object);
-        update_b(weapon_main->weapon_reticle, player_main->player_object, 1);
 
         /*ending functions*/
         EndDrawing();

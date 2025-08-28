@@ -1,29 +1,17 @@
 #include "player.h"
 
-player* player_main = nullptr;
+extern player player_main = { 0 };
 
 void init_p()
 {
-	player_main = static_cast<player*>(malloc(sizeof(player)));
-
-	if (player_main == NULL)
-	{
-		std::cout << "player alloc failed!";
-		return;
-	}
-
-
-	player_main->player_object = { 0, 0 };
-	player_main->player_speed = 525;
+	player_main.player_object = { 0, 0 };
+	player_main.player_speed = 525;
 }
-void free_p()
-{
-	free(player_main);
-}
+
 void draw_p()
 {
 
-	DrawCircleV(player_main->player_object, 25, WHITE);
+	DrawCircleV(player_main.player_object, 25, WHITE);
 }
 
 void update_p()
@@ -48,16 +36,16 @@ void update_p()
 		direction.y++;
 	}
 
-	v2 velocity = Vector2Scale(Vector2Normalize(direction), player_main->player_speed * GetFrameTime());
-	player_main->player_object = Vector2Add(player_main->player_object, velocity);
+	v2 velocity = Vector2Scale(Vector2Normalize(direction), player_main.player_speed * GetFrameTime());
+	player_main.player_object = Vector2Add(player_main.player_object, velocity);
 
 	if (IsKeyDown(KEY_LEFT_SHIFT))
 	{
-		player_main->player_speed = 325;
+		player_main.player_speed = 325;
 	}
 	else
 	{
-		player_main->player_speed = 525;
+		player_main.player_speed = 525;
 	}
 	
 }
