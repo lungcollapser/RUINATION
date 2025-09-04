@@ -11,7 +11,6 @@ struct bullet
 {
 	bool active;
 	v2 fire_position;
-	v2 velocity;
 	v2 speed;
 
 };

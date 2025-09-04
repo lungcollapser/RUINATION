@@ -77,7 +77,7 @@ int main()
         BeginDrawing();
         BeginMode2D(camera_main.camera);
         ClearBackground(BLACK);
-        DrawFPS(10, 10);
+        DrawFPS(-300 + player_main.player_object.x, -300 + player_main.player_object.y);
 
 
         update_player();

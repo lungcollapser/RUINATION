@@ -21,7 +21,7 @@ void fire_w(v2 center_position)
 	weapon_main.bullet_amount -= 1;
 
 }
-void update_w(v2 center_position, v2 player_object)
+void update_w(v2 center_position, v2 player_object, uint16 bullet_amount, uint16 clips, uint16 bullet_damage, )
 {
 	weapon_type weapon_choice;
 
@@ -31,7 +31,6 @@ void update_w(v2 center_position, v2 player_object)
 
 		if (weapon_choice == revolver)
 		{
-			weapon_main.bullet_speed = 1000;
 			weapon_main.clips = 2;
 			weapon_main.max_bullets = 6;
 			weapon_main.current_clips = 2;
@@ -46,7 +45,6 @@ void update_w(v2 center_position, v2 player_object)
 
 		if (weapon_choice == repeater)
 		{
-			weapon_main.bullet_speed = 1000;
 			weapon_main.clips = 4;
 			weapon_main.max_bullets = 12;
 			weapon_main.current_clips = 2;

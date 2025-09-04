@@ -1,6 +1,6 @@
 #include "bullet.h"
 
-extern bullet bullets[MAX_BULLETS] = { 0 };
+bullet bullets[MAX_BULLETS] = { 0 };
 
 void init_b(v2 player_object)
 {
@@ -34,13 +34,10 @@ void update_b(v2 weapon_reticle, v2 center_position)
 			if (!bullets[i].active)
 			{
 				bullets[i].active = true;
-				bullets[i].speed = Vector2MoveTowards(bullets[i].fire_position, weapon_reticle, 30);
+				bullets[i].speed = Vector2MoveTowards(bullets[i].fire_position, weapon_reticle, 25);
 				break;
-				
 			}
-
 		}
-
 	}
 	for (int i = 0; i < MAX_BULLETS; i++)
 	{
@@ -49,11 +46,13 @@ void update_b(v2 weapon_reticle, v2 center_position)
 			bullets[i].fire_position += bullets[i].speed;
 		}
 
-
+		/* NEEDS TO BE OPTIMIZED!!!
 		if (bullets[i].fire_position.x > screen_size_x || bullets[i].fire_position.y > screen_size_y)
 		{
 			bullets[i].active = false;
+			std::cout << "inactive";
 		}
+		*/
 	}
 
 }

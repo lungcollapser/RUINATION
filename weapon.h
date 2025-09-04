@@ -14,13 +14,11 @@ struct weapon
 {
 	
 	
-	uint16 bullet_speed;
 	uint16 bullet_amount;
 	uint16 bullet_damage;
 	uint16 max_bullets;
 	uint16 clips;
 	uint16 current_clips;
-	uint16 bullet_radius;
 	v2 weapon_reticle;
 };
 
