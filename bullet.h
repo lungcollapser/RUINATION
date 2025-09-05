@@ -12,6 +12,10 @@ struct bullet
 	bool active;
 	v2 fire_position;
 	v2 speed;
+	uint16 max_bullets_per_weapon;
+	uint16 bullet_damage;
+	uint16 bullet_amount;
+	bool weapon_lock;
 
 };
 

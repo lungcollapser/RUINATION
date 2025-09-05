@@ -21,7 +21,7 @@ void fire_w(v2 center_position)
 	weapon_main.bullet_amount -= 1;
 
 }
-void update_w(v2 center_position, v2 player_object, uint16 bullet_amount, uint16 clips, uint16 bullet_damage, )
+void update_w(v2 center_position, v2 player_object)
 {
 	weapon_type weapon_choice;
 

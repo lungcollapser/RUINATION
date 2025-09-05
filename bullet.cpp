@@ -27,11 +27,13 @@ void draw_b(v2 position)
 
 void update_b(v2 weapon_reticle, v2 center_position)
 {
+
+	
 	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
 	{
 		for (int i = 0; i < MAX_BULLETS; i++)
 		{
-			if (!bullets[i].active)
+			if (!bullets[i].active && bullets[i].weapon_lock)
 			{
 				bullets[i].active = true;
 				bullets[i].speed = Vector2MoveTowards(bullets[i].fire_position, weapon_reticle, 25);
