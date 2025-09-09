@@ -2,19 +2,19 @@
 
 extern player player_main = { 0 };
 
-void init_p()
+void init_player ()
 {
 	player_main.player_object = { 0, 0 };
 	player_main.player_speed = 525;
 }
 
-void draw_p()
+void draw_player()
 {
 
 	DrawCircleV(player_main.player_object, 25, WHITE);
 }
 
-void update_p()
+void update_player()
 {
 
 	v2 direction = { 0.0f, 0.0f };

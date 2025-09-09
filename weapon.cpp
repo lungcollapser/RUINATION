@@ -2,26 +2,26 @@
 
 extern weapon weapon_main = { 0 };
 
-void init_w()
+void init_weapon()
 {
 
 	weapon_main.weapon_reticle = { 0, 0 };
 	
 }
 
-void draw_w(v2 player_object)
+void draw_weapon(v2 player_object)
 {
 
 	weapon_main.weapon_reticle = GetMousePosition();
 	DrawCircleV(weapon_main.weapon_reticle + player_object, 8, RED);
 }
-void fire_w(v2 center_position)
+void fire_weapon(v2 center_position)
 {
 
 	weapon_main.bullet_amount -= 1;
 
 }
-void update_w(v2 center_position, v2 player_object)
+void update_weapon(v2 center_position, v2 player_object)
 {
 	weapon_type weapon_choice;
 

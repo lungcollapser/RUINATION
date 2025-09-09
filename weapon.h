@@ -25,9 +25,9 @@ struct weapon
 
 extern weapon weapon_main;
 
-void init_w();
-void draw_w(v2 player_object);
-void fire_w(v2 center_position);
-void update_w(v2 center_position, v2 player_object);
+void init_weapon();
+void draw_weapon(v2 player_object);
+void fire_weapon(v2 center_position);
+void update_weapon(v2 center_position, v2 player_object);
 
 #endif

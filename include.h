@@ -10,9 +10,6 @@
 #include <vector>
 #include <string>
 #include <iostream>
-#include <bitset>
-#include <queue>
-#include <array>
 
 #define global_variable static
 #define local_persist static
@@ -27,5 +24,7 @@ typedef unsigned int uint32;
 
 static int screen_size_x = 800;
 static int screen_size_y = 800;
+
+void collision
 
 
