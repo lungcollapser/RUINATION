@@ -11,43 +11,47 @@
 //TODO: Look into making a component system.
 
 
-internal void InitGame()
+
+internal void InitGame(player *player)
 {
 
-    init_player();
+    init_player(player);
     init_enemy();
     init_weapon();
-    init_ammo(player_main.player_object);
-    init_cam(player_main.player_object);
+    init_ammo(player->player_object);
+    init_cam(player->player_object);
 }
-internal void DrawGame()
+internal void DrawGame(player *player)
 {
-    draw_player();
-    draw_weapon(player_main.player_object);
-    draw_ammo(player_main.player_object);
+    draw_player(player);
+    draw_weapon(player->player_object);
+    draw_ammo(player->player_object);
     draw_enemy();
 
+    DrawFPS(-300 + player->player_object.x, -300 + player->player_object.y);
     DrawLine(800, 0, 0, 800, WHITE);
     DrawLine(0, 0, 800, 800, WHITE);
 }
-internal void UpdateGame()
+internal void UpdateGame(player *player)
 {
 
-    update_player();
-    update_enemy(player_main.player_object, 10);
-    update_weapon({ 0, 0 }, player_main.player_object);
-    update_ammo(weapon_main.weapon_reticle, player_main.player_object);
+    update_player(player);
+    update_enemy(player->player_object, 10);
+    update_weapon({ 0, 0 }, player->player_object);
+    update_ammo(weapon_main.weapon_reticle, player->player_object);
     update_cam();
 }
-internal void free_mem()
+internal void free_mem(player *player)
 {
-    free_player();
+    free_player(player);
 }
 
 // main func
 int main()
 {
-    InitGame();
+    player player_main;
+
+    InitGame(&player_main);
     InitWindow(screen_size_x, screen_size_y, "ruin");
     SetTargetFPS(120);
     HideCursor();
@@ -61,13 +65,12 @@ int main()
         BeginDrawing();
         BeginMode2D(camera_main.camera);
         ClearBackground(BLACK);
-        DrawFPS(-300 + player_main.player_object.x, -300 + player_main.player_object.y);
 
         /*updates*/
-        UpdateGame();
+        UpdateGame(&player_main);
 
         /*drawing*/
-        DrawGame();
+        DrawGame(&player_main);
 
         /*ending functions*/
         EndDrawing();

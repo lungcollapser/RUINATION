@@ -5,8 +5,6 @@
 #define MAX_BULLETS 50
 
 #include "include.h"
-#include "collision_comp.h"
-
 
 
 struct ammo_system

@@ -1,6 +1,6 @@
 #include "enemy.h"
 
-//TDOD: Delete enemy instaead of just slowing its speed.
+enemy enemy_main = { 0 };
 
 void init_enemy()
 {
@@ -26,7 +26,7 @@ void draw_enemy()
 
 void update_enemy(v2 player_object, uint16 bullet_damage)
 {
-	bool enemy_collision = collision_detection(rec1, rec2);
+	//bool enemy_collision = collision_detection(get_rectangle(), rec2);
 	
 	if (enemy_main.current_health_state == enemy_main.dead)
 	{
@@ -42,13 +42,13 @@ void update_enemy(v2 player_object, uint16 bullet_damage)
 		enemy_main.current_move_state = enemy_main.neutral;
 	}
 
-	if (enemy_collision)
+	/*if (enemy_collision)
 	{
 		take_damage(bullet_damage);
 		enemy_main.current_move_state = enemy_main.aggro;
 		std::cout << enemy_main.enemy_health;
-	}
-
+	 }
+	 */
 	if (enemy_main.enemy_health <= 0)
 	{
 		enemy_main.current_health_state = enemy_main.dead;

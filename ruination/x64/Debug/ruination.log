@@ -1,8 +1,6 @@
-﻿  ammo.cpp
-C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\ammo.cpp(18,48): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\ammo.cpp(18,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\ammo.cpp(26,86): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\ammo.cpp(26,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+﻿  ruination.cpp
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\ruination.cpp(31,50): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\ruination.cpp(31,18): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   ruination.vcxproj -> C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\x64\Debug\ruination.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.

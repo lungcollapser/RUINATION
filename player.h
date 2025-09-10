@@ -11,11 +11,10 @@ struct player
 	v2 player_object;
 	
 };
-extern player player_main;
 
-void init_player();
-void free_player();
-void draw_player();
-void update_player();
+void init_player(player *player);
+void free_player(player *player);
+void draw_player(player *player);
+void update_player(player *player);
 Rectangle get_rectangle_player(v2 player_object);
 #endif

@@ -1,7 +1,7 @@
 #include "ammo.h"
 
 bullet bullets[MAX_BULLETS] = { 0 };
-ammo_system ammo;
+ammo_system ammo = { 0 };
 
 void init_ammo(v2 position)
 {
