@@ -10,12 +10,12 @@
 //TODO: Make bullet collision more global to where if it hits any object, it deactivates and disappears.
 //TODO: Look into making a component system.
 
-enemy enemy_main;
 
 internal void InitGame()
 {
 
     init_player();
+    init_enemy();
     init_weapon();
     init_ammo(player_main.player_object);
     init_cam(player_main.player_object);
@@ -25,14 +25,16 @@ internal void DrawGame()
     draw_player();
     draw_weapon(player_main.player_object);
     draw_ammo(player_main.player_object);
+    draw_enemy();
+
     DrawLine(800, 0, 0, 800, WHITE);
     DrawLine(0, 0, 800, 800, WHITE);
-    enemy_main.draw();
 }
 internal void UpdateGame()
 {
 
     update_player();
+    update_enemy(player_main.player_object, 10);
     update_weapon({ 0, 0 }, player_main.player_object);
     update_ammo(weapon_main.weapon_reticle, player_main.player_object);
     update_cam();

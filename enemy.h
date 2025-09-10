@@ -4,6 +4,7 @@
 #define ENEMY_H
 
 #include "include.h"
+#include "collision_comp.h"
 
 struct enemy
 {
@@ -25,8 +26,11 @@ struct enemy
 
 };
 
-void draw_player();
-void update_player(v2& player_object, float bullet_damage, Rectangle rec1, Rectangle rec2);
-int take_damage(int damage);
+enemy enemy_main;
+
+void init_enemy();
+void draw_enemy();
+void update_enemy(v2 position, uint16 bullet_damage);
+int take_damage(uint16 damage);
 bool enemy_collision(Rectangle collision_one, Rectangle collision_two);
 #endif
