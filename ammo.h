@@ -7,6 +7,8 @@
 #include "include.h"
 #include "collision_comp.h"
 
+
+
 struct ammo_system
 {
 
@@ -48,5 +50,5 @@ void free_ammo();
 void draw_ammo(v2 position);
 void update_ammo(v2 position_one, v2 position_two);
 
-Rectangle get_rectangle(v2 position);
+
 #endif

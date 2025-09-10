@@ -3,8 +3,7 @@
 
 struct collision_comp
 {
-	Rectangle rec1;
-	Rectangle rec2;
+	Rectangle collision_rec;
 };
-void draw_collision(Rectangle collision);
-bool collision_detection(Rectangle rec1, Rectangle rec2);
+
+bool collision_detection(Rectangle collision_one, Rectangle collision_two);

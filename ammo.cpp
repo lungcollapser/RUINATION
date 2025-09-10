@@ -1,9 +1,11 @@
 #include "ammo.h"
 
 bullet bullets[MAX_BULLETS] = { 0 };
+ammo_system ammo;
 
 void init_ammo(v2 position)
 {
+
 	for (int i = 0; i < MAX_BULLETS; i++)
 	{
 		bullets[i].active = false;
@@ -13,6 +15,7 @@ void init_ammo(v2 position)
 }
 void draw_ammo(v2 position)
 {
+	DrawRectangle(ammo.ammo_drop.x, ammo.ammo_drop.y, 10, 10, BLUE);
 
 	for (int i = 0; i < MAX_BULLETS; i++)
 	{
@@ -20,7 +23,8 @@ void draw_ammo(v2 position)
 		{
 
 			DrawCircleV(bullets[i].fire_position + position, 10, YELLOW);
-			DrawRectangle(bullets[i].fire_position.x + position.x, bullets[i].fire_position.y + position.y, 15, 15, ORANGE);
+			DrawRectangle(bullets[i].fire_position.x + position.x, bullets[i].fire_position.y + position.y, 10, 10, WHITE);
+
 		}
 	}
 
@@ -59,15 +63,5 @@ void update_ammo(v2 position_one, v2 position_two)
 	}
 
 }
-bool collision_detection(Rectangle rec1, Rectangle rec2)
-{
-	if (CheckCollisionRecs(rec1, rec2))
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
+
 

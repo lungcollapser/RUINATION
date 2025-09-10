@@ -5,18 +5,9 @@
 
 #include "include.h"
 
-class enemy
+struct enemy
 {
-public:
-	enemy();
-	~enemy();
-	void draw();
-	void update(v2 &player_object, float bullet_damage, Rectangle rec1, Rectangle rec2);
-	int take_damage(int damage);
-	bool collision(Rectangle collision_one, Rectangle collision_two);
 
-	Rectangle get_rectangle();
-	Rectangle enemy_rec;
 	Vector2 enemy_object, enemy_position;
 	int16 enemy_health, enemy_speed, enemy_radius, bullet_speed;
 	enum enemy_move_state
@@ -33,4 +24,9 @@ public:
 	enemy_health_state current_health_state;
 
 };
+
+void draw_player();
+void update_player(v2& player_object, float bullet_damage, Rectangle rec1, Rectangle rec2);
+int take_damage(int damage);
+bool enemy_collision(Rectangle collision_one, Rectangle collision_two);
 #endif
