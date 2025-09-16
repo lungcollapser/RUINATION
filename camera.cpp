@@ -2,7 +2,7 @@
 
 extern camera camera_main = { 0 };
 
-void init_cam(v2 player_object)
+void init_cam()
 {
 	camera_main.camera = { 0 };
 	camera_main. camera.target = { 0, 0 };

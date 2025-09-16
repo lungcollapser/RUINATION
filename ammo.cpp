@@ -30,7 +30,7 @@ void draw_ammo(v2 position)
 
 }
 
-void update_ammo(v2 position_one, v2 position_two)
+void update_ammo(v2 position)
 {
 
 
@@ -41,7 +41,7 @@ void update_ammo(v2 position_one, v2 position_two)
 			if (!bullets[i].active && bullets[i].weapon_lock)
 			{
 				bullets[i].active = true;
-				bullets[i].speed = Vector2MoveTowards(bullets[i].fire_position, position_one, 25);
+				bullets[i].speed = Vector2MoveTowards(bullets[i].fire_position, position, 25);
 				break;
 			}
 		}

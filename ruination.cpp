@@ -12,19 +12,19 @@
 
 
 
-internal void InitGame(player *player)
+internal void InitGame(player *player, weapon *weapon)
 {
 
     init_player(player);
     init_enemy();
-    init_weapon();
+    init_weapon(weapon);
     init_ammo(player->player_object);
-    init_cam(player->player_object);
+    init_cam();
 }
-internal void DrawGame(player *player)
+internal void DrawGame(player *player, weapon *weapon)
 {
     draw_player(player);
-    draw_weapon(player->player_object);
+    draw_weapon(weapon, player->player_object);
     draw_ammo(player->player_object);
     draw_enemy();
 
@@ -32,31 +32,31 @@ internal void DrawGame(player *player)
     DrawLine(800, 0, 0, 800, WHITE);
     DrawLine(0, 0, 800, 800, WHITE);
 }
-internal void UpdateGame(player *player)
+internal void UpdateGame(player *player, weapon* weapon)
 {
 
     update_player(player);
-    update_enemy(player->player_object, 10);
-    update_weapon({ 0, 0 }, player->player_object);
-    update_ammo(weapon_main.weapon_reticle, player->player_object);
+    update_enemy(player->player_object);
+    update_weapon(weapon);
+    update_ammo(weapon->weapon_reticle);
     update_cam();
 }
 internal void free_mem(player *player)
 {
-    free_player(player);
+
 }
 
 // main func
 int main()
 {
     player player_main;
+    weapon weapon_main;
 
-    InitGame(&player_main);
+    InitGame(&player_main, &weapon_main);
     InitWindow(screen_size_x, screen_size_y, "ruin");
     SetTargetFPS(120);
     HideCursor();
     SetMouseOffset(-400, -400);
-
 
 
     while (!WindowShouldClose())
@@ -67,10 +67,10 @@ int main()
         ClearBackground(BLACK);
 
         /*updates*/
-        UpdateGame(&player_main);
+        UpdateGame(&player_main, &weapon_main);
 
         /*drawing*/
-        DrawGame(&player_main);
+        DrawGame(&player_main, &weapon_main);
 
         /*ending functions*/
         EndDrawing();

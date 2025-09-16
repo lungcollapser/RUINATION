@@ -6,7 +6,6 @@ void init_player(player *player)
 	player->player_object = { 0, 0 };
 	player->player_speed = 525;
 }
-
 void draw_player(player *player)
 {
 
@@ -53,9 +52,3 @@ Rectangle get_rectangle_player(v2 player_object)
 {
 	return Rectangle{ player_object.x - 25, player_object.y - 25, 50, 50 };
 }
-
-
-
-
-
-

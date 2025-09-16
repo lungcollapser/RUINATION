@@ -46,7 +46,7 @@ extern bullet bullets[MAX_BULLETS];
 void init_ammo(v2 position);
 void free_ammo();
 void draw_ammo(v2 position);
-void update_ammo(v2 position_one, v2 position_two);
+void update_ammo(v2 position);
 
 
 #endif

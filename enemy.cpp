@@ -24,7 +24,7 @@ void draw_enemy()
 }
 
 
-void update_enemy(v2 player_object, uint16 bullet_damage)
+void update_enemy(v2 position)
 {
 	//bool enemy_collision = collision_detection(get_rectangle(), rec2);
 	
@@ -35,7 +35,7 @@ void update_enemy(v2 player_object, uint16 bullet_damage)
 
 	if (enemy_main.current_move_state == enemy_main.aggro)
 	{
-		enemy_main.enemy_object = Vector2MoveTowards(enemy_main.enemy_object, player_object, enemy_main.enemy_speed);
+		enemy_main.enemy_object = Vector2MoveTowards(enemy_main.enemy_object, position, enemy_main.enemy_speed);
 	}
 	else
 	{
@@ -60,7 +60,7 @@ void update_enemy(v2 player_object, uint16 bullet_damage)
 
 
 }
-int take_damage(int damage)
+uint16 take_damage(uint16 damage)
 {
 	enemy_main.enemy_health -= damage;
 	

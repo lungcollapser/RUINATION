@@ -28,6 +28,6 @@ struct enemy
 
 void init_enemy();
 void draw_enemy();
-void update_enemy(v2 position, uint16 bullet_damage);
-int take_damage(uint16 damage);
+void update_enemy(v2 position);
+uint16 take_damage(uint16 damage);
 #endif

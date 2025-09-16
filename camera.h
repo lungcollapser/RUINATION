@@ -13,7 +13,7 @@ struct camera
 
 extern camera camera_main;
 
-void init_cam(v2 player_object);
+void init_cam();
 void free_cam();
 void update_cam();
 #endif
