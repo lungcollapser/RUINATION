@@ -9,23 +9,20 @@
 
 struct entity
 {
-	void init_entity(uint16 ent_id, component_lists* components, entity_transform* position, entity_health health);
-	void draw_entity(uint16 ent_id, v2 ent_position, float radius, Color color, entity_health health);
-	void update_entity_health(uint16 ent_id, component_lists* components, entity_health health);
-	void kill_entity(uint16 ent_id, component_lists* components);
+	
 };
 
 struct entity_transform
 {
-	uint16 player_id;
-	uint16 enemy_id;
+	uint16 entity_id;
 
-	bool active;
+	v2 ent_position;
+	float radius;
+	Color color;
 };
 struct entity_health
 {
-	uint16 player_id;
-	uint16 enemy_id;
+	uint16 entity_id;
 
 	int16 current_health;
 	uint32 max_health;
@@ -40,7 +37,14 @@ struct component_lists
 	uint16 total_transform_components;
 };
 
-extern uint32 entities;
+extern uint16 entities;
+extern uint16 player_id;
+extern uint16 enemy_id;
 
+
+void init_entity(component_lists* components);
+void draw_entity(component_lists* components);
+void update_entity_health(uint16 ent_id, component_lists* components, entity_health health);
+void kill_entity(uint16 ent_id, component_lists* components);
 
 #endif

@@ -4,6 +4,7 @@
 #include "enemy.h"
 #include "weapon.h"
 #include "ammo.h"
+#include "entity.h"
 #include "timer.h"
             
 
@@ -52,7 +53,10 @@ int main()
     player player_main;
     weapon weapon_main;
 
+    component_lists components;
+
     InitGame(&player_main, &weapon_main);
+    init_entity(&components);
     InitWindow(screen_size_x, screen_size_y, "ruin");
     SetTargetFPS(120);
     HideCursor();
@@ -71,6 +75,7 @@ int main()
 
         /*drawing*/
         DrawGame(&player_main, &weapon_main);
+        draw_entity(&components);
 
         /*ending functions*/
         EndDrawing();
