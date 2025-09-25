@@ -5,7 +5,7 @@
 #include "weapon.h"
 #include "ammo.h"
 #include "timer.h"
-
+            
 
 //TODO: Make bullet collision more global to where if it hits any object, it deactivates and disappears.
 //TODO: Look into making a component system.
