@@ -17,6 +17,7 @@ struct entity_transform
 	uint16 entity_id;
 
 	v2 ent_position;
+	uint16 speed;
 	float radius;
 	Color color;
 };
@@ -40,11 +41,14 @@ struct component_lists
 extern uint16 entities;
 extern uint16 player_id;
 extern uint16 enemy_id;
+extern uint16 weapon_id;
 
 
-void init_entity(component_lists* components);
-void draw_entity(component_lists* components);
-void update_entity_health(uint16 ent_id, component_lists* components, entity_health health);
-void kill_entity(uint16 ent_id, component_lists* components);
+void CreateEntity(uint16 ent_id, component_lists* components);
+void DrawEntity(uint16 ent_id, component_lists* components);
+void UpdateEntityMovement(uint16 ent_id, component_lists* component);
+void UpdateEntityBullet(uint16 ent_id, component_lists* component);
+void UpdateEntityHealth(uint16 ent_id, component_lists* components, entity_health health);
+void KillEntity(uint16 ent_id, component_lists* components);
 
 #endif

@@ -13,9 +13,33 @@
 
 
 
-internal void InitGame(player *player, weapon *weapon)
+internal void AddPlayer(component_lists* components)
 {
+    CreateEntity(player_id, components);
 
+    components->transform_components[player_id] = { player_id, 100, 100, 525, 40, WHITE };
+    components->health_components[player_id] = { player_id, 20, 20 };
+
+}
+internal void AddEnemy(component_lists* components)
+{
+    CreateEntity(enemy_id, components);
+
+    components->transform_components[enemy_id] = { enemy_id, 200, 400, 525, 20, RED };
+    components->health_components[enemy_id] = { enemy_id, 20, 20 };
+}
+internal void AddWeapon(component_lists* components, v2 position)
+{
+    CreateEntity(weapon_id, components);
+
+    components->transform_components[weapon_id] = { weapon_id, 0 + position.x, 0 + position.y, 0, 10, BLUE};
+    components->health_components[weapon_id] = { weapon_id, 0, 0 };
+}
+internal void InitGame(player *player, weapon *weapon, component_lists* components)
+{
+    AddPlayer(components);
+    AddEnemy(components);
+    AddWeapon(components, components->transform_components[player_id].ent_position);
     init_player(player);
     init_enemy();
     init_weapon(weapon);
@@ -25,7 +49,6 @@ internal void InitGame(player *player, weapon *weapon)
 internal void DrawGame(player *player, weapon *weapon)
 {
     draw_player(player);
-    draw_weapon(weapon, player->player_object);
     draw_ammo(player->player_object);
     draw_enemy();
 
@@ -33,9 +56,9 @@ internal void DrawGame(player *player, weapon *weapon)
     DrawLine(800, 0, 0, 800, WHITE);
     DrawLine(0, 0, 800, 800, WHITE);
 }
-internal void UpdateGame(player *player, weapon* weapon)
+internal void UpdateGame(player *player, weapon* weapon, component_lists* components)
 {
-
+    UpdateEntityMovement(player_id, components);
     update_player(player);
     update_enemy(player->player_object);
     update_weapon(weapon);
@@ -55,27 +78,28 @@ int main()
 
     component_lists components;
 
-    InitGame(&player_main, &weapon_main);
-    init_entity(&components);
+    InitGame(&player_main, &weapon_main, &components);
     InitWindow(screen_size_x, screen_size_y, "ruin");
     SetTargetFPS(120);
     HideCursor();
     SetMouseOffset(-400, -400);
 
-
     while (!WindowShouldClose())
     {
+
         /*starting functions*/
         BeginDrawing();
         BeginMode2D(camera_main.camera);
         ClearBackground(BLACK);
 
         /*updates*/
-        UpdateGame(&player_main, &weapon_main);
+        UpdateGame(&player_main, &weapon_main, &components);
 
         /*drawing*/
         DrawGame(&player_main, &weapon_main);
-        draw_entity(&components);
+        DrawEntity(player_id, &components);
+        DrawEntity(enemy_id, &components);
+        DrawEntity(weapon_id, &components);
 
         /*ending functions*/
         EndDrawing();
