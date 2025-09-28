@@ -147,7 +147,6 @@
   <ItemGroup>
     <ClInclude Include="ammo.h" />
     <ClInclude Include="camera.h" />
-    <ClInclude Include="collision_comp.h" />
     <ClInclude Include="enemy.h" />
     <ClInclude Include="entity.h" />
     <ClInclude Include="include.h" />

@@ -13,41 +13,50 @@
 
 
 
-internal void AddPlayer(component_lists* components)
+internal void AddPlayer(component_lists* component)
 {
-    CreateEntity(player_id, components);
+    component->transform_component[player_id] = { player_id, 0, 0, 525, 40, WHITE };
+    component->health_component[player_id] = { player_id, 20, 20 };
 
-    components->transform_components[player_id] = { player_id, 100, 100, 525, 40, WHITE };
-    components->health_components[player_id] = { player_id, 20, 20 };
+    CreateEntity(player_id, component);
+}
+internal void AddEnemy(component_lists* component)
+{
+    component->transform_component[enemy_id] = { enemy_id, 0, 0, 525, 20, RED };
+    component->health_component[enemy_id] = { enemy_id, 20, 20 };
+
+    CreateEntity(enemy_id, component);
+}
+internal void AddProjectWeapon(component_lists* component, v2 position)
+{
+    if (IsKeyPressed(KEY_ONE))
+    {
+        component->item_component[project_weapon_id] = { project_weapon_id, 5, 10, 1, 100 };
+    }
+
+    component->transform_component[project_weapon_id] = { project_weapon_id,  0, 0, 0, 10, BLUE};
+    component->health_component[project_weapon_id] = { project_weapon_id, 1, 1 };
+
+    CreateEntity(weapon_id, component);
 
 }
-internal void AddEnemy(component_lists* components)
+internal void InitGame(player *player, weapon *weapon, component_lists* component)
 {
-    CreateEntity(enemy_id, components);
-
-    components->transform_components[enemy_id] = { enemy_id, 200, 400, 525, 20, RED };
-    components->health_components[enemy_id] = { enemy_id, 20, 20 };
-}
-internal void AddWeapon(component_lists* components, v2 position)
-{
-    CreateEntity(weapon_id, components);
-
-    components->transform_components[weapon_id] = { weapon_id, 0 + position.x, 0 + position.y, 0, 10, BLUE};
-    components->health_components[weapon_id] = { weapon_id, 0, 0 };
-}
-internal void InitGame(player *player, weapon *weapon, component_lists* components)
-{
-    AddPlayer(components);
-    AddEnemy(components);
-    AddWeapon(components, components->transform_components[player_id].ent_position);
+    AddPlayer(component);
+    AddEnemy(component);
+    AddProjectWeapon(component, component->transform_component[player_id].ent_position);
     init_player(player);
     init_enemy();
     init_weapon(weapon);
     init_ammo(player->player_object);
     init_cam();
 }
-internal void DrawGame(player *player, weapon *weapon)
+internal void DrawGame(player *player, weapon *weapon, component_lists* component)
 {
+
+    /*need to figure out a better home for this. its more of an update than a draw state so its a bit confusing. could also be more contained and apparent.*/
+
+
     draw_player(player);
     draw_ammo(player->player_object);
     draw_enemy();
@@ -56,9 +65,10 @@ internal void DrawGame(player *player, weapon *weapon)
     DrawLine(800, 0, 0, 800, WHITE);
     DrawLine(0, 0, 800, 800, WHITE);
 }
-internal void UpdateGame(player *player, weapon* weapon, component_lists* components)
+internal void UpdateGame(player *player, weapon* weapon, component_lists* component)
 {
-    UpdateEntityMovement(player_id, components);
+    UpdateEntityMovement(player_id, component);
+    UpdateEntityProjectWeapon(project_weapon_id, component);
     update_player(player);
     update_enemy(player->player_object);
     update_weapon(weapon);
@@ -76,9 +86,9 @@ int main()
     player player_main;
     weapon weapon_main;
 
-    component_lists components;
+    component_lists component;
 
-    InitGame(&player_main, &weapon_main, &components);
+    InitGame(&player_main, &weapon_main, &component);
     InitWindow(screen_size_x, screen_size_y, "ruin");
     SetTargetFPS(120);
     HideCursor();
@@ -93,13 +103,13 @@ int main()
         ClearBackground(BLACK);
 
         /*updates*/
-        UpdateGame(&player_main, &weapon_main, &components);
+        UpdateGame(&player_main, &weapon_main, &component);
 
         /*drawing*/
-        DrawGame(&player_main, &weapon_main);
-        DrawEntity(player_id, &components);
-        DrawEntity(enemy_id, &components);
-        DrawEntity(weapon_id, &components);
+        DrawGame(&player_main, &weapon_main, &component);
+        DrawEntity(player_id, &component);
+        DrawEntity(enemy_id, &component);
+        DrawEntity(project_weapon_id, &component);
 
         /*ending functions*/
         EndDrawing();
