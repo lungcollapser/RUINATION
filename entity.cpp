@@ -65,25 +65,25 @@ void UpdateEntityProjectWeapon(uint16 ent_id, component_lists* component)
 {
 	component->transform_component[ent_id].ent_position = GetMousePosition() + component->transform_component[player_id].ent_position;
 }
-void UpdateEntityBullet(uint16 ent_id, component_lists* component)
+void UpdateEntityBullet(uint16 ent_id_one, uint16 ent_id_two, component_lists* component)
 {
 	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
 	{
 		for (int i = 0; i < MAX_BULLETS; i++)
 		{
-			if (!component->bullet_component.active)
+			if (!component->bullet_component[ent_id_one].active)
 			{
-				component->bullet_component.active = true;
-				component->bullet_component.speed = Vector2MoveTowards(component->bullet_component.fire_position, position, 25);
+				component->bullet_component[ent_id_one].active = true;
+				component->bullet_component[ent_id_one].velocity = Vector2MoveTowards(component->transform_component[ent_id_one].ent_position, component->transform_component[ent_id_two].ent_position, 25);
 				break;
 			}
 		}
 	}
 	for (int i = 0; i < MAX_BULLETS; i++)
 	{
-		if (component->bullet_component.active)
+		if (component->bullet_component[ent_id_one].active)
 		{
-			component->bullet_component.fire_position += component->bullet_component.speed;
+			component->transform_component[ent_id_one].ent_position += component->bullet_component[ent_id_one].velocity;
 		}
 
 		/* NEEDS TO BE OPTIMIZED!!!
@@ -110,6 +110,8 @@ void KillEntity(uint16 ent_id, component_lists* component)
 
 	component->total_health_component--;
 	component->total_transform_component--;
+	component->total_item_component--;
+	component->total_bullet_component--;
 }
 
 

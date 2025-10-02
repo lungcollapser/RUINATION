@@ -2,9 +2,10 @@
 
 #ifndef ENTITY_H
 #define ENTITY_H
+#include "include.h"
+
 #define MAX_BULLETS 50
 
-#include "include.h"
 
 
 struct entity
@@ -33,7 +34,6 @@ struct entity_item
 	uint16 entity_id;
 
 	bool active;
-	uint16 damage;
 	uint16 durability;
 };
 struct entity_bullet
@@ -44,7 +44,7 @@ struct entity_bullet
 	uint16 ammunition;
 	uint16 max_ammunition;
 	uint16 damage;
-	uint16 velocity;
+	v2 velocity;
 };
 struct component_lists
 {
@@ -71,7 +71,7 @@ extern uint16 bullet_id;
 void CreateEntity(uint16 ent_id, component_lists* component);
 void DrawEntity(uint16 ent_id, component_lists* component);
 void UpdateEntityMovement(uint16 ent_id, component_lists* component);
-void UpdateEntityBullet(uint16 ent_id, component_lists* component);
+void UpdateEntityBullet(uint16 ent_id_one, uint16 ent_id_two, component_lists* component);
 void UpdateEntityWeapon(uint16 ent_id, component_lists* component);
 void UpdateEntityProjectWeapon(uint16 ent_id, component_lists* component);
 void UpdateEntityHealth(uint16 ent_id, component_lists* component, entity_health health);

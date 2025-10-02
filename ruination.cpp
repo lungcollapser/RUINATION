@@ -27,11 +27,11 @@ internal void AddEnemy(component_lists* component)
 
     CreateEntity(enemy_id, component);
 }
-internal void AddProjectWeapon(component_lists* component, v2 position)
+internal void AddProjectWeapon(component_lists* component)
 {
     if (IsKeyPressed(KEY_ONE))
     {
-        component->item_component[project_weapon_id] = { project_weapon_id, 5, 10, 1, 100 };
+        component->item_component[project_weapon_id] = { project_weapon_id, true, 10 };
     }
 
     component->transform_component[project_weapon_id] = { project_weapon_id,  0, 0, 0, 10, BLUE};
@@ -40,11 +40,21 @@ internal void AddProjectWeapon(component_lists* component, v2 position)
     CreateEntity(weapon_id, component);
 
 }
+internal void AddBullet(component_lists* component)
+{
+
+    component->transform_component[bullet_id] = { bullet_id, 0, 0, 0, 10, PURPLE };
+    component->health_component[bullet_id] = { bullet_id, 1, 1 };
+    component->bullet_component[bullet_id] = { bullet_id, false, 10, 20, 1, 0, 0 };
+
+    CreateEntity(bullet_id, component);
+}
 internal void InitGame(player *player, weapon *weapon, component_lists* component)
 {
     AddPlayer(component);
     AddEnemy(component);
-    AddProjectWeapon(component, component->transform_component[player_id].ent_position);
+    AddProjectWeapon(component);
+    AddBullet(component);
     init_player(player);
     init_enemy();
     init_weapon(weapon);
@@ -69,6 +79,7 @@ internal void UpdateGame(player *player, weapon* weapon, component_lists* compon
 {
     UpdateEntityMovement(player_id, component);
     UpdateEntityProjectWeapon(project_weapon_id, component);
+    UpdateEntityBullet(bullet_id, weapon_id, component);
     update_player(player);
     update_enemy(player->player_object);
     update_weapon(weapon);
@@ -110,6 +121,7 @@ int main()
         DrawEntity(player_id, &component);
         DrawEntity(enemy_id, &component);
         DrawEntity(project_weapon_id, &component);
+        DrawEntity(bullet_id, &component);
 
         /*ending functions*/
         EndDrawing();
