@@ -18,7 +18,8 @@ struct entity_transform
 	uint16 entity_id;
 
 	v2 ent_position;
-	uint16 speed;
+	v2 bullet_velocity;
+	uint16 movement_speed;
 	float radius;
 	Color color;
 };
@@ -44,7 +45,6 @@ struct entity_bullet
 	uint16 ammunition;
 	uint16 max_ammunition;
 	uint16 damage;
-	v2 velocity;
 };
 struct component_lists
 {
@@ -70,6 +70,7 @@ extern uint16 bullet_id;
 
 void CreateEntity(uint16 ent_id, component_lists* component);
 void DrawEntity(uint16 ent_id, component_lists* component);
+void DrawBullet(uint16 ent_id, component_lists* component);
 void UpdateEntityMovement(uint16 ent_id, component_lists* component);
 void UpdateEntityBullet(uint16 ent_id_one, uint16 ent_id_two, component_lists* component);
 void UpdateEntityWeapon(uint16 ent_id, component_lists* component);

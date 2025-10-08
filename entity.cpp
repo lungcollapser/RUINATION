@@ -21,14 +21,17 @@ void DrawEntity(uint16 ent_id, component_lists* component)
 {
 	if (component->health_component[ent_id].current_health > 0)
 	{
-		DrawCircle(component->transform_component[ent_id].ent_position.x, component->transform_component[ent_id].ent_position.y, component->transform_component[ent_id].radius, component->transform_component[ent_id].color);
+		DrawCircleV(component->transform_component[ent_id].ent_position, component->transform_component[ent_id].radius, component->transform_component[ent_id].color);
 	}
 
-	if (component->bullet_component[bullet_id].active)
+}
+void DrawBullet(uint16 ent_id, component_lists* component)
+{
+	for (int i = 0; i < MAX_BULLETS; i++)
 	{
-		for (int i = 0; i < MAX_BULLETS; i++)
+		if (component->bullet_component[i].active)
 		{
-			component->bullet_component[i].active = false;
+			DrawCircleV(component->transform_component[i].ent_position + component->transform_component[player_id].ent_position, component->transform_component[i].radius, component->transform_component[i].color);
 		}
 	}
 }
@@ -53,7 +56,7 @@ void UpdateEntityMovement(uint16 ent_id, component_lists* component)
 		direction.y++;
 	}
 
-	v2 velocity = Vector2Scale(Vector2Normalize(direction), component->transform_component[ent_id].speed * GetFrameTime());
+	v2 velocity = Vector2Scale(Vector2Normalize(direction), component->transform_component[ent_id].movement_speed * GetFrameTime());
 	component->transform_component[ent_id].ent_position = Vector2Add(component->transform_component[ent_id].ent_position, velocity);
 }
 
@@ -67,23 +70,24 @@ void UpdateEntityProjectWeapon(uint16 ent_id, component_lists* component)
 }
 void UpdateEntityBullet(uint16 ent_id_one, uint16 ent_id_two, component_lists* component)
 {
+
 	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
 	{
 		for (int i = 0; i < MAX_BULLETS; i++)
 		{
-			if (!component->bullet_component[ent_id_one].active)
+			if (!component->bullet_component[i].active)
 			{
-				component->bullet_component[ent_id_one].active = true;
-				component->bullet_component[ent_id_one].velocity = Vector2MoveTowards(component->transform_component[ent_id_one].ent_position, component->transform_component[ent_id_two].ent_position, 25);
+				component->bullet_component[i].active = true;
+				component->transform_component[i].bullet_velocity = Vector2MoveTowards(component->transform_component[i].ent_position, component->transform_component[project_weapon_id].ent_position, 25);
 				break;
 			}
 		}
 	}
 	for (int i = 0; i < MAX_BULLETS; i++)
 	{
-		if (component->bullet_component[ent_id_one].active)
+		if (component->bullet_component[i].active)
 		{
-			component->transform_component[ent_id_one].ent_position += component->bullet_component[ent_id_one].velocity;
+			component->transform_component[i].ent_position += component->transform_component[i].bullet_velocity;
 		}
 
 		/* NEEDS TO BE OPTIMIZED!!!
