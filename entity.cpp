@@ -31,9 +31,10 @@ void DrawBullet(uint16 ent_id, component_lists* component)
 	{
 		if (component->bullet_component[i].active)
 		{
-			DrawCircleV(component->transform_component[i].ent_position + component->transform_component[player_id].ent_position, component->transform_component[i].radius, component->transform_component[i].color);
+			DrawCircleV(component->transform_component[i].ent_position + component->transform_component[ent_id].ent_position, component->transform_component[i].radius, component->transform_component[i].color);
 		}
 	}
+
 }
 void UpdateEntityMovement(uint16 ent_id, component_lists* component)
 {

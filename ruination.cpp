@@ -42,9 +42,10 @@ internal void AddProjectWeapon(component_lists* component)
 }
 internal void AddBullet(component_lists* component)
 {
+
     for (int i = 0; i < MAX_BULLETS; i++)
     {
-        component->transform_component[bullet_id] = { bullet_id, 0, 0, 0, 0, 0, 10, PURPLE};
+        component->transform_component[bullet_id] = { bullet_id, 0, 0, 0, 0, 0, 10, PURPLE };
         component->health_component[bullet_id] = { bullet_id, 1, 1 };
         component->bullet_component[bullet_id] = { bullet_id, false, 10, 20, 1 };
     }
@@ -76,6 +77,7 @@ internal void DrawGame(player *player, weapon *weapon, component_lists* componen
     DrawFPS(-300 + player->player_object.x, -300 + player->player_object.y);
     DrawLine(800, 0, 0, 800, WHITE);
     DrawLine(0, 0, 800, 800, WHITE);
+    DrawBullet(player_id, component);
 
 }
 internal void UpdateGame(player *player, weapon* weapon, component_lists* component)
@@ -122,7 +124,6 @@ int main()
         DrawEntity(player_id, &component);
         DrawEntity(enemy_id, &component);
         DrawEntity(project_weapon_id, &component);
-        DrawEntity(bullet_id, &component);
 
         /*ending functions*/
         EndDrawing();
