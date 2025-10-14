@@ -31,7 +31,7 @@ void DrawBullet(uint16 ent_id, component_lists* component)
 	{
 		if (component->bullet_component[i].active)
 		{
-			DrawCircleV(component->transform_component[i].ent_position + component->transform_component[ent_id].ent_position, component->transform_component[i].radius, component->transform_component[i].color);
+			DrawCircleV(component->bullet_component[i].bullet_position + component->transform_component[player_id].ent_position, component->bullet_component[i].radius, component->bullet_component[i].color);
 		}
 	}
 
@@ -72,14 +72,14 @@ void UpdateEntityProjectWeapon(uint16 ent_id, component_lists* component)
 void UpdateEntityBullet(uint16 ent_id_one, uint16 ent_id_two, component_lists* component)
 {
 
-	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && component->bullet_component[project_weapon_id].ammunition > 0)
 	{
 		for (int i = 0; i < MAX_BULLETS; i++)
 		{
 			if (!component->bullet_component[i].active)
 			{
 				component->bullet_component[i].active = true;
-				component->transform_component[i].bullet_velocity = Vector2MoveTowards(component->transform_component[i].ent_position, component->transform_component[project_weapon_id].ent_position, 25);
+				component->bullet_component[i].bullet_velocity = Vector2MoveTowards(component->bullet_component[i].bullet_position, component->transform_component[project_weapon_id].ent_position, 25);
 				break;
 			}
 		}
@@ -88,7 +88,7 @@ void UpdateEntityBullet(uint16 ent_id_one, uint16 ent_id_two, component_lists* c
 	{
 		if (component->bullet_component[i].active)
 		{
-			component->transform_component[i].ent_position += component->transform_component[i].bullet_velocity;
+			component->bullet_component[i].bullet_position += component->bullet_component[i].bullet_velocity;
 		}
 
 		/* NEEDS TO BE OPTIMIZED!!!

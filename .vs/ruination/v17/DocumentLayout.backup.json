@@ -68,7 +68,7 @@
               "RelativeDocumentMoniker": "entity.cpp",
               "ToolTip": "C:\\Users\\thort\\OneDrive\\Desktop\\CISFUN\\source\\repos\\ruination\\entity.cpp*",
               "RelativeToolTip": "entity.cpp*",
-              "ViewState": "AgIAABEAAAAAAAAAAAAQwCEAAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACEAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-09-15T23:30:26.83Z",
               "EditorCaption": ""
@@ -81,7 +81,7 @@
               "RelativeDocumentMoniker": "entity.h",
               "ToolTip": "C:\\Users\\thort\\OneDrive\\Desktop\\CISFUN\\source\\repos\\ruination\\entity.h",
               "RelativeToolTip": "entity.h",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAEgAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAEcAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-09-15T23:30:24.968Z",
               "EditorCaption": ""
@@ -96,8 +96,7 @@
               "RelativeToolTip": "ammo.h",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-09-28T02:54:59.158Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-28T02:54:59.158Z"
             },
             {
               "$type": "Document",
@@ -107,7 +106,7 @@
               "RelativeDocumentMoniker": "ammo.cpp",
               "ToolTip": "C:\\Users\\thort\\OneDrive\\Desktop\\CISFUN\\source\\repos\\ruination\\ammo.cpp",
               "RelativeToolTip": "ammo.cpp",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-09-28T02:55:00.921Z",
               "EditorCaption": ""
@@ -120,7 +119,7 @@
               "RelativeDocumentMoniker": "ruination.cpp",
               "ToolTip": "C:\\Users\\thort\\OneDrive\\Desktop\\CISFUN\\source\\repos\\ruination\\ruination.cpp",
               "RelativeToolTip": "ruination.cpp",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAE8AAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAEsAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-02-20T02:36:26.087Z",
               "EditorCaption": ""
