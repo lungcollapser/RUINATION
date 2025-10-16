@@ -18,6 +18,7 @@ struct entity_transform
 	uint16 entity_id;
 
 	v2 ent_position;
+	Rectangle ent_collision;
 	uint16 movement_speed;
 	float radius;
 	Color color;

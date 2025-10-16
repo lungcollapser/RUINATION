@@ -22,6 +22,7 @@ void DrawEntity(uint16 ent_id, component_lists* component)
 	if (component->health_component[ent_id].current_health > 0)
 	{
 		DrawCircleV(component->transform_component[ent_id].ent_position, component->transform_component[ent_id].radius, component->transform_component[ent_id].color);
+		DrawRectangleLinesEx(component->transform_component[ent_id].ent_collision, 5, ORANGE);
 	}
 
 }
@@ -36,6 +37,7 @@ void DrawBullet(uint16 ent_id, component_lists* component)
 	}
 
 }
+
 void UpdateEntityMovement(uint16 ent_id, component_lists* component)
 {
 	v2 direction = { 0.0f, 0.0f };
@@ -67,7 +69,9 @@ void UpdateEntityWeapon(uint16 ent_id, component_lists* component)
 }
 void UpdateEntityProjectWeapon(uint16 ent_id, component_lists* component)
 {
-	component->transform_component[ent_id].ent_position = GetMousePosition() + component->transform_component[player_id].ent_position;
+	component->transform_component[ent_id].ent_position = GetMousePosition();
+	DrawCircleV(component->transform_component[ent_id].ent_position + component->transform_component[player_id].ent_position, component->transform_component[ent_id].radius, component->transform_component[ent_id].color);
+
 }
 void UpdateEntityBullet(uint16 ent_id_one, uint16 ent_id_two, component_lists* component)
 {
