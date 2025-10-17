@@ -1,11 +1,23 @@
-﻿  entity.cpp
+﻿  ammo.cpp
+C:\Users\thort\OneDrive\Documents\PROGRAMMINGALL\CISFUN\source\repos\ruination\ammo.cpp(18,48): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Documents\PROGRAMMINGALL\CISFUN\source\repos\ruination\ammo.cpp(18,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Documents\PROGRAMMINGALL\CISFUN\source\repos\ruination\ammo.cpp(26,86): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Documents\PROGRAMMINGALL\CISFUN\source\repos\ruination\ammo.cpp(26,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  camera.cpp
+  enemy.cpp
+  entity.cpp
 C:\Users\thort\OneDrive\Documents\PROGRAMMINGALL\CISFUN\source\repos\ruination\entity.cpp(35,357): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 C:\Users\thort\OneDrive\Documents\PROGRAMMINGALL\CISFUN\source\repos\ruination\entity.cpp(35,297): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 C:\Users\thort\OneDrive\Documents\PROGRAMMINGALL\CISFUN\source\repos\ruination\entity.cpp(35,188): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 C:\Users\thort\OneDrive\Documents\PROGRAMMINGALL\CISFUN\source\repos\ruination\entity.cpp(35,76): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  player.cpp
   ruination.cpp
 C:\Users\thort\OneDrive\Documents\PROGRAMMINGALL\CISFUN\source\repos\ruination\ruination.cpp(97,50): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 C:\Users\thort\OneDrive\Documents\PROGRAMMINGALL\CISFUN\source\repos\ruination\ruination.cpp(97,18): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  timer.cpp
+C:\Users\thort\OneDrive\Documents\PROGRAMMINGALL\CISFUN\source\repos\ruination\timer.cpp(10,99): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Documents\PROGRAMMINGALL\CISFUN\source\repos\ruination\timer.cpp(10,77): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  weapon.cpp
   Generating Code...
   ruination.vcxproj -> C:\Users\thort\OneDrive\Documents\PROGRAMMINGALL\CISFUN\source\repos\ruination\x64\Debug\ruination.exe
   'pwsh.exe' is not recognized as an internal or external command,
