@@ -1,6 +1,12 @@
-﻿  ruination.cpp
-C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\ruination.cpp(81,50): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\ruination.cpp(81,18): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  ruination.vcxproj -> C:\Users\thort\OneDrive\Desktop\CISFUN\source\repos\ruination\x64\Debug\ruination.exe
+﻿  entity.cpp
+C:\Users\thort\OneDrive\Documents\PROGRAMMINGALL\CISFUN\source\repos\ruination\entity.cpp(35,357): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Documents\PROGRAMMINGALL\CISFUN\source\repos\ruination\entity.cpp(35,297): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Documents\PROGRAMMINGALL\CISFUN\source\repos\ruination\entity.cpp(35,188): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Documents\PROGRAMMINGALL\CISFUN\source\repos\ruination\entity.cpp(35,76): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  ruination.cpp
+C:\Users\thort\OneDrive\Documents\PROGRAMMINGALL\CISFUN\source\repos\ruination\ruination.cpp(97,50): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Documents\PROGRAMMINGALL\CISFUN\source\repos\ruination\ruination.cpp(97,18): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
+  ruination.vcxproj -> C:\Users\thort\OneDrive\Documents\PROGRAMMINGALL\CISFUN\source\repos\ruination\x64\Debug\ruination.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.

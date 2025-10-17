@@ -15,14 +15,14 @@
 
 internal void AddPlayer(component_lists* component)
 {
-    component->transform_component[player_id] = { player_id, 0, 0, -30, -30, 30, 30, 525, 40, WHITE };
+    component->transform_component[player_id] = { player_id, 0, 0, -35, -35, 70, 70, 525, 40, WHITE };
     component->health_component[player_id] = { player_id, 20, 20 };
 
     CreateEntity(player_id, component);
 }
 internal void AddEnemy(component_lists* component)
 {
-    component->transform_component[enemy_id] = { enemy_id, 0, 0, 10, 10, 30, 30, 525, 20, RED };
+    component->transform_component[enemy_id] = { enemy_id, 0, 0, -25, -25, 50, 50, 525, 20, RED };
     component->health_component[enemy_id] = { enemy_id, 20, 20 };
 
     CreateEntity(enemy_id, component);
@@ -49,12 +49,32 @@ internal void AddBullet(component_lists* component)
     }
     CreateEntity(bullet_id, component);
 }
-internal uint16 DrawPlayer(component_lists* component)
+internal void DrawPlayer(component_lists* component)
 {
     DrawEntity(player_id, component);
+    DrawEntityCollision(player_id, component);
+}
+internal void DrawEnemy(component_lists* component)
+{
+    DrawEntity(enemy_id, component);
+    DrawEntityCollision(enemy_id, component);
+}
+internal void DrawBullet(uint16 ent_id, component_lists* component)
+{
+    for (int i = 0; i < MAX_BULLETS; i++)
+    {
+        if (component->bullet_component[i].active)
+        {
+            DrawEntityAdd(bullet_id, component->bullet_component[i].bullet_position, component->transform_component[ent_id].ent_position, component->bullet_component[i].radius, component->bullet_component[i].color, component);
+            DrawEntityCollision(bullet_id, component);
+        }
+    }
 
-    return player_id;
-
+}
+/*MAKE PROJECTILEWEAPON AND BULLET USE SAME FUNCTION. RECOMMEND PUTTING BULLET IF AND FOR LOOP AROUND NEW FUNCTION THAT DRAWS*/
+internal void DrawProjectileWeapon(uint16 ent_id, component_lists* component)
+{
+    DrawEntityAdd(project_weapon_id, component->transform_component[project_weapon_id].ent_position, component->transform_component[ent_id].ent_position, component->bullet_component[project_weapon_id].radius, component->bullet_component[project_weapon_id].color, component);
 }
 internal void InitGame(player *player, weapon *weapon, component_lists* component)
 {
@@ -74,10 +94,6 @@ internal void DrawGame(player *player, weapon *weapon, component_lists* componen
     /*need to figure out a better home for this. its more of an update than a draw state so its a bit confusing. could also be more contained and apparent.*/
 
 
-    draw_player(player);
-    draw_ammo(player->player_object);
-    draw_enemy();
-
     DrawFPS(-300 + player->player_object.x, -300 + player->player_object.y);
     DrawLine(800, 0, 0, 800, WHITE);
     DrawLine(0, 0, 800, 800, WHITE);
@@ -88,7 +104,7 @@ internal void UpdateGame(player *player, weapon* weapon, component_lists* compon
 {
     UpdateEntityMovement(player_id, component);
     UpdateEntityProjectWeapon(project_weapon_id, component);
-    UpdateEntityBullet(bullet_id, project_weapon_id, component);
+    UpdateEntityBullet(player_id, component);
     update_enemy(player->player_object);
     update_weapon(weapon);
     update_ammo(weapon->weapon_reticle);
@@ -126,10 +142,10 @@ int main()
 
         /*drawing*/
         DrawGame(&player_main, &weapon_main, &component);
-        DrawPlayer(&component);
-        DrawEntity(enemy_id, &component);
         DrawBullet(player_id, &component);
-
+        DrawPlayer(&component);
+        DrawEnemy(&component);
+        DrawProjectileWeapon(player_id, &component);
 
         /*ending functions*/
         EndDrawing();

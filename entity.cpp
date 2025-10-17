@@ -22,22 +22,18 @@ void DrawEntity(uint16 ent_id, component_lists* component)
 	if (component->health_component[ent_id].current_health > 0)
 	{
 		DrawCircleV(component->transform_component[ent_id].ent_position, component->transform_component[ent_id].radius, component->transform_component[ent_id].color);
-		DrawRectangleLinesEx(component->transform_component[ent_id].ent_collision, 5, ORANGE);
 	}
 
 }
-void DrawBullet(uint16 ent_id, component_lists* component)
+void DrawEntityAdd(uint16 ent_id, v2 position_one, v2 position_two, float radius, Color color, component_lists* component)
 {
-	for (int i = 0; i < MAX_BULLETS; i++)
-	{
-		if (component->bullet_component[i].active)
-		{
-			DrawCircleV(component->bullet_component[i].bullet_position + component->transform_component[player_id].ent_position, component->bullet_component[i].radius, component->bullet_component[i].color);
-		}
-	}
+	DrawCircleV(position_one + position_two, radius, color);
 
 }
-
+void DrawEntityCollision(uint16 ent_id, component_lists* component)
+{
+	DrawRectangleLines(component->transform_component[ent_id].ent_collision.x + component->transform_component[ent_id].ent_position.x, component->transform_component[ent_id].ent_collision.y + component->transform_component[ent_id].ent_position.y, component->transform_component[ent_id].ent_collision.width, component->transform_component[ent_id].ent_collision.height, ORANGE);
+}
 void UpdateEntityMovement(uint16 ent_id, component_lists* component)
 {
 	v2 direction = { 0.0f, 0.0f };
@@ -73,7 +69,7 @@ void UpdateEntityProjectWeapon(uint16 ent_id, component_lists* component)
 	DrawCircleV(component->transform_component[ent_id].ent_position + component->transform_component[player_id].ent_position, component->transform_component[ent_id].radius, component->transform_component[ent_id].color);
 
 }
-void UpdateEntityBullet(uint16 ent_id_one, uint16 ent_id_two, component_lists* component)
+void UpdateEntityBullet(uint16 ent_id, component_lists* component)
 {
 
 	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && component->bullet_component[project_weapon_id].ammunition > 0)
@@ -94,15 +90,19 @@ void UpdateEntityBullet(uint16 ent_id_one, uint16 ent_id_two, component_lists* c
 		{
 			component->bullet_component[i].bullet_position += component->bullet_component[i].bullet_velocity;
 		}
-
-		/* NEEDS TO BE OPTIMIZED!!!
-		if (bullets[i].fire_position.x > screen_size_x || bullets[i].fire_position.y > screen_size_y)
+		
+		/*
+		if (component->bullet_component[i].bullet_position.x > component->transform_component[ent_id].ent_position.x * 2 
+			&& component->bullet_component[i].bullet_position.y > component->transform_component[ent_id].ent_position.y * 2
+			|| component->bullet_component[i].bullet_position.x < component->transform_component[ent_id].ent_position.x / 2
+			&& component->bullet_component[i].bullet_position.y < component->transform_component[ent_id].ent_position.y / 2)
 		{
-			bullets[i].active = false;
+			component->bullet_component[i].active = false;
 			std::cout << "inactive";
 		}
 		*/
 	}
+
 }
 
 void UpdateEntityHealth(uint16 ent_id, component_lists* component, entity_health health)

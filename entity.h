@@ -75,12 +75,14 @@ extern uint16 bullet_id;
 
 void CreateEntity(uint16 ent_id, component_lists* component);
 void DrawEntity(uint16 ent_id, component_lists* component);
-void DrawBullet(uint16 ent_id, component_lists* component);
+void DrawEntityAdd(uint16 ent_id, v2 position_one, v2 position_two, float radius, Color color, component_lists* component);
+void DrawEntityCollision(uint16 ent_id, component_lists* component);
 void UpdateEntityMovement(uint16 ent_id, component_lists* component);
-void UpdateEntityBullet(uint16 ent_id_one, uint16 ent_id_two, component_lists* component);
+void UpdateEntityBullet(uint16 ent_id, component_lists* component);
 void UpdateEntityWeapon(uint16 ent_id, component_lists* component);
 void UpdateEntityProjectWeapon(uint16 ent_id, component_lists* component);
 void UpdateEntityHealth(uint16 ent_id, component_lists* component, entity_health health);
+void UpdateEntityCollision(uint16 ent_id, component_lists* component, entity_transform ent_collision);
 void KillEntity(uint16 ent_id, component_lists* component);
 
 #endif
