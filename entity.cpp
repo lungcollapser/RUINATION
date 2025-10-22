@@ -6,16 +6,15 @@ extern uint16 enemy_id = 1;
 extern uint16 weapon_id = 2;
 extern uint16 project_weapon_id = 3;
 extern uint16 bullet_id = 4;
+extern uint16 camera_id = 5;
 
-void CreateEntity(uint16 ent_id, component_lists* component)
+uint16 AddEntity(uint16 ent_id)
 {
-	ent_id = entities++;
-
-	component->total_health_component++;
-	component->total_transform_component++;
-	component->total_item_component++;
-	component->total_bullet_component++;
-
+	return ent_id = entities++;
+}
+uint16 AddComponents(uint16 component_type)
+{
+	return component_type++;
 }
 void DrawEntity(uint16 ent_id, component_lists* component)
 {
@@ -111,6 +110,13 @@ void UpdateEntityHealth(uint16 ent_id, component_lists* component, entity_health
 	{
 		KillEntity(health.entity_id, component);
 	}
+}
+
+void UpdateEntityCamera(uint16 ent_id, component_lists* component)
+{
+
+	component->camera_component[camera_id].entity_cam.offset = { screen_size_x / 2.0f, screen_size_y / 2.0f };
+	component->camera_component[camera_id].entity_cam.target = component->transform_component[ent_id].ent_position;
 }
 void KillEntity(uint16 ent_id, component_lists* component)
 {

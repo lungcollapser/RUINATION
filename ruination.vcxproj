@@ -135,22 +135,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ammo.cpp" />
-    <ClCompile Include="camera.cpp" />
     <ClCompile Include="enemy.cpp" />
     <ClCompile Include="entity.cpp" />
-    <ClCompile Include="player.cpp" />
     <ClCompile Include="ruination.cpp" />
     <ClCompile Include="timer.cpp" />
     <ClCompile Include="weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ammo.h" />
-    <ClInclude Include="camera.h" />
     <ClInclude Include="enemy.h" />
     <ClInclude Include="entity.h" />
     <ClInclude Include="include.h" />
-    <ClInclude Include="player.h" />
     <ClInclude Include="timer.h" />
     <ClInclude Include="weapon.h" />
   </ItemGroup>

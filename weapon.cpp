@@ -59,6 +59,3 @@ void update_weapon(weapon *weapon)
 		weapon->current_clips -= 1;
 	}
 }
-
-
-
