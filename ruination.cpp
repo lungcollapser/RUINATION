@@ -5,9 +5,9 @@
 #include "timer.h"
             
 /*
-
 TODO:
 
+-Fix bullet collision due to it not having a transform component. add ent_position as a parameter to fill in for scalability.
 -Make bullet collision more global to where if it hits any object, it deactivates and disappears.
 -Figure out if you really need to use ENT_ID as an argument for every function (psst, probably not).
 -Fix KillEntity function to function the same way as AddEntity function.
@@ -22,17 +22,21 @@ TODO:
 
 internal void AddPlayer(component_lists* component)
 {
-    component->transform_component[player_id] = { player_id, 0, 0, -35, -35, 70, 70, 525, 40, WHITE };
+    component->transform_component[player_id] = { player_id, 0, 0, 525, 40, WHITE };
     component->health_component[player_id] = { player_id, 20, 20 };
+    component->collision_component[player_id] = { player_id, true, -35, -35, 50, 50 };
 
     AddEntity(player_id);
     AddComponents(component->total_transform_component);
     AddComponents(component->total_health_component);
+    AddComponents(component->total_collision_component);
 }
 internal void AddEnemy(component_lists* component)
 {
-    component->transform_component[enemy_id] = { enemy_id, 0, 0, -25, -25, 50, 50, 525, 20, RED };
+    component->transform_component[enemy_id] = { enemy_id, 0, 0, 525, 20, RED };
     component->health_component[enemy_id] = { enemy_id, 20, 20 };
+    component->collision_component[enemy_id] = { enemy_id, true, -35, -35, 50, 50 };
+
 
     AddEntity(enemy_id);
     AddComponents(component->total_transform_component);
@@ -45,7 +49,7 @@ internal void AddProjectWeapon(component_lists* component)
         component->item_component[project_weapon_id] = { project_weapon_id, true, 10 };
     }
 
-    component->transform_component[project_weapon_id] = { project_weapon_id,  0, 0, 10, 10, 30, 30, 0, 10, BLUE};
+    component->transform_component[project_weapon_id] = { project_weapon_id,  0, 0, 0, 10, BLUE};
     component->health_component[project_weapon_id] = { project_weapon_id, 1, 1 };
     
     AddEntity(project_weapon_id);
@@ -58,7 +62,7 @@ internal void AddBullet(component_lists* component)
     for (int i = 0; i < MAX_BULLETS; i++)
     {
         component->bullet_component[i] = { bullet_id, false, 0, 0, 0, 0, 10, 20, 1, 10, PURPLE};
-
+        component->collision_component[i] = { bullet_id, true, -35, -35, 50, 50 };
     }
 
     AddEntity(bullet_id);    
@@ -97,7 +101,6 @@ internal void DrawBullet(uint16 ent_id, component_lists* component)
     }
 
 }
-/*MAKE PROJECTILEWEAPON AND BULLET USE SAME FUNCTION. RECOMMEND PUTTING BULLET IF AND FOR LOOP AROUND NEW FUNCTION THAT DRAWS*/
 internal void DrawProjectileWeapon(uint16 ent_id, component_lists* component)
 {
     DrawEntityAdd(project_weapon_id, component->transform_component[project_weapon_id].ent_position, component->transform_component[ent_id].ent_position, component->bullet_component[project_weapon_id].radius, component->bullet_component[project_weapon_id].color, component);

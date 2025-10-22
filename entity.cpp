@@ -31,7 +31,7 @@ void DrawEntityAdd(uint16 ent_id, v2 position_one, v2 position_two, float radius
 }
 void DrawEntityCollision(uint16 ent_id, component_lists* component)
 {
-	DrawRectangleLines(component->transform_component[ent_id].ent_collision.x + component->transform_component[ent_id].ent_position.x, component->transform_component[ent_id].ent_collision.y + component->transform_component[ent_id].ent_position.y, component->transform_component[ent_id].ent_collision.width, component->transform_component[ent_id].ent_collision.height, ORANGE);
+	DrawRectangleLines(component->collision_component[ent_id].ent_collision.x + component->transform_component[ent_id].ent_position.x, component->collision_component[ent_id].ent_collision.y + component->transform_component[ent_id].ent_position.y, component->collision_component[ent_id].ent_collision.width, component->collision_component[ent_id].ent_collision.height, ORANGE);
 }
 void UpdateEntityMovement(uint16 ent_id, component_lists* component)
 {

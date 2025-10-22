@@ -18,7 +18,6 @@ struct entity_transform
 	uint16 entity_id;
 
 	v2 ent_position;
-	Rectangle ent_collision;
 	uint16 movement_speed;
 	float radius;
 	Color color;
@@ -59,6 +58,14 @@ struct entity_camera
 
 	Camera2D entity_cam;
 };
+struct entity_collision
+{
+	uint16 entity_id;
+
+	bool active;
+
+	Rectangle ent_collision;
+};
 struct component_lists
 {
 	entity_health health_component[100];
@@ -66,12 +73,15 @@ struct component_lists
 	entity_item item_component[100];
 	entity_bullet bullet_component[MAX_BULLETS];
 	entity_camera camera_component[100];
+	entity_collision collision_component[100];
 
 	uint16 total_health_component;
 	uint16 total_transform_component;
 	uint16 total_item_component;
 	uint16 total_bullet_component;
 	uint16 total_camera_component;
+	uint16 total_collision_component;
+
 };
 
 
