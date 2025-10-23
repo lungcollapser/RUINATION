@@ -46,9 +46,9 @@
               "Title": "entity.cpp",
               "DocumentMoniker": "C:\\Users\\thort\\OneDrive\\Documents\\PROGRAMMINGALL\\CISFUN\\source\\repos\\ruination\\entity.cpp",
               "RelativeDocumentMoniker": "entity.cpp",
-              "ToolTip": "C:\\Users\\thort\\OneDrive\\Documents\\PROGRAMMINGALL\\CISFUN\\source\\repos\\ruination\\entity.cpp*",
-              "RelativeToolTip": "entity.cpp*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAABOAQAAAAAAAA==",
+              "ToolTip": "C:\\Users\\thort\\OneDrive\\Documents\\PROGRAMMINGALL\\CISFUN\\source\\repos\\ruination\\entity.cpp",
+              "RelativeToolTip": "entity.cpp",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB0AAABzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-09-15T23:30:26.83Z",
               "EditorCaption": ""
@@ -59,9 +59,9 @@
               "Title": "entity.h",
               "DocumentMoniker": "C:\\Users\\thort\\OneDrive\\Documents\\PROGRAMMINGALL\\CISFUN\\source\\repos\\ruination\\entity.h",
               "RelativeDocumentMoniker": "entity.h",
-              "ToolTip": "C:\\Users\\thort\\OneDrive\\Documents\\PROGRAMMINGALL\\CISFUN\\source\\repos\\ruination\\entity.h*",
-              "RelativeToolTip": "entity.h*",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAAEIAAAAKAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\thort\\OneDrive\\Documents\\PROGRAMMINGALL\\CISFUN\\source\\repos\\ruination\\entity.h",
+              "RelativeToolTip": "entity.h",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAF4AAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-09-15T23:30:24.968Z",
               "EditorCaption": ""
@@ -74,7 +74,7 @@
               "RelativeDocumentMoniker": "ruination.cpp",
               "ToolTip": "C:\\Users\\thort\\OneDrive\\Documents\\PROGRAMMINGALL\\CISFUN\\source\\repos\\ruination\\ruination.cpp*",
               "RelativeToolTip": "ruination.cpp*",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAYwEQAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAGYAAABSAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-02-20T02:36:26.087Z",
               "EditorCaption": ""
@@ -113,8 +113,7 @@
               "RelativeToolTip": "weapon.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-08-05T12:25:23.501Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-05T12:25:23.501Z"
             }
           ]
         }

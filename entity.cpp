@@ -16,22 +16,19 @@ uint16 AddComponents(uint16 component_type)
 {
 	return component_type++;
 }
-void DrawEntity(uint16 ent_id, component_lists* component)
+void DrawEntity(uint16 ent_id, v2 position_one, v2 position_two, float radius, Color color, component_lists* component)
 {
 	if (component->health_component[ent_id].current_health > 0)
 	{
-		DrawCircleV(component->transform_component[ent_id].ent_position, component->transform_component[ent_id].radius, component->transform_component[ent_id].color);
+		DrawCircleV(position_one + position_two, radius, color);
 	}
-
 }
-void DrawEntityAdd(uint16 ent_id, v2 position_one, v2 position_two, float radius, Color color, component_lists* component)
+void DrawCollision(uint16 ent_id, v2 position_two, Rectangle collision, component_lists* component)
 {
-	DrawCircleV(position_one + position_two, radius, color);
-
-}
-void DrawEntityCollision(uint16 ent_id, component_lists* component)
-{
-	DrawRectangleLines(component->collision_component[ent_id].ent_collision.x + component->transform_component[ent_id].ent_position.x, component->collision_component[ent_id].ent_collision.y + component->transform_component[ent_id].ent_position.y, component->collision_component[ent_id].ent_collision.width, component->collision_component[ent_id].ent_collision.height, ORANGE);
+	if (component->health_component[ent_id].current_health > 0)
+	{
+		DrawRectangleLines(collision.x + position_two.x, collision.y + position_two.y, collision.width, collision.height, ORANGE);
+	}
 }
 void UpdateEntityMovement(uint16 ent_id, component_lists* component)
 {

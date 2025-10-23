@@ -18,6 +18,9 @@ struct entity_transform
 	uint16 entity_id;
 
 	v2 ent_position;
+
+	Rectangle ent_collision;
+
 	uint16 movement_speed;
 	float radius;
 	Color color;
@@ -42,6 +45,8 @@ struct entity_bullet
 
 	bool active;
 
+	Rectangle bullet_collision;
+
 	v2 bullet_position;
 	v2 bullet_velocity;
 
@@ -58,14 +63,7 @@ struct entity_camera
 
 	Camera2D entity_cam;
 };
-struct entity_collision
-{
-	uint16 entity_id;
 
-	bool active;
-
-	Rectangle ent_collision;
-};
 struct component_lists
 {
 	entity_health health_component[100];
@@ -73,7 +71,6 @@ struct component_lists
 	entity_item item_component[100];
 	entity_bullet bullet_component[MAX_BULLETS];
 	entity_camera camera_component[100];
-	entity_collision collision_component[100];
 
 	uint16 total_health_component;
 	uint16 total_transform_component;
@@ -94,9 +91,8 @@ extern uint16 camera_id;
 
 uint16 AddEntity(uint16 ent_id);
 uint16 AddComponents(uint16 component_type);
-void DrawEntity(uint16 ent_id, component_lists* component);
-void DrawEntityAdd(uint16 ent_id, v2 position_one, v2 position_two, float radius, Color color, component_lists* component);
-void DrawEntityCollision(uint16 ent_id, component_lists* component);
+void DrawEntity(uint16 ent_id, v2 position_one, v2 position_two, float radius, Color color, component_lists* component);
+void DrawCollision(uint16 ent_id, v2 position_two, Rectangle collision, component_lists* component);
 void UpdateEntityMovement(uint16 ent_id, component_lists* component);
 void UpdateEntityBullet(uint16 ent_id, component_lists* component);
 void UpdateEntityWeapon(uint16 ent_id, component_lists* component);
