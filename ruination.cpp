@@ -7,9 +7,8 @@
 /*
 TODO:
 
--FIX COLLISION NOT TRANSFORMING!!!!
 
-
+-Switch in collision function position two and rectangle. its confusing.
 -Create an entity add function that can be used as all of draw entity.
 -Fix bullet collision due to it not having a transform component. add ent_position as a parameter to fill in for scalability.
 -Make bullet collision more global to where if it hits any object, it deactivates and disappears.
@@ -62,7 +61,7 @@ internal void AddBullet(component_lists* component)
 {
     for (int i = 0; i < MAX_BULLETS; i++)
     {
-        component->bullet_component[i] = { bullet_id, false, -35, -35, 50, 50, 0, 0, 0, 0, 10, 20, 1, 10, PURPLE};
+        component->bullet_component[i] = { bullet_id, false, 0, 0, 20, 20, 0, 0, 0, 0, 10, 20, 1, 10, PURPLE};
         component->health_component[i] = { bullet_id, 1, 1 };
     }
 
@@ -84,7 +83,8 @@ internal void AddCamera(component_lists* component)
 }
 internal void DrawPlayer(component_lists* component)
 {
-    DrawEntity(player_id, component->transform_component[player_id].ent_position, {0, 0}, 40, WHITE, component);
+
+    DrawEntity(player_id, component->transform_component[player_id].ent_position, { 0, 0 }, 40, WHITE, component);
     DrawCollision(player_id, component->transform_component[player_id].ent_position, component->transform_component[player_id].ent_collision, component);
 }
 internal void DrawEnemy(component_lists* component)
@@ -103,7 +103,6 @@ internal void DrawBullet(uint16 ent_id, component_lists* component)
             DrawCollision(bullet_id, component->transform_component[player_id].ent_position, component->bullet_component[i].bullet_collision, component);
         }
     }
-
 }
 internal void DrawProjectileWeapon(uint16 ent_id, component_lists* component)
 {

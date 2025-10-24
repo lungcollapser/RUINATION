@@ -85,18 +85,11 @@ void UpdateEntityBullet(uint16 ent_id, component_lists* component)
 		if (component->bullet_component[i].active)
 		{
 			component->bullet_component[i].bullet_position += component->bullet_component[i].bullet_velocity;
+			component->bullet_component[i].bullet_collision.x += component->bullet_component[i].bullet_position.x;
+			component->bullet_component[i].bullet_collision.y += component->bullet_component[i].bullet_position.y;
+
 		}
 		
-		/*
-		if (component->bullet_component[i].bullet_position.x > component->transform_component[ent_id].ent_position.x * 2 
-			&& component->bullet_component[i].bullet_position.y > component->transform_component[ent_id].ent_position.y * 2
-			|| component->bullet_component[i].bullet_position.x < component->transform_component[ent_id].ent_position.x / 2
-			&& component->bullet_component[i].bullet_position.y < component->transform_component[ent_id].ent_position.y / 2)
-		{
-			component->bullet_component[i].active = false;
-			std::cout << "inactive";
-		}
-		*/
 	}
 
 }
