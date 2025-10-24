@@ -23,7 +23,7 @@ void DrawEntity(uint16 ent_id, v2 position_one, v2 position_two, float radius, C
 		DrawCircleV(position_one + position_two, radius, color);
 	}
 }
-void DrawCollision(uint16 ent_id, v2 position_two, Rectangle collision, component_lists* component)
+void DrawCollision(uint16 ent_id, Rectangle collision, v2 position_two, component_lists* component)
 {
 	if (component->health_component[ent_id].current_health > 0)
 	{
@@ -85,13 +85,25 @@ void UpdateEntityBullet(uint16 ent_id, component_lists* component)
 		if (component->bullet_component[i].active)
 		{
 			component->bullet_component[i].bullet_position += component->bullet_component[i].bullet_velocity;
-			component->bullet_component[i].bullet_collision.x += component->bullet_component[i].bullet_position.x;
-			component->bullet_component[i].bullet_collision.y += component->bullet_component[i].bullet_position.y;
+			component->bullet_component[i].bullet_collision.x = component->bullet_component[i].bullet_position.x;
+			component->bullet_component[i].bullet_collision.y = component->bullet_component[i].bullet_position.y;
 
 		}
 		
 	}
 
+
+}
+
+void UpdateEntityCollision(uint16 ent_id, component_lists* component, v2  circle_one, float radius_one)
+{
+	for (int i = 0; i < MAX_BULLETS; i++)
+	{
+		if (CheckCollisionCircles(circle_one, radius_one, component->bullet_component[i].bullet_position, component->bullet_component[i].radius))
+		{
+			component->bullet_component[i].active = false;
+		}
+	}
 }
 
 void UpdateEntityHealth(uint16 ent_id, component_lists* component, entity_health health)

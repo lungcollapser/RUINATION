@@ -92,13 +92,13 @@ extern uint16 camera_id;
 uint16 AddEntity(uint16 ent_id);
 uint16 AddComponents(uint16 component_type);
 void DrawEntity(uint16 ent_id, v2 position_one, v2 position_two, float radius, Color color, component_lists* component);
-void DrawCollision(uint16 ent_id, v2 position_two, Rectangle collision, component_lists* component);
+void DrawCollision(uint16 ent_id, Rectangle collision, v2 position_two, component_lists* component);
 void UpdateEntityMovement(uint16 ent_id, component_lists* component);
 void UpdateEntityBullet(uint16 ent_id, component_lists* component);
 void UpdateEntityWeapon(uint16 ent_id, component_lists* component);
 void UpdateEntityProjectWeapon(uint16 ent_id, component_lists* component);
 void UpdateEntityHealth(uint16 ent_id, component_lists* component, entity_health health);
-void UpdateEntityCollision(uint16 ent_id, component_lists* component, entity_transform ent_collision);
+void UpdateEntityCollision(uint16 ent_id, component_lists* component, v2  circle_one, float radius_one);
 void UpdateEntityCamera(uint16 ent_id, component_lists* component);
 void KillEntity(uint16 ent_id, component_lists* component);
 
