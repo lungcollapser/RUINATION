@@ -4,24 +4,21 @@
 #define ENTITY_H
 #include "include.h"
 
-#define MAX_BULLETS 50
+#define MAX_BULLETS 100
 
-
-
-struct entity
-{
-	
-};
 
 struct entity_transform
 {
 	uint16 entity_id;
 
+	bool active;
+
 	v2 ent_position;
+	v2 ent_velocity;
 
 	Rectangle ent_collision;
 
-	uint16 movement_speed;
+	uint16 speed;
 	float radius;
 	Color color;
 };
@@ -42,20 +39,13 @@ struct entity_item
 struct entity_bullet
 {
 	uint16 entity_id;
+	uint16 transform_id;
 
 	bool active;
-
-	Rectangle bullet_collision;
-
-	v2 bullet_position;
-	v2 bullet_velocity;
 
 	uint16 ammunition;
 	uint16 max_ammunition;
 	uint16 damage;
-
-	float radius;
-	Color color;
 };
 struct entity_camera
 {
@@ -67,7 +57,7 @@ struct entity_camera
 struct component_lists
 {
 	entity_health health_component[100];
-	entity_transform transform_component[100];
+	entity_transform transform_component[500];
 	entity_item item_component[100];
 	entity_bullet bullet_component[MAX_BULLETS];
 	entity_camera camera_component[100];
@@ -88,6 +78,7 @@ extern uint16 enemy_id;
 extern uint16 project_weapon_id;
 extern uint16 bullet_id;
 extern uint16 camera_id;
+extern uint16 transform_id;
 
 uint16 AddEntity(uint16 ent_id);
 uint16 AddComponents(uint16 component_type);

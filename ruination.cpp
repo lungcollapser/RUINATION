@@ -21,7 +21,8 @@ TODO:
 
 internal void AddPlayer(component_lists* component)
 {
-    component->transform_component[player_id] = { player_id, 0, 0, -35, -35, 70, 70, 525, 40, WHITE };
+
+    component->transform_component[player_id] = { player_id, true, 0, 0, 0, 0, -35, -35, 75, 75, 525, 30, WHITE };
     component->health_component[player_id] = { player_id, 20, 20 };
 
     AddEntity(player_id);
@@ -31,7 +32,7 @@ internal void AddPlayer(component_lists* component)
 }
 internal void AddEnemy(component_lists* component)
 {
-    component->transform_component[enemy_id] = { enemy_id, 0, 0, -35, -35, 50, 50, 525, 20, RED };
+    component->transform_component[enemy_id] = { enemy_id, true, 0, 0, 0, 0, -35, -35, 50, 50, 525, 20, RED };
     component->health_component[enemy_id] = { enemy_id, 20, 20 };
 
     AddEntity(enemy_id);
@@ -45,7 +46,7 @@ internal void AddProjectWeapon(component_lists* component)
         component->item_component[project_weapon_id] = { project_weapon_id, true, 10 };
     }
 
-    component->transform_component[project_weapon_id] = { project_weapon_id,  0, 0, 0, 0, 0, 0, 0, 10, BLUE};
+    component->transform_component[project_weapon_id] = { project_weapon_id, true, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, BLUE};
     component->health_component[project_weapon_id] = { project_weapon_id, 1, 1 };
     
     AddEntity(project_weapon_id);
@@ -55,14 +56,20 @@ internal void AddProjectWeapon(component_lists* component)
 }
 internal void AddBullet(component_lists* component)
 {
+
+
     for (int i = 0; i < MAX_BULLETS; i++)
     {
-        component->bullet_component[i] = { bullet_id, false, 0, 0, 15, 15, 0, 0, 0, 0, 10, 20, 1, 10, PURPLE};
-        component->health_component[i] = { bullet_id, 1, 1 };
+        uint16 t_id = component->bullet_component[i].transform_id;
+
+        component->transform_component[t_id] = { bullet_id, false, 0, 0, 0, 0, 15, 15, 35, 35, 0, 10, PURPLE};
+        component->health_component[t_id] = { bullet_id, 1, 1 };
+        component->bullet_component[t_id] = { bullet_id, 100, false, 1, 1, 1};
+
     }
 
     AddEntity(bullet_id);    
-    AddComponents(component->total_bullet_component);
+    AddComponents(component->total_transform_component);
     AddComponents(component->total_health_component);
     AddComponents(component->total_collision_component);
 
@@ -95,14 +102,16 @@ internal void DrawBullet(uint16 ent_id, component_lists* component)
     {
         if (component->bullet_component[i].active)
         {
-            DrawEntity(bullet_id, component->bullet_component[i].bullet_position, component->transform_component[ent_id].ent_position, component->bullet_component[i].radius, component->bullet_component[i].color, component);
-            DrawCollision(bullet_id,  component->bullet_component[i].bullet_collision, component->transform_component[ent_id].ent_position, component);
+            uint16 t_id = component->bullet_component[i].transform_id;
+
+            DrawEntity(bullet_id, component->transform_component[t_id].ent_position, component->transform_component[ent_id].ent_position, component->transform_component[t_id].radius, component->transform_component[t_id].color, component);
+            DrawCollision(bullet_id,  component->transform_component[t_id].ent_collision, component->transform_component[ent_id].ent_position, component);
         }
     }
 }
 internal void DrawProjectileWeapon(uint16 ent_id, component_lists* component)
 {
-    DrawEntity(project_weapon_id, component->transform_component[project_weapon_id].ent_position, component->transform_component[ent_id].ent_position, component->bullet_component[project_weapon_id].radius, component->bullet_component[project_weapon_id].color, component);
+    DrawEntity(project_weapon_id, component->transform_component[project_weapon_id].ent_position, component->transform_component[ent_id].ent_position, component->transform_component[project_weapon_id].radius, component->transform_component[project_weapon_id].color, component);
 }
 
 internal void UpdateGame(component_lists* component)
