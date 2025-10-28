@@ -66,7 +66,7 @@ void UpdateEntityProjectWeapon(uint16 ent_id, component_lists* component)
 	DrawCircleV(component->transform_component[ent_id].ent_position + component->transform_component[player_id].ent_position, component->transform_component[ent_id].radius, component->transform_component[ent_id].color);
 
 }
-void UpdateEntityBullet(uint16 ent_id, component_lists* component)
+void UpdateEntityBullet(uint16 ent_id, uint16 transform_id, component_lists* component)
 {
 
 
@@ -76,10 +76,8 @@ void UpdateEntityBullet(uint16 ent_id, component_lists* component)
 		{
 			if (!component->bullet_component[i].active)
 			{
-				uint16 t_id = component->bullet_component[i].transform_id;
-
-				component->transform_component[t_id].active = true;
-				component->transform_component[t_id].ent_velocity = Vector2MoveTowards(component->transform_component[t_id].ent_position, component->transform_component[project_weapon_id].ent_position, 25);
+				component->transform_component[transform_id].active = true;
+				component->transform_component[transform_id].ent_velocity = Vector2MoveTowards(component->transform_component[transform_id].ent_position, component->transform_component[project_weapon_id].ent_position, 25);
 				break;
 			}
 		}
@@ -89,14 +87,10 @@ void UpdateEntityBullet(uint16 ent_id, component_lists* component)
 
 		if (component->bullet_component[i].active)
 		{
-			uint16 t_id = component->bullet_component[i].transform_id;
-
-			component->transform_component[t_id].ent_position += component->transform_component[t_id].ent_velocity;
-			component->transform_component[t_id].ent_collision.x = component->transform_component[t_id].ent_position.x;
-			component->transform_component[t_id].ent_collision.y = component->transform_component[t_id].ent_position.y;
-
+			component->transform_component[transform_id].ent_position += component->transform_component[transform_id].ent_velocity;
+			component->transform_component[transform_id].ent_collision.x = component->transform_component[transform_id].ent_position.x;
+			component->transform_component[transform_id].ent_collision.y = component->transform_component[transform_id].ent_position.y;
 		}
-		
 	}
 }
 

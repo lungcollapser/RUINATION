@@ -54,18 +54,14 @@ internal void AddProjectWeapon(component_lists* component)
     AddComponents(component->total_transform_component);
     AddComponents(component->total_health_component);
 }
-internal void AddBullet(component_lists* component)
+internal void AddBullet(uint16 transform_id, component_lists* component)
 {
-
 
     for (int i = 0; i < MAX_BULLETS; i++)
     {
-        uint16 t_id = component->bullet_component[i].transform_id;
-
-        component->transform_component[t_id] = { bullet_id, false, 0, 0, 0, 0, 15, 15, 35, 35, 0, 10, PURPLE};
-        component->health_component[t_id] = { bullet_id, 1, 1 };
-        component->bullet_component[t_id] = { bullet_id, 100, false, 1, 1, 1};
-
+        component->bullet_component[transform_id] = { bullet_id, 0, false, 1, 1, 1 };
+        component->transform_component[transform_id] = { bullet_id, false, 0, 0, 0, 0, 15, 15, 35, 35, 0, 10, PURPLE};
+        component->health_component[transform_id] = { bullet_id, 1, 1 };
     }
 
     AddEntity(bullet_id);    
@@ -96,16 +92,14 @@ internal void DrawEnemy(component_lists* component)
     DrawCollision(enemy_id, component->transform_component[enemy_id].ent_collision, component->transform_component[enemy_id].ent_position, component);
 
 }
-internal void DrawBullet(uint16 ent_id, component_lists* component)
+internal void DrawBullet(uint16 ent_id, uint16 transform_id, component_lists* component)
 {
     for (int i = 0; i < MAX_BULLETS; i++)
     {
         if (component->bullet_component[i].active)
         {
-            uint16 t_id = component->bullet_component[i].transform_id;
-
-            DrawEntity(bullet_id, component->transform_component[t_id].ent_position, component->transform_component[ent_id].ent_position, component->transform_component[t_id].radius, component->transform_component[t_id].color, component);
-            DrawCollision(bullet_id,  component->transform_component[t_id].ent_collision, component->transform_component[ent_id].ent_position, component);
+            DrawEntity(bullet_id, component->transform_component[transform_id].ent_position, component->transform_component[ent_id].ent_position, component->transform_component[transform_id].radius, component->transform_component[transform_id].color, component);
+            DrawCollision(bullet_id,  component->transform_component[transform_id].ent_collision, component->transform_component[ent_id].ent_position, component);
         }
     }
 }
@@ -118,7 +112,7 @@ internal void UpdateGame(component_lists* component)
 {
     UpdateEntityMovement(player_id, component);
     UpdateEntityProjectWeapon(project_weapon_id, component);
-    UpdateEntityBullet(player_id, component);
+    UpdateEntityBullet(player_id, component->bullet_component->transform_id, component);
     UpdateEntityCamera(player_id, component);
     UpdateEntityCollision(bullet_id, component, component->transform_component[enemy_id].ent_position, component->transform_component[enemy_id].radius);
 
@@ -127,7 +121,7 @@ internal void InitGame(component_lists* component)
 {
     AddPlayer(component);
     AddEnemy(component);
-    AddBullet(component);
+    AddBullet(component->bullet_component->transform_id, component);
     AddProjectWeapon(component);
     AddCamera(component);
 }
