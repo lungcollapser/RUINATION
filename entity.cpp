@@ -8,7 +8,6 @@ extern uint16 project_weapon_id = 3;
 extern uint16 bullet_id = 4;
 extern uint16 camera_id = 5;
 
-
 uint16 AddEntity(uint16 ent_id)
 {
 	return ent_id = entities++;
@@ -52,7 +51,7 @@ void UpdateEntityMovement(uint16 ent_id, component_lists* component)
 		direction.y++;
 	}
 
-	v2 velocity = Vector2Scale(Vector2Normalize(direction), component->transform_component[ent_id].speed * GetFrameTime());
+	v2 velocity = Vector2Scale(Vector2Normalize(direction), component->transform_component[ent_id].movement_speed * GetFrameTime());
 	component->transform_component[ent_id].ent_position = Vector2Add(component->transform_component[ent_id].ent_position, velocity);
 }
 
@@ -66,9 +65,8 @@ void UpdateEntityProjectWeapon(uint16 ent_id, component_lists* component)
 	DrawCircleV(component->transform_component[ent_id].ent_position + component->transform_component[player_id].ent_position, component->transform_component[ent_id].radius, component->transform_component[ent_id].color);
 
 }
-void UpdateEntityBullet(uint16 ent_id, uint16 transform_id, component_lists* component)
+void UpdateEntityBullet(uint16 ent_id, component_lists* component)
 {
-
 
 	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && component->bullet_component[project_weapon_id].ammunition > 0)
 	{
@@ -76,21 +74,24 @@ void UpdateEntityBullet(uint16 ent_id, uint16 transform_id, component_lists* com
 		{
 			if (!component->bullet_component[i].active)
 			{
-				component->transform_component[transform_id].active = true;
-				component->transform_component[transform_id].ent_velocity = Vector2MoveTowards(component->transform_component[transform_id].ent_position, component->transform_component[project_weapon_id].ent_position, 25);
+				component->bullet_component[i].active = true;
+				component->bullet_component[i].bullet_velocity = Vector2MoveTowards(component->bullet_component[i].bullet_position, component->transform_component[project_weapon_id].ent_position, 25);
 				break;
 			}
 		}
 	}
 	for (int i = 0; i < MAX_BULLETS; i++)
 	{
-
 		if (component->bullet_component[i].active)
 		{
-			component->transform_component[transform_id].ent_position += component->transform_component[transform_id].ent_velocity;
-			component->transform_component[transform_id].ent_collision.x = component->transform_component[transform_id].ent_position.x;
-			component->transform_component[transform_id].ent_collision.y = component->transform_component[transform_id].ent_position.y;
+			component->bullet_component[i].bullet_position += component->bullet_component[i].bullet_velocity;
+			component->bullet_component[i].bullet_collision.x += component->bullet_component[i].bullet_position.x;
+			component->bullet_component[i].bullet_collision.y += component->bullet_component[i].bullet_position.y;
+			component->bullet_component[i].bullet_collision.x = component->bullet_component[i].bullet_position.x;
+			component->bullet_component[i].bullet_collision.y = component->bullet_component[i].bullet_position.y;
+
 		}
+
 	}
 }
 
@@ -98,9 +99,7 @@ void UpdateEntityCollision(uint16 ent_id, component_lists* component, v2  circle
 {
 	for (int i = 0; i < MAX_BULLETS; i++)
 	{
-		uint16 t_id = component->bullet_component[i].transform_id;
-
-		if (CheckCollisionCircles(circle_one, radius_one, component->transform_component[t_id].ent_position, component->transform_component[t_id].radius))
+		if (CheckCollisionCircles(circle_one, radius_one, component->bullet_component[i].bullet_position, component->bullet_component[i].radius))
 		{
 			component->bullet_component[i].active = false;
 		}
@@ -109,12 +108,8 @@ void UpdateEntityCollision(uint16 ent_id, component_lists* component, v2  circle
 
 void UpdateEntityHealth(uint16 ent_id, component_lists* component, entity_health health)
 {
-	if (health.current_health <= 0)
-	{
-		KillEntity(health.entity_id, component);
-	}
+	
 }
-
 void UpdateEntityCamera(uint16 ent_id, component_lists* component)
 {
 
@@ -131,5 +126,3 @@ void KillEntity(uint16 ent_id, component_lists* component)
 	component->total_item_component--;
 	component->total_bullet_component--;
 }
-
-
