@@ -8,8 +8,6 @@
 TODO:
 
 
--Switch in collision function position two and rectangle. its confusing.
--Create an entity add function that can be used as all of draw entity.
 -Fix bullet collision due to it not having a transform component. add ent_position as a parameter to fill in for scalability.
 -Make bullet collision more global to where if it hits any object, it deactivates and disappears.
 -Figure out if you really need to use ENT_ID as an argument for every function (psst, probably not).
@@ -35,7 +33,7 @@ internal void AddPlayer(component_lists * component)
 }
 internal void AddEnemy(component_lists* component)
 {
-    component->transform_component[enemy_id] = { enemy_id, 100, 100, -35, -35, 50, 50, 525, 20, RED };
+    component->transform_component[enemy_id] = { enemy_id, 300, 300, -15, -15, 35, 35, 525, 20, RED };
     component->health_component[enemy_id] = { enemy_id, 20, 20 };
 
     AddEntity(enemy_id);
@@ -61,8 +59,7 @@ internal void AddBullet(component_lists* component)
 {
     for (int i = 0; i < MAX_BULLETS; i++)
     {
-        component->bullet_component[i] = { bullet_id, false, 0, 0, 20, 20, 0, 0, 0, 0, 10, 20, 1, 10, PURPLE };
-        component->bullet_component[i] = { bullet_id, false, 0, 0, 15, 15, 0, 0, 0, 0, 10, 20, 1, 10, PURPLE };
+        component->bullet_component[i] = { bullet_id, false, 0, 0, 0, 0, -10, -10, 20, 20, 10, 20, 1, 10, PURPLE };
         component->health_component[i] = { bullet_id, 1, 1 };
     }
 
@@ -101,7 +98,8 @@ internal void DrawBullet(uint16 ent_id, component_lists* component)
         if (component->bullet_component[i].active)
         {
             DrawEntity(bullet_id, component->bullet_component[i].bullet_position, component->transform_component[ent_id].ent_position, component->bullet_component[i].radius, component->bullet_component[i].color, component);
-            DrawCollision(bullet_id, component->bullet_component[i].bullet_collision, component->transform_component[ent_id].ent_position, component);
+            DrawCollision(bullet_id, component->bullet_component[i].bullet_collision, component->bullet_component[i].bullet_position + component->transform_component[player_id].ent_position, component);
+
         }
     }
 }
@@ -114,10 +112,9 @@ internal void UpdateGame(component_lists* component)
 {
     UpdateEntityMovement(player_id, component);
     UpdateEntityProjectWeapon(project_weapon_id, component);
-    UpdateEntityBullet(player_id, component);
+    UpdateEntityBullet(bullet_id, component);
     UpdateEntityCamera(player_id, component);
-    UpdateEntityCollision(bullet_id, component, component->transform_component[enemy_id].ent_position, component->transform_component[enemy_id].radius);
-
+    /*whats causing bullets not to shoot*/
 }
 internal void InitGame(component_lists* component)
 {

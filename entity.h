@@ -45,10 +45,10 @@ struct entity_bullet
 
 	bool active;
 
-	Rectangle bullet_collision;
-
 	v2 bullet_position;
 	v2 bullet_velocity;
+
+	Rectangle bullet_collision;
 
 	uint16 ammunition;
 	uint16 max_ammunition;
@@ -105,8 +105,7 @@ void UpdateEntityBullet(uint16 ent_id, component_lists* component);
 void UpdateEntityWeapon(uint16 ent_id, component_lists* component);
 void UpdateEntityProjectWeapon(uint16 ent_id, component_lists* component);
 void UpdateEntityHealth(uint16 ent_id, component_lists* component, entity_health health);
-void UpdateEntityCollision(uint16 ent_id, component_lists* component, entity_transform ent_collision);
-void UpdateEntityCollision(uint16 ent_id, component_lists* component, v2  circle_one, float radius_one);
+void UpdateEntityCollision(uint16 ent_id, component_lists* component, Rectangle rec_one, Rectangle rec_two);
 void UpdateEntityCamera(uint16 ent_id, component_lists* component);
 void KillEntity(uint16 ent_id, component_lists* component);
 

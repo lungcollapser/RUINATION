@@ -1,5 +1,10 @@
 #include "entity.h"
 
+/*component->bullet_component[i].bullet_collision.x += component->bullet_component[i].bullet_position.x;
+			component->bullet_component[i].bullet_collision.y += component->bullet_component[i].bullet_position.y;
+			component->bullet_component[i].bullet_collision.x = component->bullet_component[i].bullet_position.x;
+			component->bullet_component[i].bullet_collision.y = component->bullet_component[i].bullet_position.y;*/
+
 extern uint16 entities = 0;
 extern uint16 player_id = 0;
 extern uint16 enemy_id = 1;
@@ -68,7 +73,7 @@ void UpdateEntityProjectWeapon(uint16 ent_id, component_lists* component)
 void UpdateEntityBullet(uint16 ent_id, component_lists* component)
 {
 
-	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && component->bullet_component[project_weapon_id].ammunition > 0)
+	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
 	{
 		for (int i = 0; i < MAX_BULLETS; i++)
 		{
@@ -85,27 +90,19 @@ void UpdateEntityBullet(uint16 ent_id, component_lists* component)
 		if (component->bullet_component[i].active)
 		{
 			component->bullet_component[i].bullet_position += component->bullet_component[i].bullet_velocity;
-			component->bullet_component[i].bullet_collision.x += component->bullet_component[i].bullet_position.x;
-			component->bullet_component[i].bullet_collision.y += component->bullet_component[i].bullet_position.y;
-			component->bullet_component[i].bullet_collision.x = component->bullet_component[i].bullet_position.x;
-			component->bullet_component[i].bullet_collision.y = component->bullet_component[i].bullet_position.y;
-
+			UpdateEntityCollision(i, component, component->bullet_component[i].bullet_collision, component->transform_component[enemy_id].ent_collision);
 		}
 
 	}
 }
 
-void UpdateEntityCollision(uint16 ent_id, component_lists* component, v2  circle_one, float radius_one)
+void UpdateEntityCollision(uint16 ent_id, component_lists* component, Rectangle rec_one, Rectangle rec_two)
 {
-	for (int i = 0; i < MAX_BULLETS; i++)
+	if (CheckCollisionRecs(rec_one, rec_two))
 	{
-		if (CheckCollisionCircles(circle_one, radius_one, component->bullet_component[i].bullet_position, component->bullet_component[i].radius))
-		{
-			component->bullet_component[i].active = false;
-		}
+		component->bullet_component[ent_id].active = false;
 	}
 }
-
 void UpdateEntityHealth(uint16 ent_id, component_lists* component, entity_health health)
 {
 	

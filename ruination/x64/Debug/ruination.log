@@ -1,4 +1,10 @@
-﻿  ruination.cpp
+﻿  entity.cpp
+C:\Users\thort\OneDrive\Documents\PROGRAMMINGALL\CISFUN\source\repos\ruination\entity.cpp(35,108): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Documents\PROGRAMMINGALL\CISFUN\source\repos\ruination\entity.cpp(35,91): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Documents\PROGRAMMINGALL\CISFUN\source\repos\ruination\entity.cpp(35,64): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thort\OneDrive\Documents\PROGRAMMINGALL\CISFUN\source\repos\ruination\entity.cpp(35,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  ruination.cpp
+  Generating Code...
   ruination.vcxproj -> C:\Users\thort\OneDrive\Documents\PROGRAMMINGALL\CISFUN\source\repos\ruination\x64\Debug\ruination.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.
