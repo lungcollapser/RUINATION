@@ -28,12 +28,25 @@ void DrawEntity(uint16 ent_id, v2 position_one, v2 position_two, float radius, C
 		DrawCircleV(position_one + position_two, radius, color);
 	}
 }
-void DrawCollision(uint16 ent_id, Rectangle collision, v2 position_two, component_lists* component)
+void DrawCollision(uint16 ent_id, Rectangle collision, v2 position, component_lists* component)
 {
-	if (component->health_component[ent_id].current_health > 0)
+
+	if (component->collision_component[ent_id].active)
 	{
-		DrawRectangleLines(collision.x + position_two.x, collision.y + position_two.y, collision.width, collision.height, ORANGE);
+		DrawRectangleLines(position.x - PLAYER_SIZE / 2.0f, position.y - PLAYER_SIZE / 2.0f, collision.width, collision.height, ORANGE);
 	}
+
+	std::cout << collision.x;
+}
+Rectangle CenterCollision(Rectangle collision)
+{
+	return
+	{
+		collision.x + collision.width / 2.0f,
+		collision.y + collision.height / 2.0f,
+		collision.width,
+		collision.height
+	};
 }
 void UpdateEntityMovement(uint16 ent_id, component_lists* component)
 {
@@ -90,7 +103,6 @@ void UpdateEntityBullet(uint16 ent_id, component_lists* component)
 		if (component->bullet_component[i].active)
 		{
 			component->bullet_component[i].bullet_position += component->bullet_component[i].bullet_velocity;
-			UpdateEntityCollision(i, component, component->bullet_component[i].bullet_collision, component->transform_component[enemy_id].ent_collision);
 		}
 
 	}
@@ -98,9 +110,15 @@ void UpdateEntityBullet(uint16 ent_id, component_lists* component)
 
 void UpdateEntityCollision(uint16 ent_id, component_lists* component, Rectangle rec_one, Rectangle rec_two)
 {
+
 	if (CheckCollisionRecs(rec_one, rec_two))
 	{
-		component->bullet_component[ent_id].active = false;
+		component->health_component[ent_id].current_health -= 1;
+		std::cout << "ENEMY HIT";
+	}
+	else
+	{
+		return;
 	}
 }
 void UpdateEntityHealth(uint16 ent_id, component_lists* component, entity_health health)

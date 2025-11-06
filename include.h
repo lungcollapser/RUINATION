@@ -10,7 +10,6 @@
 #include <vector>
 #include <string>
 #include <iostream>
-#include <tuple>
 
 #define global_variable static
 #define local_persist static
