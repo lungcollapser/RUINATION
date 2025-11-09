@@ -6,12 +6,12 @@
 			component->bullet_component[i].bullet_collision.y = component->bullet_component[i].bullet_position.y;*/
 
 extern uint16 entities = 0;
-extern uint16 player_id = 0;
-extern uint16 enemy_id = 1;
-extern uint16 weapon_id = 2;
-extern uint16 project_weapon_id = 3;
-extern uint16 bullet_id = 4;
-extern uint16 camera_id = 5;
+extern uint16 player_id = 51;
+extern uint16 enemy_id = 52;
+extern uint16 weapon_id = 53;
+extern uint16 project_weapon_id = 54;
+extern uint16 bullet_id = 1;
+extern uint16 camera_id = 56;
 
 uint16 AddEntity(uint16 ent_id)
 {
@@ -21,22 +21,28 @@ uint16 AddComponents(uint16 component_type)
 {
 	return component_type++;
 }
-void DrawEntity(uint16 ent_id, v2 position_one, v2 position_two, float radius, Color color, component_lists* component)
+void DrawEntity(uint16 ent_id, v2 position, float radius, Color color, component_lists* component)
+{
+	if (component->health_component[ent_id].current_health > 0)
+	{
+		DrawCircleV(position, radius, color);
+	}
+}
+void DrawEntityAdd(uint16 ent_id, v2 position_one, v2 position_two, float radius, Color color, component_lists* component)
 {
 	if (component->health_component[ent_id].current_health > 0)
 	{
 		DrawCircleV(position_one + position_two, radius, color);
 	}
 }
-void DrawCollision(uint16 ent_id, Rectangle collision, v2 position, component_lists* component)
+void DrawCollision(uint16 ent_id, Rectangle collision, v2 position, uint16 ent_size, component_lists* component)
 {
 
 	if (component->collision_component[ent_id].active)
 	{
-		DrawRectangleLines(position.x - PLAYER_SIZE / 2.0f, position.y - PLAYER_SIZE / 2.0f, collision.width, collision.height, ORANGE);
+		DrawRectangleLines(position.x - ent_size / 2.0f, position.y - ent_size / 2.0f, collision.width, collision.height, ORANGE);
 	}
 
-	std::cout << collision.x;
 }
 Rectangle CenterCollision(Rectangle collision)
 {
@@ -93,7 +99,7 @@ void UpdateEntityBullet(uint16 ent_id, component_lists* component)
 			if (!component->bullet_component[i].active)
 			{
 				component->bullet_component[i].active = true;
-				component->bullet_component[i].bullet_velocity = Vector2MoveTowards(component->bullet_component[i].bullet_position, component->transform_component[project_weapon_id].ent_position, 25);
+				component->transform_component[i].bullet_velocity = Vector2MoveTowards(component->transform_component[i].ent_position, component->transform_component[project_weapon_id].ent_position, 25);
 				break;
 			}
 		}
@@ -102,7 +108,7 @@ void UpdateEntityBullet(uint16 ent_id, component_lists* component)
 	{
 		if (component->bullet_component[i].active)
 		{
-			component->bullet_component[i].bullet_position += component->bullet_component[i].bullet_velocity;
+			component->transform_component[i].ent_position += component->transform_component[i].bullet_velocity;
 		}
 
 	}
@@ -113,8 +119,8 @@ void UpdateEntityCollision(uint16 ent_id, component_lists* component, Rectangle 
 
 	if (CheckCollisionRecs(rec_one, rec_two))
 	{
-		component->health_component[ent_id].current_health -= 1;
-		std::cout << "ENEMY HIT";
+		component->health_component[enemy_id].current_health -= 1;
+		std::cout << component->health_component->current_health;
 	}
 	else
 	{

@@ -23,7 +23,7 @@ TODO:
 
 internal void AddPlayer(component_lists * component)
 {
-    component->transform_component[player_id] = { player_id, 0, 0, 525, 40, WHITE };
+    component->transform_component[player_id] = { player_id, 0, 0, 0, 0, 525, 40, WHITE };
     component->collision_component[player_id] = { player_id, true, 0, 0, 60, 60 };
     component->health_component[player_id] = { player_id, 20, 20 };
 
@@ -34,9 +34,9 @@ internal void AddPlayer(component_lists * component)
 }
 internal void AddEnemy(component_lists* component)
 {
-    component->transform_component[enemy_id] = { enemy_id, 300, 300, 525, 20, RED};
-    component->collision_component[enemy_id] = { enemy_id, true, 0, 0, 30, 30 };
-    component->health_component[enemy_id] = { enemy_id, 20, 20 };
+    component->transform_component[enemy_id] = { enemy_id, 300, 300, 0, 0, 525, 20, RED};
+    component->collision_component[enemy_id] = { enemy_id, true, component->transform_component[enemy_id].ent_position.x, component->transform_component[enemy_id].ent_position.y, 40, 40 };
+    component->health_component[enemy_id] = { enemy_id, 1, 20 };
 
     AddEntity(enemy_id);
     AddComponents(component->total_transform_component);
@@ -49,7 +49,7 @@ internal void AddProjectWeapon(component_lists* component)
         component->item_component[project_weapon_id] = { project_weapon_id, true, 10 };
     }
 
-    component->transform_component[project_weapon_id] = { project_weapon_id,  0, 0, 0, 10, BLUE };
+    component->transform_component[project_weapon_id] = { project_weapon_id,  0, 0, 0, 0, 0, 10, BLUE };
     component->health_component[project_weapon_id] = { project_weapon_id, 1, 1 };
 
     AddEntity(project_weapon_id);
@@ -61,12 +61,14 @@ internal void AddBullet(component_lists* component)
 {
     for (int i = 0; i < MAX_BULLETS; i++)
     {
-        component->bullet_component[i] = { bullet_id, false, 0, 0, 0, 0, 10, 20, 1, 10, PURPLE };
+        component->transform_component[i] = { bullet_id, 0, 0, 0, 0, 0, 10, PURPLE };
+        component->bullet_component[i] = { bullet_id, false, 1, 1, 1 };
+        component->collision_component[i] = { bullet_id, true, component->transform_component[i].ent_position.x, component->transform_component[i].ent_position.y, 20, 20};
         component->health_component[i] = { bullet_id, 1, 1 };
     }
 
     AddEntity(bullet_id);
-    AddComponents(component->total_bullet_component);
+    AddComponents(component->total_transform_component);
     AddComponents(component->total_health_component);
     AddComponents(component->total_collision_component);
 
@@ -84,12 +86,14 @@ internal void AddCamera(component_lists* component)
 internal void DrawPlayer(component_lists* component)
 {
 
-    DrawEntity(player_id, component->transform_component[player_id].ent_position, { 0, 0 }, component->transform_component[player_id].radius, component->transform_component[player_id].color, component);
-    DrawCollision(player_id, component->collision_component[player_id].collision, component->transform_component[player_id].ent_position, component);
+    DrawEntity(player_id, component->transform_component[player_id].ent_position, component->transform_component[player_id].radius, component->transform_component[player_id].color, component);
+    DrawCollision(player_id, component->collision_component[player_id].collision, component->transform_component[player_id].ent_position, PLAYER_SIZE, component);
 }
 internal void DrawEnemy(component_lists* component)
 {
-    DrawEntity(enemy_id, component->transform_component[enemy_id].ent_position, { 0, 0 }, component->transform_component[enemy_id].radius, component->transform_component[enemy_id].color, component);
+    DrawEntity(enemy_id, component->transform_component[enemy_id].ent_position, component->transform_component[enemy_id].radius, component->transform_component[enemy_id].color, component);
+    DrawCollision(enemy_id, component->collision_component[enemy_id].collision, component->transform_component[enemy_id].ent_position, ENEMY_SIZE, component);
+
 }
 internal void DrawBullet(uint16 ent_id, component_lists* component)
 {
@@ -97,13 +101,14 @@ internal void DrawBullet(uint16 ent_id, component_lists* component)
     {
         if (component->bullet_component[i].active)
         {
-            DrawEntity(bullet_id, component->bullet_component[i].bullet_position, component->transform_component[ent_id].ent_position, component->bullet_component[i].radius, component->bullet_component[i].color, component);
+            DrawEntityAdd(bullet_id, component->transform_component[i].ent_position, component->transform_component[ent_id].ent_position, component->transform_component[i].radius, component->transform_component[i].color, component);
+            DrawCollision(bullet_id, component->collision_component[i].collision, component->transform_component[i].ent_position + component->transform_component[player_id].ent_position, BULLET_SIZE, component);
         }
     }
 }
 internal void DrawProjectileWeapon(uint16 ent_id, component_lists* component)
 {
-    DrawEntity(project_weapon_id, component->transform_component[project_weapon_id].ent_position, component->transform_component[ent_id].ent_position, component->bullet_component[project_weapon_id].radius, component->bullet_component[project_weapon_id].color, component);
+    DrawEntityAdd(project_weapon_id, component->transform_component[project_weapon_id].ent_position, component->transform_component[ent_id].ent_position, component->transform_component[project_weapon_id].radius, component->transform_component[project_weapon_id].color, component);
 }
 
 internal void UpdateGame(component_lists* component)
@@ -112,6 +117,10 @@ internal void UpdateGame(component_lists* component)
     UpdateEntityProjectWeapon(project_weapon_id, component);
     UpdateEntityBullet(bullet_id, component);
     UpdateEntityCamera(player_id, component);
+    for (int i = 0; i < MAX_BULLETS; i++)
+    {
+        UpdateEntityCollision(enemy_id, component, component->collision_component[i].collision, component->collision_component[enemy_id].collision);
+    }
     /*whats causing bullets not to shoot*/
 
 }

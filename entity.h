@@ -5,8 +5,9 @@
 #include "include.h"
 
 #define PLAYER_SIZE 60
+#define ENEMY_SIZE 40
+#define BULLET_SIZE 20
 #define MAX_BULLETS 50
-
 
 
 struct entity
@@ -19,6 +20,7 @@ struct entity_transform
 	uint16 entity_id;
 
 	v2 ent_position;
+	v2 bullet_velocity;
 
 	uint16 movement_speed;
 	float radius;
@@ -44,15 +46,11 @@ struct entity_bullet
 
 	bool active;
 
-	v2 bullet_position;
-	v2 bullet_velocity;
 
 	uint16 ammunition;
 	uint16 max_ammunition;
 	uint16 damage;
 
-	float radius;
-	Color color;
 };
 struct entity_camera
 {
@@ -104,15 +102,16 @@ extern uint16 camera_id;
 
 uint16 AddEntity(uint16 ent_id);
 uint16 AddComponents(uint16 component_type);
-void DrawEntity(uint16 ent_id, v2 position_one, v2 position_two, float radius, Color color, component_lists* component);
-void DrawCollision(uint16 ent_id, Rectangle collision, v2 position, component_lists* component);
+void DrawEntity(uint16 ent_id, v2 position, float radius, Color color, component_lists* component);
+void DrawEntityAdd(uint16 ent_id, v2 position_one, v2 position_two, float radius, Color color, component_lists* component);
+void DrawCollision(uint16 ent_id, Rectangle collision, v2 position, uint16 ent_size, component_lists* component);
 Rectangle CenterCollision(Rectangle collision);
 void UpdateEntityMovement(uint16 ent_id, component_lists* component);
 void UpdateEntityBullet(uint16 ent_id, component_lists* component);
 void UpdateEntityWeapon(uint16 ent_id, component_lists* component);
 void UpdateEntityProjectWeapon(uint16 ent_id, component_lists* component);
 void UpdateEntityHealth(uint16 ent_id, component_lists* component, entity_health health);
-void UpdateEntityCollision(uint16 ent_id, component_lists* component, v2 position, Rectangle rec_one, Rectangle rec_two);
+void UpdateEntityCollision(uint16 ent_id, component_lists* component, Rectangle rec_one, Rectangle rec_two);
 void UpdateEntityCamera(uint16 ent_id, component_lists* component);
 void KillEntity(uint16 ent_id, component_lists* component);
 
