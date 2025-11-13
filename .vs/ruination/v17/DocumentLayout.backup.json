@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\thort\\OneDrive\\Documents\\PROGRAMMINGALL\\CISFUN\\source\\repos\\ruination\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{44DD23FC-33C6-43A4-B3C0-3ABFA10A7A79}|ruination.vcxproj|C:\\Users\\thort\\OneDrive\\Documents\\PROGRAMMINGALL\\CISFUN\\source\\repos\\ruination\\ruination.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{44DD23FC-33C6-43A4-B3C0-3ABFA10A7A79}|ruination.vcxproj|solutionrelative:ruination.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{44DD23FC-33C6-43A4-B3C0-3ABFA10A7A79}|ruination.vcxproj|C:\\Users\\thort\\OneDrive\\Documents\\PROGRAMMINGALL\\CISFUN\\source\\repos\\ruination\\entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{44DD23FC-33C6-43A4-B3C0-3ABFA10A7A79}|ruination.vcxproj|solutionrelative:entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44DD23FC-33C6-43A4-B3C0-3ABFA10A7A79}|ruination.vcxproj|C:\\Users\\thort\\OneDrive\\Documents\\PROGRAMMINGALL\\CISFUN\\source\\repos\\ruination\\ruination.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{44DD23FC-33C6-43A4-B3C0-3ABFA10A7A79}|ruination.vcxproj|solutionrelative:ruination.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{44DD23FC-33C6-43A4-B3C0-3ABFA10A7A79}|ruination.vcxproj|C:\\Users\\thort\\OneDrive\\Documents\\PROGRAMMINGALL\\CISFUN\\source\\repos\\ruination\\entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -48,7 +48,7 @@
               "RelativeDocumentMoniker": "entity.h",
               "ToolTip": "C:\\Users\\thort\\OneDrive\\Documents\\PROGRAMMINGALL\\CISFUN\\source\\repos\\ruination\\entity.h",
               "RelativeToolTip": "entity.h",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAHEAAABGAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAArwBcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-09-15T23:30:24.968Z",
               "EditorCaption": ""
@@ -56,27 +56,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "entity.cpp",
-              "DocumentMoniker": "C:\\Users\\thort\\OneDrive\\Documents\\PROGRAMMINGALL\\CISFUN\\source\\repos\\ruination\\entity.cpp",
-              "RelativeDocumentMoniker": "entity.cpp",
-              "ToolTip": "C:\\Users\\thort\\OneDrive\\Documents\\PROGRAMMINGALL\\CISFUN\\source\\repos\\ruination\\entity.cpp",
-              "RelativeToolTip": "entity.cpp",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAAAHYAAAAAAAAAAAAAAA==",
+              "Title": "ruination.cpp",
+              "DocumentMoniker": "C:\\Users\\thort\\OneDrive\\Documents\\PROGRAMMINGALL\\CISFUN\\source\\repos\\ruination\\ruination.cpp",
+              "RelativeDocumentMoniker": "ruination.cpp",
+              "ToolTip": "C:\\Users\\thort\\OneDrive\\Documents\\PROGRAMMINGALL\\CISFUN\\source\\repos\\ruination\\ruination.cpp",
+              "RelativeToolTip": "ruination.cpp",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAD8AAACzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-09-15T23:30:26.83Z",
+              "WhenOpened": "2025-02-20T02:36:26.087Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ruination.cpp",
-              "DocumentMoniker": "C:\\Users\\thort\\OneDrive\\Documents\\PROGRAMMINGALL\\CISFUN\\source\\repos\\ruination\\ruination.cpp",
-              "RelativeDocumentMoniker": "ruination.cpp",
-              "ToolTip": "C:\\Users\\thort\\OneDrive\\Documents\\PROGRAMMINGALL\\CISFUN\\source\\repos\\ruination\\ruination.cpp*",
-              "RelativeToolTip": "ruination.cpp*",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAvwCUAAAChAAAAAAAAAA==",
+              "Title": "entity.cpp",
+              "DocumentMoniker": "C:\\Users\\thort\\OneDrive\\Documents\\PROGRAMMINGALL\\CISFUN\\source\\repos\\ruination\\entity.cpp",
+              "RelativeDocumentMoniker": "entity.cpp",
+              "ToolTip": "C:\\Users\\thort\\OneDrive\\Documents\\PROGRAMMINGALL\\CISFUN\\source\\repos\\ruination\\entity.cpp*",
+              "RelativeToolTip": "entity.cpp*",
+              "ViewState": "AgIAAEYAAAAAAAAAAAArwG0AAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-02-20T02:36:26.087Z",
+              "WhenOpened": "2025-09-15T23:30:26.83Z",
               "EditorCaption": ""
             },
             {
@@ -89,8 +89,7 @@
               "RelativeToolTip": "include.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-22T02:29:20.002Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T02:29:20.002Z"
             },
             {
               "$type": "Document",
