@@ -7,7 +7,7 @@
 /*
 TODO:
 
-
+-Create a drawing of a weapon where the bullets fires based on where its pointing, not based on the weapon reticle. Have the barrel of the gun point towards the barrel.
 -Fix bullet collision due to it not having a transform component. add ent_position as a parameter to fill in for scalability.
 -Make bullet collision more global to where if it hits any object, it deactivates and disappears.
 -Figure out if you really need to use ENT_ID as an argument for every function (psst, probably not).
@@ -61,7 +61,7 @@ internal void AddBullet(component_lists* component)
 {
     for (int i = 0; i < MAX_BULLETS; i++)
     {
-        component->transform_component[i] = { bullet_id, component->transform_component[player_id].ent_position.x, component->transform_component[player_id].ent_position.y, 10, 10, 10, PURPLE};
+        component->transform_component[i] = { bullet_id, component->transform_component[player_id].ent_position.x, component->transform_component[player_id].ent_position.y, 2, 2, 10, PURPLE};
         component->bullet_component[i] = { bullet_id, false,  0, 0, 20, 20, 1, 1, 1 };
         component->health_component[i] = { bullet_id, 1, 1 };
     }
@@ -167,9 +167,9 @@ int main()
         DrawLine(800, 0, 0, 800, WHITE);
         DrawLine(0, 0, 800, 800, WHITE);
         DrawBullet(player_id, &component);
+        DrawProjectileWeapon(player_id, &component);
         DrawPlayer(&component);
         DrawEnemy(&component);
-        DrawProjectileWeapon(player_id, &component);
 
         /*ending functions*/
         EndDrawing();
