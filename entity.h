@@ -24,6 +24,7 @@ struct entity_transform
 
 	float radius;
 	Color color;
+
 };
 struct entity_health
 {
@@ -66,6 +67,12 @@ struct entity_collision
 
 	Rectangle collision;
 };
+struct entity_render
+{
+	uint16 entity_id;
+
+	Texture2D entity_texture;
+};
 enum entity_state
 {
 	ALIVE = 1,
@@ -82,6 +89,7 @@ struct component_lists
 	entity_camera camera_component[100];
 	entity_collision collision_component[100];
 	entity_state state_component[100];
+	entity_render render_component[100];
 
 	uint16 total_health_component;
 	uint16 total_transform_component;
@@ -90,8 +98,8 @@ struct component_lists
 	uint16 total_camera_component;
 	uint16 total_collision_component;
 	uint16 total_state_component;
+	uint16 total_render_component;
 };
-
 
 extern uint16 entities;
 extern uint16 player_id;

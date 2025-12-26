@@ -44,6 +44,9 @@ internal void AddEnemy(component_lists* component)
 }
 internal void AddProjectWeapon(component_lists* component)
 {
+
+    Image gun_image = LoadImage("ruination\lilpee.png");
+
     if (IsKeyPressed(KEY_ONE))
     {
         component->item_component[project_weapon_id] = { project_weapon_id, true, 10 };
@@ -51,6 +54,7 @@ internal void AddProjectWeapon(component_lists* component)
 
     component->transform_component[project_weapon_id] = { project_weapon_id,  0, 0, 0, 0, 10, BLUE };
     component->health_component[project_weapon_id] = { project_weapon_id, 1, 1 };
+    component->render_component[project_weapon_id] = { project_weapon_id, LoadTextureFromImage(gun_image)};
 
     AddEntity(project_weapon_id, component);
     AddComponents(component->total_item_component);
@@ -103,21 +107,19 @@ internal void DrawBullet(uint16 ent_id, component_lists* component)
 {
     for (int i = 0; i < MAX_BULLETS; i++)
     {
-
-
         component->bullet_component[i].bullet_collision.x = component->transform_component[i].ent_position.x;
         component->bullet_component[i].bullet_collision.y = component->transform_component[i].ent_position.y;
 
 
-        DrawEntity(i, component->transform_component[i].ent_position, component->transform_component[i].radius, component->transform_component[i].color, component);
+        DrawEntityAdd(i, component->transform_component[i].ent_position, component->transform_component[player_id].ent_position, component->transform_component[i].radius, component->transform_component[i].color, component);
         DrawCollision(i, component->bullet_component[i].bullet_collision, component->transform_component[i].ent_position, BULLET_SIZE, component);
     }
 }
 internal void DrawProjectileWeapon(uint16 ent_id, component_lists* component)
 {
     DrawEntityAdd(project_weapon_id, component->transform_component[project_weapon_id].ent_position, component->transform_component[ent_id].ent_position, component->transform_component[project_weapon_id].radius, component->transform_component[project_weapon_id].color, component);
+    DrawTextureEx()
 }
-
 internal void UpdateGame(component_lists* component)
 {
     UpdateEntityMovement(player_id, component);
@@ -130,7 +132,6 @@ internal void UpdateGame(component_lists* component)
         UpdateEntityCollision(component, component->bullet_component[i].bullet_collision, component->collision_component[enemy_id].collision);
     }
     /*whats causing bullets not to shoot*/
-
 }
 internal void InitGame(component_lists* component)
 {
@@ -157,7 +158,6 @@ int main()
         BeginDrawing();
         BeginMode2D(component.camera_component[camera_id].entity_cam);
         ClearBackground(BLACK);
-
 
         /*updates*/
         UpdateGame(&component);

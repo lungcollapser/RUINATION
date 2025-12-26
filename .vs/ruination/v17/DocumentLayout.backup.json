@@ -3,19 +3,19 @@
   "WorkspaceRootPath": "C:\\Users\\thort\\OneDrive\\Documents\\PROGRAMMINGALL\\CISFUN\\source\\repos\\ruination\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{44DD23FC-33C6-43A4-B3C0-3ABFA10A7A79}|ruination.vcxproj|C:\\Users\\thort\\OneDrive\\Documents\\PROGRAMMINGALL\\CISFUN\\source\\repos\\ruination\\entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{44DD23FC-33C6-43A4-B3C0-3ABFA10A7A79}|ruination.vcxproj|solutionrelative:entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{44DD23FC-33C6-43A4-B3C0-3ABFA10A7A79}|ruination.vcxproj|C:\\Users\\thort\\OneDrive\\Documents\\PROGRAMMINGALL\\CISFUN\\source\\repos\\ruination\\ruination.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{44DD23FC-33C6-43A4-B3C0-3ABFA10A7A79}|ruination.vcxproj|solutionrelative:ruination.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\thort\\Downloads\\vcpkg\\installed\\x64-windows\\include\\raymath.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{44DD23FC-33C6-43A4-B3C0-3ABFA10A7A79}|ruination.vcxproj|C:\\Users\\thort\\OneDrive\\Documents\\PROGRAMMINGALL\\CISFUN\\source\\repos\\ruination\\entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{44DD23FC-33C6-43A4-B3C0-3ABFA10A7A79}|ruination.vcxproj|solutionrelative:entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44DD23FC-33C6-43A4-B3C0-3ABFA10A7A79}|ruination.vcxproj|C:\\Users\\thort\\OneDrive\\Documents\\PROGRAMMINGALL\\CISFUN\\source\\repos\\ruination\\entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{44DD23FC-33C6-43A4-B3C0-3ABFA10A7A79}|ruination.vcxproj|solutionrelative:entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\thort\\Downloads\\vcpkg\\installed\\x64-windows\\include\\raymath.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{44DD23FC-33C6-43A4-B3C0-3ABFA10A7A79}|ruination.vcxproj|C:\\Users\\thort\\OneDrive\\Documents\\PROGRAMMINGALL\\CISFUN\\source\\repos\\ruination\\include.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -37,7 +37,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 240,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -45,52 +45,52 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "raymath.h",
               "DocumentMoniker": "C:\\Users\\thort\\Downloads\\vcpkg\\installed\\x64-windows\\include\\raymath.h",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Downloads\\vcpkg\\installed\\x64-windows\\include\\raymath.h",
               "ToolTip": "C:\\Users\\thort\\Downloads\\vcpkg\\installed\\x64-windows\\include\\raymath.h",
               "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Downloads\\vcpkg\\installed\\x64-windows\\include\\raymath.h",
-              "ViewState": "AgIAALQBAAAAAAAAAAAnwMsBAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAMIBAAAAAAAAAAAnwNkBAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-12-04T00:41:27.41Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "entity.cpp",
               "DocumentMoniker": "C:\\Users\\thort\\OneDrive\\Documents\\PROGRAMMINGALL\\CISFUN\\source\\repos\\ruination\\entity.cpp",
               "RelativeDocumentMoniker": "entity.cpp",
-              "ToolTip": "C:\\Users\\thort\\OneDrive\\Documents\\PROGRAMMINGALL\\CISFUN\\source\\repos\\ruination\\entity.cpp*",
-              "RelativeToolTip": "entity.cpp*",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAAAGQAAABKAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\thort\\OneDrive\\Documents\\PROGRAMMINGALL\\CISFUN\\source\\repos\\ruination\\entity.cpp",
+              "RelativeToolTip": "entity.cpp",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAGwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-09-15T23:30:26.83Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "entity.h",
               "DocumentMoniker": "C:\\Users\\thort\\OneDrive\\Documents\\PROGRAMMINGALL\\CISFUN\\source\\repos\\ruination\\entity.h",
               "RelativeDocumentMoniker": "entity.h",
               "ToolTip": "C:\\Users\\thort\\OneDrive\\Documents\\PROGRAMMINGALL\\CISFUN\\source\\repos\\ruination\\entity.h",
               "RelativeToolTip": "entity.h",
-              "ViewState": "AgIAABwAAAAAAAAAAAArwG0AAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAACsAAAAAAAAAAAArwEgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-09-15T23:30:24.968Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "ruination.cpp",
               "DocumentMoniker": "C:\\Users\\thort\\OneDrive\\Documents\\PROGRAMMINGALL\\CISFUN\\source\\repos\\ruination\\ruination.cpp",
               "RelativeDocumentMoniker": "ruination.cpp",
-              "ToolTip": "C:\\Users\\thort\\OneDrive\\Documents\\PROGRAMMINGALL\\CISFUN\\source\\repos\\ruination\\ruination.cpp*",
-              "RelativeToolTip": "ruination.cpp*",
-              "ViewState": "AgIAAIcAAAAAAAAAAAAAAJcAAAAfAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\thort\\OneDrive\\Documents\\PROGRAMMINGALL\\CISFUN\\source\\repos\\ruination\\ruination.cpp",
+              "RelativeToolTip": "ruination.cpp",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAAAHgAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-02-20T02:36:26.087Z",
               "EditorCaption": ""

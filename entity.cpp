@@ -105,8 +105,7 @@ void UpdateEntityProjectWeapon(uint16 ent_id, component_lists* component)
 
 	component->transform_component[ent_id].ent_position = GetMousePosition();
 	DrawCircleV(component->transform_component[ent_id].ent_position + component->transform_component[player_id].ent_position, component->transform_component[ent_id].radius, component->transform_component[ent_id].color);
-
-
+	
 }
 void UpdateEntityBullet(uint16 ent_id, component_lists* component)
 {
@@ -117,8 +116,7 @@ void UpdateEntityBullet(uint16 ent_id, component_lists* component)
 		{
 			if (!component->bullet_component[i].active)
 			{
-
-				component->transform_component[i].ent_position = component->transform_component[player_id].ent_position;
+				component->transform_component[i].speed = Vector2Subtract(component->transform_component[project_weapon_id].ent_position, component->transform_component[i].ent_position);
 				component->bullet_component[i].active = true;
 				break;
 			}
@@ -128,14 +126,9 @@ void UpdateEntityBullet(uint16 ent_id, component_lists* component)
 	{
 		if (component->bullet_component[i].active)
 		{
-			v2 bullet_origin = { 0, 0 };
 
-			v2 bullet_end = component->transform_component[i].ent_position - component->transform_component[project_weapon_id].ent_position;
-
-
-
+			component->transform_component[i].ent_position += component->transform_component[i].speed;
 		}
-
 	}
 }
 
