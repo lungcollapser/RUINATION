@@ -45,7 +45,6 @@ internal void AddEnemy(component_lists* component)
 internal void AddProjectWeapon(component_lists* component)
 {
 
-    Image gun_image = LoadImage("ruination\lilpee.png");
 
     if (IsKeyPressed(KEY_ONE))
     {
@@ -54,7 +53,6 @@ internal void AddProjectWeapon(component_lists* component)
 
     component->transform_component[project_weapon_id] = { project_weapon_id,  0, 0, 0, 0, 10, BLUE };
     component->health_component[project_weapon_id] = { project_weapon_id, 1, 1 };
-    component->render_component[project_weapon_id] = { project_weapon_id, LoadTextureFromImage(gun_image)};
 
     AddEntity(project_weapon_id, component);
     AddComponents(component->total_item_component);
@@ -117,8 +115,12 @@ internal void DrawBullet(uint16 ent_id, component_lists* component)
 }
 internal void DrawProjectileWeapon(uint16 ent_id, component_lists* component)
 {
+
+    Image gun_image = LoadImage("ruinationart/lilpee.png");
+    Texture2D gun_texture = LoadTextureFromImage(gun_image);
+
     DrawEntityAdd(project_weapon_id, component->transform_component[project_weapon_id].ent_position, component->transform_component[ent_id].ent_position, component->transform_component[project_weapon_id].radius, component->transform_component[project_weapon_id].color, component);
-    DrawTextureEx()
+    DrawTextureEx(gun_texture, component->transform_component[player_id].ent_position, component->transform_component[project_weapon_id].ent_position, 1, WHITE);
 }
 internal void UpdateGame(component_lists* component)
 {
